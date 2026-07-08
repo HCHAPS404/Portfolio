@@ -98,12 +98,22 @@ h1, h2, h3, h4 {
 }
 
 .brand {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
+  line-height: 0;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 38px;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.brand:hover .brand-logo {
+  filter: drop-shadow(0 0 8px rgba(201, 131, 90, 0.5));
+  opacity: 0.95;
 }
 
 .site-nav {
