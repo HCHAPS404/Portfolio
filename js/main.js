@@ -1,13 +1,18 @@
 /*
  * Portfolio — interactions and i18n.
- * Language: follows the browser (Spanish -> es), falls back to English.
- * The manual switch in the header persists the choice in localStorage.
+ * Language follows the browser (Spanish -> es) and falls back to English.
+ * The EN/ES switch in the header persists the choice in localStorage.
  */
 
 (function () {
   "use strict";
 
-  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Optional Formspree endpoint (https://formspree.io/f/xxxx). When empty, the
+  // form opens the visitor's mail client pre-addressed to helmut.chs@gmail.com.
+  var FORM_ENDPOINT = "";
+  var CONTACT_EMAIL = "helmut.chs@gmail.com";
 
   var translations = {
     en: {
@@ -21,10 +26,15 @@
       "nav.contact": "Contact",
 
       "hero.kicker": "Portfolio",
-      "hero.role": "Electronics Engineer · Full-Stack Developer",
+      "hero.role": "Electronics Engineer · Full-Stack Developer · Founder",
       "hero.summary": "Six years building technology from the circuit to the cloud — embedded systems, PCB design, enterprise platforms and AI on hardware, applied to problems that matter.",
       "hero.cv": "Download CV",
       "hero.available": "Open to work",
+      "lang.native": "Native",
+      "lang.es": "Spanish",
+      "lang.en": "English",
+      "lang.fr": "French",
+      "lang.zh": "Mandarin",
 
       "metric.years": "Years of experience",
       "metric.certs": "Certifications",
@@ -35,28 +45,22 @@
       "sec1.title": "Profile",
       "sec1.note": "Who I am",
       "about.lead": "Electronics Engineer and Full-Stack Developer with over six years leading high-impact technological projects. I combine deep expertise in programming (.NET, Python, C/C++), advanced embedded systems (ARM/RTOS), PCB design (EMI/EMC) and FPGA development (Xilinx/Intel) — from enterprise logistics platforms for international trade to Edge AI and neural networks on hardware for aerospace, defense and applied bioengineering.",
-      "about.t1": "Strategic leadership",
+      "about.t1": "Company founder",
       "about.t2": "IEEE branch president",
-      "about.t3": "Agile methodologies",
+      "about.t3": "Strategic leadership",
       "about.t4": "Technical consulting",
       "fact.location": "Location",
       "fact.phone": "Phone",
       "fact.email": "Email",
       "fact.web": "Website",
 
-      "sec2.title": "Education & languages",
-      "sec2.note": "Studies, training, languages",
-      "edu.label": "Education",
+      "sec2.title": "Education",
+      "sec2.note": "Studies & training",
+      "edu.label": "Academic education",
       "edu.d1": "Electronics Engineering",
       "edu.d2": "Professional PCB Design & Assembly",
       "cert.label": "Certifications",
       "cert.esri": "Remote Sensing & Drones",
-      "lang.label": "Languages",
-      "lang.es": "Spanish",
-      "lang.en": "English",
-      "lang.fr": "French",
-      "lang.zh": "Mandarin",
-      "lang.native": "Native",
 
       "sec3.title": "Skills & tools",
       "sec3.note": "What I work with",
@@ -77,6 +81,16 @@
 
       "sec4.title": "Experience",
       "sec4.note": "Professional journey",
+      "xpdk.date": "2024 — Present",
+      "xpdk.meta": "Founder",
+      "xpdk.role": "Founder & General Manager",
+      "xpdk.b1": "Founded and lead a company with two years of experience in specialized education in engineering, science and STEM for children, youth, university students and professionals.",
+      "xpdk.b2": "Design engineering solutions for educational contexts, from curriculum to hardware and lab equipment.",
+      "xppo.date": "2025 — Present",
+      "xppo.meta": "Founder",
+      "xppo.role": "Founder",
+      "xppo.b1": "Founded a company delivering agricultural solutions built on engineering across Colombia.",
+      "xppo.b2": "Bring automation, electronics and data to the field to improve productivity and decision-making.",
       "xp1.date": "May 2024 — Apr 2025",
       "xp1.meta": "Full-time · Remote",
       "xp1.role": "Junior Full-Stack Developer",
@@ -119,27 +133,28 @@
       "folders.hint": "Drag to browse · hover for quick actions · click to open",
       "folders.open": "Open project",
       "folders.repo": "Repository",
+      "folders.wip": "Work in progress",
       "folders.close": "Close",
 
-      "p1.title": "Landslide early warning system",
-      "p1.flag": "Winner",
-      "p1.desc": "Early warning system for landslides and mass movements. Winner of the UNGRD × UNDP national hackathon.",
-      "p1.more": "Designed during the national hackathon organized by UNGRD and UNDP. The system combines low-power sensor nodes, edge inference and an alert pipeline to give communities early warning of mass-movement events. First place among teams from across the country.",
-      "p2.title": "International trade logistics platform",
-      "p2.desc": "Enterprise .NET solutions for customs, imports, DIAN compliance and logistics at scale.",
-      "p2.more": "Enterprise platform supporting customs operations, imports and DIAN compliance for high-volume international trade clients — built with .NET, C# and SQL Server, focused on scalability, security and performance.",
-      "p3.title": "Edge AI on hardware",
-      "p3.desc": "Neural networks deployed on FPGA and embedded hardware for aerospace, defense and bioengineering.",
-      "p3.more": "Neural networks deployed directly on FPGAs and embedded targets for aerospace, defense and bioengineering applications, optimizing models to run within tight power and latency budgets.",
-      "p4.title": "Educational robotics prototypes",
-      "p4.desc": "Mechatronic prototypes and STEAM solutions for education programs across the country.",
-      "p4.more": "Mechatronic prototypes for Computadores para Educar and the Ministry of Education: PCB design, 3D modeling and programming applied to STEAM education for vulnerable populations.",
-      "p5.title": "Personal portfolio",
-      "p5.desc": "This site — a dependency-free portfolio built with plain HTML, CSS and JavaScript.",
-      "p5.more": "Custom internationalization, scroll-driven animations and an interactive folder-based project browser, with no frameworks and no build step.",
+      "navira.flag": "Winner",
+      "navira.desc": "Early warning system for landslides and mass movements. Winner of the UNGRD × UNDP national hackathon.",
+      "navira.more": "Built during the national hackathon organized by UNGRD and UNDP. The system pairs low-power sensor nodes with edge inference and an alerting pipeline so communities get early warning of mass-movement events. It took first place among teams from across the country.",
+      "wip.desc": "One of my active repositories. The full write-up is on its way.",
+      "wip.more": "This project lives in my GitHub. Open the repository to see the code, commits and current progress while I finish documenting it here.",
 
       "contact.kicker": "Available for projects and roles",
-      "contact.title": "Let's build something real.",
+      "contact.title": "Have a problem worth engineering?",
+      "contact.sub": "Tell me what you're building. I read every message.",
+      "form.name": "Name",
+      "form.email": "Email",
+      "form.subject": "Subject",
+      "form.message": "Message",
+      "form.send": "Send message",
+      "form.sending": "Sending…",
+      "form.invalid": "Please fill in your name, a valid email and a message.",
+      "form.mail": "Opening your email app…",
+      "form.ok": "Thanks — I'll get back to you soon.",
+      "form.error": "Something went wrong. Write me directly at " + CONTACT_EMAIL + ".",
     },
 
     es: {
@@ -153,10 +168,15 @@
       "nav.contact": "Contacto",
 
       "hero.kicker": "Portafolio",
-      "hero.role": "Ingeniero Electrónico · Desarrollador Full-Stack",
+      "hero.role": "Ingeniero Electrónico · Desarrollador Full-Stack · Fundador",
       "hero.summary": "Seis años construyendo tecnología del circuito a la nube: sistemas embebidos, diseño de PCB, plataformas empresariales e IA en hardware, aplicados a problemas que importan.",
       "hero.cv": "Descargar CV",
       "hero.available": "Disponible",
+      "lang.native": "Nativo",
+      "lang.es": "Español",
+      "lang.en": "Inglés",
+      "lang.fr": "Francés",
+      "lang.zh": "Mandarín",
 
       "metric.years": "Años de experiencia",
       "metric.certs": "Certificaciones",
@@ -167,28 +187,22 @@
       "sec1.title": "Perfil",
       "sec1.note": "Quién soy",
       "about.lead": "Ingeniero Electrónico y Desarrollador Full-Stack con más de seis años liderando proyectos tecnológicos de alto impacto. Combino experiencia profunda en programación (.NET, Python, C/C++), sistemas embebidos avanzados (ARM/RTOS), diseño de PCB (EMI/EMC) y desarrollo FPGA (Xilinx/Intel) — desde plataformas logísticas empresariales para comercio internacional hasta Edge AI y redes neuronales en hardware para aeroespacial, defensa y bioingeniería aplicada.",
-      "about.t1": "Liderazgo estratégico",
+      "about.t1": "Fundador de empresas",
       "about.t2": "Presidente de rama IEEE",
-      "about.t3": "Metodologías ágiles",
+      "about.t3": "Liderazgo estratégico",
       "about.t4": "Consultoría técnica",
       "fact.location": "Ubicación",
       "fact.phone": "Teléfono",
       "fact.email": "Correo",
       "fact.web": "Sitio web",
 
-      "sec2.title": "Formación e idiomas",
-      "sec2.note": "Estudios, capacitación, idiomas",
-      "edu.label": "Estudios",
+      "sec2.title": "Formación",
+      "sec2.note": "Estudios y capacitación",
+      "edu.label": "Educación académica",
       "edu.d1": "Ingeniería Electrónica",
       "edu.d2": "Diseño y Ensamble Profesional de PCB",
       "cert.label": "Certificaciones",
       "cert.esri": "Teledetección y Drones",
-      "lang.label": "Idiomas",
-      "lang.es": "Español",
-      "lang.en": "Inglés",
-      "lang.fr": "Francés",
-      "lang.zh": "Mandarín",
-      "lang.native": "Nativo",
 
       "sec3.title": "Habilidades y herramientas",
       "sec3.note": "Con qué trabajo",
@@ -209,6 +223,16 @@
 
       "sec4.title": "Experiencia",
       "sec4.note": "Recorrido profesional",
+      "xpdk.date": "2024 — Actualidad",
+      "xpdk.meta": "Fundador",
+      "xpdk.role": "Fundador y Gerente General",
+      "xpdk.b1": "Fundé y dirijo una empresa con dos años de trayectoria en educación especializada en ingeniería, ciencias y STEM para niños, jóvenes, universitarios y profesionales.",
+      "xpdk.b2": "Diseño soluciones de ingeniería para contextos educativos, desde el currículo hasta el hardware y equipos de laboratorio.",
+      "xppo.date": "2025 — Actualidad",
+      "xppo.meta": "Fundador",
+      "xppo.role": "Fundador",
+      "xppo.b1": "Fundé una empresa de soluciones agrícolas basadas en ingeniería en Colombia.",
+      "xppo.b2": "Llevo automatización, electrónica y datos al campo para mejorar la productividad y la toma de decisiones.",
       "xp1.date": "May 2024 — Abr 2025",
       "xp1.meta": "Tiempo completo · Remoto",
       "xp1.role": "Desarrollador Full-Stack Junior",
@@ -251,31 +275,36 @@
       "folders.hint": "Arrastra para explorar · pasa el mouse para acciones · haz clic para abrir",
       "folders.open": "Abrir proyecto",
       "folders.repo": "Repositorio",
+      "folders.wip": "En desarrollo",
       "folders.close": "Cerrar",
 
-      "p1.title": "Sistema de alerta temprana de deslizamientos",
-      "p1.flag": "Ganador",
-      "p1.desc": "Sistema de alerta temprana para derrumbes y deslizamientos. Ganador de la hackatón nacional UNGRD × PNUD.",
-      "p1.more": "Diseñado durante la hackatón nacional organizada por la UNGRD y el PNUD. El sistema combina nodos de sensores de bajo consumo, inferencia en el borde y una cadena de alertas para dar aviso temprano a las comunidades ante eventos de remoción en masa. Primer puesto entre equipos de todo el país.",
-      "p2.title": "Plataforma logística de comercio internacional",
-      "p2.desc": "Soluciones empresariales .NET para aduanas, importaciones, cumplimiento DIAN y logística a escala.",
-      "p2.more": "Plataforma empresarial que soporta operaciones aduaneras, importaciones y cumplimiento DIAN para clientes de comercio internacional de alto volumen — construida con .NET, C# y SQL Server, enfocada en escalabilidad, seguridad y rendimiento.",
-      "p3.title": "Edge AI en hardware",
-      "p3.desc": "Redes neuronales desplegadas en FPGA y hardware embebido para aeroespacial, defensa y bioingeniería.",
-      "p3.more": "Redes neuronales desplegadas directamente en FPGAs y plataformas embebidas para aplicaciones aeroespaciales, de defensa y bioingeniería, optimizando los modelos para presupuestos estrictos de potencia y latencia.",
-      "p4.title": "Prototipos de robótica educativa",
-      "p4.desc": "Prototipos mecatrónicos y soluciones STEAM para programas educativos en todo el país.",
-      "p4.more": "Prototipos mecatrónicos para Computadores para Educar y el Ministerio de Educación: diseño de PCB, modelado 3D y programación aplicados a educación STEAM para poblaciones vulnerables.",
-      "p5.title": "Portafolio personal",
-      "p5.desc": "Este sitio — un portafolio sin dependencias construido con HTML, CSS y JavaScript puros.",
-      "p5.more": "Internacionalización propia, animaciones al hacer scroll y un explorador de proyectos con carpetas interactivas, sin frameworks ni proceso de build.",
+      "navira.flag": "Ganador",
+      "navira.desc": "Sistema de alerta temprana para derrumbes y deslizamientos. Ganador de la hackatón nacional UNGRD × PNUD.",
+      "navira.more": "Construido durante la hackatón nacional organizada por la UNGRD y el PNUD. El sistema combina nodos de sensores de bajo consumo con inferencia en el borde y una cadena de alertas para dar aviso temprano a las comunidades ante eventos de remoción en masa. Obtuvo el primer puesto entre equipos de todo el país.",
+      "wip.desc": "Uno de mis repositorios activos. La descripción completa está en camino.",
+      "wip.more": "Este proyecto vive en mi GitHub. Abre el repositorio para ver el código, los commits y el avance actual mientras termino de documentarlo aquí.",
 
       "contact.kicker": "Disponible para proyectos y vinculación",
-      "contact.title": "Construyamos algo real.",
+      "contact.title": "¿Tienes un problema que valga la pena resolver con ingeniería?",
+      "contact.sub": "Cuéntame qué estás construyendo. Leo cada mensaje.",
+      "form.name": "Nombre",
+      "form.email": "Correo",
+      "form.subject": "Asunto",
+      "form.message": "Mensaje",
+      "form.send": "Enviar mensaje",
+      "form.sending": "Enviando…",
+      "form.invalid": "Escribe tu nombre, un correo válido y un mensaje.",
+      "form.mail": "Abriendo tu aplicación de correo…",
+      "form.ok": "Gracias — te responderé pronto.",
+      "form.error": "Algo salió mal. Escríbeme directamente a " + CONTACT_EMAIL + ".",
     },
   };
 
-  var currentLang = "en";
+  var lang = "en";
+
+  function t(key) {
+    return translations[lang][key] || key;
+  }
 
   function resolveLanguage() {
     var saved = localStorage.getItem("lang");
@@ -284,25 +313,23 @@
     return translations[browser] ? browser : "en";
   }
 
-  function setLanguage(lang) {
-    currentLang = lang;
-    var dict = translations[lang];
-    document.documentElement.lang = lang;
-    document.title = dict["meta.title"];
+  function setLanguage(next) {
+    lang = next;
+    document.documentElement.lang = next;
+    document.title = t("meta.title");
 
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var value = dict[el.dataset.i18n];
-      if (value) el.textContent = value;
+      el.textContent = t(el.dataset.i18n);
     });
 
     document.querySelectorAll(".lang-switch button").forEach(function (btn) {
-      btn.classList.toggle("active", btn.dataset.lang === lang);
+      btn.classList.toggle("active", btn.dataset.lang === next);
     });
 
-    var closeBtn = document.querySelector(".dialog-close");
-    if (closeBtn) closeBtn.setAttribute("aria-label", dict["folders.close"]);
+    var close = document.querySelector(".dialog-close");
+    if (close) close.setAttribute("aria-label", t("folders.close"));
 
-    if (dialog && dialog.open && openProjectId) fillDialog(openProjectId);
+    if (dialog && dialog.open && openId) fillDialog(openId);
   }
 
   document.querySelectorAll(".lang-switch button").forEach(function (btn) {
@@ -312,73 +339,81 @@
     });
   });
 
-  // Language level dots (5-step scale)
-  document.querySelectorAll(".dots").forEach(function (el) {
-    var level = parseInt(el.dataset.level, 10) || 0;
-    for (var i = 0; i < 5; i++) {
-      var dot = document.createElement("i");
-      if (i < level) dot.className = "on";
-      el.appendChild(dot);
-    }
-  });
-
-  // Fade-in blocks as they enter the viewport
-  var revealTargets = document.querySelectorAll(
-    ".sec-header, .hero-text, .hero-photo, .metrics, .profile-lead, .facts, .edu-col, .domain, .skills-foot, .xp, .folder-hint, .contact > *"
+  // Reveal blocks as they scroll into view
+  var reveals = document.querySelectorAll(
+    ".sec-header, .hero-text, .hero-photo, .profile-lead, .col-label, .domain, .skills-foot, .xp, .folder-hint, .contact > *"
   );
-
-  revealTargets.forEach(function (el) {
+  reveals.forEach(function (el) {
     el.classList.add("reveal");
   });
 
-  var revealObserver = new IntersectionObserver(
+  var revealIO = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add("in-view");
-          revealObserver.unobserve(entry.target);
+          revealIO.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.1 }
   );
-
-  revealTargets.forEach(function (el) {
-    revealObserver.observe(el);
+  reveals.forEach(function (el) {
+    revealIO.observe(el);
   });
 
-  // Staggered reveal for grouped items (award rows, project folders).
-  // Delays are applied with timeouts so they never interfere with hover transitions.
-  function staggerReveal(containerSelector, itemSelector, step) {
+  // Staggered reveal for grouped items, driven by timeouts so it never fights
+  // the hover transitions on the same elements
+  function stagger(containerSelector, itemSelector, step) {
     var container = document.querySelector(containerSelector);
     if (!container) return;
-
     var items = container.querySelectorAll(itemSelector);
-
-    var observer = new IntersectionObserver(
+    var io = new IntersectionObserver(
       function (entries) {
         if (!entries[0].isIntersecting) return;
-        observer.disconnect();
+        io.disconnect();
         items.forEach(function (item, i) {
-          var delay = prefersReducedMotion ? 0 : i * step;
           setTimeout(function () {
             item.classList.add("in-view");
-          }, delay);
+          }, reduceMotion ? 0 : i * step);
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.12 }
     );
-
-    observer.observe(container);
+    io.observe(container);
   }
 
-  staggerReveal(".award-list", ".award-row", 140);
-  staggerReveal(".folder-strip", ".folder", 110);
+  stagger(".award-list", ".award-row", 140);
+  stagger(".folder-strip", ".folder", 90);
+  stagger(".metrics", ".metric", 90);
+  stagger(".tag-row", "li", 70);
+  stagger(".facts", ".fact", 80);
+  stagger(".edu-list", "li", 100);
+  stagger(".cert-list", "li", 70);
 
-  // Highlight the section currently in view
+  // Copy to clipboard for contact facts
+  var copyLabel = { en: "Copied", es: "Copiado" };
+  document.querySelectorAll(".copyable").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var value = btn.getAttribute("data-copy") || btn.textContent.trim();
+      var done = function () {
+        btn.setAttribute("data-hint", copyLabel[lang] || copyLabel.en);
+        btn.classList.add("copied");
+        setTimeout(function () {
+          btn.classList.remove("copied");
+        }, 1400);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(done, done);
+      } else {
+        done();
+      }
+    });
+  });
+
+  // Active section in the nav
   var navLinks = document.querySelectorAll(".site-nav a");
-
-  var sectionObserver = new IntersectionObserver(
+  var navIO = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
@@ -390,91 +425,90 @@
     },
     { rootMargin: "-30% 0px -60% 0px" }
   );
-
-  document.querySelectorAll("section[id]").forEach(function (section) {
-    sectionObserver.observe(section);
+  document.querySelectorAll("section[id]").forEach(function (s) {
+    navIO.observe(s);
   });
 
-  // Count-up metrics, padded to keep the technical look (06, 10, 04)
+  // Count-up metrics, zero-padded for the technical look
   function countUp(el) {
     var target = parseInt(el.dataset.count, 10);
     var pad = parseInt(el.dataset.pad, 10) || 0;
-
-    function format(value) {
-      return String(value).padStart(pad, "0");
-    }
-
-    if (prefersReducedMotion) {
-      el.textContent = format(target);
+    var render = function (v) {
+      el.textContent = String(v).padStart(pad, "0");
+    };
+    if (reduceMotion) {
+      render(target);
       return;
     }
-
     var duration = 1200;
     var start = performance.now();
-
-    function tick(now) {
-      var progress = Math.min((now - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = format(Math.round(target * eased));
-      if (progress < 1) requestAnimationFrame(tick);
-    }
-
-    requestAnimationFrame(tick);
+    (function tick(now) {
+      var p = Math.min((now - start) / duration, 1);
+      render(Math.round(target * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) requestAnimationFrame(tick);
+    })(start);
   }
 
-  var countObserver = new IntersectionObserver(
+  var countIO = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           countUp(entry.target);
-          countObserver.unobserve(entry.target);
+          countIO.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.6 }
   );
-
   document.querySelectorAll("[data-count]").forEach(function (el) {
-    countObserver.observe(el);
+    countIO.observe(el);
   });
 
   // --- Project folders ---
 
-  var projectData = {
-    p1: { no: "P-01", year: "2026", stack: "IoT · Edge AI · Embedded", repo: "https://github.com/HCHAPS404" },
-    p2: { no: "P-02", year: "2024 — 2025", stack: ".NET · C# · SQL Server", repo: "https://github.com/HCHAPS404" },
-    p3: { no: "P-03", year: "2025", stack: "FPGA · Python · ARM", repo: "https://github.com/HCHAPS404" },
-    p4: { no: "P-04", year: "2021 — 2023", stack: "PCB · 3D · Python · C/C++", repo: "https://github.com/HCHAPS404" },
-    p5: { no: "P-05", year: "2026", stack: "HTML · CSS · JavaScript", repo: "https://github.com/HCHAPS404/Portfolio" },
+  var repo = "https://github.com/HCHAPS404/";
+
+  var projects = {
+    navira: { no: "01", name: "NAVIRA-SATViRe", meta: "2026 · IoT · Edge AI · Embedded", url: repo + "NAVIRA-SATViRe", desc: "navira.desc", more: "navira.more" },
+    statum: { no: "02", name: "STATUM", url: repo + "STATUM", desc: "wip.desc", more: "wip.more" },
+    inzerm: { no: "03", name: "INZERM", url: repo + "INZERM", desc: "wip.desc", more: "wip.more" },
+    nuren: { no: "04", name: "NUREN", url: repo + "NUREN", desc: "wip.desc", more: "wip.more" },
+    prora: { no: "05", name: "PRORA", url: repo + "PRORA", desc: "wip.desc", more: "wip.more" },
+    soul: { no: "06", name: "SOUL", url: repo + "SOUL", desc: "wip.desc", more: "wip.more" },
+    verik: { no: "07", name: "VERIK", url: repo + "VERIK", desc: "wip.desc", more: "wip.more" },
+    vak: { no: "08", name: "VAK", url: repo + "VAK", desc: "wip.desc", more: "wip.more" },
+    niru: { no: "09", name: "NIRU", url: repo + "NIRU", desc: "wip.desc", more: "wip.more" },
+    protobot: { no: "10", name: "PROTOBOT", url: repo + "PROTOBOT", desc: "wip.desc", more: "wip.more" },
+    redact: { no: "11", name: "REDACT", url: repo + "REDACT", desc: "wip.desc", more: "wip.more" },
+    voxlu: { no: "12", name: "VOXLU", url: repo + "VOXLU", desc: "wip.desc", more: "wip.more" },
   };
 
   var dialog = document.querySelector(".project-dialog");
-  var openProjectId = null;
-  var lastFocused = null;
+  var openId = null;
+  var returnFocusTo = null;
 
   function fillDialog(id) {
-    var data = projectData[id];
-    var dict = translations[currentLang];
-
-    dialog.querySelector(".dialog-no").textContent = data.no;
-    dialog.querySelector(".dialog-title").textContent = dict[id + ".title"];
-    dialog.querySelector(".dialog-meta").textContent = data.year + " · " + data.stack;
-    dialog.querySelector(".dialog-desc").textContent = dict[id + ".desc"];
-    dialog.querySelector(".dialog-more").textContent = dict[id + ".more"];
+    var p = projects[id];
+    dialog.querySelector(".dialog-no").textContent = p.no + " · REPO";
+    dialog.querySelector(".dialog-title").textContent = p.name;
+    dialog.querySelector(".dialog-meta").textContent = p.meta || "github.com/HCHAPS404/" + p.name;
+    dialog.querySelector(".dialog-desc").textContent = t(p.desc);
+    dialog.querySelector(".dialog-more").textContent = t(p.more);
 
     var links = dialog.querySelector(".dialog-links");
     links.innerHTML = "";
-    var repo = document.createElement("a");
-    repo.href = data.repo;
-    repo.target = "_blank";
-    repo.rel = "noopener";
-    repo.textContent = dict["folders.repo"];
-    links.appendChild(repo);
+    var a = document.createElement("a");
+    a.href = p.url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = t("folders.repo");
+    links.appendChild(a);
   }
 
   function openDialog(id, opener) {
-    openProjectId = id;
-    lastFocused = opener || null;
+    if (!projects[id] || !dialog) return;
+    openId = id;
+    returnFocusTo = opener || null;
     fillDialog(id);
     dialog.showModal();
   }
@@ -483,58 +517,50 @@
     dialog.querySelector(".dialog-close").addEventListener("click", function () {
       dialog.close();
     });
-
-    // Close when clicking the backdrop
     dialog.addEventListener("click", function (e) {
       if (e.target === dialog) dialog.close();
     });
-
     dialog.addEventListener("close", function () {
-      openProjectId = null;
-      if (lastFocused) lastFocused.focus();
+      openId = null;
+      if (returnFocusTo) returnFocusTo.focus();
     });
   }
 
-  // Drag-to-scroll for the folder strip; a real drag must not trigger a click
+  // Drag-to-scroll the folder strip. A real drag must not fire a click.
   var strip = document.querySelector(".folder-strip");
-  var dragging = false;
-  var dragMoved = false;
-  var dragStartX = 0;
-  var dragStartScroll = 0;
+  var down = false;
+  var moved = false;
+  var startX = 0;
+  var startScroll = 0;
 
   if (strip) {
     strip.addEventListener("pointerdown", function (e) {
-      dragging = true;
-      dragMoved = false;
-      dragStartX = e.clientX;
-      dragStartScroll = strip.scrollLeft;
+      down = true;
+      moved = false;
+      startX = e.clientX;
+      startScroll = strip.scrollLeft;
     });
-
     window.addEventListener("pointermove", function (e) {
-      if (!dragging) return;
-      var dx = e.clientX - dragStartX;
+      if (!down) return;
+      var dx = e.clientX - startX;
       if (Math.abs(dx) > 6) {
-        dragMoved = true;
+        moved = true;
         strip.classList.add("dragging");
       }
-      strip.scrollLeft = dragStartScroll - dx;
+      strip.scrollLeft = startScroll - dx;
     });
-
     window.addEventListener("pointerup", function () {
-      dragging = false;
+      down = false;
       strip.classList.remove("dragging");
     });
   }
 
   document.querySelectorAll(".folder").forEach(function (folder) {
     var id = folder.dataset.project;
-
     folder.addEventListener("click", function (e) {
-      if (dragMoved) return;
-      if (e.target.closest("a")) return;
+      if (moved || e.target.closest("a")) return;
       openDialog(id, folder);
     });
-
     folder.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
@@ -542,6 +568,65 @@
       }
     });
   });
+
+  // --- Contact form ---
+
+  var form = document.getElementById("contact-form");
+  var note = document.getElementById("form-note");
+
+  function isEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  function say(message, tone) {
+    note.textContent = message;
+    note.dataset.tone = tone || "";
+  }
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var name = form.name.value.trim();
+      var email = form.email.value.trim();
+      var subject = form.subject.value.trim();
+      var message = form.message.value.trim();
+
+      if (!name || !isEmail(email) || !message) {
+        say(t("form.invalid"), "error");
+        return;
+      }
+
+      var fullSubject = subject || "Portfolio — " + name;
+
+      if (FORM_ENDPOINT) {
+        say(t("form.sending"), "");
+        fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { Accept: "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify({ name: name, email: email, subject: fullSubject, message: message }),
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error("bad response");
+            form.reset();
+            say(t("form.ok"), "ok");
+          })
+          .catch(function () {
+            say(t("form.error"), "error");
+          });
+        return;
+      }
+
+      // No backend configured: hand off to the visitor's mail client.
+      var body = message + "\n\n— " + name + " (" + email + ")";
+      var mailto =
+        "mailto:" + CONTACT_EMAIL +
+        "?subject=" + encodeURIComponent(fullSubject) +
+        "&body=" + encodeURIComponent(body);
+      window.location.href = mailto;
+      say(t("form.mail"), "ok");
+    });
+  }
 
   setLanguage(resolveLanguage());
 })();

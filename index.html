@@ -40,7 +40,9 @@
       <div class="hero-body">
         <div class="hero-text">
           <h1 class="hero-name">
-            Helmut<br />Chaparro<br /><span class="thin">Sandoval</span>
+            <span class="hn-line"><span>Helmut</span></span>
+            <span class="hn-line"><span>Chaparro</span></span>
+            <span class="hn-line"><span class="thin">Sandoval</span></span>
           </h1>
           <p class="hero-role" data-i18n="hero.role">Electronics Engineer · Full-Stack Developer</p>
           <p class="hero-summary" data-i18n="hero.summary">
@@ -55,6 +57,41 @@
             <li><a href="https://github.com/HCHAPS404" target="_blank" rel="noopener">GitHub</a></li>
             <li><a href="https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317/" target="_blank" rel="noopener">LinkedIn</a></li>
             <li><a href="https://www.helmutchs.com" target="_blank" rel="noopener">helmutchs.com</a></li>
+          </ul>
+
+          <ul class="hero-langs" aria-label="Languages">
+            <li class="lang-chip" style="--fill: 100%">
+              <span class="lang-code">ES</span>
+              <span class="lang-info">
+                <span class="lang-name" data-i18n="lang.es">Spanish</span>
+                <span class="lang-tag" data-i18n="lang.native">Native</span>
+              </span>
+              <span class="lang-meter"><i></i></span>
+            </li>
+            <li class="lang-chip" style="--fill: 68%">
+              <span class="lang-code">EN</span>
+              <span class="lang-info">
+                <span class="lang-name" data-i18n="lang.en">English</span>
+                <span class="lang-tag">B2</span>
+              </span>
+              <span class="lang-meter"><i></i></span>
+            </li>
+            <li class="lang-chip" style="--fill: 30%">
+              <span class="lang-code">FR</span>
+              <span class="lang-info">
+                <span class="lang-name" data-i18n="lang.fr">French</span>
+                <span class="lang-tag">A1</span>
+              </span>
+              <span class="lang-meter"><i></i></span>
+            </li>
+            <li class="lang-chip" style="--fill: 18%">
+              <span class="lang-code">ZH</span>
+              <span class="lang-info">
+                <span class="lang-name" data-i18n="lang.zh">Mandarin</span>
+                <span class="lang-tag">HSK1</span>
+              </span>
+              <span class="lang-meter"><i></i></span>
+            </li>
           </ul>
         </div>
 
@@ -111,11 +148,11 @@
         </div>
 
         <dl class="facts">
-          <div><dt data-i18n="fact.location">Location</dt><dd>Bogotá D.C., Colombia</dd></div>
-          <div><dt data-i18n="fact.phone">Phone</dt><dd>(+57) 300 872 32 90</dd></div>
-          <div><dt data-i18n="fact.email">Email</dt><dd><a href="mailto:helmut.chs@gmail.com">helmut.chs@gmail.com</a></dd></div>
-          <div><dt data-i18n="fact.web">Website</dt><dd><a href="https://www.helmutchs.com" target="_blank" rel="noopener">helmutchs.com</a></dd></div>
-          <div><dt>GitHub</dt><dd><a href="https://github.com/HCHAPS404" target="_blank" rel="noopener">HCHAPS404</a></dd></div>
+          <div class="fact"><dt data-i18n="fact.location">Location</dt><dd>Bogotá D.C., Colombia</dd></div>
+          <div class="fact"><dt data-i18n="fact.phone">Phone</dt><dd><button type="button" class="copyable" data-copy="+573008723290">(+57) 300 872 32 90</button></dd></div>
+          <div class="fact"><dt data-i18n="fact.email">Email</dt><dd><button type="button" class="copyable" data-copy="helmut.chs@gmail.com">helmut.chs@gmail.com</button></dd></div>
+          <div class="fact"><dt data-i18n="fact.web">Website</dt><dd><a href="https://www.helmutchs.com" target="_blank" rel="noopener">helmutchs.com</a></dd></div>
+          <div class="fact"><dt>GitHub</dt><dd><a href="https://github.com/HCHAPS404" target="_blank" rel="noopener">HCHAPS404</a></dd></div>
         </dl>
       </div>
 
@@ -124,13 +161,13 @@
     <section class="section" id="formacion">
       <header class="sec-header">
         <span class="sec-no">02</span>
-        <h2 data-i18n="sec2.title">Education &amp; languages</h2>
-        <span class="sec-note" data-i18n="sec2.note">Studies, training, languages</span>
+        <h2 data-i18n="sec2.title">Education</h2>
+        <span class="sec-note" data-i18n="sec2.note">Studies &amp; training</span>
       </header>
 
       <div class="edu-grid">
         <div class="edu-col">
-          <h3 class="col-label" data-i18n="edu.label">Education</h3>
+          <h3 class="col-label" data-i18n="edu.label">Academic education</h3>
           <ol class="edu-list">
             <li>
               <span class="edu-years">2020 — 2027</span>
@@ -154,14 +191,6 @@
               </div>
             </li>
           </ol>
-
-          <h3 class="col-label" data-i18n="lang.label">Languages</h3>
-          <ul class="lang-list">
-            <li><span data-i18n="lang.es">Spanish</span><span class="lang-level"><em data-i18n="lang.native">Native</em><span class="dots" data-level="5"></span></span></li>
-            <li><span data-i18n="lang.en">English</span><span class="lang-level"><em>B2</em><span class="dots" data-level="4"></span></span></li>
-            <li><span data-i18n="lang.fr">French</span><span class="lang-level"><em>A1</em><span class="dots" data-level="1"></span></span></li>
-            <li><span data-i18n="lang.zh">Mandarin</span><span class="lang-level"><em>HSK1</em><span class="dots" data-level="1"></span></span></li>
-          </ul>
         </div>
 
         <div class="edu-col">
@@ -240,6 +269,36 @@
       </header>
 
       <ol class="xp-list">
+        <li class="xp">
+          <div class="xp-when">
+            <span class="xp-dates accent" data-i18n="xpdk.date">2024 — Present</span>
+            <span class="xp-meta" data-i18n="xpdk.meta">Founder</span>
+          </div>
+          <div class="xp-what">
+            <h3 data-i18n="xpdk.role">Founder &amp; General Manager</h3>
+            <p class="xp-org">DevKit Electronics S.A.S</p>
+            <ul>
+              <li data-i18n="xpdk.b1">Founded and lead a company with two years of experience in specialized education in engineering, science and STEM for children, youth, university students and professionals.</li>
+              <li data-i18n="xpdk.b2">Design engineering solutions for educational contexts, from curriculum to hardware and lab equipment.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="xp">
+          <div class="xp-when">
+            <span class="xp-dates accent" data-i18n="xppo.date">2025 — Present</span>
+            <span class="xp-meta" data-i18n="xppo.meta">Founder</span>
+          </div>
+          <div class="xp-what">
+            <h3 data-i18n="xppo.role">Founder</h3>
+            <p class="xp-org">Poimen</p>
+            <ul>
+              <li data-i18n="xppo.b1">Founded a company delivering agricultural solutions built on engineering across Colombia.</li>
+              <li data-i18n="xppo.b2">Bring automation, electronics and data to the field to improve productivity and decision-making.</li>
+            </ul>
+          </div>
+        </li>
+
         <li class="xp">
           <div class="xp-when">
             <span class="xp-dates" data-i18n="xp1.date">May 2024 — Apr 2025</span>
@@ -376,69 +435,160 @@
       <p class="folder-hint" data-i18n="folders.hint">Drag to browse · hover for quick actions · click to open</p>
 
       <ul class="folder-strip" aria-label="Projects">
-        <li class="folder" tabindex="0" data-project="p1">
+        <li class="folder" tabindex="0" data-project="navira">
           <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
-          <span class="folder-tab">P-01 / 2026</span>
+          <span class="folder-tab">01 · REPO</span>
           <div class="folder-body">
-            <span class="folder-flag" data-i18n="p1.flag">Winner</span>
-            <h3 data-i18n="p1.title">Landslide early warning system</h3>
+            <span class="folder-flag" data-i18n="navira.flag">Winner</span>
+            <h3>NAVIRA-SATViRe</h3>
             <p class="folder-meta">IoT · Edge AI · Embedded</p>
           </div>
           <div class="folder-menu">
             <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
-            <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+            <a href="https://github.com/HCHAPS404/NAVIRA-SATViRe" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
           </div>
         </li>
 
-        <li class="folder" tabindex="0" data-project="p2">
+        <li class="folder" tabindex="0" data-project="statum">
           <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
-          <span class="folder-tab">P-02 / 2024</span>
+          <span class="folder-tab">02 · REPO</span>
           <div class="folder-body">
-            <h3 data-i18n="p2.title">International trade logistics platform</h3>
-            <p class="folder-meta">.NET · C# · SQL Server</p>
+            <h3>STATUM</h3>
+            <p class="folder-meta" data-i18n="folders.wip">Work in progress</p>
           </div>
           <div class="folder-menu">
             <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
-            <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+            <a href="https://github.com/HCHAPS404/STATUM" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
           </div>
         </li>
 
-        <li class="folder" tabindex="0" data-project="p3">
+        <li class="folder" tabindex="0" data-project="inzerm">
           <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
-          <span class="folder-tab">P-03 / 2025</span>
+          <span class="folder-tab">03 · REPO</span>
           <div class="folder-body">
-            <h3 data-i18n="p3.title">Edge AI on hardware</h3>
-            <p class="folder-meta">FPGA · Python · ARM</p>
+            <h3>INZERM</h3>
+            <p class="folder-meta" data-i18n="folders.wip">Work in progress</p>
           </div>
           <div class="folder-menu">
             <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
-            <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+            <a href="https://github.com/HCHAPS404/INZERM" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
           </div>
         </li>
 
-        <li class="folder" tabindex="0" data-project="p4">
+        <li class="folder" tabindex="0" data-project="nuren">
           <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
-          <span class="folder-tab">P-04 / 2021</span>
+          <span class="folder-tab">04 · REPO</span>
           <div class="folder-body">
-            <h3 data-i18n="p4.title">Educational robotics prototypes</h3>
-            <p class="folder-meta">PCB · 3D · Python · C/C++</p>
+            <h3>NUREN</h3>
+            <p class="folder-meta" data-i18n="folders.wip">Work in progress</p>
           </div>
           <div class="folder-menu">
             <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
-            <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+            <a href="https://github.com/HCHAPS404/NUREN" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
           </div>
         </li>
 
-        <li class="folder" tabindex="0" data-project="p5">
+        <li class="folder" tabindex="0" data-project="prora">
           <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
-          <span class="folder-tab">P-05 / 2026</span>
+          <span class="folder-tab">05 · REPO</span>
           <div class="folder-body">
-            <h3 data-i18n="p5.title">Personal portfolio</h3>
-            <p class="folder-meta">HTML · CSS · JavaScript</p>
+            <h3>PRORA</h3>
+            <p class="folder-meta" data-i18n="folders.wip">Work in progress</p>
           </div>
           <div class="folder-menu">
             <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
-            <a href="https://github.com/HCHAPS404/Portfolio" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+            <a href="https://github.com/HCHAPS404/PRORA" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+
+        <li class="folder" tabindex="0" data-project="soul">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">06 · REPO</span>
+          <div class="folder-body">
+            <h3>SOUL</h3>
+            <p class="folder-meta" data-i18n="folders.wip">Work in progress</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404/SOUL" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+
+        <li class="folder" tabindex="0" data-project="verik">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">07 · REPO</span>
+          <div class="folder-body">
+            <h3>VERIK</h3>
+            <p class="folder-meta" data-i18n="folders.wip">Work in progress</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404/VERIK" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+
+        <li class="folder" tabindex="0" data-project="vak">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">08 · REPO</span>
+          <div class="folder-body">
+            <h3>VAK</h3>
+            <p class="folder-meta" data-i18n="folders.wip">Work in progress</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404/VAK" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+
+        <li class="folder" tabindex="0" data-project="niru">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">09 · REPO</span>
+          <div class="folder-body">
+            <h3>NIRU</h3>
+            <p class="folder-meta" data-i18n="folders.wip">Work in progress</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404/NIRU" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+
+        <li class="folder" tabindex="0" data-project="protobot">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">10 · REPO</span>
+          <div class="folder-body">
+            <h3>PROTOBOT</h3>
+            <p class="folder-meta" data-i18n="folders.wip">Work in progress</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404/PROTOBOT" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+
+        <li class="folder" tabindex="0" data-project="redact">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">11 · REPO</span>
+          <div class="folder-body">
+            <h3>REDACT</h3>
+            <p class="folder-meta" data-i18n="folders.wip">Work in progress</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404/REDACT" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+
+        <li class="folder" tabindex="0" data-project="voxlu">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">12 · REPO</span>
+          <div class="folder-body">
+            <h3>VOXLU</h3>
+            <p class="folder-meta" data-i18n="folders.wip">Work in progress</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404/VOXLU" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
           </div>
         </li>
       </ul>
@@ -446,9 +596,32 @@
 
     <section class="section contact" id="contacto">
       <p class="kicker" data-i18n="contact.kicker">Available for projects and roles</p>
-      <h2 class="contact-title" data-i18n="contact.title">Let's build something real.</h2>
-      <a href="mailto:helmut.chs@gmail.com" class="contact-mail">helmut.chs@gmail.com</a>
+      <h2 class="contact-title" data-i18n="contact.title">Have a problem worth engineering?</h2>
+      <p class="contact-sub" data-i18n="contact.sub">Tell me what you're building. I read every message.</p>
+
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="field">
+          <label for="cf-name" data-i18n="form.name">Name</label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="cf-email" data-i18n="form.email">Email</label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email" />
+        </div>
+        <div class="field field-full">
+          <label for="cf-subject" data-i18n="form.subject">Subject</label>
+          <input id="cf-subject" name="subject" type="text" />
+        </div>
+        <div class="field field-full">
+          <label for="cf-message" data-i18n="form.message">Message</label>
+          <textarea id="cf-message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="button" data-i18n="form.send">Send message</button>
+        <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+      </form>
+
       <div class="contact-links">
+        <a href="mailto:helmut.chs@gmail.com">helmut.chs@gmail.com</a>
         <a href="https://wa.me/573008723290" target="_blank" rel="noopener">WhatsApp</a>
         <a href="https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener">GitHub</a>
