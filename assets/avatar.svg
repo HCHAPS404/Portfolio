@@ -12,5 +12,5 @@
   <rect width="200" height="200" fill="url(#bg)"/>
   <circle cx="100" cy="78" r="34" fill="url(#fig)" opacity="0.9"/>
   <path d="M40 200 C40 150 70 128 100 128 C130 128 160 150 160 200 Z" fill="url(#fig)" opacity="0.9"/>
-  <text x="100" y="188" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#e8ecf8" opacity="0.75">Tu foto aquí</text>
+  <text x="100" y="188" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#e8ecf8" opacity="0.75">Tu foto aquï¿½</text>
 </svg>
