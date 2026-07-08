@@ -1,40 +1,32 @@
-# Portfolio · Hoja de Vida Interactiva
+# Portfolio — Helmut Chaparro Sandoval
 
-Portafolio personal estilo hoja de vida con diseño **glassmorphism**, construido con HTML, CSS y JavaScript puros (sin dependencias ni build).
+Personal portfolio / interactive CV. Electronics engineering, embedded systems, PCB design, full-stack development and applied AI.
 
-## Estructura de las 6 etapas
+Built with plain HTML, CSS and JavaScript — no frameworks, no build step.
 
-1. **Inicio (Hero)** — Presentación con foto, rol animado (efecto máquina de escribir), botones de acción y redes sociales.
-2. **Perfil Profesional** — Sobre mí, datos personales y estadísticas animadas.
-3. **Formación & Idiomas** — Estudios (línea de tiempo), capacitación complementaria e idiomas con barras de nivel.
-4. **Habilidades & Herramientas** — Conocimientos técnicos con barras de progreso, herramientas de uso y habilidades blandas.
-5. **Experiencia Laboral** — Línea de tiempo vertical con cargos, empresas y logros.
-6. **Proyectos & Contacto** — Tarjetas de proyectos destacados, llamado a la acción de contacto y pie de página.
+## Run it
 
-## Cómo verlo
-
-Abre `index.html` directamente en el navegador, o sirve la carpeta con cualquier servidor estático:
+Open `index.html` in a browser, or serve the folder:
 
 ```bash
 npx serve .
 ```
 
-## Personalización
-
-- **Foto**: reemplaza `assets/avatar.svg` por tu foto (por ejemplo `assets/avatar.jpg`) y actualiza el `src` de la imagen en `index.html`.
-- **CV**: coloca tu hoja de vida en `assets/cv.pdf` para que funcione el botón "Descargar CV".
-- **Textos y datos**: todo el contenido (nombre, redes, estudios, experiencia, proyectos) está en `index.html` con datos de ejemplo listos para editar.
-- **Colores**: la paleta se controla con variables CSS al inicio de `css/styles.css` (`--accent`, `--accent-2`, `--bg`, etc.).
-
-## Estructura del proyecto
+## Structure
 
 ```
-├── index.html        # Estructura y contenido de las 6 etapas
-├── css/styles.css    # Estilos glassmorphism, animaciones y responsive
-├── js/main.js        # Scroll reveal, dot-nav, contadores y typing effect
-└── assets/           # Imágenes y archivos descargables
+├── index.html      # Content and structure
+├── css/styles.css  # Design system and layout
+├── js/main.js      # i18n, scroll reveals, nav state, counters
+└── assets/         # Photo, CV
 ```
 
-## Licencia
+## Notes
 
-MIT — ver [LICENSE](LICENSE).
+- **Language**: the site follows the browser language (Spanish → ES, anything else → EN). A manual EN/ES switch in the header persists the choice. Translations live in the `translations` object in `js/main.js`.
+- **CV download**: place the file at `assets/cv.pdf`.
+- **Palette and type**: design tokens are defined as CSS custom properties at the top of `css/styles.css`.
+
+## License
+
+MIT — see [LICENSE](LICENSE).

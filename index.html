@@ -1,367 +1,478 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio — Hoja de Vida</title>
-  <meta name="description" content="Portafolio profesional estilo hoja de vida con diseño glassmorphism." />
+  <title>Helmut Chaparro Sandoval — Electronics Engineer &amp; Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Helmut Chaparro Sandoval. Electronics engineering, embedded systems, PCB design, full-stack development and applied AI. Bogotá, Colombia." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500;125,600;125,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- Fondo animado -->
-  <div class="bg" aria-hidden="true">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-    <div class="grain"></div>
-  </div>
-
-  <!-- Navegación lateral (dots) -->
-  <nav class="dot-nav" aria-label="Navegación de secciones">
-    <a href="#inicio" class="dot active" data-label="Inicio"></a>
-    <a href="#perfil" class="dot" data-label="Perfil"></a>
-    <a href="#formacion" class="dot" data-label="Formación"></a>
-    <a href="#habilidades" class="dot" data-label="Habilidades"></a>
-    <a href="#experiencia" class="dot" data-label="Experiencia"></a>
-    <a href="#proyectos" class="dot" data-label="Proyectos"></a>
-  </nav>
-
-  <!-- Barra superior glass -->
-  <header class="topbar glass">
-    <span class="logo">TN<span class="accent">.</span></span>
-    <nav class="topbar-links">
-      <a href="#perfil">Perfil</a>
-      <a href="#formacion">Formación</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#proyectos">Proyectos</a>
+  <header class="site-header">
+    <a href="#top" class="brand">Helmut&nbsp;C.S.</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#perfil" data-i18n="nav.profile">Profile</a>
+      <a href="#formacion" data-i18n="nav.education">Education</a>
+      <a href="#habilidades" data-i18n="nav.skills">Skills</a>
+      <a href="#experiencia" data-i18n="nav.experience">Experience</a>
+      <a href="#premios" data-i18n="nav.awards">Awards</a>
+      <a href="#proyectos" data-i18n="nav.projects">Projects</a>
+      <a href="#contacto" data-i18n="nav.contact">Contact</a>
     </nav>
-    <a href="#contacto" class="btn btn-small">Contáctame</a>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en">EN</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-lang="es">ES</button>
+    </div>
   </header>
 
-  <main>
+  <main id="top">
 
-    <!-- ETAPA 1 · HERO -->
-    <section id="inicio" class="stage hero">
-      <div class="hero-content reveal">
-        <div class="avatar-ring">
-          <!-- Reemplaza assets/avatar.jpg por tu foto -->
-          <img src="assets/avatar.svg" alt="Foto de perfil" class="avatar" />
-          <span class="status-badge">Disponible</span>
+    <section class="hero" id="inicio">
+      <p class="kicker">
+        <span data-i18n="hero.kicker">Portfolio</span> — Bogotá D.C., Colombia · 4.71° N, 74.07° W
+      </p>
+
+      <div class="hero-body">
+        <div class="hero-text">
+          <h1 class="hero-name">
+            Helmut<br />Chaparro<br /><span class="thin">Sandoval</span>
+          </h1>
+          <p class="hero-role" data-i18n="hero.role">Electronics Engineer · Full-Stack Developer</p>
+          <p class="hero-summary" data-i18n="hero.summary">
+            Six years building technology from the circuit to the cloud — embedded systems,
+            PCB design, enterprise platforms and AI on hardware, applied to problems that matter.
+          </p>
+          <div class="hero-actions">
+            <a href="assets/cv.pdf" download class="button" data-i18n="hero.cv">Download CV</a>
+            <a href="mailto:helmut.chs@gmail.com" class="text-link">helmut.chs@gmail.com</a>
+          </div>
+          <ul class="hero-links">
+            <li><a href="https://github.com/HCHAPS404" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.helmutchs.com" target="_blank" rel="noopener">helmutchs.com</a></li>
+          </ul>
         </div>
-        <p class="hero-greeting">Hola, soy</p>
-        <h1 class="hero-name">Tu Nombre <span class="accent">Apellido</span></h1>
-        <p class="hero-role" id="typed-role">Desarrollador Full&nbsp;Stack</p>
-        <p class="hero-tagline">
-          Transformo ideas en experiencias digitales — apasionado por el diseño,
-          el código limpio y la tecnología.
-        </p>
-        <div class="hero-actions">
-          <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
-          <a href="assets/cv.pdf" class="btn btn-ghost" download>Descargar CV</a>
-        </div>
-        <div class="socials">
-          <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener" aria-label="GitHub" class="glass social">
-            <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12v3.15c0 .3.21.66.8.55A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
-          </a>
-          <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener" aria-label="LinkedIn" class="glass social">
-            <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.22 8.09h4.56V23H.22V8.09ZM8.34 8.09h4.37v2.04h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 7v8.24h-4.55v-7.3c0-1.74-.03-3.98-2.43-3.98-2.43 0-2.8 1.9-2.8 3.85V23H8.34V8.09Z"/></svg>
-          </a>
-          <a href="mailto:tucorreo@email.com" aria-label="Correo" class="glass social">
-            <svg viewBox="0 0 24 24"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm10 8.5L22 6H2l10 6.5ZM2 8.7V18h20V8.7l-10 6.3L2 8.7Z"/></svg>
-          </a>
-          <a href="https://instagram.com/tu-usuario" target="_blank" rel="noopener" aria-label="Instagram" class="glass social">
-            <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16ZM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.7 21.31.27 16.95.07 15.67.01 15.26 0 12 0Zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.15A3.99 3.99 0 1 1 16 12a3.99 3.99 0 0 1-4 3.99Zm6.4-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44Z"/></svg>
-          </a>
-        </div>
+
+        <figure class="hero-photo">
+          <span class="status"><span class="status-dot"></span><span data-i18n="hero.available">Open to work</span></span>
+          <img src="assets/photo.png" alt="Helmut Chaparro Sandoval" width="400" height="400" />
+          <figcaption>Fig. 01 — Helmut Chaparro S.</figcaption>
+        </figure>
       </div>
-      <a href="#perfil" class="scroll-hint" aria-label="Bajar a la siguiente sección">
-        <span class="mouse"><span class="wheel"></span></span>
-        <span class="scroll-text">Desliza para conocerme</span>
-      </a>
+
+      <dl class="metrics">
+        <div class="metric">
+          <dt data-i18n="metric.years">Years of experience</dt>
+          <dd><span data-count="6" data-pad="2">00</span>+</dd>
+        </div>
+        <div class="metric">
+          <dt data-i18n="metric.certs">Certifications</dt>
+          <dd><span data-count="10" data-pad="2">00</span>+</dd>
+        </div>
+        <div class="metric">
+          <dt data-i18n="metric.langs">Languages</dt>
+          <dd><span data-count="4" data-pad="2">00</span></dd>
+        </div>
+        <div class="metric">
+          <dt data-i18n="metric.hack">National hackathon</dt>
+          <dd class="accent" data-i18n="metric.hack_v">1st place</dd>
+        </div>
+      </dl>
     </section>
 
-    <!-- ETAPA 2 · PERFIL PROFESIONAL + DATOS -->
-    <section id="perfil" class="stage">
-      <div class="stage-inner">
-        <header class="stage-head reveal">
-          <span class="stage-index">01</span>
-          <h2>Perfil <span class="accent">Profesional</span></h2>
-          <p class="stage-sub">Quién soy y qué me mueve</p>
-        </header>
-        <div class="grid-2">
-          <article class="glass card reveal">
-            <h3 class="card-title">Sobre mí</h3>
-            <p>
-              Profesional con enfoque en el desarrollo de soluciones digitales, con capacidad de
-              análisis, adaptación y trabajo en equipo. Me caracterizo por la responsabilidad,
-              la proactividad y el aprendizaje continuo. Busco aportar valor en proyectos
-              desafiantes donde la tecnología genere impacto real.
+    <section class="section" id="perfil">
+      <header class="sec-header">
+        <span class="sec-no">01</span>
+        <h2 data-i18n="sec1.title">Profile</h2>
+        <span class="sec-note" data-i18n="sec1.note">Who I am</span>
+      </header>
+
+      <div class="profile-grid">
+        <div class="profile-lead">
+          <p class="lead" data-i18n="about.lead">
+            Electronics Engineer and Full-Stack Developer with over six years leading
+            high-impact technological projects. I combine deep expertise in programming
+            (.NET, Python, C/C++), advanced embedded systems (ARM/RTOS), PCB design (EMI/EMC)
+            and FPGA development (Xilinx/Intel) — from enterprise logistics platforms for
+            international trade to Edge AI and neural networks on hardware for aerospace,
+            defense and applied bioengineering.
+          </p>
+          <ul class="tag-row">
+            <li data-i18n="about.t1">Strategic leadership</li>
+            <li data-i18n="about.t2">IEEE branch president</li>
+            <li data-i18n="about.t3">Agile methodologies</li>
+            <li data-i18n="about.t4">Technical consulting</li>
+          </ul>
+        </div>
+
+        <dl class="facts">
+          <div><dt data-i18n="fact.location">Location</dt><dd>Bogotá D.C., Colombia</dd></div>
+          <div><dt data-i18n="fact.phone">Phone</dt><dd>(+57) 300 872 32 90</dd></div>
+          <div><dt data-i18n="fact.email">Email</dt><dd><a href="mailto:helmut.chs@gmail.com">helmut.chs@gmail.com</a></dd></div>
+          <div><dt data-i18n="fact.web">Website</dt><dd><a href="https://www.helmutchs.com" target="_blank" rel="noopener">helmutchs.com</a></dd></div>
+          <div><dt>GitHub</dt><dd><a href="https://github.com/HCHAPS404" target="_blank" rel="noopener">HCHAPS404</a></dd></div>
+        </dl>
+      </div>
+
+    </section>
+
+    <section class="section" id="formacion">
+      <header class="sec-header">
+        <span class="sec-no">02</span>
+        <h2 data-i18n="sec2.title">Education &amp; languages</h2>
+        <span class="sec-note" data-i18n="sec2.note">Studies, training, languages</span>
+      </header>
+
+      <div class="edu-grid">
+        <div class="edu-col">
+          <h3 class="col-label" data-i18n="edu.label">Education</h3>
+          <ol class="edu-list">
+            <li>
+              <span class="edu-years">2020 — 2027</span>
+              <div>
+                <h4 data-i18n="edu.d1">Electronics Engineering</h4>
+                <p>Universidad Distrital Francisco José de Caldas</p>
+              </div>
+            </li>
+            <li>
+              <span class="edu-years">2023</span>
+              <div>
+                <h4 data-i18n="edu.d2">Professional PCB Design &amp; Assembly</h4>
+                <p>Altium Designer · Universidad Distrital FJC</p>
+              </div>
+            </li>
+            <li>
+              <span class="edu-years">2026</span>
+              <div>
+                <h4>Altium Global Scholarship Program</h4>
+                <p>Altium Designer Software</p>
+              </div>
+            </li>
+          </ol>
+
+          <h3 class="col-label" data-i18n="lang.label">Languages</h3>
+          <ul class="lang-list">
+            <li><span data-i18n="lang.es">Spanish</span><span class="lang-level"><em data-i18n="lang.native">Native</em><span class="dots" data-level="5"></span></span></li>
+            <li><span data-i18n="lang.en">English</span><span class="lang-level"><em>B2</em><span class="dots" data-level="4"></span></span></li>
+            <li><span data-i18n="lang.fr">French</span><span class="lang-level"><em>A1</em><span class="dots" data-level="1"></span></span></li>
+            <li><span data-i18n="lang.zh">Mandarin</span><span class="lang-level"><em>HSK1</em><span class="dots" data-level="1"></span></span></li>
+          </ul>
+        </div>
+
+        <div class="edu-col">
+          <h3 class="col-label" data-i18n="cert.label">Certifications</h3>
+          <ul class="cert-list">
+            <li><span>AI Developer</span><span class="cert-meta">IBM · 2026</span></li>
+            <li><span>Data Science Professional</span><span class="cert-meta">IBM · 2026</span></li>
+            <li><span>RAG &amp; Agentic AI</span><span class="cert-meta">IBM · 2026</span></li>
+            <li><span>JavaScript Backend Developer</span><span class="cert-meta">IBM · 2026</span></li>
+            <li><span>AI &amp; ML Engineering</span><span class="cert-meta">Microsoft · 2026</span></li>
+            <li><span>Advanced Data Analytics</span><span class="cert-meta">Google · 2026</span></li>
+            <li><span>Data Engineering</span><span class="cert-meta">DeepLearning.AI · 2026</span></li>
+            <li><span data-i18n="cert.esri">Remote Sensing &amp; Drones</span><span class="cert-meta">ESRI Colombia · 2026</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="habilidades">
+      <header class="sec-header">
+        <span class="sec-no">03</span>
+        <h2 data-i18n="sec3.title">Skills &amp; tools</h2>
+        <span class="sec-note" data-i18n="sec3.note">What I work with</span>
+      </header>
+
+      <ul class="domains">
+        <li class="domain">
+          <span class="domain-no">A</span>
+          <h3 data-i18n="dom.a">Embedded systems</h3>
+          <p>ARM · RTOS · STM32 · C/C++ · SoC</p>
+        </li>
+        <li class="domain">
+          <span class="domain-no">B</span>
+          <h3 data-i18n="dom.b">Hardware &amp; PCB design</h3>
+          <p>Altium Designer · KiCAD · EMI/EMC · LTSpice</p>
+        </li>
+        <li class="domain">
+          <span class="domain-no">C</span>
+          <h3 data-i18n="dom.c">Full-stack development</h3>
+          <p>.NET · C# · JavaScript · SQL Server · Azure DevOps</p>
+        </li>
+        <li class="domain">
+          <span class="domain-no">D</span>
+          <h3 data-i18n="dom.d">Data &amp; AI</h3>
+          <p>Python · R · Power BI · Edge AI · MATLAB</p>
+        </li>
+        <li class="domain">
+          <span class="domain-no">E</span>
+          <h3 data-i18n="dom.e">Digital design &amp; robotics</h3>
+          <p>FPGA · VHDL/Verilog · ROS · Gazebo · Fusion 360</p>
+        </li>
+      </ul>
+
+      <div class="skills-foot">
+        <div>
+          <h3 class="col-label" data-i18n="tools.label">Everyday tools</h3>
+          <p class="inline-list">Altium Designer · KiCAD · Visual Studio · STM32Cube · Xilinx/Quartus · MATLAB · SQL Server · ROS · Gazebo · Fusion 360 · Blender · Power BI</p>
+        </div>
+        <div>
+          <h3 class="col-label" data-i18n="soft.label">Soft skills</h3>
+          <p class="inline-list">
+            <span data-i18n="soft.s1">Strategic leadership</span> · <span data-i18n="soft.s2">Bilingual communication</span> ·
+            <span data-i18n="soft.s3">Creative problem-solving</span> · <span data-i18n="soft.s4">Analytical thinking</span> ·
+            <span data-i18n="soft.s5">Multidisciplinary teams</span> · <span data-i18n="soft.s6">Data-driven decisions</span> ·
+            <span data-i18n="soft.s7">Adaptability</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia">
+      <header class="sec-header">
+        <span class="sec-no">04</span>
+        <h2 data-i18n="sec4.title">Experience</h2>
+        <span class="sec-note" data-i18n="sec4.note">Professional journey</span>
+      </header>
+
+      <ol class="xp-list">
+        <li class="xp">
+          <div class="xp-when">
+            <span class="xp-dates" data-i18n="xp1.date">May 2024 — Apr 2025</span>
+            <span class="xp-meta" data-i18n="xp1.meta">Full-time · Remote</span>
+          </div>
+          <div class="xp-what">
+            <h3 data-i18n="xp1.role">Junior Full-Stack Developer</h3>
+            <p class="xp-org">Trianexco</p>
+            <ul>
+              <li data-i18n="xp1.b1">Designed .NET solutions for customer management, customs processes, imports, DIAN compliance, logistics and integrations.</li>
+              <li data-i18n="xp1.b2">Built robust solutions for high-volume clients, optimizing international trade workflows with scalability, security and performance.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="xp">
+          <div class="xp-when">
+            <span class="xp-dates" data-i18n="xp2.date">Jul 2025 — Dec 2025</span>
+            <span class="xp-meta" data-i18n="xp2.meta">On-site</span>
+          </div>
+          <div class="xp-what">
+            <h3 data-i18n="xp2.role">Robotics &amp; Electronics Teacher</h3>
+            <p class="xp-org">COMPENSAR · Universidad COMPENSAR</p>
+            <ul>
+              <li data-i18n="xp2.b1">Led STEAM initiatives focused on reducing the educational gap in public schools, promoting science and technology.</li>
+              <li data-i18n="xp2.b2">Designed specialized courses in robotics, automation and embedded systems with AI, integrated into UCOMPENSAR's curricular projects.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="xp">
+          <div class="xp-when">
+            <span class="xp-dates">2023 — 2024</span>
+            <span class="xp-meta" data-i18n="xp3.meta">Full-time · Hybrid</span>
+          </div>
+          <div class="xp-what">
+            <h3 data-i18n="xp3.role">Software Developer &amp; Educational Robotics Consultant</h3>
+            <p class="xp-org">Arisoft Seguridad Vial S.A.S</p>
+            <ul>
+              <li data-i18n="xp3.b1">Managed educational robotics projects for commercialization to district and educational institutions.</li>
+              <li data-i18n="xp3.b2">Programmed educational robots, developed electronic circuits and provided on-the-job consulting.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="xp">
+          <div class="xp-when">
+            <span class="xp-dates" data-i18n="xp4.date">Mar 2021 — Nov 2023</span>
+            <span class="xp-meta" data-i18n="xp4.meta">Full-time · Hybrid</span>
+          </div>
+          <div class="xp-what">
+            <h3 data-i18n="xp4.role">Engineering &amp; Educational Robotics Consultant</h3>
+            <p class="xp-org">Computadores para Educar · Ministerio de Educación</p>
+            <ul>
+              <li data-i18n="xp4.b1">Led the complete design and development cycle of innovative mechatronic prototypes, implementing STEAM methodology.</li>
+              <li data-i18n="xp4.b2">Applied PCB design, 3D modeling, robotics and programming (Python, C/C++) to solutions for education and vulnerable populations.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="xp">
+          <div class="xp-when">
+            <span class="xp-dates accent" data-i18n="xp5.date">Jun 2022 — Present</span>
+            <span class="xp-meta" data-i18n="xp5.meta">Part-time · Hybrid</span>
+          </div>
+          <div class="xp-what">
+            <h3 data-i18n="xp5.role">Presidency &amp; Staff Positions</h3>
+            <p class="xp-org">IEEE · Universidad Distrital</p>
+            <ul>
+              <li data-i18n="xp5.b1">Presidential positions in the IEEE student branch, the Robotics and Automation Society, EMBS and the Humanitarian Technologies chapter.</li>
+              <li data-i18n="xp5.b2">Currently president of the RAS, SIGHT and CIS student chapters.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" id="premios">
+      <header class="sec-header">
+        <span class="sec-no">05</span>
+        <h2 data-i18n="sec5.title">Awards &amp; competitions</h2>
+        <span class="sec-note" data-i18n="sec5.note">Recognitions</span>
+      </header>
+
+      <ol class="award-list">
+        <li class="award-row">
+          <span class="award-year">2026</span>
+          <div class="award-info">
+            <h3 data-i18n="aw1.title">Early warning system for landslides</h3>
+            <p class="award-org" data-i18n="aw1.org">National hackathon — UNGRD × UNDP</p>
+            <p class="award-desc" data-i18n="aw1.desc">
+              Winner of the national hackathon organized by Colombia's National Disaster Risk
+              Management Unit (UNGRD) and the United Nations Development Programme (UNDP),
+              designing an early warning system for landslides and mass-movement events.
             </p>
-            <div class="chips">
-              <span class="chip">Responsable</span>
-              <span class="chip">Autodidacta</span>
-              <span class="chip">Trabajo en equipo</span>
-              <span class="chip">Creativo</span>
-              <span class="chip">Orientado a resultados</span>
-            </div>
-          </article>
-          <article class="glass card reveal delay-1">
-            <h3 class="card-title">Datos personales</h3>
-            <ul class="data-list">
-              <li><span class="data-label">Nombre</span><span>Tu Nombre Apellido</span></li>
-              <li><span class="data-label">Ubicación</span><span>Ciudad, País</span></li>
-              <li><span class="data-label">Teléfono</span><span>+57 300 000 0000</span></li>
-              <li><span class="data-label">Correo</span><span>tucorreo@email.com</span></li>
-              <li><span class="data-label">Nacimiento</span><span>01 / 01 / 2000</span></li>
-              <li><span class="data-label">Licencia</span><span>Categoría B1</span></li>
-            </ul>
-          </article>
-        </div>
-        <div class="stats reveal delay-2">
-          <div class="glass stat"><span class="stat-num" data-count="3">0</span><span class="stat-label">Años de experiencia</span></div>
-          <div class="glass stat"><span class="stat-num" data-count="15">0</span><span class="stat-label">Proyectos realizados</span></div>
-          <div class="glass stat"><span class="stat-num" data-count="8">0</span><span class="stat-label">Certificaciones</span></div>
-          <div class="glass stat"><span class="stat-num" data-count="100">0</span><span class="stat-label">% Compromiso</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ETAPA 3 · FORMACIÓN + CAPACITACIÓN + IDIOMAS -->
-    <section id="formacion" class="stage">
-      <div class="stage-inner">
-        <header class="stage-head reveal">
-          <span class="stage-index">02</span>
-          <h2>Formación <span class="accent">&amp; Idiomas</span></h2>
-          <p class="stage-sub">Estudios, capacitación y lenguas</p>
-        </header>
-        <div class="grid-formacion">
-          <article class="glass card reveal">
-            <h3 class="card-title">Estudios</h3>
-            <div class="timeline">
-              <div class="tl-item">
-                <span class="tl-date">2021 — 2025</span>
-                <h4>Ingeniería / Tecnología en Sistemas</h4>
-                <p>Universidad o Institución · Ciudad</p>
-              </div>
-              <div class="tl-item">
-                <span class="tl-date">2019 — 2021</span>
-                <h4>Técnico en Programación de Software</h4>
-                <p>Institución técnica · Ciudad</p>
-              </div>
-              <div class="tl-item">
-                <span class="tl-date">2018</span>
-                <h4>Bachiller Académico</h4>
-                <p>Colegio · Ciudad</p>
-              </div>
-            </div>
-          </article>
-          <article class="glass card reveal delay-1">
-            <h3 class="card-title">Capacitación complementaria</h3>
-            <ul class="cert-list">
-              <li><span class="cert-name">Desarrollo Web Full Stack</span><span class="cert-meta">Platzi · 2024</span></li>
-              <li><span class="cert-name">Bases de Datos SQL</span><span class="cert-meta">SENA · 2023</span></li>
-              <li><span class="cert-name">Git &amp; GitHub Profesional</span><span class="cert-meta">Udemy · 2023</span></li>
-              <li><span class="cert-name">Fundamentos de Cloud</span><span class="cert-meta">AWS · 2024</span></li>
-              <li><span class="cert-name">Metodologías Ágiles (Scrum)</span><span class="cert-meta">Coursera · 2022</span></li>
-            </ul>
-          </article>
-          <article class="glass card reveal delay-2">
-            <h3 class="card-title">Idiomas</h3>
-            <div class="lang">
-              <div class="lang-head"><span>Español</span><span>Nativo</span></div>
-              <div class="bar"><span class="bar-fill" style="--w:100%"></span></div>
-            </div>
-            <div class="lang">
-              <div class="lang-head"><span>Inglés</span><span>B1 — Intermedio</span></div>
-              <div class="bar"><span class="bar-fill" style="--w:65%"></span></div>
-            </div>
-            <div class="lang">
-              <div class="lang-head"><span>Portugués</span><span>A2 — Básico</span></div>
-              <div class="bar"><span class="bar-fill" style="--w:35%"></span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ETAPA 4 · HABILIDADES: HERRAMIENTAS + CONOCIMIENTOS -->
-    <section id="habilidades" class="stage">
-      <div class="stage-inner">
-        <header class="stage-head reveal">
-          <span class="stage-index">03</span>
-          <h2>Habilidades <span class="accent">&amp; Herramientas</span></h2>
-          <p class="stage-sub">Con qué trabajo día a día</p>
-        </header>
-        <div class="grid-2">
-          <article class="glass card reveal">
-            <h3 class="card-title">Conocimientos técnicos</h3>
-            <div class="skill">
-              <div class="skill-head"><span>HTML / CSS / JavaScript</span><span>90%</span></div>
-              <div class="bar"><span class="bar-fill" style="--w:90%"></span></div>
-            </div>
-            <div class="skill">
-              <div class="skill-head"><span>React / Frontend moderno</span><span>75%</span></div>
-              <div class="bar"><span class="bar-fill" style="--w:75%"></span></div>
-            </div>
-            <div class="skill">
-              <div class="skill-head"><span>Node.js / APIs REST</span><span>70%</span></div>
-              <div class="bar"><span class="bar-fill" style="--w:70%"></span></div>
-            </div>
-            <div class="skill">
-              <div class="skill-head"><span>Bases de datos (SQL / NoSQL)</span><span>65%</span></div>
-              <div class="bar"><span class="bar-fill" style="--w:65%"></span></div>
-            </div>
-            <div class="skill">
-              <div class="skill-head"><span>UI / UX &amp; Diseño</span><span>60%</span></div>
-              <div class="bar"><span class="bar-fill" style="--w:60%"></span></div>
-            </div>
-          </article>
-          <article class="glass card reveal delay-1">
-            <h3 class="card-title">Herramientas de uso</h3>
-            <div class="tools">
-              <div class="glass tool"><span class="tool-icon">⚛️</span>React</div>
-              <div class="glass tool"><span class="tool-icon">🟨</span>JavaScript</div>
-              <div class="glass tool"><span class="tool-icon">🟦</span>TypeScript</div>
-              <div class="glass tool"><span class="tool-icon">🐍</span>Python</div>
-              <div class="glass tool"><span class="tool-icon">🌿</span>Git</div>
-              <div class="glass tool"><span class="tool-icon">🐙</span>GitHub</div>
-              <div class="glass tool"><span class="tool-icon">🎨</span>Figma</div>
-              <div class="glass tool"><span class="tool-icon">🗄️</span>MySQL</div>
-              <div class="glass tool"><span class="tool-icon">🍃</span>MongoDB</div>
-              <div class="glass tool"><span class="tool-icon">📦</span>Docker</div>
-              <div class="glass tool"><span class="tool-icon">☁️</span>AWS</div>
-              <div class="glass tool"><span class="tool-icon">💻</span>VS Code</div>
-            </div>
-            <h3 class="card-title" style="margin-top:2rem">Habilidades blandas</h3>
-            <div class="chips">
-              <span class="chip">Comunicación</span>
-              <span class="chip">Liderazgo</span>
-              <span class="chip">Resolución de problemas</span>
-              <span class="chip">Gestión del tiempo</span>
-              <span class="chip">Pensamiento crítico</span>
-              <span class="chip">Adaptabilidad</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ETAPA 5 · EXPERIENCIA LABORAL -->
-    <section id="experiencia" class="stage">
-      <div class="stage-inner">
-        <header class="stage-head reveal">
-          <span class="stage-index">04</span>
-          <h2>Experiencia <span class="accent">Laboral</span></h2>
-          <p class="stage-sub">Mi recorrido profesional</p>
-        </header>
-        <div class="xp-timeline">
-          <article class="glass card xp reveal">
-            <div class="xp-meta">
-              <span class="xp-date">2024 — Actualidad</span>
-              <span class="chip chip-active">Actual</span>
-            </div>
-            <h3>Desarrollador Full Stack</h3>
-            <p class="xp-company">Empresa Tecnológica S.A.S · Ciudad</p>
-            <ul class="xp-list">
-              <li>Desarrollo y mantenimiento de aplicaciones web con React y Node.js.</li>
-              <li>Diseño e integración de APIs REST y bases de datos.</li>
-              <li>Colaboración en equipo bajo metodología Scrum.</li>
-            </ul>
-          </article>
-          <article class="glass card xp reveal delay-1">
-            <div class="xp-meta"><span class="xp-date">2022 — 2024</span></div>
-            <h3>Desarrollador Frontend Junior</h3>
-            <p class="xp-company">Agencia Digital · Ciudad</p>
-            <ul class="xp-list">
-              <li>Maquetación de interfaces responsivas a partir de diseños en Figma.</li>
-              <li>Optimización de rendimiento y accesibilidad web.</li>
-              <li>Implementación de componentes reutilizables.</li>
-            </ul>
-          </article>
-          <article class="glass card xp reveal delay-2">
-            <div class="xp-meta"><span class="xp-date">2021 — 2022</span></div>
-            <h3>Practicante de Desarrollo</h3>
-            <p class="xp-company">Empresa de Software · Ciudad</p>
-            <ul class="xp-list">
-              <li>Apoyo en pruebas, documentación y corrección de errores.</li>
-              <li>Aprendizaje del ciclo completo de desarrollo de software.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ETAPA 6 · PROYECTOS + CONTACTO -->
-    <section id="proyectos" class="stage">
-      <div class="stage-inner">
-        <header class="stage-head reveal">
-          <span class="stage-index">05</span>
-          <h2>Proyectos <span class="accent">Destacados</span></h2>
-          <p class="stage-sub">Cosas que he construido</p>
-        </header>
-        <div class="projects">
-          <article class="glass card project reveal">
-            <div class="project-thumb" style="--g:linear-gradient(135deg,#7c3aed,#06b6d4)">🛒</div>
-            <h3>E-commerce App</h3>
-            <p>Tienda en línea con carrito, pagos y panel administrativo.</p>
-            <div class="chips small">
-              <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">MongoDB</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-ghost btn-small">Demo</a>
-              <a href="#" class="btn btn-ghost btn-small">Código</a>
-            </div>
-          </article>
-          <article class="glass card project reveal delay-1">
-            <div class="project-thumb" style="--g:linear-gradient(135deg,#06b6d4,#22d3ee)">📊</div>
-            <h3>Dashboard Analítico</h3>
-            <p>Panel de métricas en tiempo real con gráficas interactivas.</p>
-            <div class="chips small">
-              <span class="chip">TypeScript</span><span class="chip">Chart.js</span><span class="chip">API REST</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-ghost btn-small">Demo</a>
-              <a href="#" class="btn btn-ghost btn-small">Código</a>
-            </div>
-          </article>
-          <article class="glass card project reveal delay-2">
-            <div class="project-thumb" style="--g:linear-gradient(135deg,#f472b6,#7c3aed)">📱</div>
-            <h3>App de Gestión</h3>
-            <p>Aplicación para gestión de tareas y productividad personal.</p>
-            <div class="chips small">
-              <span class="chip">React Native</span><span class="chip">Firebase</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-ghost btn-small">Demo</a>
-              <a href="#" class="btn btn-ghost btn-small">Código</a>
-            </div>
-          </article>
-        </div>
-
-        <!-- Contacto -->
-        <div id="contacto" class="glass card contact reveal">
-          <div class="contact-text">
-            <h3>¿Trabajamos juntos?</h3>
-            <p>Estoy abierto a nuevas oportunidades, proyectos freelance y colaboraciones.</p>
           </div>
-          <div class="contact-actions">
-            <a href="mailto:tucorreo@email.com" class="btn btn-primary">Escríbeme</a>
-            <a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp</a>
-          </div>
-        </div>
+          <span class="award-flag gold" data-i18n="aw1.flag">1st place</span>
+        </li>
 
-        <footer class="footer">
-          <p>© 2026 Tu Nombre — Diseñado con 💜 y glassmorphism</p>
-        </footer>
+        <li class="award-row">
+          <span class="award-year">2026</span>
+          <div class="award-info">
+            <h3>Altium Global Scholarship Program</h3>
+            <p class="award-org">Altium Designer Software</p>
+            <p class="award-desc" data-i18n="aw2.desc">
+              Global scholarship granted by Altium for excellence in professional PCB design.
+            </p>
+          </div>
+          <span class="award-flag" data-i18n="aw2.flag">Scholarship</span>
+        </li>
+
+        <li class="award-row">
+          <span class="award-year">2022+</span>
+          <div class="award-info">
+            <h3 data-i18n="aw3.title">IEEE presidencies &amp; student chapters</h3>
+            <p class="award-org">IEEE · Universidad Distrital</p>
+            <p class="award-desc" data-i18n="aw3.desc">
+              Elected president of the IEEE student branch and the RAS, SIGHT and CIS chapters,
+              leading robotics, humanitarian technology and computational intelligence initiatives.
+            </p>
+          </div>
+          <span class="award-flag" data-i18n="aw3.flag">Leadership</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" id="proyectos">
+      <header class="sec-header">
+        <span class="sec-no">06</span>
+        <h2 data-i18n="sec6.title">Projects</h2>
+        <span class="sec-note" data-i18n="sec6.note">From the repository</span>
+      </header>
+
+      <p class="folder-hint" data-i18n="folders.hint">Drag to browse · hover for quick actions · click to open</p>
+
+      <ul class="folder-strip" aria-label="Projects">
+        <li class="folder" tabindex="0" data-project="p1">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">P-01 / 2026</span>
+          <div class="folder-body">
+            <span class="folder-flag" data-i18n="p1.flag">Winner</span>
+            <h3 data-i18n="p1.title">Landslide early warning system</h3>
+            <p class="folder-meta">IoT · Edge AI · Embedded</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+
+        <li class="folder" tabindex="0" data-project="p2">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">P-02 / 2024</span>
+          <div class="folder-body">
+            <h3 data-i18n="p2.title">International trade logistics platform</h3>
+            <p class="folder-meta">.NET · C# · SQL Server</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+
+        <li class="folder" tabindex="0" data-project="p3">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">P-03 / 2025</span>
+          <div class="folder-body">
+            <h3 data-i18n="p3.title">Edge AI on hardware</h3>
+            <p class="folder-meta">FPGA · Python · ARM</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+
+        <li class="folder" tabindex="0" data-project="p4">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">P-04 / 2021</span>
+          <div class="folder-body">
+            <h3 data-i18n="p4.title">Educational robotics prototypes</h3>
+            <p class="folder-meta">PCB · 3D · Python · C/C++</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+
+        <li class="folder" tabindex="0" data-project="p5">
+          <div class="folder-papers" aria-hidden="true"><span></span><span></span></div>
+          <span class="folder-tab">P-05 / 2026</span>
+          <div class="folder-body">
+            <h3 data-i18n="p5.title">Personal portfolio</h3>
+            <p class="folder-meta">HTML · CSS · JavaScript</p>
+          </div>
+          <div class="folder-menu">
+            <button type="button" class="menu-open" data-i18n="folders.open">Open project</button>
+            <a href="https://github.com/HCHAPS404/Portfolio" target="_blank" rel="noopener" data-i18n="folders.repo">Repository</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section contact" id="contacto">
+      <p class="kicker" data-i18n="contact.kicker">Available for projects and roles</p>
+      <h2 class="contact-title" data-i18n="contact.title">Let's build something real.</h2>
+      <a href="mailto:helmut.chs@gmail.com" class="contact-mail">helmut.chs@gmail.com</a>
+      <div class="contact-links">
+        <a href="https://wa.me/573008723290" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
 
   </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Helmut Chaparro Sandoval</span>
+    <span>Bogotá D.C., Colombia</span>
+  </footer>
+
+  <dialog class="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-head">
+      <span class="dialog-no"></span>
+      <button type="button" class="dialog-close" aria-label="Close">&times;</button>
+    </div>
+    <h3 id="dialog-title" class="dialog-title"></h3>
+    <p class="dialog-meta"></p>
+    <p class="dialog-desc"></p>
+    <p class="dialog-more"></p>
+    <div class="dialog-links"></div>
+  </dialog>
 
   <script src="js/main.js"></script>
 </body>
