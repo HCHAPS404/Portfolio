@@ -17,6 +17,7 @@
     <nav class="site-nav" aria-label="Sections">
       <a href="#perfil" data-i18n="nav.profile">Profile</a>
       <a href="#formacion" data-i18n="nav.education">Education</a>
+      <a href="#afinidad" data-i18n="nav.domains">Expertise</a>
       <a href="#habilidades" data-i18n="nav.skills">Skills</a>
       <a href="#experiencia" data-i18n="nav.experience">Experience</a>
       <a href="#premios" data-i18n="nav.awards">Awards</a>
@@ -44,11 +45,22 @@
             <span class="hn-line"><span>Chaparro</span></span>
             <span class="hn-line"><span class="thin">Sandoval</span></span>
           </h1>
-          <p class="hero-role" data-i18n="hero.role">Electronics Engineer · Full-Stack Developer</p>
-          <p class="hero-summary" data-i18n="hero.summary">
-            Six years building technology from the circuit to the cloud — embedded systems,
-            PCB design, enterprise platforms and AI on hardware, applied to problems that matter.
-          </p>
+          <ul class="hero-roles" aria-label="Roles">
+            <li data-i18n="hero.r1">Electronics Engineer</li>
+            <li data-i18n="hero.r2">Full-Stack Developer</li>
+            <li data-i18n="hero.r3">Entrepreneur</li>
+            <li data-i18n="hero.r4">Embedded systems</li>
+            <li data-i18n="hero.r5">PCB designer</li>
+            <li data-i18n="hero.r6">Robotics engineer</li>
+            <li data-i18n="hero.r7">EDGE AI</li>
+            <li data-i18n="hero.r8">AI Engineer</li>
+            <li data-i18n="hero.r9">Data analyst</li>
+            <li data-i18n="hero.r10">Data engineer</li>
+            <li data-i18n="hero.r11">STEM educator</li>
+          </ul>
+          <div class="hero-intro glass">
+            <p class="hero-summary" data-i18n="hero.summary">Six years turning ideas into working systems, from PCB traces and embedded firmware to cloud platforms and edge AI, with impact in education, agriculture and disaster resilience.</p>
+          </div>
           <div class="hero-actions">
             <a href="assets/cv.pdf" download class="button" data-i18n="hero.cv">Download CV</a>
             <a href="mailto:helmut.chs@gmail.com" class="text-link">helmut.chs@gmail.com</a>
@@ -165,8 +177,8 @@
         <span class="sec-note" data-i18n="sec2.note">Studies &amp; training</span>
       </header>
 
-      <div class="edu-grid">
-        <div class="edu-col">
+      <div class="formation glass">
+        <div class="fm-block">
           <h3 class="col-label" data-i18n="edu.label">Academic education</h3>
           <ol class="edu-list">
             <li>
@@ -176,130 +188,231 @@
                 <p>Universidad Distrital Francisco José de Caldas</p>
               </div>
             </li>
-            <li>
-              <span class="edu-years">2023</span>
-              <div>
-                <h4 data-i18n="edu.d2">Professional PCB Design &amp; Assembly</h4>
-                <p>Altium Designer · Universidad Distrital FJC</p>
-              </div>
-            </li>
-            <li>
-              <span class="edu-years">2026</span>
-              <div>
-                <h4>Altium Global Scholarship Program</h4>
-                <p>Altium Designer Software</p>
-              </div>
-            </li>
           </ol>
         </div>
 
-        <div class="edu-col">
+        <div class="fm-divider" aria-hidden="true"></div>
+
+        <div class="fm-block">
           <h3 class="col-label" data-i18n="cert.label">Certifications</h3>
-          <ul class="cert-list">
-            <li><span>AI Developer</span><span class="cert-meta">IBM · 2026</span></li>
-            <li><span>Data Science Professional</span><span class="cert-meta">IBM · 2026</span></li>
-            <li><span>RAG &amp; Agentic AI</span><span class="cert-meta">IBM · 2026</span></li>
-            <li><span>JavaScript Backend Developer</span><span class="cert-meta">IBM · 2026</span></li>
-            <li><span>AI &amp; ML Engineering</span><span class="cert-meta">Microsoft · 2026</span></li>
-            <li><span>Advanced Data Analytics</span><span class="cert-meta">Google · 2026</span></li>
-            <li><span>Data Engineering</span><span class="cert-meta">DeepLearning.AI · 2026</span></li>
-            <li><span data-i18n="cert.esri">Remote Sensing &amp; Drones</span><span class="cert-meta">ESRI Colombia · 2026</span></li>
+          <ul class="cert-grid">
+            <li class="cert-card"><span class="cert-name" data-i18n="cert.pcb">Professional PCB Design &amp; Assembly</span><span class="cert-meta">Altium Designer · UDFJC · 2023</span></li>
+            <li class="cert-card"><span class="cert-name" data-i18n="cert.altium">Altium Global Scholarship Program</span><span class="cert-meta">Altium Designer Software · 2026</span></li>
+            <li class="cert-card"><span class="cert-name">AI Developer</span><span class="cert-meta">IBM · 2026</span></li>
+            <li class="cert-card"><span class="cert-name">Data Science Professional</span><span class="cert-meta">IBM · 2026</span></li>
+            <li class="cert-card"><span class="cert-name">RAG &amp; Agentic AI</span><span class="cert-meta">IBM · 2026</span></li>
+            <li class="cert-card"><span class="cert-name">JavaScript Backend Developer</span><span class="cert-meta">IBM · 2026</span></li>
+            <li class="cert-card"><span class="cert-name">AI &amp; ML Engineering</span><span class="cert-meta">Microsoft · 2026</span></li>
+            <li class="cert-card"><span class="cert-name">Advanced Data Analytics</span><span class="cert-meta">Google · 2026</span></li>
+            <li class="cert-card"><span class="cert-name">Data Engineering</span><span class="cert-meta">DeepLearning.AI · 2026</span></li>
+            <li class="cert-card"><span class="cert-name" data-i18n="cert.esri">Remote Sensing &amp; Drones</span><span class="cert-meta">ESRI Colombia · 2026</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="section" id="habilidades">
+    <section class="section" id="afinidad">
       <header class="sec-header">
         <span class="sec-no">03</span>
-        <h2 data-i18n="sec3.title">Skills &amp; tools</h2>
-        <span class="sec-note" data-i18n="sec3.note">What I work with</span>
+        <h2 data-i18n="sec3.title">Fields of expertise</h2>
+        <span class="sec-note" data-i18n="sec3.note">Technical domains</span>
       </header>
 
-      <ul class="domains">
-        <li class="domain">
-          <span class="domain-no">A</span>
-          <h3 data-i18n="dom.a">Embedded systems</h3>
-          <p>ARM · RTOS · STM32 · C/C++ · SoC</p>
-        </li>
-        <li class="domain">
-          <span class="domain-no">B</span>
-          <h3 data-i18n="dom.b">Hardware &amp; PCB design</h3>
-          <p>Altium Designer · KiCAD · EMI/EMC · LTSpice</p>
-        </li>
-        <li class="domain">
-          <span class="domain-no">C</span>
-          <h3 data-i18n="dom.c">Full-stack development</h3>
-          <p>.NET · C# · JavaScript · SQL Server · Azure DevOps</p>
-        </li>
-        <li class="domain">
-          <span class="domain-no">D</span>
-          <h3 data-i18n="dom.d">Data &amp; AI</h3>
-          <p>Python · R · Power BI · Edge AI · MATLAB</p>
-        </li>
-        <li class="domain">
-          <span class="domain-no">E</span>
-          <h3 data-i18n="dom.e">Digital design &amp; robotics</h3>
-          <p>FPGA · VHDL/Verilog · ROS · Gazebo · Fusion 360</p>
-        </li>
-      </ul>
+      <div class="domains-panel glass">
+        <ul class="domains">
+          <li class="domain">
+            <span class="domain-no">A</span>
+            <h3 data-i18n="dom.a">Embedded systems</h3>
+            <p>ARM · RTOS · STM32 · ESP32 · C/C++ · FreeRTOS · SoC</p>
+          </li>
+          <li class="domain">
+            <span class="domain-no">B</span>
+            <h3 data-i18n="dom.b">Hardware &amp; PCB design</h3>
+            <p>Altium Designer · KiCAD · EMI/EMC · LTSpice · Signal integrity</p>
+          </li>
+          <li class="domain">
+            <span class="domain-no">C</span>
+            <h3 data-i18n="dom.c">Electrical &amp; power systems</h3>
+            <p>Power electronics · Control · Protection · Schematics · EMI/EMC</p>
+          </li>
+          <li class="domain">
+            <span class="domain-no">D</span>
+            <h3 data-i18n="dom.d">Full-stack &amp; software</h3>
+            <p>.NET · C# · JavaScript · TypeScript · REST APIs · SQL Server · Azure DevOps</p>
+          </li>
+          <li class="domain">
+            <span class="domain-no">E</span>
+            <h3 data-i18n="dom.e">Data engineering &amp; analytics</h3>
+            <p>ETL · Pipelines · SQL · Power BI · R · Dashboards · Reporting</p>
+          </li>
+          <li class="domain">
+            <span class="domain-no">F</span>
+            <h3 data-i18n="dom.f">AI &amp; machine learning</h3>
+            <p>Python · TensorFlow · PyTorch · Edge AI · RAG · Computer vision</p>
+          </li>
+          <li class="domain">
+            <span class="domain-no">G</span>
+            <h3 data-i18n="dom.g">Digital design &amp; FPGA</h3>
+            <p>VHDL · Verilog · Xilinx · Intel · RTL · Timing closure</p>
+          </li>
+          <li class="domain">
+            <span class="domain-no">H</span>
+            <h3 data-i18n="dom.h">Robotics &amp; automation</h3>
+            <p>ROS 2 · Gazebo · SLAM · Mechatronics · PID · Navigation</p>
+          </li>
+          <li class="domain">
+            <span class="domain-no">I</span>
+            <h3 data-i18n="dom.i">Bioengineering</h3>
+            <p>Biosensors · Signal processing · Lab instruments · Edge AI · Biomedical IoT</p>
+          </li>
+          <li class="domain">
+            <span class="domain-no">J</span>
+            <h3 data-i18n="dom.j">Cloud, DevOps &amp; systems</h3>
+            <p>Docker · Linux · CI/CD · Git · Azure · Monitoring · Infrastructure</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="habilidades">
+      <header class="sec-header">
+        <span class="sec-no">04</span>
+        <h2 data-i18n="sec4.title">Skills &amp; tools</h2>
+        <span class="sec-note" data-i18n="sec4.note">Daily stack</span>
+      </header>
 
       <div class="skills-foot">
-        <div>
+        <div class="skills-card glass">
           <h3 class="col-label" data-i18n="tools.label">Everyday tools</h3>
-          <p class="inline-list">Altium Designer · KiCAD · Visual Studio · STM32Cube · Xilinx/Quartus · MATLAB · SQL Server · ROS · Gazebo · Fusion 360 · Blender · Power BI</p>
+          <ul class="chip-cloud" aria-label="Tools">
+            <li>Altium Designer</li>
+            <li>KiCAD</li>
+            <li>Cadence OrCAD</li>
+            <li>LTSpice</li>
+            <li>Multisim</li>
+            <li>Proteus</li>
+            <li>STM32CubeIDE</li>
+            <li>Keil MDK</li>
+            <li>ESP-IDF</li>
+            <li>Arduino IDE</li>
+            <li>Arduino App Lab</li>
+            <li>PlatformIO</li>
+            <li>Vivado / Quartus</li>
+            <li>Visual Studio</li>
+            <li>VS Code</li>
+            <li>Qt Creator</li>
+            <li>Eclipse</li>
+            <li>.NET / C#</li>
+            <li>Python</li>
+            <li>TypeScript</li>
+            <li>Node.js</li>
+            <li>React</li>
+            <li>Next.js</li>
+            <li>MATLAB</li>
+            <li>Simulink</li>
+            <li>LabVIEW</li>
+            <li>TensorFlow</li>
+            <li>PyTorch</li>
+            <li>OpenCV</li>
+            <li>Hugging Face</li>
+            <li>Google Colab</li>
+            <li>CUDA</li>
+            <li>Jupyter</li>
+            <li>R</li>
+            <li>SQL Server</li>
+            <li>PostgreSQL</li>
+            <li>MongoDB</li>
+            <li>Redis</li>
+            <li>Apache Spark</li>
+            <li>Power BI</li>
+            <li>Grafana</li>
+            <li>Azure DevOps</li>
+            <li>Git</li>
+            <li>Docker</li>
+            <li>Linux</li>
+            <li>Nginx</li>
+            <li>Postman</li>
+            <li>Swagger</li>
+            <li>DBeaver</li>
+            <li>Wireshark</li>
+            <li>MQTT / LoRaWAN</li>
+            <li>ROS 2</li>
+            <li>Gazebo</li>
+            <li>Fusion 360</li>
+            <li>SolidWorks</li>
+            <li>AutoCAD</li>
+            <li>Blender</li>
+            <li>Figma</li>
+          </ul>
         </div>
-        <div>
+        <div class="skills-card glass">
           <h3 class="col-label" data-i18n="soft.label">Soft skills</h3>
-          <p class="inline-list">
-            <span data-i18n="soft.s1">Strategic leadership</span> · <span data-i18n="soft.s2">Bilingual communication</span> ·
-            <span data-i18n="soft.s3">Creative problem-solving</span> · <span data-i18n="soft.s4">Analytical thinking</span> ·
-            <span data-i18n="soft.s5">Multidisciplinary teams</span> · <span data-i18n="soft.s6">Data-driven decisions</span> ·
-            <span data-i18n="soft.s7">Adaptability</span>
-          </p>
+          <ul class="chip-cloud chip-cloud--soft" aria-label="Soft skills">
+            <li data-i18n="soft.s1">Strategic leadership</li>
+            <li data-i18n="soft.s2">Bilingual communication</li>
+            <li data-i18n="soft.s3">Creative problem-solving</li>
+            <li data-i18n="soft.s4">Analytical thinking</li>
+            <li data-i18n="soft.s5">Multidisciplinary teams</li>
+            <li data-i18n="soft.s6">Data-driven decisions</li>
+            <li data-i18n="soft.s7">Adaptability</li>
+            <li data-i18n="soft.s8">Project management</li>
+            <li data-i18n="soft.s9">Technical mentoring</li>
+            <li data-i18n="soft.s10">Public speaking</li>
+            <li data-i18n="soft.s11">Critical thinking</li>
+            <li data-i18n="soft.s12">Negotiation</li>
+            <li data-i18n="soft.s13">Entrepreneurship</li>
+            <li data-i18n="soft.s14">Teaching &amp; training</li>
+            <li data-i18n="soft.s15">Systems thinking</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="section" id="experiencia">
       <header class="sec-header">
-        <span class="sec-no">04</span>
-        <h2 data-i18n="sec4.title">Experience</h2>
-        <span class="sec-note" data-i18n="sec4.note">Professional journey</span>
+        <span class="sec-no">05</span>
+        <h2 data-i18n="sec5.title">Experience</h2>
+        <span class="sec-note" data-i18n="sec5.note">Professional journey</span>
       </header>
 
       <ol class="xp-list">
-        <li class="xp">
+        <li class="xp glass">
           <div class="xp-when">
             <span class="xp-dates accent" data-i18n="xpdk.date">2024 — Present</span>
             <span class="xp-meta" data-i18n="xpdk.meta">Founder</span>
           </div>
           <div class="xp-what">
             <h3 data-i18n="xpdk.role">Founder &amp; General Manager</h3>
-            <p class="xp-org">DevKit Electronics S.A.S</p>
+            <p class="xp-org">DevKit Electronics S.A.S · <a class="xp-link" href="https://devkitelectronics.com" target="_blank" rel="noopener">devkitelectronics.com</a></p>
+            <p class="xp-lead" data-i18n="xpdk.lead">An education company that turns engineering, science and STEM into hands-on learning experiences.</p>
             <ul>
               <li data-i18n="xpdk.b1">Founded and lead a company with two years of experience in specialized education in engineering, science and STEM for children, youth, university students and professionals.</li>
               <li data-i18n="xpdk.b2">Design engineering solutions for educational contexts, from curriculum to hardware and lab equipment.</li>
+              <li data-i18n="xpdk.b3">Grew the team and built a portfolio of courses, kits and lab equipment now used by schools and universities.</li>
             </ul>
+            <ul class="xp-tags"><li>STEM</li><li>Robotics</li><li>STM32</li><li>3D printing</li><li>IoT</li></ul>
           </div>
         </li>
 
-        <li class="xp">
+        <li class="xp glass">
           <div class="xp-when">
             <span class="xp-dates accent" data-i18n="xppo.date">2025 — Present</span>
             <span class="xp-meta" data-i18n="xppo.meta">Founder</span>
           </div>
           <div class="xp-what">
-            <h3 data-i18n="xppo.role">Founder</h3>
-            <p class="xp-org">Poimen</p>
+            <h3 data-i18n="xppo.role">Founder &amp; General Manager</h3>
+            <p class="xp-org">Poimen Labs</p>
+            <p class="xp-lead" data-i18n="xppo.lead">Engineering brought to Colombian agriculture — automation, sensing and data working in the field.</p>
             <ul>
               <li data-i18n="xppo.b1">Founded a company delivering agricultural solutions built on engineering across Colombia.</li>
               <li data-i18n="xppo.b2">Bring automation, electronics and data to the field to improve productivity and decision-making.</li>
+              <li data-i18n="xppo.b3">Design low-cost sensing and monitoring systems adapted to real rural conditions and connectivity.</li>
             </ul>
+            <ul class="xp-tags"><li>AgriTech</li><li>IoT</li><li>Automation</li><li>Sensors</li><li>Data</li></ul>
           </div>
         </li>
 
-        <li class="xp">
+        <li class="xp glass">
           <div class="xp-when">
             <span class="xp-dates" data-i18n="xp1.date">May 2024 — Apr 2025</span>
             <span class="xp-meta" data-i18n="xp1.meta">Full-time · Remote</span>
@@ -307,14 +420,17 @@
           <div class="xp-what">
             <h3 data-i18n="xp1.role">Junior Full-Stack Developer</h3>
             <p class="xp-org">Trianexco</p>
+            <p class="xp-lead" data-i18n="xp1.lead">Enterprise software for international trade, customs and logistics operations.</p>
             <ul>
               <li data-i18n="xp1.b1">Designed .NET solutions for customer management, customs processes, imports, DIAN compliance, logistics and integrations.</li>
               <li data-i18n="xp1.b2">Built robust solutions for high-volume clients, optimizing international trade workflows with scalability, security and performance.</li>
+              <li data-i18n="xp1.b3">Worked across the full stack — from SQL Server data models to APIs and front-end — in an agile, remote team.</li>
             </ul>
+            <ul class="xp-tags"><li>.NET</li><li>C#</li><li>SQL Server</li><li>REST API</li><li>DIAN</li></ul>
           </div>
         </li>
 
-        <li class="xp">
+        <li class="xp glass">
           <div class="xp-when">
             <span class="xp-dates" data-i18n="xp2.date">Jul 2025 — Dec 2025</span>
             <span class="xp-meta" data-i18n="xp2.meta">On-site</span>
@@ -322,14 +438,17 @@
           <div class="xp-what">
             <h3 data-i18n="xp2.role">Robotics &amp; Electronics Teacher</h3>
             <p class="xp-org">COMPENSAR · Universidad COMPENSAR</p>
+            <p class="xp-lead" data-i18n="xp2.lead">Teaching robotics and embedded AI to help close the STEAM education gap.</p>
             <ul>
               <li data-i18n="xp2.b1">Led STEAM initiatives focused on reducing the educational gap in public schools, promoting science and technology.</li>
               <li data-i18n="xp2.b2">Designed specialized courses in robotics, automation and embedded systems with AI, integrated into UCOMPENSAR's curricular projects.</li>
+              <li data-i18n="xp2.b3">Mentored students through hands-on projects, from first circuit to a working autonomous prototype.</li>
             </ul>
+            <ul class="xp-tags"><li>Robotics</li><li>Embedded AI</li><li>Arduino</li><li>STEAM</li></ul>
           </div>
         </li>
 
-        <li class="xp">
+        <li class="xp glass">
           <div class="xp-when">
             <span class="xp-dates">2023 — 2024</span>
             <span class="xp-meta" data-i18n="xp3.meta">Full-time · Hybrid</span>
@@ -337,14 +456,17 @@
           <div class="xp-what">
             <h3 data-i18n="xp3.role">Software Developer &amp; Educational Robotics Consultant</h3>
             <p class="xp-org">Arisoft Seguridad Vial S.A.S</p>
+            <p class="xp-lead" data-i18n="xp3.lead">Educational robotics taken from circuit to classroom, ready for the market.</p>
             <ul>
               <li data-i18n="xp3.b1">Managed educational robotics projects for commercialization to district and educational institutions.</li>
               <li data-i18n="xp3.b2">Programmed educational robots, developed electronic circuits and provided on-the-job consulting.</li>
+              <li data-i18n="xp3.b3">Bridged engineering and sales, translating technical capabilities into products institutions could adopt.</li>
             </ul>
+            <ul class="xp-tags"><li>Robotics</li><li>PCB</li><li>C/C++</li><li>Product</li></ul>
           </div>
         </li>
 
-        <li class="xp">
+        <li class="xp glass">
           <div class="xp-when">
             <span class="xp-dates" data-i18n="xp4.date">Mar 2021 — Nov 2023</span>
             <span class="xp-meta" data-i18n="xp4.meta">Full-time · Hybrid</span>
@@ -352,14 +474,17 @@
           <div class="xp-what">
             <h3 data-i18n="xp4.role">Engineering &amp; Educational Robotics Consultant</h3>
             <p class="xp-org">Computadores para Educar · Ministerio de Educación</p>
+            <p class="xp-lead" data-i18n="xp4.lead">Mechatronic prototypes and STEAM programs reaching vulnerable communities nationwide.</p>
             <ul>
               <li data-i18n="xp4.b1">Led the complete design and development cycle of innovative mechatronic prototypes, implementing STEAM methodology.</li>
               <li data-i18n="xp4.b2">Applied PCB design, 3D modeling, robotics and programming (Python, C/C++) to solutions for education and vulnerable populations.</li>
+              <li data-i18n="xp4.b3">Delivered training so teachers and communities could sustain the technology on their own.</li>
             </ul>
+            <ul class="xp-tags"><li>PCB</li><li>3D CAD</li><li>Python</li><li>C/C++</li><li>STEAM</li></ul>
           </div>
         </li>
 
-        <li class="xp">
+        <li class="xp glass">
           <div class="xp-when">
             <span class="xp-dates accent" data-i18n="xp5.date">Jun 2022 — Present</span>
             <span class="xp-meta" data-i18n="xp5.meta">Part-time · Hybrid</span>
@@ -367,10 +492,13 @@
           <div class="xp-what">
             <h3 data-i18n="xp5.role">Presidency &amp; Staff Positions</h3>
             <p class="xp-org">IEEE · Universidad Distrital</p>
+            <p class="xp-lead" data-i18n="xp5.lead">Leading student communities across robotics, biomedical and humanitarian technology.</p>
             <ul>
               <li data-i18n="xp5.b1">Presidential positions in the IEEE student branch, the Robotics and Automation Society, EMBS and the Humanitarian Technologies chapter.</li>
               <li data-i18n="xp5.b2">Currently president of the RAS, SIGHT and CIS student chapters.</li>
+              <li data-i18n="xp5.b3">Organize technical events, workshops and outreach that connect students with real-world engineering.</li>
             </ul>
+            <ul class="xp-tags"><li>IEEE</li><li>RAS</li><li>EMBS</li><li>SIGHT</li><li>CIS</li></ul>
           </div>
         </li>
       </ol>
@@ -378,9 +506,9 @@
 
     <section class="section" id="premios">
       <header class="sec-header">
-        <span class="sec-no">05</span>
-        <h2 data-i18n="sec5.title">Awards &amp; competitions</h2>
-        <span class="sec-note" data-i18n="sec5.note">Recognitions</span>
+        <span class="sec-no">06</span>
+        <h2 data-i18n="sec6.title">Awards &amp; competitions</h2>
+        <span class="sec-note" data-i18n="sec6.note">Recognitions</span>
       </header>
 
       <ol class="award-list">
@@ -427,9 +555,9 @@
 
     <section class="section" id="proyectos">
       <header class="sec-header">
-        <span class="sec-no">06</span>
-        <h2 data-i18n="sec6.title">Projects</h2>
-        <span class="sec-note" data-i18n="sec6.note">From the repository</span>
+        <span class="sec-no">07</span>
+        <h2 data-i18n="sec7.title">Projects</h2>
+        <span class="sec-note" data-i18n="sec7.note">From the repository</span>
       </header>
 
       <p class="folder-hint" data-i18n="folders.hint">Drag to browse · hover for quick actions · click to open</p>
@@ -621,10 +749,34 @@
       </form>
 
       <div class="contact-links">
-        <a href="mailto:helmut.chs@gmail.com">helmut.chs@gmail.com</a>
-        <a href="https://wa.me/573008723290" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/HCHAPS404" target="_blank" rel="noopener">GitHub</a>
+        <a class="contact-link" href="https://www.helmutchs.com" target="_blank" rel="noopener">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2Zm7.93 9h-3.18a15.4 15.4 0 0 0-1.1-4.32A8 8 0 0 1 19.93 11ZM12 4a13.4 13.4 0 0 1 1.96 6H10.04A13.4 13.4 0 0 1 12 4ZM8.35 6.68A15.4 15.4 0 0 0 7.25 11H4.07a8 8 0 0 1 4.28-4.32ZM4.07 13h3.18a15.4 15.4 0 0 0 1.1 4.32A8 8 0 0 1 4.07 13Zm3.28 4.32A13.4 13.4 0 0 1 12 20a13.4 13.4 0 0 1 4.65-2.68A15.4 15.4 0 0 0 12 18a15.4 15.4 0 0 0-4.65-.68Zm5.37 0A8 8 0 0 1 19.93 13h-3.18a15.4 15.4 0 0 0-1.1 4.32ZM13.96 13a13.4 13.4 0 0 1-1.96 6 13.4 13.4 0 0 1-1.96-6Zm0-2a13.4 13.4 0 0 1 1.96-6 13.4 13.4 0 0 1 1.96 6Z"/></svg>
+          <span>helmutchs.com</span>
+        </a>
+        <a class="contact-link" href="mailto:helmut.chs@gmail.com">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
+          <span>helmut.chs@gmail.com</span>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317/" target="_blank" rel="noopener">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.55V9h3.57v11.45ZM22 0H2C.9 0 0 .9 0 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2Z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a class="contact-link" href="https://github.com/HCHAPS404" target="_blank" rel="noopener">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.35-1.29-1.71-1.29-1.71-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.11-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.19a11 11 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.5 3.17-1.19 3.17-1.19.63 1.58.23 2.75.11 3.04.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.28 5.69.42.36.79 1.07.79 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56A10.51 10.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a class="contact-link" href="https://instagram.com/hchaps404" target="_blank" rel="noopener">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.51 5.51 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5Zm5.75-3.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a class="contact-link" href="https://www.tiktok.com/@hchaps404" target="_blank" rel="noopener">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.1 4.1 0 0 1-2.64-.96Z"/></svg>
+          <span>TikTok</span>
+        </a>
+        <a class="contact-link" href="https://x.com/HCHAPS404" target="_blank" rel="noopener">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18.9 2H22l-6.82 7.8L22.7 22h-6.7l-5.24-6.84L4.95 22H2l7.28-8.33L1.3 2h6.86l4.73 6.2L18.9 2Zm-1.17 18h1.86L7.04 4h-1.9l11.59 16Z"/></svg>
+          <span>X</span>
+        </a>
       </div>
     </section>
 
