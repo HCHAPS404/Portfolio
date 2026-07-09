@@ -207,22 +207,13 @@ h1, h2, h3, h4 {
   max-width: 1120px;
   margin: 0 auto;
   padding: 1.1rem 24px;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line-soft);
-  transition:
-    padding 0.35s var(--ease),
-    border-color 0.35s var(--ease),
-    box-shadow 0.35s var(--ease),
-    background 0.35s var(--ease);
+  background: transparent;
+  border-bottom: none;
+  transition: padding 0.35s var(--ease);
 }
 
 .site-header.is-scrolled {
   padding: 0.72rem 24px;
-  border-bottom-color: var(--line);
-  background: color-mix(in srgb, var(--bg) 94%, transparent);
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.32);
 }
 
 .site-header.is-scrolled .brand-logo {
