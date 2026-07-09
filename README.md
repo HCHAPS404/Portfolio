@@ -109,9 +109,10 @@ Los archivos `css/styles.css` y `js/main.js` en la raíz conservan la versión e
 
 <p align="center">
   <a href="https://x.com/HCHAPS404"><img src="https://img.shields.io/badge/X-@HCHAPS404-C9835A?style=for-the-badge&labelColor=141110" alt="X" /></a>
-  <a href="https://instagram.com/hchaps404"><img src="https://img.shields.io/badge/Instagram-@hchaps404-C9835A?style=for-the-badge&labelColor=141110" alt="Instagram" /></a>
+  <a href="https://instagram.com/divisum.hell"><img src="https://img.shields.io/badge/Instagram-divisum.hell-C9835A?style=for-the-badge&labelColor=141110" alt="Instagram" /></a>
   <a href="https://facebook.com/hchaps404"><img src="https://img.shields.io/badge/Facebook-hchaps404-C9835A?style=for-the-badge&labelColor=141110" alt="Facebook" /></a>
   <a href="https://youtube.com/@HCHAPS404"><img src="https://img.shields.io/badge/YouTube-@HCHAPS404-C9835A?style=for-the-badge&labelColor=141110" alt="YouTube" /></a>
+  <a href="https://www.tiktok.com/@imhell.12"><img src="https://img.shields.io/badge/TikTok-@imhell.12-C9835A?style=for-the-badge&labelColor=141110" alt="TikTok" /></a>
 </p>
 
 <p align="center">

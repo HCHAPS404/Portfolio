@@ -20,13 +20,13 @@ export const contactLinks = [
     icon: "github",
   },
   {
-    href: "https://instagram.com/hchaps404",
-    label: "Instagram",
+    href: "https://instagram.com/divisum.hell",
+    label: "divisum.hell",
     icon: "instagram",
   },
   {
-    href: "https://www.tiktok.com/@hchaps404",
-    label: "TikTok",
+    href: "https://www.tiktok.com/@imhell.12",
+    label: "@imhell.12",
     icon: "tiktok",
   },
   {
