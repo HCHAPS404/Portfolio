@@ -39,7 +39,7 @@
       "hero.r9": "Data analyst",
       "hero.r10": "Data engineer",
       "hero.r11": "STEM educator",
-      "hero.summary": "Six years turning ideas into working systems, from PCB traces and embedded firmware to cloud platforms and edge AI, with impact in education, agriculture and disaster resilience.",
+      "hero.summary": "Electronics Engineer and full-stack developer with over six years delivering end-to-end engineering products: multilayer PCB design and EMI/EMC validation in Altium, C/C++ firmware on ARM and STM32 with FreeRTOS, .NET and SQL Server backends for international trade and customs operations, and Edge AI inference on constrained hardware for real-time field sensing. Founder of DevKit Electronics and Poimen Labs; led NAVIRA-SATViRe, a nationally awarded IoT early-warning system for mass-movement events. I work where electronics, software and data must hold up in production: STEM education at scale, agricultural automation in Colombia and disaster-resilience systems with field-proven reliability.",
       "hero.cv": "Download CV",
       "hero.available": "Open to work",
       "lang.native": "Native",
@@ -224,7 +224,7 @@
       "hero.r9": "Analista de datos",
       "hero.r10": "Ingeniero de datos",
       "hero.r11": "Educador STEM",
-      "hero.summary": "Seis años convirtiendo ideas en sistemas que funcionan, desde trazas de PCB y firmware embebido hasta plataformas en la nube e IA en el borde, con impacto en educación, agro y resiliencia ante desastres.",
+      "hero.summary": "Ingeniero Electrónico y desarrollador full-stack con más de seis años llevando productos de ingeniería de punta a punta: diseño de PCB multilayer y validación EMI/EMC en Altium, firmware en C/C++ sobre ARM y STM32 con FreeRTOS, backends y APIs en .NET y SQL Server para comercio internacional y aduanas, e inferencia Edge AI en hardware restringido para sensado en tiempo real en campo. Fundador de DevKit Electronics y Poimen Labs; lideré NAVIRA-SATViRe, sistema IoT ganador a nivel nacional de alerta temprana ante remoción en masa. Trabajo donde la electrónica, el software y los datos deben sostenerse en producción: educación STEM a escala, automatización agrícola en Colombia y sistemas críticos de resiliencia ante desastres con fiabilidad comprobada en campo.",
       "hero.cv": "Descargar CV",
       "hero.available": "Disponible",
       "lang.native": "Nativo",
@@ -427,7 +427,7 @@
 
   // Reveal blocks as they scroll into view
   var reveals = document.querySelectorAll(
-    ".sec-header, .hero-text, .hero-photo, .profile-lead, .col-label, .domains-panel, .skills-foot, .formation, .xp, .folder-hint, .contact > *"
+    ".sec-header, .hero-text, .hero-main, .hero-foot, .hero-photo, .col-label, .domains-panel, .skills-foot, .formation, .xp, .folder-hint, .contact > *"
   );
   reveals.forEach(function (el) {
     el.classList.add("reveal");
@@ -636,36 +636,67 @@
   }
 
   // Drag-to-scroll the folder strip. A real drag must not fire a click.
-  var strip = document.querySelector(".folder-strip");
+  var strip = document.querySelector(".folder-scroll");
   var down = false;
   var moved = false;
   var startX = 0;
   var startScroll = 0;
+  var activePointer = null;
 
   if (strip) {
     strip.addEventListener("pointerdown", function (e) {
+      if (e.button !== 0) return;
+      if (e.target.closest(".folder-menu a, .folder-menu button")) return;
+
       down = true;
       moved = false;
+      activePointer = e.pointerId;
       startX = e.clientX;
       startScroll = strip.scrollLeft;
     });
-    window.addEventListener("pointermove", function (e) {
-      if (!down) return;
+
+    strip.addEventListener("pointermove", function (e) {
+      if (!down || e.pointerId !== activePointer) return;
       var dx = e.clientX - startX;
-      if (Math.abs(dx) > 6) {
-        moved = true;
-        strip.classList.add("dragging");
+      if (Math.abs(dx) > 8) {
+        if (!moved) {
+          moved = true;
+          strip.classList.add("dragging");
+          strip.setPointerCapture(e.pointerId);
+        }
+        e.preventDefault();
+        strip.scrollLeft = startScroll - dx;
       }
-      strip.scrollLeft = startScroll - dx;
     });
-    window.addEventListener("pointerup", function () {
+
+    function endDrag(e) {
+      if (!down) return;
+      if (e && activePointer !== null && e.pointerId !== activePointer) return;
       down = false;
+      activePointer = null;
       strip.classList.remove("dragging");
-    });
+      if (e && strip.hasPointerCapture && strip.hasPointerCapture(e.pointerId)) {
+        strip.releasePointerCapture(e.pointerId);
+      }
+    }
+
+    strip.addEventListener("pointerup", endDrag);
+    strip.addEventListener("pointercancel", endDrag);
+    window.addEventListener("pointerup", endDrag);
+    window.addEventListener("pointercancel", endDrag);
   }
 
   document.querySelectorAll(".folder").forEach(function (folder) {
     var id = folder.dataset.project;
+
+    folder.addEventListener("mouseenter", function () {
+      if (strip && strip.classList.contains("dragging")) return;
+      folder.classList.add("is-active");
+    });
+    folder.addEventListener("mouseleave", function () {
+      folder.classList.remove("is-active");
+    });
+
     folder.addEventListener("click", function (e) {
       if (moved || e.target.closest("a")) return;
       openDialog(id, folder);
@@ -675,6 +706,14 @@
         e.preventDefault();
         openDialog(id, folder);
       }
+    });
+  });
+
+  document.querySelectorAll(".menu-open").forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var folder = btn.closest(".folder");
+      if (folder) openDialog(folder.dataset.project, folder);
     });
   });
 
