@@ -12,19 +12,20 @@
 
 ---
 
-Hola. Este repo es mi portafolio en una sola página: HTML, CSS y JavaScript, sin frameworks ni paso de build. Lo monté para presentar mi trabajo de forma clara, rápida y fácil de mantener.
+Hola. Este repo es mi portafolio en una sola página, ahora construido con **React + Vite**. Misma estética y comportamiento que la versión estática anterior, con componentes modulares y un paso de build para producción.
 
-Soy ingeniero electrónico y desarrollador full-stack en Bogotá. Llevo unos seis años entre circuitos, firmware, software y datos. Dirijo **DevKit Electronics S.A.S** (formación en ingeniería, ciencia y STEM) y **Poimen Labs** (soluciones agrícolas con ingeniería). También participo en IEEE y en proyectos de robótica, IA y hardware aplicado.
+Soy ingeniero electrónico y desarrollador full-stack en Bogotá. Llevo unos seis años entre circuitos, firmware, software y datos. Soy **cofundador y gerente general** de **DevKit Electronics S.A.S** (educación en ingeniería, ciencia y STEM — hardware y software) y **Poimen Labs** (AgriTech y automatización agrícola en Colombia). También participo en IEEE y en proyectos de robótica, IA y hardware aplicado.
 
 ## Qué hay en la página
 
-- Perfil con datos de contacto.
+- Perfil con datos de contacto, idiomas y métricas.
 - Formación académica y certificaciones.
 - Campos de afinidad técnica (embebidos, PCB, datos, IA, robótica, bioingeniería, etc.).
 - Herramientas que uso a diario y habilidades blandas.
-- Experiencia laboral, incluidas mis dos empresas.
-- Premios y competencias. Destaca el 1er puesto en la hackatón nacional UNGRD × PNUD con **NAVIRA-SATViRe** (alerta temprana de deslizamientos).
+- Experiencia laboral, incluidas DevKit Electronics y Poimen Labs como empresas cofundadas.
+- Becas, premios y competencias — hackatón UNGRD × PNUD (1er puesto con **NAVIRA-SATViRe**), becas Altium (Global Scholarship y Grad to Career) y liderazgo IEEE.
 - Proyectos en formato carpeta, cada uno enlazado a su repositorio.
+- Animaciones de scroll, timeline en experiencia y fondo ambiental tipo PCB.
 - Idioma ES/EN según el navegador, con selector manual.
 - Formulario de contacto hacia `helmut.chs@gmail.com`.
 
@@ -33,25 +34,45 @@ Soy ingeniero electrónico y desarrollador full-stack en Bogotá. Llevo unos sei
 ```bash
 git clone https://github.com/HCHAPS404/Portfolio.git
 cd Portfolio
-npx serve .
+npm install
+npm run dev
 ```
 
-También puedes abrir `index.html` directamente en el navegador.
+Abre la URL que muestra Vite (por defecto `http://localhost:5173`).
+
+### Build de producción
+
+```bash
+npm run build
+npm run preview
+```
+
+El resultado queda en `dist/`.
 
 ## Archivos
 
 ```
-index.html       Estructura y contenido
-css/styles.css   Estilos (paleta cobre sobre carbón)
-js/main.js       Idiomas, animaciones, proyectos y formulario
-assets/          Foto y CV
+index.html              Entrada Vite
+src/
+  App.jsx               Composición de secciones
+  main.jsx              Punto de entrada React
+  index.css             Estilos (paleta cobre sobre carbón)
+  i18n/translations.js  Textos ES/EN
+  data/                 Contenido estático (experiencia, proyectos, etc.)
+  components/           Secciones y UI
+  hooks/                Animaciones, nav activa, drag de carpetas
+  context/              Idioma global
+public/assets/          Foto, logos y CV
 ```
+
+Los archivos `css/styles.css` y `js/main.js` en la raíz conservan la versión estática anterior como referencia.
 
 ## Notas técnicas
 
-- Los textos bilingües están en `translations` dentro de `js/main.js`.
-- El formulario usa `mailto` por defecto. Para envío directo, configura `FORM_ENDPOINT` en `js/main.js` (por ejemplo con Formspree).
-- Colores y tipografías en variables CSS al inicio de `css/styles.css`.
+- Los textos bilingües están en `src/i18n/translations.js` (experiencia, becas, i18n completo).
+- El contenido estructurado (experiencia, premios, proyectos) vive en `src/data/`.
+- El formulario usa `mailto` por defecto. Para envío directo, configura `FORM_ENDPOINT` en `src/data/config.js` (por ejemplo con Formspree).
+- Colores y tipografías en variables CSS al inicio de `src/index.css`.
 
 ## Redes
 
