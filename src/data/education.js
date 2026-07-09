@@ -1,6 +1,6 @@
 export const education = [
   {
-    years: "2020 — 2027",
+    years: "2020 - 2027",
     titleKey: "edu.d1",
     institution: "Universidad Distrital Francisco José de Caldas",
   },

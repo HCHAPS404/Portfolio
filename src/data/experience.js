@@ -39,7 +39,7 @@ export const experience = [
     tags: ["Robotics", "Embedded AI", "Arduino", "STEAM"],
   },
   {
-    date: "2023 — 2024",
+    date: "2023 - 2024",
     metaKey: "xp3.meta",
     roleKey: "xp3.role",
     org: "Arisoft Seguridad Vial S.A.S",

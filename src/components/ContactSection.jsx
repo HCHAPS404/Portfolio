@@ -38,7 +38,7 @@ export function ContactSection() {
       return;
     }
 
-    const fullSubject = subject || `Portfolio — ${name}`;
+    const fullSubject = subject || `Portfolio · ${name}`;
 
     if (FORM_ENDPOINT) {
       setNote({ text: t("form.sending"), tone: "" });
@@ -65,7 +65,7 @@ export function ContactSection() {
       return;
     }
 
-    const body = `${message}\n\n— ${name} (${email})`;
+    const body = `${message}\n\n${name} (${email})`;
     const mailto =
       `mailto:${CONTACT_EMAIL}` +
       `?subject=${encodeURIComponent(fullSubject)}` +

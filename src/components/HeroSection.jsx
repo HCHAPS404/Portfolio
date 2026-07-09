@@ -41,7 +41,7 @@ export function HeroSection() {
   return (
     <section className="hero" id="perfil">
       <p className="kicker">
-        <T k="hero.kicker" /> — Bogotá D.C., Colombia · 4.71° N, 74.07° W
+        <T k="hero.kicker" /> · Bogotá D.C., Colombia · 4.71° N, 74.07° W
       </p>
 
       <div className="hero-body">
@@ -91,7 +91,7 @@ export function HeroSection() {
               width="400"
               height="400"
             />
-            <figcaption>Fig. 01 — Helmut Chaparro S.</figcaption>
+            <figcaption>Fig. 01 · Helmut Chaparro S.</figcaption>
           </figure>
         </div>
 

@@ -1,22 +1,14 @@
-# Portfolio — Helmut Chaparro Sandoval
+# Portfolio · Helmut Chaparro Sandoval
 
 Sitio en vivo: **[hchaps404.github.io/Portfolio](https://hchaps404.github.io/Portfolio/)**
 
-Portafolio personal en una sola página. Está hecho con **React 19 y Vite** — el código fuente vive en `src/`, se compila a `dist/` y eso es lo que publica GitHub Pages.
+Mi portafolio personal. Una sola página, bilingüe (ES/EN), hecha con React y Vite. El código está en `src/`, el build en `dist/`.
 
-Soy ingeniero electrónico y desarrollador full-stack en Bogotá. Cofundador de [DevKit Electronics](https://devkitelectronics.com) y Poimen Labs. Este repo es la versión que mantengo yo; la estética es carbón + cobre, bilingüe ES/EN, y las secciones van de perfil y experiencia hasta proyectos con carpetas arrastrables.
+Soy ingeniero electrónico y desarrollador full-stack en Bogotá. Fundé [DevKit Electronics](https://devkitelectronics.com) (soy uno de los dos fundadores oficiales) y soy cofundador de Poimen Labs. Este repo es la versión que mantengo yo.
 
 ## Stack
 
-| Capa | Tecnología |
-|------|------------|
-| UI | React 19 (JSX) |
-| Build | Vite 6 |
-| Estilos | CSS en `src/index.css` |
-| i18n | Context API + `src/i18n/translations.js` |
-| Deploy | GitHub Actions → Pages |
-
-GitHub no muestra “React” en la barra de lenguajes: cuenta el JSX como **JavaScript**. Si ves mucho CSS, es normal — casi todo el diseño está en un solo archivo de estilos.
+React 19, Vite 6, CSS en `src/index.css`, i18n con Context API. Se publica con GitHub Actions en Pages.
 
 ## Desarrollo local
 
@@ -29,59 +21,40 @@ npm run dev
 
 Abre `http://localhost:5173`.
 
-Build:
-
 ```bash
 npm run build
 npm run preview
 ```
 
-## Deploy (GitHub Pages)
+## Deploy
 
-El workflow `.github/workflows/deploy.yml` hace `npm run build` en cada push a `main` y sube `dist/`.
+El workflow en `.github/workflows/deploy.yml` compila y sube `dist/` en cada push a `main`.
 
-En el repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+En GitHub: **Settings → Pages → Source: GitHub Actions**.
 
-> Si la página sale en blanco, casi siempre es porque Pages está publicando la rama `main` (código fuente) en vez del artefacto del workflow. El `index.html` del repo apunta a `/src/main.jsx`, que solo funciona con `npm run dev`, no en hosting estático.
+Si la página sale en blanco, revisa que Pages no esté publicando la rama `main` directamente. El `index.html` del repo apunta a `/src/main.jsx`, que solo corre en desarrollo.
 
-`vite.config.js` usa `base: "/Portfolio/"` porque la URL del proyecto es una subruta. Si despliegas en la raíz de un dominio propio:
+Para dominio propio en la raíz:
 
 ```powershell
 $env:BASE_PATH="/"; npm run build
 ```
 
-## Dónde editar qué
+## Dónde editar
 
-- **Textos ES/EN** → `src/i18n/translations.js`
-- **Experiencia, becas, proyectos** → `src/data/`
-- **Componentes de cada sección** → `src/components/`
-- **Foto, logos, CV** → `public/assets/`
-- **Formulario (Formspree)** → `FORM_ENDPOINT` en `src/data/config.js`
-
-## Estructura
-
-```
-index.html          Entrada Vite
-src/
-  App.jsx           Secciones principales
-  main.jsx          Mount de React
-  index.css         Estilos
-  components/       UI por sección
-  data/             Contenido estático
-  hooks/            Scroll, animaciones, carpetas
-  context/          Idioma
-  i18n/             Traducciones
-public/assets/      Imágenes y CV
-.github/workflows/  Deploy automático
-```
+- Textos ES/EN → `src/i18n/translations.js`
+- Experiencia, becas, proyectos → `src/data/`
+- Componentes → `src/components/`
+- Imágenes y CV → `public/assets/`
+- Formulario → `FORM_ENDPOINT` en `src/data/config.js`
 
 ## Contacto
 
-- Web: [helmutchs.com](https://www.helmutchs.com)
-- Email: [helmut.chs@gmail.com](mailto:helmut.chs@gmail.com)
-- LinkedIn: [helmut-chaparro-sandoval](https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317/)
-- GitHub: [@HCHAPS404](https://github.com/HCHAPS404)
-- Instagram: [@divisum.hell](https://instagram.com/divisum.hell)
-- TikTok: [@imhell.12](https://www.tiktok.com/@imhell.12)
+- [helmutchs.com](https://www.helmutchs.com)
+- [helmut.chs@gmail.com](mailto:helmut.chs@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317/)
+- [@HCHAPS404](https://github.com/HCHAPS404)
+- [@divisum.hell](https://instagram.com/divisum.hell)
+- [@imhell.12](https://www.tiktok.com/@imhell.12)
 
-MIT License · © 2026 Helmut Chaparro Sandoval
+MIT · © 2026 Helmut Chaparro Sandoval
