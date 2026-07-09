@@ -1,22 +1,44 @@
 import { useRef } from "react";
-import { softSkills, tools } from "../data/skills.js";
+import { softSkills, toolCategories } from "../data/skills.js";
 import { useReveal, useStagger } from "../hooks/useInteractions.js";
 import { SectionHeader } from "./ui.jsx";
 import { T } from "./T.jsx";
 
-function ChipCloud({ items, soft = false }) {
-  const cloudRef = useRef(null);
-  useStagger(cloudRef, "li", 55);
+function ToolGroups() {
+  const groupsRef = useRef(null);
+  useStagger(groupsRef, ".tool-group", 70);
+
+  return (
+    <div ref={groupsRef} className="tool-groups">
+      {toolCategories.map((group) => (
+        <div key={group.labelKey} className="tool-group">
+          <h4 className="tool-group-label">
+            <T k={group.labelKey} />
+          </h4>
+          <ul className="chip-cloud chip-cloud--tools" aria-label={group.labelKey}>
+            {group.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SoftSkills() {
+  const softRef = useRef(null);
+  useStagger(softRef, "li", 45);
 
   return (
     <ul
-      ref={cloudRef}
-      className={`chip-cloud${soft ? " chip-cloud--soft" : ""}`}
-      aria-label={soft ? "Soft skills" : "Tools"}
+      ref={softRef}
+      className="chip-cloud chip-cloud--soft"
+      aria-label="Soft skills"
     >
-      {items.map((item) => (
-        <li key={item}>
-          {soft ? <T k={item} /> : item}
+      {softSkills.map((key) => (
+        <li key={key}>
+          <T k={key} />
         </li>
       ))}
     </ul>
@@ -24,11 +46,11 @@ function ChipCloud({ items, soft = false }) {
 }
 
 export function SkillsSection() {
-  const footRef = useRef(null);
+  const panelRef = useRef(null);
   const toolsLabelRef = useRef(null);
   const softLabelRef = useRef(null);
 
-  useReveal(footRef);
+  useReveal(panelRef);
   useReveal(toolsLabelRef);
   useReveal(softLabelRef);
 
@@ -36,18 +58,21 @@ export function SkillsSection() {
     <section className="section" id="habilidades">
       <SectionHeader no="03" titleKey="sec4.title" noteKey="sec4.note" />
 
-      <div ref={footRef} className="skills-foot reveal">
-        <div className="skills-card glass">
+      <div ref={panelRef} className="skills-panel glass reveal">
+        <div className="skills-block">
           <h3 ref={toolsLabelRef} className="col-label reveal">
             <T k="tools.label" />
           </h3>
-          <ChipCloud items={tools} />
+          <ToolGroups />
         </div>
-        <div className="skills-card glass">
+
+        <div className="skills-divider" aria-hidden="true" />
+
+        <div className="skills-block skills-block--soft">
           <h3 ref={softLabelRef} className="col-label reveal">
             <T k="soft.label" />
           </h3>
-          <ChipCloud items={softSkills} soft />
+          <SoftSkills />
         </div>
       </div>
     </section>
