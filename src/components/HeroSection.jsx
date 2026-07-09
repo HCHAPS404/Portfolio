@@ -97,7 +97,11 @@ export function HeroSection() {
 
         <div ref={footRef} className="hero-foot reveal">
           <div className="hero-actions">
-            <a href={asset("assets/cv.pdf")} download className="button">
+            <a
+              href={asset("assets/cv.pdf")}
+              download="Helmut-Chaparro-Sandoval-CV.pdf"
+              className="button"
+            >
               <T k="hero.cv" />
             </a>
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-link">
