@@ -24,18 +24,20 @@ export function SiteHeader({ scrolled = false }) {
           </a>
         ))}
       </nav>
-      <div className="lang-switch" role="group" aria-label="Language">
+      <div className="lang-switch" role="group" aria-label="Language" data-lang={lang}>
+        <span className="lang-switch__indicator" aria-hidden="true" />
         <button
           type="button"
           className={lang === "en" ? "active" : ""}
+          aria-pressed={lang === "en"}
           onClick={() => setLang("en")}
         >
           EN
         </button>
-        <span aria-hidden="true">/</span>
         <button
           type="button"
           className={lang === "es" ? "active" : ""}
+          aria-pressed={lang === "es"}
           onClick={() => setLang("es")}
         >
           ES
