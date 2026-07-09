@@ -1,5 +1,6 @@
 import { navigation } from "../data/navigation.js";
 import { useTranslation } from "../context/LanguageContext.jsx";
+import { asset } from "../lib/assets.js";
 import { T } from "./T.jsx";
 
 export function SiteHeader({ scrolled = false }) {
@@ -9,7 +10,7 @@ export function SiteHeader({ scrolled = false }) {
     <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <a href="#top" className="brand" aria-label="Helmut Chaparro Sandoval">
         <img
-          src="/assets/logo.png"
+          src={asset("assets/logo.png")}
           className="brand-logo"
           width="38"
           height="45"

@@ -7,6 +7,7 @@ import {
   spokenLanguages,
 } from "../data/profile.js";
 import { CONTACT_EMAIL } from "../data/config.js";
+import { asset } from "../lib/assets.js";
 import { useCountUp, useReveal, useStagger } from "../hooks/useInteractions.js";
 import { Copyable, Reveal } from "./ui.jsx";
 import { T } from "./T.jsx";
@@ -85,7 +86,7 @@ export function HeroSection() {
               <T k="hero.available" />
             </span>
             <img
-              src="/assets/photo.png"
+              src={asset("assets/photo.png")}
               alt="Helmut Chaparro Sandoval"
               width="400"
               height="400"
@@ -96,7 +97,7 @@ export function HeroSection() {
 
         <div ref={footRef} className="hero-foot reveal">
           <div className="hero-actions">
-            <a href="/assets/cv.pdf" download className="button">
+            <a href={asset("assets/cv.pdf")} download className="button">
               <T k="hero.cv" />
             </a>
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-link">

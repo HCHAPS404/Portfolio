@@ -47,9 +47,40 @@ npm run build
 npm run preview
 ```
 
-El resultado queda en `dist/`.
+El resultado queda en `dist/`. Esa carpeta es la que se publica — no subas el código fuente tal cual a Pages.
 
-## Archivos
+## Publicar en GitHub Pages
+
+URL del sitio: **https://hchaps404.github.io/Portfolio/**
+
+Este proyecto es React + Vite, así que GitHub Pages necesita el **build** (`dist/`), no los archivos de `src/`. Si publicas la raíz del repo, la página queda en blanco porque el navegador no puede ejecutar `.jsx` directamente.
+
+### Opción recomendada (GitHub Actions)
+
+1. En el repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**
+2. Haz push a `main`. El workflow `.github/workflows/deploy.yml` corre `npm run build` y sube `dist/`.
+3. Revisa la pestaña **Actions** hasta que el deploy termine en verde.
+
+`vite.config.js` ya tiene `base: "/Portfolio/"` para que JS, CSS e imágenes carguen en la subruta correcta.
+
+### Si lo haces a mano
+
+```bash
+npm install
+npm run build
+```
+
+Luego publica **solo el contenido de `dist/`** (rama `gh-pages` o el método que uses). No copies `index.html` de la raíz del proyecto.
+
+### Dominio propio (helmutchs.com, Vercel, etc.)
+
+```bash
+# PowerShell
+$env:BASE_PATH="/"; npm run build
+```
+
+En Linux/macOS: `BASE_PATH=/ npm run build`
+
 
 ```
 index.html              Entrada Vite
