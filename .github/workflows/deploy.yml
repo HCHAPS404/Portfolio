@@ -25,8 +25,19 @@ jobs:
           node-version: 20
           cache: npm
 
+      - uses: actions/configure-pages@v5
+
       - run: npm ci
-      - run: npm run build
+
+      - name: Build for GitHub Pages
+        run: npm run build
+        env:
+          BASE_PATH: /Portfolio/
+
+      - name: Verify build output
+        run: |
+          test -f dist/index.html
+          grep -q '/Portfolio/assets/' dist/index.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
