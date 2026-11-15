@@ -199,7 +199,7 @@
 
 .degree__progress {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: var(--sp-3);
   margin-top: var(--sp-5);
@@ -633,16 +633,6 @@
   height: 100%;
 }
 
-.comp__hud {
-  position: absolute;
-  font-size: var(--fs-2xs);
-  line-height: 1.7;
-}
-
-.comp__hud--tl { top: var(--sp-3); left: var(--sp-3); }
-.comp__hud--tr { top: var(--sp-3); right: var(--sp-3); }
-.comp__hud--bl { bottom: var(--sp-3); left: var(--sp-3); }
-
 .comp__info {
   display: flex;
   flex-direction: column;
@@ -1024,13 +1014,6 @@
 }
 
 @media (max-width: 520px) {
-  .comp__hud--tr {
-    top: auto;
-    bottom: var(--sp-3);
-  }
-  .comp__hud--bl {
-    display: none;
-  }
   .projects__grid,
   .domains {
     grid-template-columns: 1fr;

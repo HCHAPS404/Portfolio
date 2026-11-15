@@ -168,13 +168,6 @@ body::before {
   text-transform: uppercase;
 }
 
-/* Rótulos del panel: fondo propio para leerse sobre la animación */
-.comp__hud {
-  padding: 0.3em 0.6em;
-  margin: -0.3em -0.6em;
-  background: rgba(15, 15, 18, 0.78);
-}
-
 .comp-list {
   display: grid;
   gap: var(--sp-5);

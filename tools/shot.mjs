@@ -54,7 +54,7 @@ const overflow = await page.evaluate(() => {
   const wide = [...document.querySelectorAll('main *')]
     .filter((el) => {
       const r = el.getBoundingClientRect();
-      return r.width > 0 && r.right > vw + 2 && !el.closest('.marquee, .hero__canvas');
+      return r.width > 0 && r.right > vw + 2 && !el.closest('.marquee, .hero__canvas, .rule__scale');
     })
     .slice(0, 6)
     .map((el) => `${el.tagName.toLowerCase()}.${el.className}`.slice(0, 70));

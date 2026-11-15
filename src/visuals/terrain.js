@@ -71,9 +71,7 @@ export function createTerrain(canvas) {
       }
     }
 
-    // Nodos sensores con etiqueta
-    ctx.font = '500 10px "JetBrains Mono", ui-monospace, Consolas, monospace';
-    ctx.textBaseline = 'middle';
+    // Nodos sensores: cuadro rojo que parpadea y se enciende con la onda
     for (const [i, n] of NODES.entries()) {
       const y = height(n.x, n.z);
       const { sx, sy } = project(n.x, y, n.z, sway);
@@ -81,23 +79,12 @@ export function createTerrain(canvas) {
       const hit = Math.abs(dist - waveR) < 0.16;
       const blink = Math.sin(t * 0.005 + i * 1.7) > 0;
 
-      ctx.strokeStyle = 'rgba(237,235,230,0.45)';
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(sx, sy);
-      ctx.lineTo(sx, sy - 34);
-      ctx.lineTo(sx + 14, sy - 34);
-      ctx.stroke();
-
       ctx.fillStyle = hit || blink ? '#ee2e33' : 'rgba(238,46,51,0.35)';
       ctx.fillRect(sx - 3, sy - 3, 6, 6);
       if (hit) {
         ctx.strokeStyle = 'rgba(238,46,51,0.8)';
         ctx.strokeRect(sx - 8, sy - 8, 16, 16);
       }
-
-      ctx.fillStyle = hit ? '#ee2e33' : 'rgba(237,235,230,0.8)';
-      ctx.fillText(`${n.id} ${hit ? '▲ ALERTA' : 'OK'}`, sx + 18, sy - 34);
     }
   }
 

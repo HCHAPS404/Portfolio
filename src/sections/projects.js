@@ -2,9 +2,6 @@ import { projects, profile } from '../data.js';
 import { esc, pad2, sectionHead } from '../core/dom.js';
 import { sigilSvg } from '../visuals/sigil.js';
 
-// Texto provisional mientras el dueño documenta cada repositorio (no inventar descripciones).
-const PLACEHOLDER = 'Descripción en preparación. El código y el avance están en el repositorio.';
-
 export function renderProjects() {
   const cards = projects
     .map(
@@ -17,7 +14,7 @@ export function renderProjects() {
           </span>
           <span class="project__glyph">${sigilSvg(p.name)}</span>
           <span class="project__name" data-scramble-target>${esc(p.name)}</span>
-          <span class="project__desc">${esc(p.summary ?? PLACEHOLDER)}</span>
+          ${p.summary ? `<span class="project__desc">${esc(p.summary)}</span>` : ''}
           <span class="project__foot mono">
             <span>github/${esc(p.name)}</span>
             <span class="project__arrow" aria-hidden="true">↗</span>

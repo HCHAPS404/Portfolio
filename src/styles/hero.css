@@ -34,16 +34,6 @@
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%);
 }
 
-.hero__mapinfo {
-  position: absolute;
-  top: calc(var(--hud-h) + clamp(1rem, 2.4vh, 2.5rem));
-  right: calc(var(--gutter) + 2.2rem);
-  z-index: 1;
-  font-size: var(--fs-2xs);
-  line-height: 1.75;
-  text-align: right;
-}
-
 .hero__veil {
   position: absolute;
   inset: 0;
@@ -190,10 +180,7 @@
 }
 
 @media (max-width: 1000px) {
-  .hero__mapinfo {
-    display: none;
-  }
-  /* En pantallas angostas el mapa pasa a ser telón de fondo detrás del nombre */
+  /* En pantallas angostas la placa pasa a ser telón de fondo detrás del nombre */
   .hero__canvas {
     top: var(--hud-h);
     right: -22%;

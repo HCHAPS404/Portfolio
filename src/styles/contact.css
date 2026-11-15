@@ -152,50 +152,50 @@
   color: var(--c-ink);
 }
 
+/* Redes: cuadrícula de iconos, un cuadro por red */
 .contact__channels {
-  border-bottom: 3px solid var(--c-accent-ink);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border: 3px solid var(--c-accent-ink);
+}
+
+.contact__channels li {
+  border: 0 solid var(--c-accent-ink);
+}
+
+.contact__channels li:nth-child(n + 4) {
+  border-top-width: 3px;
+}
+
+.contact__channels li:not(:nth-child(3n + 1)) {
+  border-left-width: 3px;
 }
 
 .channel {
   display: grid;
-  grid-template-columns: 7rem minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: var(--sp-3);
-  padding: 0.95rem 0.6rem;
-  border-top: 3px solid var(--c-accent-ink);
-  transition: background var(--dur-snap), color var(--dur-snap), padding var(--dur-snap) var(--ease-out);
+  place-items: center;
+  aspect-ratio: 1 / 0.82;
+  color: var(--c-accent-ink);
+  transition: background var(--dur-snap), color var(--dur-snap);
 }
 
-.channel__label {
-  font-family: var(--f-pixel);
-  font-size: var(--fs-xs);
-  text-transform: uppercase;
-}
-
-.channel__handle {
-  font-family: var(--f-display);
-  font-weight: 700;
-  font-size: var(--fs-lg);
-  letter-spacing: -0.02em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.channel__arrow {
-  font-size: 1.2rem;
-  transition: transform 0.4s var(--ease-out);
+.channel__icon {
+  width: clamp(2.2rem, 1.4rem + 2.6vw, 3.4rem);
+  height: auto;
+  fill: currentColor;
+  transition: transform 0.45s var(--ease-out);
 }
 
 .channel:hover,
 .channel:focus-visible {
   background: var(--c-accent-ink);
   color: var(--c-ink);
-  padding-left: 1.2rem;
 }
 
-.channel:hover .channel__arrow {
-  transform: translate(4px, -4px);
+.channel:hover .channel__icon,
+.channel:focus-visible .channel__icon {
+  transform: scale(1.14) rotate(-4deg);
 }
 
 /* ---------- Pie ---------- */
@@ -220,12 +220,6 @@
 @media (max-width: 900px) {
   .contact__grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .channel {
-    grid-template-columns: 5.2rem minmax(0, 1fr) auto;
   }
 }
 

@@ -1,6 +1,5 @@
 import { profile, asset } from '../data.js';
 import { esc } from '../core/dom.js';
-import { pcbInfo } from '../visuals/pcb.js';
 
 export function renderHero() {
   const nameLines = profile.name.split(' ');
@@ -17,15 +16,10 @@ export function renderHero() {
   <section class="hero" id="inicio" aria-labelledby="hero-title">
     <canvas class="hero__canvas" role="img" aria-label="Placa electrónica de tres capas en vista explosionada, con pistas, vías y componentes, por la que viajan pulsos de señal"></canvas>
     <div class="hero__veil" aria-hidden="true"></div>
-    <p class="hero__mapinfo mono" aria-hidden="true">
-      <span class="red">FIG. 00</span> — Placa HCS-01 · vista explosionada<br>
-      <span class="dim">3 capas · ${pcbInfo.traces} pistas · ${pcbInfo.vias} vías · ${pcbInfo.parts} componentes<br>Modelo generado por código</span>
-    </p>
 
     <div class="wrap hero__inner">
       <p class="hero__top mono">
         <span class="hero__status"><i class="pulse" aria-hidden="true"></i>${esc(profile.availability)}</span>
-        <span class="dim">04.7110° N · 74.0721° W</span>
         <span class="dim">${esc(profile.location)}</span>
       </p>
 

@@ -33,7 +33,6 @@ export function renderChrome() {
     </a>
     <nav class="hud__nav" aria-label="Navegación principal">${links}</nav>
     <div class="hud__right">
-      <span class="hud__clock" aria-hidden="true">BOG <span data-clock>--:--:--</span></span>
       <button class="hud__menu" type="button" aria-expanded="false" aria-controls="menu" data-cursor>
         <span data-menu-label>Menú</span><i aria-hidden="true"></i>
       </button>
@@ -68,11 +67,8 @@ export function boot() {
   const count = $('[data-boot-count]', el);
   const bar = $('.boot__bar i', el);
   const lines = [
-    'HCS-OS v2.6 // BOGOTÁ 04.7110N 074.0721W',
-    '> cargando perfil ............. OK',
-    '> montando motor ASCII ........ OK',
-    '> calibrando telemetría ....... OK',
-    '> enlace establecido',
+    profile.name.toUpperCase(),
+    'Portafolio · ' + new Date().getFullYear(),
   ];
   const DURATION = 1350;
 
@@ -94,24 +90,6 @@ export function boot() {
     };
     requestAnimationFrame(step);
   });
-}
-
-function initClock() {
-  const targets = $$('[data-clock]');
-  if (!targets.length) return;
-  const fmt = new Intl.DateTimeFormat('es-CO', {
-    timeZone: 'America/Bogota',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
-  });
-  const tick = () => {
-    const text = fmt.format(new Date());
-    targets.forEach((t) => (t.textContent = text));
-  };
-  tick();
-  setInterval(tick, 1000);
 }
 
 function initMenu(onToggle) {
@@ -207,7 +185,6 @@ export function setProgress(p) {
 }
 
 export function initChrome({ onMenuToggle } = {}) {
-  initClock();
   initMenu(onMenuToggle);
   initCursor();
 }

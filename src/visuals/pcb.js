@@ -178,8 +178,6 @@ function buildBoard() {
 
   /* --- Serigrafía --- */
   silk.push({ text: 'HCS-01', x: -33.5, y: -22.6, size: 2.6, alpha: 0.9 });
-  silk.push({ text: 'REV A · 3 CAPAS', x: -22.5, y: -22.4, size: 1.15, alpha: 0.55 });
-  silk.push({ text: 'DISEÑADO EN BOGOTÁ', x: 13, y: -22.4, size: 1.15, alpha: 0.55 });
   comps.forEach((c) => {
     if (!c.label || c.kind === 'cap') return;
     const w = c.kind === 'cyl' ? c.r : c.w / 2;
@@ -398,7 +396,6 @@ export function createPcb(canvas) {
     }
     if (c.label === 'U1') {
       planeText('HCS', c.x - 4.4, c.y - 0.2, z1, 3.3, 0.95);
-      planeText('32-BIT · MCU', c.x - 4.4, c.y - 2.5, z1, 0.95, 0.55);
       // Núcleo "latiendo": un cuadro que pulsa al ritmo del reloj
       const beat = 0.5 + 0.5 * Math.sin(t * 0.004);
       ctx.strokeStyle = `rgba(238,46,51,${(0.25 + beat * 0.6).toFixed(2)})`;
@@ -424,31 +421,6 @@ export function createPcb(canvas) {
         ctx.fillRect(px(x, y) - size / 2, py(x, y, z) - size / 2, size, size);
       }
     });
-  }
-
-  function label(text, x, y, z, dx, dy, alpha, accent) {
-    const ax = px(x, y), ay = py(x, y, z);
-    ctx.globalAlpha = alpha;
-    ctx.strokeStyle = accent ? RED : `rgba(${INK},0.6)`;
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(ax, ay);
-    ctx.lineTo(ax + dx, ay + dy);
-    ctx.lineTo(ax + dx + Math.sign(dx || 1) * 12, ay + dy);
-    ctx.stroke();
-    ctx.fillStyle = accent ? RED : `rgba(${INK},0.95)`;
-    ctx.fillRect(ax - 2, ay - 2, 4, 4);
-
-    ctx.font = '500 10px "JetBrains Mono", ui-monospace, Consolas, monospace';
-    ctx.textBaseline = 'middle';
-    const tw = ctx.measureText(text).width;
-    const left = dx < 0;
-    const tx = ax + dx + (left ? -16 - tw : 16);
-    ctx.fillStyle = `rgba(${BG},0.86)`;
-    ctx.fillRect(tx - 4, ay + dy - 8, tw + 8, 16);
-    ctx.fillStyle = accent ? RED : `rgba(${INK},0.94)`;
-    ctx.fillText(text, tx, ay + dy);
-    ctx.globalAlpha = 1;
   }
 
   function draw(now) {
@@ -592,17 +564,6 @@ export function createPcb(canvas) {
         .forEach((c) => drawComponent(c, zTop, t));
       ctx.globalAlpha = 1;
     }
-
-    /* ----- Rótulos ----- */
-    const la = ease((t - 2300) / 900);
-    if (la > 0 && !small) {
-      label('U1 · MICROCONTROLADOR 32 BIT', -2, 8, zTop + 1.3, 26, -92, la, true);
-      label('U3 · RADIO 2,4 GHz + ANTENA', -31, 22.5, zTop, -18, -46, la);
-      label('J2 · EXPANSIÓN', 31.6, -11, zTop + 3.6, 22, -30, la);
-      label('L1 · SEÑAL', BW / 2, -BH / 2 + 3, zTop, 30, 26, la);
-      label('L2 · PLANO GND / 3V3', BW / 2, -BH / 2 + 3, zMid, 30, 26, la);
-      label('L3 · SEÑAL', BW / 2, -BH / 2 + 3, zBot, 30, 26, la);
-    }
   }
 
   function onPointer(e) {
@@ -613,12 +574,5 @@ export function createPcb(canvas) {
   resize();
   window.addEventListener('resize', resize);
   if (!reduceMotion) window.addEventListener('pointermove', onPointer, { passive: true });
-  const stop = visibleLoop(canvas, draw);
-  return stop;
+  return visibleLoop(canvas, draw);
 }
-
-/** Datos reales del modelo generado, para la leyenda. */
-export const pcbInfo = (() => {
-  const b = buildBoard();
-  return { traces: b.top.length + b.bottom.length, vias: b.vias.length, parts: b.comps.length };
-})();

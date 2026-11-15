@@ -31,7 +31,7 @@ export function renderAbout() {
   return `
   <section class="section about" id="perfil" aria-labelledby="perfil-title">
     <div class="wrap">
-      ${sectionHead('01', 'Perfil', 'Quién soy<br>Hardware · Software · Datos').replace('<h2 ', '<h2 id="perfil-title" ')}
+      ${sectionHead('01', 'Perfil', '').replace('<h2 ', '<h2 id="perfil-title" ')}
 
       <div class="about__grid">
         <figure class="about__figure corners" data-reveal>
@@ -39,10 +39,6 @@ export function renderAbout() {
             <canvas class="about__canvas" role="img" aria-label="Retrato de ${esc(profile.name)} dibujado con caracteres ASCII"></canvas>
             <span class="about__scanline" aria-hidden="true"></span>
           </div>
-          <figcaption class="mono dim">
-            <span>FIG. 01 — Retrato ASCII</span>
-            <span>ID: ${esc(profile.shortName)}</span>
-          </figcaption>
         </figure>
 
         <div class="about__body">

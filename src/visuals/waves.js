@@ -1,6 +1,6 @@
 /**
  * Mar de puntos en perspectiva con un sol de franjas en el horizonte y una
- * baliza roja. Ilustra la hackatón de GDG Cartagena (costa Caribe).
+ * baliza roja. Acompaña la hackatón de GDG Cartagena (costa Caribe).
  */
 import { fitCanvas, visibleLoop } from '../core/dom.js';
 
@@ -67,7 +67,7 @@ export function createWaves(canvas) {
       }
     }
 
-    // Baliza roja flotando, con anillo de pulso y etiqueta
+    // Baliza roja flotando, con anillo de pulso
     const bx = W * 0.3;
     const by = horizon + (H - horizon) * 0.4 + Math.sin(t * 1.7) * 5;
     const pulse = (t * 0.6) % 1;
@@ -76,17 +76,6 @@ export function createWaves(canvas) {
     ctx.strokeRect(bx - 6 - pulse * 18, by - 6 - pulse * 18, 12 + pulse * 36, 12 + pulse * 36);
     ctx.fillStyle = '#ee2e33';
     ctx.fillRect(bx - 4, by - 4, 8, 8);
-
-    ctx.strokeStyle = `rgba(${INK},0.5)`;
-    ctx.beginPath();
-    ctx.moveTo(bx, by - 6);
-    ctx.lineTo(bx, by - 44);
-    ctx.lineTo(bx + 14, by - 44);
-    ctx.stroke();
-    ctx.font = '500 10px "JetBrains Mono", ui-monospace, Consolas, monospace';
-    ctx.textBaseline = 'middle';
-    ctx.fillStyle = `rgba(${INK},0.9)`;
-    ctx.fillText('CTG · 10.3910° N  75.4794° W', bx + 18, by - 44);
   }
 
   resize();

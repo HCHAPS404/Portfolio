@@ -27,7 +27,6 @@ export function renderEducation() {
             : `<div class="degree__progress">
                 <span class="mono"><i class="pulse" aria-hidden="true"></i>${esc(e.status)}</span>
                 <span class="degree__bar" aria-hidden="true"><i data-fill="${pct}"></i></span>
-                <span class="mono dim">Línea de tiempo</span>
               </div>`
         }
       </article>`;
