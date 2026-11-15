@@ -1,5 +1,6 @@
 import { profile, asset } from '../data.js';
 import { esc } from '../core/dom.js';
+import { t } from '../i18n/index.js';
 
 export function renderHero() {
   const nameLines = profile.name.split(' ');
@@ -14,7 +15,7 @@ export function renderHero() {
 
   return `
   <section class="hero" id="inicio" aria-labelledby="hero-title">
-    <canvas class="hero__canvas" role="img" aria-label="Placa electrónica de tres capas en vista explosionada, con pistas, vías y componentes, por la que viajan pulsos de señal"></canvas>
+    <canvas class="hero__canvas" role="img" aria-label="${esc(t('hero.canvas_alt'))}"></canvas>
     <div class="hero__veil" aria-hidden="true"></div>
 
     <div class="wrap hero__inner">
@@ -40,8 +41,8 @@ export function renderHero() {
           </p>
           <p class="hero__summary" data-hero-fade>${esc(profile.summary)}</p>
           <div class="hero__cta" data-hero-fade>
-            <a class="btn btn--accent" href="#proyectos" data-cursor data-magnetic>Ver proyectos <span class="btn__arrow" aria-hidden="true">↗</span></a>
-            <a class="btn" href="${asset(profile.cv)}" download data-cursor data-magnetic>Descargar CV <span class="btn__arrow" aria-hidden="true">↓</span></a>
+            <a class="btn btn--accent" href="#proyectos" data-cursor data-magnetic>${esc(t('hero.cta_projects'))} <span class="btn__arrow" aria-hidden="true">↗</span></a>
+            <a class="btn" href="${asset(profile.cv)}" download data-cursor data-magnetic>${esc(t('hero.cta_cv'))} <span class="btn__arrow" aria-hidden="true">↓</span></a>
           </div>
         </div>
 

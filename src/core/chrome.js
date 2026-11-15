@@ -1,13 +1,14 @@
 /**
- * "Chrome" del sitio: arranque tipo terminal, HUD de navegación, menú móvil,
- * riel de progreso, reloj de Bogotá y cursor personalizado.
+ * "Chrome" del sitio: arranque, barra superior con navegación y selector de idioma,
+ * menú móvil, riel de progreso y cursor personalizado.
  */
 import { sections, profile } from '../data.js';
 import { $, $$, esc, pad2, reduceMotion, finePointer } from './dom.js';
-
-const navSections = sections.filter((s) => s.id !== 'inicio');
+import { t, LANGS, getLang, switchLang } from '../i18n/index.js';
 
 export function renderChrome() {
+  const navSections = sections.filter((s) => s.id !== 'inicio');
+  const current = LANGS.find((l) => l.code === getLang()) ?? LANGS[0];
   const links = navSections
     .map(
       (s, i) =>
@@ -20,6 +21,13 @@ export function renderChrome() {
     .map((w) => w[0])
     .join('');
 
+  const langOptions = LANGS.map(
+    (l) => `
+        <li><button class="langsel__opt" type="button" lang="${l.code}" data-lang-code="${l.code}"${l.code === current.code ? ' aria-current="true"' : ''} data-cursor>
+          <span class="langsel__code" aria-hidden="true">${l.code.toUpperCase()}</span><span class="langsel__name">${esc(l.native)}</span>
+        </button></li>`,
+  ).join('');
+
   return `
   <div class="boot" aria-hidden="true">
     <pre class="boot__log"></pre>
@@ -28,26 +36,35 @@ export function renderChrome() {
   </div>
 
   <header class="hud">
-    <a class="hud__brand" href="#inicio" aria-label="${esc(profile.name)} — inicio" data-cursor>
-      <span class="hud__mark" aria-hidden="true"></span>${esc(initials)}<span class="red">/</span>PORTAFOLIO
+    <a class="hud__brand" href="#inicio" aria-label="${esc(t('hud.home_aria', { name: profile.name }))}" data-cursor>
+      <span class="hud__mark" aria-hidden="true"></span>${esc(initials)}<span class="red">/</span>${esc(t('hud.brand'))}
     </a>
-    <nav class="hud__nav" aria-label="Navegación principal">${links}</nav>
+    <nav class="hud__nav" aria-label="${esc(t('a11y.main_nav'))}">${links}</nav>
     <div class="hud__right">
+      <div class="langsel" data-lang>
+        <button class="langsel__btn" type="button" aria-expanded="false" aria-controls="lang-list" aria-label="${esc(t('lang.aria', { lang: current.native }))}" data-cursor>
+          <svg class="langsel__globe" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
+          <span class="langsel__current" aria-hidden="true">${current.code.toUpperCase()}</span>
+          <i class="langsel__chev" aria-hidden="true"></i>
+        </button>
+        <ul class="langsel__list" id="lang-list" aria-label="${esc(t('lang.label'))}" hidden>${langOptions}
+        </ul>
+      </div>
       <button class="hud__menu" type="button" aria-expanded="false" aria-controls="menu" data-cursor>
-        <span data-menu-label>Menú</span><i aria-hidden="true"></i>
+        <span data-menu-label>${esc(t('hud.menu'))}</span><i aria-hidden="true"></i>
       </button>
     </div>
   </header>
 
   <div class="menu" id="menu" hidden>
-    <nav class="menu__nav" aria-label="Menú móvil">${links}</nav>
+    <nav class="menu__nav" aria-label="${esc(t('a11y.mobile_nav'))}">${links}</nav>
     <p class="menu__foot mono dim">${esc(profile.location)} · ${esc(profile.availability)}</p>
   </div>
 
   <aside class="rail" aria-hidden="true">
     <span class="rail__no" data-rail-no>00</span>
     <span class="rail__bar"><i data-rail-bar></i></span>
-    <span class="rail__label" data-rail-label>Inicio</span>
+    <span class="rail__label" data-rail-label>${esc(t('nav.home'))}</span>
   </aside>
 
   <div class="cursor" aria-hidden="true"><i class="cursor__ring"></i><i class="cursor__dot"></i></div>
@@ -55,10 +72,10 @@ export function renderChrome() {
 }
 
 /** Secuencia de arranque. Resuelve cuando el sitio queda a la vista. */
-export function boot() {
+export function boot({ skip = false } = {}) {
   const el = $('.boot');
   if (!el) return Promise.resolve();
-  if (reduceMotion) {
+  if (reduceMotion || skip) {
     el.remove();
     return Promise.resolve();
   }
@@ -68,7 +85,7 @@ export function boot() {
   const bar = $('.boot__bar i', el);
   const lines = [
     profile.name.toUpperCase(),
-    'Portafolio · ' + new Date().getFullYear(),
+    t('boot.tagline', { year: new Date().getFullYear() }),
   ];
   const DURATION = 1350;
 
@@ -100,7 +117,7 @@ function initMenu(onToggle) {
 
   const set = (open) => {
     button.setAttribute('aria-expanded', String(open));
-    label.textContent = open ? 'Cerrar' : 'Menú';
+    label.textContent = open ? t('hud.close') : t('hud.menu');
     document.documentElement.classList.toggle('menu-open', open);
     if (open) {
       menu.hidden = false;
@@ -126,6 +143,53 @@ function initMenu(onToggle) {
   });
   window.matchMedia('(min-width: 1101px)').addEventListener('change', (e) => {
     if (e.matches) set(false);
+  });
+}
+
+function initLang() {
+  const root = $('[data-lang]');
+  if (!root) return;
+  const button = $('.langsel__btn', root);
+  const list = $('.langsel__list', root);
+
+  const setOpen = (open) => {
+    button.setAttribute('aria-expanded', String(open));
+    list.hidden = !open;
+    root.classList.toggle('is-open', open);
+  };
+
+  button.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    setOpen(open);
+    if (open) $('[aria-current="true"]', list)?.focus({ preventScroll: true });
+  });
+
+  list.addEventListener('click', (e) => {
+    const option = e.target.closest('[data-lang-code]');
+    if (!option) return;
+    setOpen(false);
+    switchLang(option.dataset.langCode);
+  });
+
+  // Flechas, inicio y fin dentro de la lista
+  list.addEventListener('keydown', (e) => {
+    const options = $$('.langsel__opt', list);
+    const i = options.indexOf(document.activeElement);
+    const go = (n) => options[(n + options.length) % options.length].focus();
+    if (e.key === 'ArrowDown') (e.preventDefault(), go(i + 1));
+    else if (e.key === 'ArrowUp') (e.preventDefault(), go(i - 1));
+    else if (e.key === 'Home') (e.preventDefault(), go(0));
+    else if (e.key === 'End') (e.preventDefault(), go(options.length - 1));
+  });
+
+  document.addEventListener('pointerdown', (e) => {
+    if (!root.contains(e.target)) setOpen(false);
+  });
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !list.hidden) {
+      setOpen(false);
+      button.focus();
+    }
   });
 }
 
@@ -186,5 +250,6 @@ export function setProgress(p) {
 
 export function initChrome({ onMenuToggle } = {}) {
   initMenu(onMenuToggle);
+  initLang();
   initCursor();
 }

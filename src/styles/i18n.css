@@ -1,0 +1,14 @@
+/* Ajustes por idioma. Se carga el último para poder imponerse al resto de hojas. */
+
+/* El nombre y las cifras en contorno son siempre latinos: se fijan a Space Grotesk.
+   Las fuentes alternativas de ru/ja/zh tienen contornos solapados que, con
+   -webkit-text-stroke, dejan trazos internos visibles. */
+.hero__title,
+.footer__mark,
+.degree__years,
+.tally__place,
+.sec-ghost,
+.insp__sym,
+.tool__sym {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}

@@ -1,29 +1,268 @@
 {
   "tools": [
-    { "category": "PCB", "items": ["Altium Designer", "KiCAD", "Cadence OrCAD", "LTSpice", "Multisim", "Proteus"] },
-    { "category": "Embebidos", "items": ["STM32CubeIDE", "Keil MDK", "ESP-IDF", "Arduino IDE", "PlatformIO", "Vivado / Quartus"] },
-    { "category": "Software", "items": ["VS Code", "Visual Studio", ".NET / C#", "Python", "TypeScript", "Node.js", "React", "Next.js"] },
-    { "category": "Datos e IA", "items": ["TensorFlow", "PyTorch", "OpenCV", "MATLAB", "Jupyter", "R", "Power BI", "Apache Spark"] },
-    { "category": "Bases de datos", "items": ["SQL Server", "PostgreSQL", "MongoDB", "Redis", "Grafana", "Azure DevOps"] },
-    { "category": "Operaciones", "items": ["Git", "Docker", "Linux", "Postman", "Wireshark", "MQTT / LoRaWAN"] },
-    { "category": "Robótica y diseño", "items": ["ROS 2", "Gazebo", "Fusion 360", "SolidWorks", "Blender", "Figma"] }
+    {
+      "id": "pcb",
+      "category": "PCB",
+      "items": [
+        "Altium Designer",
+        "KiCAD",
+        "Cadence OrCAD",
+        "LTSpice",
+        "Multisim",
+        "Proteus"
+      ]
+    },
+    {
+      "id": "embedded",
+      "category": "Embebidos",
+      "items": [
+        "STM32CubeIDE",
+        "Keil MDK",
+        "ESP-IDF",
+        "Arduino IDE",
+        "PlatformIO",
+        "Vivado / Quartus"
+      ]
+    },
+    {
+      "id": "software",
+      "category": "Software",
+      "items": [
+        "VS Code",
+        "Visual Studio",
+        ".NET / C#",
+        "Python",
+        "TypeScript",
+        "Node.js",
+        "React",
+        "Next.js"
+      ]
+    },
+    {
+      "id": "data",
+      "category": "Datos e IA",
+      "items": [
+        "TensorFlow",
+        "PyTorch",
+        "OpenCV",
+        "MATLAB",
+        "Jupyter",
+        "R",
+        "Power BI",
+        "Apache Spark"
+      ]
+    },
+    {
+      "id": "datastore",
+      "category": "Bases de datos",
+      "items": [
+        "SQL Server",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Grafana",
+        "Azure DevOps"
+      ]
+    },
+    {
+      "id": "ops",
+      "category": "Operaciones",
+      "items": [
+        "Git",
+        "Docker",
+        "Linux",
+        "Postman",
+        "Wireshark",
+        "MQTT / LoRaWAN"
+      ]
+    },
+    {
+      "id": "robotics",
+      "category": "Robótica y diseño",
+      "items": [
+        "ROS 2",
+        "Gazebo",
+        "Fusion 360",
+        "SolidWorks",
+        "Blender",
+        "Figma"
+      ]
+    }
   ],
   "domains": [
-    { "no": "A", "title": "Sistemas embebidos", "tech": "ARM · RTOS · STM32 · ESP32 · C/C++ · FreeRTOS · SoC" },
-    { "no": "B", "title": "Hardware y diseño de PCB", "tech": "Altium Designer · KiCAD · EMI/EMC · LTSpice · Integridad de señal" },
-    { "no": "C", "title": "Sistemas eléctricos y potencia", "tech": "Electrónica de potencia · Control · Protección · Esquemáticos · EMI/EMC" },
-    { "no": "D", "title": "Full-stack y software", "tech": ".NET · C# · JavaScript · TypeScript · REST APIs · SQL Server · Azure DevOps" },
-    { "no": "E", "title": "Ingeniería y análisis de datos", "tech": "ETL · Pipelines · SQL · Power BI · R · Dashboards · Reportes" },
-    { "no": "F", "title": "IA y aprendizaje automático", "tech": "Python · TensorFlow · PyTorch · Edge AI · RAG · Visión artificial" },
-    { "no": "G", "title": "Diseño digital y FPGA", "tech": "VHDL · Verilog · Xilinx · Intel · RTL · Cierre de timing" },
-    { "no": "H", "title": "Robótica y automatización", "tech": "ROS 2 · Gazebo · SLAM · Mecatrónica · PID · Navegación" },
-    { "no": "I", "title": "Bioingeniería", "tech": "Biosensores · Procesamiento de señales · Instrumentos de laboratorio · Edge AI · IoT biomédico" },
-    { "no": "J", "title": "Cloud, DevOps y sistemas", "tech": "Docker · Linux · CI/CD · Git · Azure · Monitoreo · Infraestructura" }
+    {
+      "no": "A",
+      "title": "Sistemas embebidos",
+      "tech": "ARM · RTOS · STM32 · ESP32 · C/C++ · FreeRTOS · SoC",
+      "categories": [
+        "embedded"
+      ],
+      "experience": [
+        "devkit",
+        "poimen",
+        "compensar",
+        "arisoft"
+      ],
+      "certificates": [],
+      "competitions": [
+        "navira"
+      ]
+    },
+    {
+      "no": "B",
+      "title": "Hardware y diseño de PCB",
+      "tech": "Altium Designer · KiCAD · EMI/EMC · LTSpice · Integridad de señal",
+      "categories": [
+        "pcb"
+      ],
+      "experience": [
+        "devkit",
+        "poimen",
+        "arisoft",
+        "ce"
+      ],
+      "certificates": [
+        "pcb",
+        "altium",
+        "altium-scholarship",
+        "altium-grad"
+      ],
+      "competitions": []
+    },
+    {
+      "no": "C",
+      "title": "Sistemas eléctricos y potencia",
+      "tech": "Electrónica de potencia · Control · Protección · Esquemáticos · EMI/EMC",
+      "categories": [
+        "pcb"
+      ],
+      "experience": [],
+      "certificates": [],
+      "competitions": []
+    },
+    {
+      "no": "D",
+      "title": "Full-stack y software",
+      "tech": ".NET · C# · JavaScript · TypeScript · REST APIs · SQL Server · Azure DevOps",
+      "categories": [
+        "software",
+        "datastore"
+      ],
+      "experience": [
+        "tranexco",
+        "devkit",
+        "poimen"
+      ],
+      "certificates": [
+        "ibm-js"
+      ],
+      "competitions": []
+    },
+    {
+      "no": "E",
+      "title": "Ingeniería y análisis de datos",
+      "tech": "ETL · Pipelines · SQL · Power BI · R · Dashboards · Reportes",
+      "categories": [
+        "data",
+        "datastore"
+      ],
+      "experience": [
+        "poimen"
+      ],
+      "certificates": [
+        "ibm-ds",
+        "google-da",
+        "dl-de",
+        "esri"
+      ],
+      "competitions": []
+    },
+    {
+      "no": "F",
+      "title": "IA y aprendizaje automático",
+      "tech": "Python · TensorFlow · PyTorch · Edge AI · RAG · Visión artificial",
+      "categories": [
+        "data"
+      ],
+      "experience": [
+        "compensar"
+      ],
+      "certificates": [
+        "ibm-ai",
+        "ibm-rag",
+        "ms-ai",
+        "ibm-ds"
+      ],
+      "competitions": [
+        "navira"
+      ]
+    },
+    {
+      "no": "G",
+      "title": "Diseño digital y FPGA",
+      "tech": "VHDL · Verilog · Xilinx · Intel · RTL · Cierre de timing",
+      "categories": [
+        "embedded"
+      ],
+      "experience": [],
+      "certificates": [],
+      "competitions": []
+    },
+    {
+      "no": "H",
+      "title": "Robótica y automatización",
+      "tech": "ROS 2 · Gazebo · SLAM · Mecatrónica · PID · Navegación",
+      "categories": [
+        "robotics"
+      ],
+      "experience": [
+        "compensar",
+        "arisoft",
+        "ce",
+        "devkit",
+        "ieee"
+      ],
+      "certificates": [],
+      "competitions": []
+    },
+    {
+      "no": "I",
+      "title": "Bioingeniería",
+      "tech": "Biosensores · Procesamiento de señales · Instrumentos de laboratorio · Edge AI · IoT biomédico",
+      "categories": [],
+      "experience": [
+        "ieee"
+      ],
+      "certificates": [],
+      "competitions": []
+    },
+    {
+      "no": "J",
+      "title": "Cloud, DevOps y sistemas",
+      "tech": "Docker · Linux · CI/CD · Git · Azure · Monitoreo · Infraestructura",
+      "categories": [
+        "ops"
+      ],
+      "experience": [],
+      "certificates": [],
+      "competitions": []
+    }
   ],
   "softSkills": [
-    "Liderazgo estratégico", "Comunicación bilingüe", "Resolución creativa de problemas", "Pensamiento analítico",
-    "Equipos multidisciplinarios", "Decisiones basadas en datos", "Adaptabilidad", "Gestión de proyectos",
-    "Mentoría técnica", "Comunicación pública", "Pensamiento crítico", "Negociación",
-    "Emprendimiento", "Docencia y formación", "Pensamiento sistémico"
+    "Liderazgo estratégico",
+    "Comunicación bilingüe",
+    "Resolución creativa de problemas",
+    "Pensamiento analítico",
+    "Equipos multidisciplinarios",
+    "Decisiones basadas en datos",
+    "Adaptabilidad",
+    "Gestión de proyectos",
+    "Mentoría técnica",
+    "Comunicación pública",
+    "Pensamiento crítico",
+    "Negociación",
+    "Emprendimiento",
+    "Docencia y formación",
+    "Pensamiento sistémico"
   ]
 }

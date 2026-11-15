@@ -30,6 +30,15 @@ npm run preview   # sirve dist/ en http://localhost:4173
 
 Para agregar un proyecto, una certificación o un premio basta con añadir una entrada al JSON correspondiente; la página se actualiza sola.
 
+## Idiomas
+
+El sitio está disponible en español, inglés, alemán, francés, ruso, chino mandarín, japonés e italiano. El selector está en la barra superior; la elección se recuerda y también funciona con `?lang=ja`. Para añadir o corregir textos:
+
+```bash
+node tools/i18n/extract.mjs      # regenera la plantilla docs/i18n/source.es.json
+node tools/i18n/check.mjs all    # valida todas las traducciones
+```
+
 ## Verificación
 
 Con el servidor de preview activo:

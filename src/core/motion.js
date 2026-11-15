@@ -9,6 +9,8 @@ import Lenis from 'lenis';
 import { sections, profile } from '../data.js';
 import { $, $$, esc, reduceMotion, finePointer } from './dom.js';
 import { setActiveSection, setProgress } from './chrome.js';
+import { initSkillsUi } from './skills-ui.js';
+import { t } from '../i18n/index.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -252,39 +254,6 @@ function initTimeline() {
   });
 }
 
-/* ---------- Filtro de herramientas ---------- */
-function initToolsFilter() {
-  const tabs = $$('.tools__tab');
-  const chips = $$('.chip');
-  const count = $('[data-tools-count]');
-  if (!tabs.length) return;
-
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const filter = tab.dataset.filter;
-      tabs.forEach((t) => {
-        const active = t === tab;
-        t.classList.toggle('is-active', active);
-        t.setAttribute('aria-pressed', String(active));
-      });
-      const on = [];
-      chips.forEach((chip) => {
-        const match = filter === '*' || chip.dataset.cat === filter;
-        chip.classList.toggle('is-off', !match);
-        if (match) on.push(chip);
-      });
-      if (count) count.textContent = on.length;
-      if (!reduceMotion) {
-        gsap.fromTo(
-          on,
-          { y: 8, opacity: 0.4 },
-          { y: 0, opacity: 1, duration: 0.45, ease: 'power3.out', stagger: 0.012, clearProps: 'transform,opacity' },
-        );
-      }
-    });
-  });
-}
-
 /* ---------- Interacciones de puntero ---------- */
 function initPointerFx() {
   // Scramble del nombre al pasar sobre una tarjeta de proyecto
@@ -333,8 +302,8 @@ function initCopy() {
       } catch {
         ok = false;
       }
-      label.textContent = ok ? 'Copiado ✓' : 'No se pudo copiar';
-      if (status) status.textContent = ok ? 'Dirección de correo copiada' : 'No se pudo copiar la dirección';
+      label.textContent = ok ? t('contact.copied') : t('contact.copy_fail');
+      if (status) status.textContent = ok ? t('contact.copied_status') : t('contact.copy_fail_status');
       setTimeout(() => (label.textContent = original), 2200);
     });
   });
@@ -455,13 +424,19 @@ function initExtras() {
   });
 }
 
+/** Desplaza la vista hasta un elemento (usa Lenis cuando está activo). */
+export function scrollToEl(el, offset = -96) {
+  if (lenis) lenis.scrollTo(el, { offset, duration: 1.1 });
+  else el.scrollIntoView({ block: 'center' });
+}
+
 export function initMotion() {
   initHero();
   initExtras();
   initSplit();
   initReveals();
   initTimeline();
-  initToolsFilter();
+  initSkillsUi({ scrollTo: (el) => scrollToEl(el) });
   initPointerFx();
   initCopy();
   initSectionTracking();

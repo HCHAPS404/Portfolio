@@ -332,3 +332,47 @@ button {
     padding-bottom: 0;
   }
 }
+
+/* ---------- Cambio de idioma: fundido breve antes de recargar ---------- */
+body {
+  transition: opacity 0.25s ease;
+}
+
+.is-switching body {
+  opacity: 0;
+}
+
+/* ---------- Tipografías por alfabeto ---------- */
+/* Space Grotesk y Silkscreen no cubren cirílico ni CJK: se sustituyen por fuentes que sí. */
+html[lang='ru'] {
+  --f-display: 'Inter', system-ui, sans-serif;
+  --f-pixel: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+}
+
+html[lang='ja'] {
+  --f-display: 'Noto Sans JP', 'Inter', system-ui, sans-serif;
+  --f-body: 'Noto Sans JP', 'Inter', system-ui, sans-serif;
+  --f-pixel: 'Noto Sans JP', 'JetBrains Mono', monospace;
+  --f-mono: 'JetBrains Mono', 'Noto Sans JP', ui-monospace, monospace;
+}
+
+html[lang='zh'] {
+  --f-display: 'Noto Sans SC', 'Inter', system-ui, sans-serif;
+  --f-body: 'Noto Sans SC', 'Inter', system-ui, sans-serif;
+  --f-pixel: 'Noto Sans SC', 'JetBrains Mono', monospace;
+  --f-mono: 'JetBrains Mono', 'Noto Sans SC', ui-monospace, monospace;
+}
+
+/* En CJK el espaciado negativo de los titulares superpone los trazos */
+html[lang='ja'] body *,
+html[lang='zh'] body * {
+  letter-spacing: 0;
+}
+
+.sec-head__title,
+.dd__title,
+.comp__name,
+.award__title {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}

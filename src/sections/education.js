@@ -1,5 +1,6 @@
 import { education, certificates } from '../data.js';
 import { esc, pad2, sectionHead } from '../core/dom.js';
+import { t } from '../i18n/index.js';
 
 function degreeProgress(period) {
   const [from, to] = period.split('–').map((y) => parseInt(y, 10));
@@ -15,7 +16,7 @@ export function renderEducation() {
       const pct = degreeProgress(e.period);
       return `
       <article class="degree corners" data-reveal>
-        <p class="mono dim">Educación académica</p>
+        <p class="mono dim">${esc(t('edu.academic'))}</p>
         <p class="degree__years" aria-label="${esc(e.period)}">
           <span>${esc(from)}</span><i aria-hidden="true"></i><span>${esc(to)}</span>
         </p>
@@ -38,7 +39,7 @@ export function renderEducation() {
       (c, i) => `
       <li class="cert" data-reveal data-cursor>
         <span class="cert__no">${pad2(i + 1)}</span>
-        <span class="cert__name">${esc(c.name)}${c.award ? ' <span class="flag">Beca</span>' : ''}</span>
+        <span class="cert__name">${esc(c.name)}${c.award ? ` <span class="flag">${esc(t('edu.scholarship'))}</span>` : ''}</span>
         <span class="cert__issuer">${esc(c.issuer)}</span>
         <span class="cert__date">${esc(c.date || '—')}</span>
       </li>`,
@@ -48,14 +49,14 @@ export function renderEducation() {
   return `
   <section class="section education" id="formacion" aria-labelledby="formacion-title">
     <div class="wrap">
-      ${sectionHead('02', 'Formación', `Educación<br>${pad2(certificates.length)} certificaciones`).replace('<h2 ', '<h2 id="formacion-title" ')}
+      ${sectionHead('02', t('nav.education'), `${esc(t('edu.meta_a'))}<br>${esc(t('edu.meta_b', { n: pad2(certificates.length) }))}`).replace('<h2 ', '<h2 id="formacion-title" ')}
 
       <div class="education__grid">
         <div class="education__degrees">${degrees}</div>
 
         <div class="education__certs">
           <p class="cert cert--head mono dim" aria-hidden="true">
-            <span>N.º</span><span>Certificación</span><span>Emisor</span><span>Año</span>
+            <span>${esc(t('edu.col_no'))}</span><span>${esc(t('edu.col_cert'))}</span><span>${esc(t('edu.col_issuer'))}</span><span>${esc(t('edu.col_year'))}</span>
           </p>
           <ol>${rows}</ol>
         </div>

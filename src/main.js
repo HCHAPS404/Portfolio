@@ -4,9 +4,12 @@ import './styles/hero.css';
 import './styles/sections.css';
 import './styles/contact.css';
 import './styles/extras.css';
+import './styles/skills.css';
+import './styles/i18n.css';
 
-import { profile, skills, sections, asset } from './data.js';
+import { initData, profile, skills, sections, asset } from './data.js';
 import { $, $$, esc } from './core/dom.js';
+import { detectLang, setupLang, consumeSwitch, t } from './i18n/index.js';
 import { renderChrome, initChrome, boot } from './core/chrome.js';
 import { initScroll, initMotion, lockScroll } from './core/motion.js';
 
@@ -32,7 +35,7 @@ function sectionRule(id) {
   return `
   <div class="rule" aria-hidden="true">
     <div class="wrap rule__inner">
-      <span class="rule__label"><b>↓</b> Siguiente — ${esc(sections[index].label)}</span>
+      <span class="rule__label"><b>↓</b> ${esc(t('rule.next', { section: sections[index].label }))}</span>
       <span class="rule__scale"><i class="rule__marker"></i></span>
       <span class="rule__code">${String(index).padStart(2, '0')} / ${String(total).padStart(2, '0')}</span>
     </div>
@@ -92,14 +95,51 @@ function initVisuals() {
   $$('.comp__canvas').forEach((canvas) => (factories[canvas.dataset.visual] ?? createTerrain)(canvas));
 }
 
+/** Título, descripción y etiquetas para compartir, en el idioma elegido. */
+function applyDocumentMeta() {
+  document.title = t('meta.title');
+  const set = (selector, value) => $(selector)?.setAttribute('content', value);
+  set('meta[name="description"]', t('meta.description'));
+  set('meta[property="og:title"]', t('meta.og_title'));
+  set('meta[property="og:description"]', t('meta.og_description'));
+  $('.skip-link').textContent = t('a11y.skip');
+}
+
+/** Tipografías de alfabetos que las fuentes base no cubren (se piden solo si hacen falta). */
+const EXTRA_FONTS = {
+  ru: 'Inter:wght@500;700',
+  ja: 'Noto+Sans+JP:wght@500;700',
+  zh: 'Noto+Sans+SC:wght@500;700',
+};
+
+function loadScriptFonts(lang) {
+  const family = EXTRA_FONTS[lang];
+  if (!family) return;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = `https://fonts.googleapis.com/css2?family=${family}&display=swap`;
+  document.head.append(link);
+}
+
 async function start() {
+  const lang = await setupLang(detectLang());
+  initData();
+  applyDocumentMeta();
+  loadScriptFonts(lang);
+
+  const { switching, scroll } = consumeSwitch();
   render();
   initChrome({ onMenuToggle: lockScroll });
   initScroll();
   initVisuals();
-  await boot();
+  await boot({ skip: switching });
   document.documentElement.classList.add('is-ready');
   initMotion();
+
+  // Tras cambiar de idioma se vuelve al punto donde estaba la lectura
+  if (switching && scroll > 0) {
+    requestAnimationFrame(() => window.scrollTo(0, scroll));
+  }
 }
 
 start();

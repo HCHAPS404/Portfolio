@@ -325,3 +325,52 @@ body::before {
     animation: none;
   }
 }
+
+/* ---------- Medalla del bloque de puesto ---------- */
+.comp__flag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  position: relative;
+  overflow: hidden;
+}
+
+.comp__medal {
+  flex: none;
+  width: clamp(4.6rem, 3rem + 5vw, 7.6rem);
+}
+
+.medal {
+  display: block;
+  width: 100%;
+  height: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.medal__spin {
+  transform-box: view-box;
+  transform-origin: 50px 50px;
+  animation: sigil-spin 46s linear infinite;
+}
+
+.medal__spin--rev {
+  animation-duration: 30s;
+  animation-direction: reverse;
+}
+
+.medal__no {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 40px;
+  fill: currentColor;
+  stroke: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .medal__spin {
+    animation: none;
+  }
+}

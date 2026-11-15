@@ -1,6 +1,8 @@
 import { profile } from '../data.js';
 import { esc, sectionHead } from '../core/dom.js';
+import { t } from '../i18n/index.js';
 
+// Nombres propios: no se traducen
 const LINK_LABELS = {
   web: 'helmutchs.com',
   github: 'GitHub',
@@ -8,7 +10,7 @@ const LINK_LABELS = {
 };
 
 export function renderAbout() {
-  const tags = profile.tags.map((t) => `<li class="tag">${esc(t)}</li>`).join('');
+  const tags = profile.tags.map((tag) => `<li class="tag">${esc(tag)}</li>`).join('');
 
   const languages = profile.languages
     .map(
@@ -31,12 +33,12 @@ export function renderAbout() {
   return `
   <section class="section about" id="perfil" aria-labelledby="perfil-title">
     <div class="wrap">
-      ${sectionHead('01', 'Perfil', '').replace('<h2 ', '<h2 id="perfil-title" ')}
+      ${sectionHead('01', t('nav.profile'), '').replace('<h2 ', '<h2 id="perfil-title" ')}
 
       <div class="about__grid">
         <figure class="about__figure corners" data-reveal>
           <div class="about__frame">
-            <canvas class="about__canvas" role="img" aria-label="Retrato de ${esc(profile.name)} dibujado con caracteres ASCII"></canvas>
+            <canvas class="about__canvas" role="img" aria-label="${esc(t('about.portrait_alt', { name: profile.name }))}"></canvas>
             <span class="about__scanline" aria-hidden="true"></span>
           </div>
         </figure>
@@ -46,7 +48,7 @@ export function renderAbout() {
           <ul class="about__tags" data-reveal>${tags}</ul>
 
           <div class="about__langs">
-            <h3 class="mono dim" data-reveal>Idiomas / ${String(profile.languages.length).padStart(2, '0')}</h3>
+            <h3 class="mono dim" data-reveal>${esc(t('about.langs'))} / ${String(profile.languages.length).padStart(2, '0')}</h3>
             <ul>${languages}</ul>
           </div>
 

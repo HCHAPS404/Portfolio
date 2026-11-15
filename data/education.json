@@ -8,17 +8,79 @@
     }
   ],
   "certificates": [
-    { "name": "Diseño y Ensamble Profesional de PCB", "issuer": "UDFJC", "date": "2023" },
-    { "name": "Altium Designer", "issuer": "Altium Designer Software", "date": "2026" },
-    { "name": "Altium Global Scholarship Program", "issuer": "Altium", "date": "", "award": true },
-    { "name": "Grad to Career Program", "issuer": "Altium Designer", "date": "", "award": true },
-    { "name": "AI Developer", "issuer": "IBM", "date": "2026" },
-    { "name": "Data Science Professional", "issuer": "IBM", "date": "2026" },
-    { "name": "RAG & Agentic AI", "issuer": "IBM", "date": "2026" },
-    { "name": "JavaScript Backend Developer", "issuer": "IBM", "date": "2026" },
-    { "name": "AI & ML Engineering", "issuer": "Microsoft", "date": "2026" },
-    { "name": "Advanced Data Analytics", "issuer": "Google", "date": "2026" },
-    { "name": "Data Engineering", "issuer": "DeepLearning.AI", "date": "2026" },
-    { "name": "Teledetección y Drones", "issuer": "ESRI Colombia", "date": "2026" }
+    {
+      "id": "pcb",
+      "name": "Diseño y Ensamble Profesional de PCB",
+      "issuer": "UDFJC",
+      "date": "2023"
+    },
+    {
+      "id": "altium",
+      "name": "Altium Designer",
+      "issuer": "Altium Designer Software",
+      "date": "2026"
+    },
+    {
+      "id": "altium-scholarship",
+      "name": "Altium Global Scholarship Program",
+      "issuer": "Altium",
+      "date": "",
+      "award": true
+    },
+    {
+      "id": "altium-grad",
+      "name": "Grad to Career Program",
+      "issuer": "Altium Designer",
+      "date": "",
+      "award": true
+    },
+    {
+      "id": "ibm-ai",
+      "name": "AI Developer",
+      "issuer": "IBM",
+      "date": "2026"
+    },
+    {
+      "id": "ibm-ds",
+      "name": "Data Science Professional",
+      "issuer": "IBM",
+      "date": "2026"
+    },
+    {
+      "id": "ibm-rag",
+      "name": "RAG & Agentic AI",
+      "issuer": "IBM",
+      "date": "2026"
+    },
+    {
+      "id": "ibm-js",
+      "name": "JavaScript Backend Developer",
+      "issuer": "IBM",
+      "date": "2026"
+    },
+    {
+      "id": "ms-ai",
+      "name": "AI & ML Engineering",
+      "issuer": "Microsoft",
+      "date": "2026"
+    },
+    {
+      "id": "google-da",
+      "name": "Advanced Data Analytics",
+      "issuer": "Google",
+      "date": "2026"
+    },
+    {
+      "id": "dl-de",
+      "name": "Data Engineering",
+      "issuer": "DeepLearning.AI",
+      "date": "2026"
+    },
+    {
+      "id": "esri",
+      "name": "Teledetección y Drones",
+      "issuer": "ESRI Colombia",
+      "date": "2026"
+    }
   ]
 }

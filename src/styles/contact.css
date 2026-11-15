@@ -40,7 +40,7 @@
   display: inline-block;
   font-family: var(--f-display);
   font-weight: 700;
-  font-size: clamp(3rem, 19vw, 17.5rem);
+  font-size: clamp(2.6rem, calc(152vw / var(--chars, 8)), 17.5rem);
   line-height: 0.82;
   letter-spacing: -0.06em;
   text-transform: uppercase;
@@ -152,50 +152,84 @@
   color: var(--c-ink);
 }
 
-/* Redes: cuadrícula de iconos, un cuadro por red */
+/* Redes: una fila por red, con el icono a la izquierda del texto */
 .contact__channels {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  border: 3px solid var(--c-accent-ink);
-}
-
-.contact__channels li {
-  border: 0 solid var(--c-accent-ink);
-}
-
-.contact__channels li:nth-child(n + 4) {
-  border-top-width: 3px;
-}
-
-.contact__channels li:not(:nth-child(3n + 1)) {
-  border-left-width: 3px;
+  border-bottom: 3px solid var(--c-accent-ink);
 }
 
 .channel {
   display: grid;
-  place-items: center;
-  aspect-ratio: 1 / 0.82;
-  color: var(--c-accent-ink);
-  transition: background var(--dur-snap), color var(--dur-snap);
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: 0.9rem 0.6rem;
+  border-top: 3px solid var(--c-accent-ink);
+  transition: background var(--dur-snap), color var(--dur-snap), padding var(--dur-snap) var(--ease-out);
 }
 
 .channel__icon {
-  width: clamp(2.2rem, 1.4rem + 2.6vw, 3.4rem);
+  display: grid;
+  place-items: center;
+  width: clamp(2.6rem, 2rem + 1.6vw, 3.4rem);
+  aspect-ratio: 1;
+  border: 2px solid currentColor;
+  transition: background var(--dur-snap), color var(--dur-snap), border-color var(--dur-snap);
+}
+
+.channel__icon svg {
+  width: 52%;
   height: auto;
   fill: currentColor;
   transition: transform 0.45s var(--ease-out);
+}
+
+.channel__text {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.channel__label {
+  font-family: var(--f-pixel);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+}
+
+.channel__handle {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: var(--fs-lg);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.channel__arrow {
+  font-size: 1.2rem;
+  transition: transform 0.4s var(--ease-out);
 }
 
 .channel:hover,
 .channel:focus-visible {
   background: var(--c-accent-ink);
   color: var(--c-ink);
+  padding-left: 1.2rem;
 }
 
-.channel:hover .channel__icon,
-.channel:focus-visible .channel__icon {
-  transform: scale(1.14) rotate(-4deg);
+.channel:hover .channel__icon {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: var(--c-accent-ink);
+}
+
+.channel:hover .channel__icon svg {
+  transform: scale(1.12) rotate(-5deg);
+}
+
+.channel:hover .channel__arrow {
+  transform: translate(4px, -4px);
 }
 
 /* ---------- Pie ---------- */

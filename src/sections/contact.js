@@ -1,5 +1,6 @@
 import { profile } from '../data.js';
 import { esc } from '../core/dom.js';
+import { t } from '../i18n/index.js';
 
 // Iconos de marca (trazados de simple-icons, dominio público CC0), incrustados para no
 // depender del paquete. LinkedIn ya no está en esa colección y el globo es propio.
@@ -17,8 +18,9 @@ const ICONS = {
     'M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z',
 };
 
+// Nombres propios y usuarios no se traducen; "Sitio web" sí (clave ch.web).
 const CHANNELS = [
-  ['web', 'Sitio web', 'helmutchs.com'],
+  ['web', null, 'helmutchs.com'],
   ['linkedin', 'LinkedIn', 'Helmut Chaparro Sandoval'],
   ['github', 'GitHub', '@HCHAPS404'],
   ['instagram', 'Instagram', '@divisum.hell'],
@@ -26,34 +28,53 @@ const CHANNELS = [
   ['x', 'X', '@HCHAPS404'],
 ];
 
+/** Largo visual del titular: los caracteres CJK y cirílicos ocupan más que los latinos. */
+function visualLength(text) {
+  let n = 0;
+  for (const ch of text) {
+    const code = ch.codePointAt(0);
+    n += code >= 0x2e80 ? 1.75 : code >= 0x400 && code <= 0x4ff ? 1.3 : 1; // CJK, cirilico, latino
+  }
+  return Math.max(8, n);
+}
+
 export function renderContact() {
   const email = profile.links.email;
+  const title = t('contact.title');
   const channels = CHANNELS.filter(([key]) => profile.links[key])
-    .map(
-      ([key, label, handle]) => `
+    .map(([key, name, handle]) => {
+      const label = name ?? t('ch.web');
+      return `
       <li>
-        <a class="channel" href="${esc(profile.links[key])}" target="_blank" rel="noopener" data-cursor aria-label="${esc(label)}: ${esc(handle)}" title="${esc(handle)}">
-          <svg class="channel__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${ICONS[key]}" fill-rule="evenodd"/></svg>
+        <a class="channel" href="${esc(profile.links[key])}" target="_blank" rel="noopener" data-cursor aria-label="${esc(label)}: ${esc(handle)}">
+          <span class="channel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="${ICONS[key]}" fill-rule="evenodd"/></svg>
+          </span>
+          <span class="channel__text">
+            <span class="channel__label">${esc(label)}</span>
+            <span class="channel__handle">${esc(handle)}</span>
+          </span>
+          <span class="channel__arrow" aria-hidden="true">↗</span>
         </a>
-      </li>`,
-    )
+      </li>`;
+    })
     .join('');
 
   return `
   <section class="contact" id="contacto" aria-labelledby="contacto-title">
     <div class="wrap contact__inner">
-      <p class="contact__kicker mono"><span>08 / Contacto</span><span>${esc(profile.availability)} para nuevos proyectos</span></p>
+      <p class="contact__kicker mono"><span>08 / ${esc(t('nav.contact'))}</span><span>${esc(t('contact.availability'))}</span></p>
 
-      <h2 class="contact__title" id="contacto-title" data-glitch="Hablemos">Hablemos</h2>
+      <h2 class="contact__title" id="contacto-title" data-glitch="${esc(title)}" style="--chars:${visualLength(title).toFixed(2)}">${esc(title)}</h2>
 
       <div class="contact__grid">
         <div class="contact__mail">
-          <p class="mono">Correo directo</p>
+          <p class="mono">${esc(t('contact.mail'))}</p>
           <a class="contact__email" href="mailto:${esc(email)}" data-cursor>${esc(email)}</a>
           <div class="contact__actions">
-            <a class="btn btn--ink" href="mailto:${esc(email)}" data-cursor data-magnetic>Escribir correo <span class="btn__arrow" aria-hidden="true">↗</span></a>
+            <a class="btn btn--ink" href="mailto:${esc(email)}" data-cursor data-magnetic>${esc(t('contact.write'))} <span class="btn__arrow" aria-hidden="true">↗</span></a>
             <button class="btn btn--line" type="button" data-copy="${esc(email)}" data-cursor>
-              <span data-copy-label>Copiar dirección</span>
+              <span data-copy-label>${esc(t('contact.copy'))}</span>
             </button>
           </div>
           <p class="sr-only" role="status" data-copy-status></p>
@@ -78,7 +99,7 @@ export function renderFooter() {
     <p class="footer__mark" aria-hidden="true">${mark}</p>
     <div class="wrap footer__inner mono">
       <span>© ${new Date().getFullYear()} ${esc(profile.name)}</span>
-      <a href="#inicio" data-cursor>Volver arriba ↑</a>
+      <a href="#inicio" data-cursor>${esc(t('footer.top'))}</a>
     </div>
   </footer>`;
 }

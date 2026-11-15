@@ -1,5 +1,6 @@
 import { awards } from '../data.js';
 import { esc, pad2, sectionHead } from '../core/dom.js';
+import { t } from '../i18n/index.js';
 
 export function renderAwards() {
   const rows = awards
@@ -21,7 +22,7 @@ export function renderAwards() {
   return `
   <section class="section awards" id="premios" aria-labelledby="premios-title">
     <div class="wrap">
-      ${sectionHead('07', 'Premios', `Reconocimientos y becas<br>${pad2(awards.length)} registros`).replace('<h2 ', '<h2 id="premios-title" ')}
+      ${sectionHead('07', t('nav.awards'), `${esc(t('awards.meta_a'))}<br>${esc(t('awards.meta_b', { n: pad2(awards.length) }))}`).replace('<h2 ', '<h2 id="premios-title" ')}
       <ol class="awards__list">${rows}</ol>
     </div>
   </section>`;

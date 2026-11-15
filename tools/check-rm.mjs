@@ -18,7 +18,12 @@ await page.screenshot({ path: 'renders/rm-experiencia.png' });
 // Interacciones: acordeón, filtro y menú móvil
 await page.click('.xp:nth-child(2) .xp__toggle');
 const opened = await page.$eval('.xp:nth-child(2)', (el) => el.classList.contains('is-open'));
-await page.click('.tools__tab:nth-child(3)');
+await page.click('.tools__cat[data-filter="embedded"]');
 const count = await page.$eval('[data-tools-count]', (el) => el.textContent);
-console.log(JSON.stringify({ errors, hiddenElements: hidden, bootRemoved: !boot, accordionOpens: opened, toolsCountAfterFilter: count }, null, 2));
+// Bloques de dominio: abrir y cerrar sin animación
+await page.click('.domain[data-domain="A"] .domain__open');
+const domainOpen = await page.$eval('.domain[data-domain="A"]', (el) => el.classList.contains('is-open') && !el.querySelector('.domain__detail').hidden);
+await page.click('.domain.is-open .domain__close');
+const domainClosed = await page.$eval('.domain[data-domain="A"]', (el) => !el.classList.contains('is-open'));
+console.log(JSON.stringify({ errors, hiddenElements: hidden, bootRemoved: !boot, accordionOpens: opened, toolsCountAfterFilter: count, domainOpen, domainClosed }, null, 2));
 await browser.close();

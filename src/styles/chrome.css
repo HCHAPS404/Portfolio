@@ -413,3 +413,121 @@
     transition: none;
   }
 }
+
+/* ---------- Selector de idioma ---------- */
+.langsel {
+  position: relative;
+}
+
+.langsel__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  padding: 0.55em 0.75em;
+  font-family: var(--f-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--c-line-strong);
+  transition: background var(--dur-snap), color var(--dur-snap), border-color var(--dur-snap);
+}
+
+.langsel__btn:hover,
+.langsel.is-open .langsel__btn {
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+  color: var(--c-bg);
+}
+
+.langsel__globe {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+
+.langsel__chev {
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.35s var(--ease-out);
+}
+
+.langsel.is-open .langsel__chev {
+  margin-top: 3px;
+  transform: rotate(225deg);
+}
+
+.langsel__list {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  z-index: 120;
+  display: grid;
+  min-width: 13rem;
+  padding: 0.35rem;
+  background: var(--c-bg-2);
+  border: 1px solid var(--c-line-strong);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  animation: lang-in 0.35s var(--ease-out) both;
+}
+
+.langsel__list[hidden] {
+  display: none;
+}
+
+@keyframes lang-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.langsel__opt {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  font-family: var(--f-body);
+  font-size: var(--fs-sm);
+  text-align: left;
+  letter-spacing: 0;
+  text-transform: none;
+  transition: background var(--dur-snap), color var(--dur-snap);
+}
+
+.langsel__code {
+  width: 1.9rem;
+  font-family: var(--f-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.08em;
+  color: var(--c-accent);
+  transition: color var(--dur-snap);
+}
+
+.langsel__opt:hover,
+.langsel__opt:focus-visible {
+  background: var(--c-ink);
+  color: var(--c-bg);
+}
+
+.langsel__opt:hover .langsel__code,
+.langsel__opt:focus-visible .langsel__code {
+  color: var(--c-accent-ink);
+}
+
+.langsel__opt[aria-current='true'] {
+  font-weight: 500;
+  box-shadow: inset 2px 0 0 var(--c-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .langsel__list {
+    animation: none;
+  }
+}
