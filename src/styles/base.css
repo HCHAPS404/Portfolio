@@ -333,13 +333,20 @@ button {
   }
 }
 
-/* ---------- Cambio de idioma: fundido breve antes de recargar ---------- */
-body {
-  transition: opacity 0.25s ease;
+/* ---------- Cambio de idioma: baja una cortina antes de recargar ---------- */
+html::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 390;
+  background: var(--c-bg);
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.48s var(--ease-io);
+  pointer-events: none;
 }
 
-.is-switching body {
-  opacity: 0;
+html.is-switching::after {
+  clip-path: inset(0 0 0 0);
 }
 
 /* ---------- Tipografías por alfabeto ---------- */

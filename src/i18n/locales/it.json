@@ -7,8 +7,14 @@
     "about.portrait_alt": "Ritratto di {name} disegnato con caratteri ASCII",
     "awards.meta_a": "Riconoscimenti e borse di studio",
     "awards.meta_b": "{n} voci",
+    "boot.switching": "Cambio lingua in corso",
     "boot.tagline": "Portfolio · {year}",
+    "ch.github": "GitHub",
+    "ch.instagram": "Instagram",
+    "ch.linkedin": "LinkedIn",
+    "ch.tiktok": "TikTok",
     "ch.web": "Sito web",
+    "ch.x": "X",
     "comp.count_one": "{n} voce",
     "comp.count_other": "{n} voci",
     "comp.meta_a": "Concorsi e hackathon",
@@ -31,17 +37,17 @@
     "edu.meta_b": "{n} certificazioni",
     "edu.scholarship": "Borsa",
     "footer.top": "Torna su ↑",
-    "hero.canvas_alt": "Scheda elettronica a tre strati in vista esplosa, con piste, via e componenti, lungo cui viaggiano impulsi di segnale",
+    "hero.canvas_alt": "Treno di ingranaggi con biella e pistone in movimento",
     "hero.cta_cv": "Scarica CV",
     "hero.cta_projects": "Vedi progetti",
     "hud.brand": "PORTFOLIO",
     "hud.close": "Chiudi",
-    "hud.home_aria": "{name} — home",
+    "hud.home_aria": "{name} — pagina iniziale",
     "hud.menu": "Menu",
     "lang.aria": "Lingua: {lang}. Cambia lingua",
     "lang.label": "Lingua",
     "meta.description": "Portfolio di Helmut Chaparro Sandoval: ingegnere elettronico e sviluppatore full-stack a Bogotá. Sistemi embedded, PCB, Edge AI, software e dati. Fondatore di DevKit Electronics S.A.S e proprietario e fondatore di Poimen Labs S.A.S.",
-    "meta.og_description": "Ingegnere elettronico e sviluppatore full-stack. Hardware, software e dati, end-to-end.",
+    "meta.og_description": "Ingegnere elettronico e sviluppatore full-stack. Hardware, software e dati, dall'inizio alla fine.",
     "meta.og_title": "Helmut Chaparro Sandoval — Portfolio",
     "meta.title": "Helmut Chaparro Sandoval — Ingegnere Elettronico e Sviluppatore Full-Stack",
     "nav.awards": "Premi",
@@ -49,21 +55,32 @@
     "nav.contact": "Contatti",
     "nav.education": "Formazione",
     "nav.experience": "Esperienza",
-    "nav.home": "Home",
+    "nav.home": "Inizio",
     "nav.profile": "Profilo",
     "nav.projects": "Progetti",
     "nav.skills": "Competenze",
+    "proj.github": "GitHub",
+    "proj.handle": "@HCHAPS404",
     "proj.meta_a": "{n} repository",
     "proj.meta_b": "In sviluppo attivo",
     "proj.more": "Vedi tutto il codice",
     "proj.more_aria": "Vedi tutti i repository su GitHub",
     "proj.open_aria": "{name} — apri il repository su GitHub",
+    "proj.path": "github/{name}",
     "rule.next": "Avanti — {section}",
     "skills.all": "Tutti",
     "skills.close": "Chiudi",
+    "skills.code.data": "IA",
+    "skills.code.datastore": "DB",
+    "skills.code.embedded": "EMB",
+    "skills.code.ops": "OPS",
+    "skills.code.pcb": "PCB",
+    "skills.code.robotics": "ROB",
+    "skills.code.software": "SW",
     "skills.detail.applied": "Applicato in",
     "skills.detail.certs": "Certificazioni",
     "skills.detail.competitions": "Competizioni",
+    "skills.detail.focus": "Focus",
     "skills.detail.tech": "Tecnologie",
     "skills.detail.tools": "Strumenti",
     "skills.expand": "Mostra dettaglio di {title}",
@@ -77,7 +94,7 @@
     "skills.search": "Cerca strumento",
     "skills.sec_a": "A — Ambiti di competenza",
     "skills.sec_b": "B — Strumenti",
-    "skills.sec_c": "C — Soft skill",
+    "skills.sec_c": "C — Competenze trasversali",
     "xp.detail_aria": "Dettaglio: {role}",
     "xp.meta_a": "{n} ruoli",
     "xp.meta_b": "{from} — {to}",
@@ -85,9 +102,11 @@
   },
   "data": {
     "profile": {
+      "name": "Helmut Chaparro Sandoval",
+      "shortName": "Helmut Chaparro",
       "availability": "Disponibile",
       "location": "Bogotá, Colombia",
-      "summary": "Ingegnere elettronico e sviluppatore full-stack a Bogotá. Da oltre sei anni costruisco soluzioni end-to-end: PCB, firmware embedded, backend .NET, Edge AI sul campo. Fondatore di DevKit Electronics S.A.S e proprietario e fondatore di Poimen Labs S.A.S.",
+      "summary": "Ingegnere elettronico e sviluppatore full-stack a Bogotá. Da oltre sei anni costruisco soluzioni complete, dall'inizio alla fine: PCB, firmware embedded, backend .NET, Edge AI sul campo. Fondatore di DevKit Electronics S.A.S e proprietario e fondatore di Poimen Labs S.A.S.",
       "about": "Da oltre sei anni lavoro a progetti che uniscono hardware, software e dati: dalle piattaforme per il commercio estero all'Edge AI, dalle FPGA alla robotica applicata.",
       "roles": [
         "Ingegnere Elettronico",
@@ -97,15 +116,15 @@
         "Progettista PCB",
         "Ingegnere robotico",
         "Edge AI",
-        "Ingegnere AI",
-        "Data analyst",
-        "Data engineer",
+        "Ingegnere di IA",
+        "Analista dei dati",
+        "Ingegnere dei dati",
         "Educatore STEM"
       ],
       "tags": [
         "Fondatore di DevKit Electronics S.A.S",
         "Proprietario e fondatore di Poimen Labs S.A.S",
-        "Presidente di branch IEEE",
+        "Presidente di sezione IEEE",
         "Leadership strategica",
         "Consulenza tecnica"
       ],
@@ -168,7 +187,7 @@
         "summary": "Azienda di educazione STEM da me fondata. Realizziamo hardware, software e curricula che funzionano in aule e laboratori reali.",
         "bullets": [
           "Guido strategia, operatività e prodotto nell'educazione ingegneristica e scientifica per bambini, ragazzi, universitari e professionisti.",
-          "Progetto e consegno soluzioni end-to-end: architettura curricolare, PCB multistrato, firmware embedded, software didattico, piattaforme web e attrezzature di laboratorio.",
+          "Progetto e consegno soluzioni complete, dall'inizio alla fine: architettura curricolare, PCB multistrato, firmware embedded, software didattico, piattaforme web e attrezzature di laboratorio.",
           "Ho costruito un portafoglio di corsi, kit di robotica e sistemi di laboratorio adottati da scuole e università.",
           "Guido team multidisciplinari tra elettronica, software e pedagogia.",
           "Trasformo ingegneria complessa (STM32, IoT, fabbricazione 3D, automazione) in esperienze di apprendimento."
@@ -194,13 +213,13 @@
           "Progetto hardware e software integrati per il campo: nodi sensore, acquisizione edge, controllo e livelli di connettività rurale.",
           "Sviluppo sistemi di monitoraggio e automazione a basso costo per colture e allevamento, con firmware a basso consumo energetico.",
           "Trasformo i dati di campo in visualizzazioni, allarmi e supporto decisionale per i produttori.",
-          "Gestisco l'intero ciclo: requisiti con i produttori, PCB e involucro, firmware, backend, pilot sul campo e miglioramento iterativo."
+          "Gestisco l'intero ciclo: requisiti con i produttori, PCB e involucro, firmware, backend, progetti pilota sul campo e miglioramento iterativo."
         ],
         "tags": [
           "AgriTech",
           "IoT",
           "Automazione",
-          "Embedded",
+          "Sistemi embedded",
           "Sensori",
           "Dati",
           "Software"
@@ -221,24 +240,24 @@
           ".NET",
           "C#",
           "SQL Server",
-          "REST API",
+          "API REST",
           "DIAN"
         ]
       },
       {
         "period": "Lug 2025 – Dic 2025",
         "role": "Docente di Robotica ed Elettronica",
-        "org": "COMPENSAR · Universidad COMPENSAR",
+        "org": "COMPENSAR · Università COMPENSAR",
         "type": "In presenza",
-        "summary": "Insegnare robotica e AI embedded per contribuire a colmare il divario educativo nelle discipline STEAM.",
+        "summary": "Insegnare robotica e IA embedded per contribuire a colmare il divario educativo nelle discipline STEAM.",
         "bullets": [
           "Ho guidato iniziative STEAM per ridurre il divario educativo nelle istituzioni pubbliche.",
-          "Ho progettato corsi di robotica, automazione e sistemi embedded con AI, integrati nei progetti curricolari.",
+          "Ho progettato corsi di robotica, automazione e sistemi embedded con IA, integrati nei progetti curricolari.",
           "Ho accompagnato gli studenti dal primo circuito a un prototipo autonomo funzionante."
         ],
         "tags": [
           "Robotica",
-          "AI embedded",
+          "IA embedded",
           "Arduino",
           "STEAM"
         ]
@@ -264,7 +283,7 @@
       {
         "period": "Mar 2021 – Nov 2023",
         "role": "Consulente di Ingegneria e Robotica Educativa",
-        "org": "Computadores para Educar · Ministerio de Educación",
+        "org": "Computer per Educare · Ministero dell'Istruzione",
         "type": "Tempo pieno · Ibrido",
         "summary": "Prototipi meccatronici e programmi STEAM arrivati a comunità vulnerabili in tutto il paese.",
         "bullets": [
@@ -283,13 +302,13 @@
       {
         "period": "Giu 2022 – Oggi",
         "role": "Incarichi di Presidenza e Staff",
-        "org": "IEEE · Universidad Distrital",
-        "type": "Part-time · Ibrido",
+        "org": "IEEE · Università Distrettuale",
+        "type": "Tempo parziale · Ibrido",
         "summary": "Guidare comunità studentesche in robotica, tecnologia biomedica e umanitaria.",
         "bullets": [
-          "Incarichi di presidenza nella branch studentesca IEEE, in RAS, EMBS e nel chapter Humanitarian Technologies.",
-          "Attualmente presiedo i chapter studenteschi RAS, SIGHT e CIS.",
-          "Organizzo eventi tecnici, workshop e attività che avvicinano gli studenti all'ingegneria reale."
+          "Incarichi di presidenza nella sezione studentesca IEEE, in RAS, EMBS e nel capitolo di Tecnologie Umanitarie.",
+          "Attualmente presiedo i capitoli studenteschi RAS, SIGHT e CIS.",
+          "Organizzo eventi tecnici, laboratori e attività che avvicinano gli studenti all'ingegneria reale."
         ],
         "tags": [
           "IEEE",
@@ -304,125 +323,268 @@
       "education": [
         {
           "degree": "Ingegneria Elettronica",
+          "institution": "Università Distrettuale Francisco José de Caldas",
           "status": "In corso"
         }
       ],
       "certificates": [
         {
-          "name": "Progettazione e Assemblaggio Professionale di PCB"
+          "name": "Progettazione e Assemblaggio Professionale di PCB",
+          "issuer": "UDFJC"
         },
         {
-          "name": "Altium Designer"
+          "name": "Altium Designer",
+          "issuer": "Altium Designer Software"
         },
         {
-          "name": "Altium Global Scholarship Program"
+          "name": "Programma Globale di Borse di Studio Altium",
+          "issuer": "Altium"
         },
         {
-          "name": "Grad to Career Program"
+          "name": "Programma Dalla Laurea alla Carriera",
+          "issuer": "Altium Designer"
         },
         {
-          "name": "AI Developer"
+          "name": "Sviluppatore di IA",
+          "issuer": "IBM"
         },
         {
-          "name": "Data Science Professional"
+          "name": "Scienza dei dati – livello professionale",
+          "issuer": "IBM"
         },
         {
-          "name": "RAG & Agentic AI"
+          "name": "RAG e IA agentica",
+          "issuer": "IBM"
         },
         {
-          "name": "JavaScript Backend Developer"
+          "name": "Sviluppatore backend JavaScript",
+          "issuer": "IBM"
         },
         {
-          "name": "AI & ML Engineering"
+          "name": "Ingegneria di IA e apprendimento automatico",
+          "issuer": "Microsoft"
         },
         {
-          "name": "Advanced Data Analytics"
+          "name": "Analisi avanzata dei dati",
+          "issuer": "Google"
         },
         {
-          "name": "Data Engineering"
+          "name": "Ingegneria dei dati",
+          "issuer": "DeepLearning.AI"
         },
         {
-          "name": "Telerilevamento e Droni"
+          "name": "Telerilevamento e Droni",
+          "issuer": "ESRI Colombia"
         }
       ]
     },
     "skills": {
       "tools": [
         {
-          "category": "PCB"
+          "category": "PCB",
+          "items": [
+            "Altium Designer",
+            "KiCAD",
+            "Cadence OrCAD",
+            "LTSpice",
+            "Multisim",
+            "Proteus"
+          ]
         },
         {
-          "category": "Embedded"
+          "category": "Sistemi embedded",
+          "items": [
+            "STM32CubeIDE",
+            "Keil MDK",
+            "ESP-IDF",
+            "Arduino IDE",
+            "PlatformIO",
+            "Vivado / Quartus"
+          ]
         },
         {
-          "category": "Software"
+          "category": "Software",
+          "items": [
+            "VS Code",
+            "Visual Studio",
+            ".NET / C#",
+            "Python",
+            "TypeScript",
+            "Node.js",
+            "React",
+            "Next.js"
+          ]
         },
         {
-          "category": "Dati e AI"
+          "category": "Dati e IA",
+          "items": [
+            "TensorFlow",
+            "PyTorch",
+            "OpenCV",
+            "MATLAB",
+            "Jupyter",
+            "R",
+            "Power BI",
+            "Apache Spark"
+          ]
         },
         {
-          "category": "Database"
+          "category": "Basi di dati",
+          "items": [
+            "SQL Server",
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Grafana",
+            "Azure DevOps"
+          ]
         },
         {
-          "category": "Operations"
+          "category": "Operazioni",
+          "items": [
+            "Git",
+            "Docker",
+            "Linux",
+            "Postman",
+            "Wireshark",
+            "MQTT / LoRaWAN"
+          ]
         },
         {
-          "category": "Robotica e design"
+          "category": "Robotica e progettazione",
+          "items": [
+            "ROS 2",
+            "Gazebo",
+            "Fusion 360",
+            "SolidWorks",
+            "Blender",
+            "Figma"
+          ]
         }
       ],
       "domains": [
         {
           "title": "Sistemi embedded",
-          "tech": "ARM · RTOS · STM32 · ESP32 · C/C++ · FreeRTOS · SoC"
+          "tech": "ARM · RTOS · STM32 · ESP32 · C/C++ · FreeRTOS · SoC",
+          "summary": "Firmware per microcontrollori ARM (STM32) ed ESP32, in C/C++ e su FreeRTOS quando il sistema lo richiede. È la base di quasi tutto ciò che costruisco: kit didattici, nodi sensore per il campo e robot.",
+          "focus": [
+            "Firmware in C/C++ su STM32 ed ESP32, con sistema operativo real-time quando serve",
+            "Basso consumo per nodi alimentati a batteria sul campo",
+            "Acquisizione da sensori, controllo e connettività IoT",
+            "Dal prototipo su breadboard alla scheda proprietaria"
+          ]
         },
         {
           "title": "Hardware e progettazione PCB",
-          "tech": "Altium Designer · KiCAD · EMI/EMC · LTSpice · Integrità del segnale"
+          "tech": "Altium Designer · KiCAD · EMI/EMC · LTSpice · Integrità del segnale",
+          "summary": "Progetto circuiti stampati dallo schema elettrico all'assemblaggio, in Altium Designer e KiCAD. Curo l'integrità del segnale e la compatibilità elettromagnetica fin dal layout, e simulo in LTSpice prima della produzione.",
+          "focus": [
+            "PCB multistrato per prodotti didattici e attrezzature di laboratorio",
+            "Scheda e involucro di nodi sensore per l'agricoltura",
+            "Simulazione dei circuiti prima della produzione",
+            "Borsista Altium in due programmi di progettazione professionale di PCB"
+          ]
         },
         {
           "title": "Sistemi elettrici e di potenza",
-          "tech": "Elettronica di potenza · Controllo · Protezione · Schemi elettrici · EMI/EMC"
+          "tech": "Elettronica di potenza · Controllo · Protezione · Schemi elettrici · EMI/EMC",
+          "summary": "Elettronica di potenza e sistemi elettrici: stadi di alimentazione, controllo e protezione, documentati in schemi elettrici chiari e pensati per convivere con il resto del circuito senza interferenze.",
+          "focus": [
+            "Stadi di alimentazione e di conversione dell'energia",
+            "Anelli di controllo e circuiti di protezione",
+            "Schemi elettrici e documentazione tecnica",
+            "Criteri di compatibilità elettromagnetica fin dalla progettazione"
+          ]
         },
         {
           "title": "Full-stack e software",
-          "tech": ".NET · C# · JavaScript · TypeScript · API REST · SQL Server · Azure DevOps"
+          "tech": ".NET · C# · JavaScript · TypeScript · API REST · SQL Server · Azure DevOps",
+          "summary": "Sviluppo software dall'inizio alla fine: .NET e C# lato server, JavaScript e TypeScript lato client e SQL Server per i dati. L'ho applicato in software aziendale per il commercio estero e nelle piattaforme delle mie aziende.",
+          "focus": [
+            "Servizi e API REST in .NET",
+            "Modelli di dati e query in SQL Server",
+            "Interfacce web con JavaScript e TypeScript",
+            "Lavoro in team agili e da remoto, con Azure DevOps"
+          ]
         },
         {
-          "title": "Data engineering e analisi dei dati",
-          "tech": "ETL · Pipeline · SQL · Power BI · R · Dashboard · Report"
+          "title": "Ingegneria e analisi dei dati",
+          "tech": "ETL · Pipeline · SQL · Power BI · R · Cruscotti · Reportistica",
+          "summary": "Porto i dati dalla loro origine fino alla decisione: estrazione e trasformazione, pipeline, query SQL e cruscotti in Power BI. In Poimen Labs trasformo le letture di campo in visualizzazioni, allarmi e supporto decisionale per i produttori.",
+          "focus": [
+            "Pipeline e processi di estrazione, trasformazione e caricamento",
+            "Analisi in SQL e R",
+            "Cruscotti e report in Power BI",
+            "Dati geospaziali: telerilevamento e droni"
+          ]
         },
         {
-          "title": "AI e machine learning",
-          "tech": "Python · TensorFlow · PyTorch · Edge AI · RAG · Computer vision"
+          "title": "IA e apprendimento automatico",
+          "tech": "Python · TensorFlow · PyTorch · Edge AI · RAG · Visione artificiale",
+          "summary": "Modelli di apprendimento automatico in Python con TensorFlow e PyTorch, con un interesse particolare per la loro esecuzione in edge, su hardware embedded. Lavoro anche con la visione artificiale e con sistemi di generazione aumentata dal recupero e agenti.",
+          "focus": [
+            "Inferenza edge su hardware proprietario",
+            "Visione artificiale",
+            "Generazione aumentata dal recupero (RAG) e agenti basati su modelli linguistici",
+            "Corsi di sistemi embedded con IA come docente"
+          ]
         },
         {
           "title": "Progettazione digitale e FPGA",
-          "tech": "VHDL · Verilog · Xilinx · Intel · RTL · Timing closure"
+          "tech": "VHDL · Verilog · Xilinx · Intel · RTL · Chiusura delle temporizzazioni",
+          "summary": "Progettazione digitale descritta in VHDL e Verilog per FPGA Xilinx e Intel: dalla descrizione a livello di trasferimento tra registri alla sintesi, alla simulazione e alla chiusura delle temporizzazioni.",
+          "focus": [
+            "Descrizione dell'hardware in VHDL e Verilog",
+            "Sintesi e implementazione in Vivado e Quartus",
+            "Simulazione e verifica",
+            "Analisi e chiusura delle temporizzazioni"
+          ]
         },
         {
           "title": "Robotica e automazione",
-          "tech": "ROS 2 · Gazebo · SLAM · Meccatronica · PID · Navigazione"
+          "tech": "ROS 2 · Gazebo · SLAM · Meccatronica · PID · Navigazione",
+          "summary": "Robotica e meccatronica, dal prototipo all'aula: dal 2021 progetto e programmo robot didattici e li uso per insegnare. Lavoro con ROS 2 e Gazebo per simulazione, navigazione e mappatura, e con il controllo PID sugli attuatori.",
+          "focus": [
+            "Prototipi meccatronici con metodologia STEAM",
+            "Kit e robot didattici per scuole e università",
+            "Simulazione e navigazione con ROS 2 e Gazebo",
+            "Presiedo il capitolo studentesco di Robotica e Automazione dell'IEEE"
+          ]
         },
         {
           "title": "Bioingegneria",
-          "tech": "Biosensori · Elaborazione dei segnali · Strumenti di laboratorio · Edge AI · IoT biomedicale"
+          "tech": "Biosensori · Elaborazione dei segnali · Strumenti di laboratorio · Edge AI · IoT biomedicale",
+          "summary": "Strumentazione per la misura di segnali biologici: biosensori, condizionamento ed elaborazione dei segnali, e dispositivi biomedicali connessi con intelligenza edge. È un interesse che coltivo anche nella comunità di Ingegneria in Medicina e Biologia dell'IEEE.",
+          "focus": [
+            "Biosensori e acquisizione di biosegnali",
+            "Elaborazione digitale dei segnali",
+            "Strumenti di laboratorio",
+            "Incarico di presidenza nel capitolo studentesco di Ingegneria in Medicina e Biologia dell'IEEE"
+          ]
         },
         {
           "title": "Cloud, DevOps e sistemi",
-          "tech": "Docker · Linux · CI/CD · Git · Azure · Monitoraggio · Infrastruttura"
+          "tech": "Docker · Linux · CI/CD · Git · Azure · Monitoraggio · Infrastruttura",
+          "summary": "L'infrastruttura che mantiene il software in funzione: container Docker, server Linux, integrazione e distribuzione continue e servizi su Azure, con il monitoraggio per sapere cosa succede in produzione.",
+          "focus": [
+            "Container con Docker",
+            "Amministrazione di sistemi Linux",
+            "Integrazione e distribuzione continue con Git",
+            "Monitoraggio e infrastruttura su Azure"
+          ]
         }
       ],
       "softSkills": [
         "Leadership strategica",
         "Comunicazione bilingue",
-        "Problem solving creativo",
+        "Risoluzione creativa dei problemi",
         "Pensiero analitico",
         "Team multidisciplinari",
         "Decisioni basate sui dati",
         "Adattabilità",
-        "Project management",
-        "Mentoring tecnico",
-        "Public speaking",
+        "Gestione dei progetti",
+        "Tutoraggio tecnico",
+        "Comunicazione in pubblico",
         "Pensiero critico",
         "Negoziazione",
         "Imprenditorialità",
@@ -441,43 +603,54 @@
         },
         {
           "name": "Hackathon GDG Cartagena",
-          "org": "Google Developer Group (GDG) Cartagena",
-          "summary": "Terzo posto all'hackathon organizzato da Google Developer Group (GDG) Cartagena.",
+          "org": "Gruppo di sviluppatori Google (GDG) di Cartagena",
+          "summary": "Terzo posto all'hackathon organizzato dal Gruppo di sviluppatori Google (GDG) di Cartagena.",
           "flag": "3º posto"
         }
       ],
       "proyectos": [
         {
+          "name": "STATUM",
           "status": "In sviluppo"
         },
         {
+          "name": "INZERM",
           "status": "In sviluppo"
         },
         {
+          "name": "NUREN",
           "status": "In sviluppo"
         },
         {
+          "name": "PRORA",
           "status": "In sviluppo"
         },
         {
+          "name": "SOUL",
           "status": "In sviluppo"
         },
         {
+          "name": "VERIK",
           "status": "In sviluppo"
         },
         {
+          "name": "VAK",
           "status": "In sviluppo"
         },
         {
+          "name": "NIRU",
           "status": "In sviluppo"
         },
         {
+          "name": "PROTOBOT",
           "status": "In sviluppo"
         },
         {
+          "name": "REDACT",
           "status": "In sviluppo"
         },
         {
+          "name": "VOXLU",
           "status": "In sviluppo"
         }
       ]
@@ -488,28 +661,28 @@
           "year": "2026",
           "title": "Sistema di allerta precoce per le frane",
           "org": "Hackathon nazionale · UNGRD × UNDP",
-          "desc": "Vincitore dell'hackathon nazionale dell'Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD) e del Programma delle Nazioni Unite per lo Sviluppo (UNDP), con un sistema di allerta precoce per crolli e frane.",
+          "desc": "Vincitore dell'hackathon nazionale dell'Unità Nazionale per la Gestione del Rischio di Disastri (UNGRD) e del Programma delle Nazioni Unite per lo Sviluppo (UNDP), con un sistema di allerta precoce per crolli e frane.",
           "flag": "1º posto"
         },
         {
           "year": "2026",
-          "title": "Altium Global Scholarship Program",
-          "org": "Altium Designer Software",
+          "title": "Programma Globale di Borse di Studio Altium",
+          "org": "Software Altium Designer",
           "desc": "Borsa di studio globale assegnata da Altium per l'eccellenza nella progettazione professionale di PCB.",
           "flag": "Borsa"
         },
         {
           "year": "2026",
-          "title": "Grad to Career Program",
+          "title": "Programma Dalla Laurea alla Carriera",
           "org": "Altium Designer",
-          "desc": "Borsa di sviluppo professionale nell'ambito del programma Grad to Career per giovani talenti della progettazione PCB.",
+          "desc": "Borsa di sviluppo professionale nell'ambito del programma Dalla Laurea alla Carriera per giovani talenti della progettazione PCB.",
           "flag": "Borsa"
         },
         {
           "year": "2022 – Oggi",
-          "title": "Presidenze IEEE e chapter studenteschi",
-          "org": "IEEE · Universidad Distrital",
-          "desc": "Presidente eletto della branch studentesca IEEE e dei chapter RAS, SIGHT e CIS, alla guida di iniziative di robotica, tecnologia umanitaria e intelligenza computazionale.",
+          "title": "Presidenze IEEE e capitoli studenteschi",
+          "org": "IEEE · Università Distrettuale",
+          "desc": "Presidente eletto della sezione studentesca IEEE e dei capitoli RAS, SIGHT e CIS, alla guida di iniziative di robotica, tecnologia umanitaria e intelligenza computazionale.",
           "flag": "Leadership"
         }
       ]

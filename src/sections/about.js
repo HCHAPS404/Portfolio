@@ -2,12 +2,8 @@ import { profile } from '../data.js';
 import { esc, sectionHead } from '../core/dom.js';
 import { t } from '../i18n/index.js';
 
-// Nombres propios: no se traducen
-const LINK_LABELS = {
-  web: 'helmutchs.com',
-  github: 'GitHub',
-  linkedin: 'LinkedIn',
-};
+// La dirección web es un identificador; los nombres de las redes salen de `ch.*`
+const LINK_KEYS = ['web', 'github', 'linkedin'];
 
 export function renderAbout() {
   const tags = profile.tags.map((tag) => `<li class="tag">${esc(tag)}</li>`).join('');
@@ -23,7 +19,7 @@ export function renderAbout() {
     )
     .join('');
 
-  const links = Object.entries(LINK_LABELS)
+  const links = LINK_KEYS.map((key) => [key, key === 'web' ? 'helmutchs.com' : t(`ch.${key}`)])
     .map(
       ([key, label]) =>
         `<a class="about__link" href="${esc(profile.links[key])}" target="_blank" rel="noopener" data-cursor>${esc(label)} <span aria-hidden="true">↗</span></a>`,

@@ -1,8 +1,8 @@
 /**
- * "Chrome" del sitio: arranque, barra superior con navegación y selector de idioma,
+ * "Chrome" del sitio: barra superior con navegación y selector de idioma,
  * menú móvil, riel de progreso y cursor personalizado.
  */
-import { sections, profile } from '../data.js';
+import { sections, profile, initials } from '../data.js';
 import { $, $$, esc, pad2, reduceMotion, finePointer } from './dom.js';
 import { t, LANGS, getLang, switchLang } from '../i18n/index.js';
 
@@ -16,25 +16,14 @@ export function renderChrome() {
     )
     .join('');
 
-  const initials = profile.name
-    .split(' ')
-    .map((w) => w[0])
-    .join('');
-
   const langOptions = LANGS.map(
     (l) => `
         <li><button class="langsel__opt" type="button" lang="${l.code}" data-lang-code="${l.code}"${l.code === current.code ? ' aria-current="true"' : ''} data-cursor>
-          <span class="langsel__code" aria-hidden="true">${l.code.toUpperCase()}</span><span class="langsel__name">${esc(l.native)}</span>
+          <span class="langsel__code" aria-hidden="true">${esc(l.short)}</span><span class="langsel__name">${esc(l.native)}</span>
         </button></li>`,
   ).join('');
 
   return `
-  <div class="boot" aria-hidden="true">
-    <pre class="boot__log"></pre>
-    <p class="boot__count"><span data-boot-count>000</span><i>%</i></p>
-    <span class="boot__bar"><i></i></span>
-  </div>
-
   <header class="hud">
     <a class="hud__brand" href="#inicio" aria-label="${esc(t('hud.home_aria', { name: profile.name }))}" data-cursor>
       <span class="hud__mark" aria-hidden="true"></span>${esc(initials)}<span class="red">/</span>${esc(t('hud.brand'))}
@@ -44,7 +33,7 @@ export function renderChrome() {
       <div class="langsel" data-lang>
         <button class="langsel__btn" type="button" aria-expanded="false" aria-controls="lang-list" aria-label="${esc(t('lang.aria', { lang: current.native }))}" data-cursor>
           <svg class="langsel__globe" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
-          <span class="langsel__current" aria-hidden="true">${current.code.toUpperCase()}</span>
+          <span class="langsel__current" aria-hidden="true">${esc(current.short)}</span>
           <i class="langsel__chev" aria-hidden="true"></i>
         </button>
         <ul class="langsel__list" id="lang-list" aria-label="${esc(t('lang.label'))}" hidden>${langOptions}
@@ -69,44 +58,6 @@ export function renderChrome() {
 
   <div class="cursor" aria-hidden="true"><i class="cursor__ring"></i><i class="cursor__dot"></i></div>
   <div class="grain" aria-hidden="true"></div>`;
-}
-
-/** Secuencia de arranque. Resuelve cuando el sitio queda a la vista. */
-export function boot({ skip = false } = {}) {
-  const el = $('.boot');
-  if (!el) return Promise.resolve();
-  if (reduceMotion || skip) {
-    el.remove();
-    return Promise.resolve();
-  }
-
-  const log = $('.boot__log', el);
-  const count = $('[data-boot-count]', el);
-  const bar = $('.boot__bar i', el);
-  const lines = [
-    profile.name.toUpperCase(),
-    t('boot.tagline', { year: new Date().getFullYear() }),
-  ];
-  const DURATION = 1350;
-
-  return new Promise((resolve) => {
-    const t0 = performance.now();
-    const step = (now) => {
-      const p = Math.min(1, (now - t0) / DURATION);
-      const shown = Math.ceil(p * lines.length);
-      log.textContent = lines.slice(0, shown).join('\n');
-      count.textContent = String(Math.round(p * 100)).padStart(3, '0');
-      bar.style.transform = `scaleX(${p})`;
-      if (p < 1) {
-        requestAnimationFrame(step);
-        return;
-      }
-      el.classList.add('is-done');
-      resolve();
-      setTimeout(() => el.remove(), 900);
-    };
-    requestAnimationFrame(step);
-  });
 }
 
 function initMenu(onToggle) {

@@ -1,402 +1,189 @@
 /**
- * Hackatón GDG Cartagena — bahía al atardecer.
+ * Hackatón GDG Cartagena — la ciudad amurallada en 3D, vista desde la bahía.
  *
- * Línea de horizonte inspirada en Cartagena de Indias (fortaleza, muralla almenada, Torre
- * del Reloj con su esfera en marcha, cúpula y campanario), un sol de franjas, un mar de
- * perfiles ondulados con reflejo, un velero de vela roja y gaviotas. En el cielo, una
- * constelación dibuja los corchetes "< • >" del logo de Google Developer Groups.
+ * Maqueta sólida de Cartagena de Indias: la Torre del Reloj con sus tres arcos
+ * y la esfera en marcha, la muralla almenada con garitas, casas coloniales, la
+ * cúpula y el campanario. Delante, un mar de malla que ondula y refleja el
+ * sol; un velero de vela roja cruza la bahía. En el cielo flotan, en volumen,
+ * los corchetes «< >» de Google Developer Groups, que giran sobre la ciudad.
  */
-import { fitCanvas, visibleLoop, reduceMotion, rng } from '../core/dom.js';
+import { scene, TAU } from './kit.js';
+import { Scene3D, orbit, chain, translate, rotY, rotX, rotZ, ngon } from './kit3d.js';
+import { rng } from '../core/dom.js';
 
-const BG = '#0f0f12';
-const INK = '237,235,230';
-const RED = '238,46,51';
+const CHEVRON = [[0.5, 0.66], [0.2, 0.66], [-0.52, 0], [0.2, -0.66], [0.5, -0.66], [-0.08, 0]];
+const HOUSES = [
+  [-6.0, 1.0, 1.5], [-5.0, 1.1, 1.9], [-3.85, 0.9, 1.6], [-2.9, 1.0, 2.1], [-1.8, 0.9, 1.7],
+  [1.75, 0.9, 1.8], [2.75, 1.0, 2.2], [5.9, 1.0, 1.7],
+];
 
-const TAU = Math.PI * 2;
+/** Arco de medio punto (polígono) para puertas y vanos. */
+function arch(w, h, seg = 8) {
+  const pts = [[-w / 2, 0], [w / 2, 0], [w / 2, h - w / 2]];
+  for (let k = 1; k < seg; k++) pts.push([Math.cos((k / seg) * Math.PI) * (w / 2), h - w / 2 + Math.sin((k / seg) * Math.PI) * (w / 2)]);
+  pts.push([-w / 2, h - w / 2]);
+  return pts;
+}
 
 export function createWaves(canvas) {
-  let ctx, W, H;
+  const S = new Scene3D();
   const R = rng(1533); // año de fundación de Cartagena
-  const stars = Array.from({ length: 46 }, () => ({ x: R(), y: R() * 0.62, s: 0.6 + R() * 1.4, p: R() * TAU, f: 0.6 + R() * 1.6 }));
-  const gulls = Array.from({ length: 4 }, (_, i) => ({ x: R(), y: 0.12 + R() * 0.2, v: 0.006 + R() * 0.006, size: 5 + R() * 4, p: R() * TAU + i }));
+  const stars = Array.from({ length: 60 }, () => ({ x: (R() - 0.5) * 26, y: 3.5 + R() * 7, p: R() * TAU, f: 0.6 + R() * 1.8 }));
+  const palms = [[-4.4, 0.75, 1.5], [-2.3, 0.7, 1.25], [2.3, 0.75, 1.4], [5.0, 0.7, 1.2], [3.4, -0.1, 1.0]];
+  const gulls = Array.from({ length: 5 }, (_, i) => ({ x: R(), y: 4.2 + R() * 1.6, z: -1 - R() * 3, v: 0.02 + R() * 0.02, p: R() * TAU + i }));
 
-  function resize() {
-    ({ ctx, width: W, height: H } = fitCanvas(canvas));
-  }
+  return scene(canvas, (ctx, W, H, t, ptr) => {
+    const cam = orbit({
+      yaw: Math.sin(t * 0.08) * 0.26 + ptr.x * 0.2,
+      pitch: 0.17 + ptr.y * 0.05,
+      scale: Math.min(W * 0.066, H * 0.098),
+      cx: W * 0.5,
+      cy: H * 0.63,
+      dist: 30,
+      target: [0, 1.9, 0],
+    });
+    S.reset();
 
-  const stroke = (alpha, width = 1) => {
-    ctx.strokeStyle = `rgba(${INK},${alpha})`;
-    ctx.lineWidth = width;
-  };
-
-  /** Contorno cerrado relleno con el color de fondo (tapa lo que queda detrás) y trazado. */
-  function solid(points, alpha = 0.9) {
-    ctx.beginPath();
-    ctx.moveTo(points[0][0], points[0][1]);
-    for (let i = 1; i < points.length; i++) ctx.lineTo(points[i][0], points[i][1]);
-    ctx.closePath();
-    ctx.fillStyle = BG;
-    ctx.fill();
-    stroke(alpha);
-    ctx.stroke();
-  }
-
-  /** Almenas a lo largo de un tramo de muralla. */
-  function battlements(x0, x1, y, h, step) {
-    const pts = [[x0, y]];
-    for (let x = x0; x < x1; x += step * 2) {
-      pts.push([x, y - h], [Math.min(x + step, x1), y - h], [Math.min(x + step, x1), y], [Math.min(x + step * 2, x1), y]);
-    }
-    return pts;
-  }
-
-  function skyline(horizon, t) {
-    const u = H * 0.01; // unidad vertical
-    const w = W * 0.01; // unidad horizontal
-
-    // Fortaleza (izquierda): terrazas escalonadas con almenas
-    const fort = [
-      [w * 3, horizon], [w * 8, horizon - u * 5], [w * 13, horizon - u * 5],
-      [w * 16, horizon - u * 9], [w * 22, horizon - u * 9], [w * 25, horizon - u * 6],
-      [w * 31, horizon - u * 6], [w * 34, horizon],
-    ];
-    solid(fort);
-    stroke(0.55);
-    ctx.beginPath();
-    for (let i = 0; i < 9; i++) {
-      const x = w * (16.6 + i * 0.62);
-      ctx.moveTo(x, horizon - u * 9);
-      ctx.lineTo(x, horizon - u * 10.2);
-    }
-    ctx.stroke();
-
-    // Muralla almenada
-    solid([...battlements(w * 33, w * 78, horizon - u * 3.2, u * 1.1, w * 0.55), [w * 78, horizon], [w * 33, horizon]], 0.8);
-
-    // Cúpula con tambor y linterna
-    const dx = w * 60;
-    const dr = w * 4.2;
-    const base = horizon - u * 3.2;
-    solid([[dx - dr, base], [dx - dr, base - u * 4], [dx + dr, base - u * 4], [dx + dr, base]]);
-    ctx.beginPath();
-    ctx.moveTo(dx - dr * 0.92, base - u * 4);
-    ctx.bezierCurveTo(dx - dr * 0.92, base - u * 11.5, dx + dr * 0.92, base - u * 11.5, dx + dr * 0.92, base - u * 4);
-    ctx.closePath();
-    ctx.fillStyle = BG;
-    ctx.fill();
-    stroke(0.9);
-    ctx.stroke();
-    solid([[dx - w * 0.7, base - u * 9.6], [dx - w * 0.7, base - u * 12.6], [dx + w * 0.7, base - u * 12.6], [dx + w * 0.7, base - u * 9.6]]);
-    ctx.beginPath();
-    ctx.moveTo(dx, base - u * 12.6);
-    ctx.lineTo(dx, base - u * 14.4);
-    ctx.moveTo(dx - w * 0.4, base - u * 13.6);
-    ctx.lineTo(dx + w * 0.4, base - u * 13.6);
-    stroke(0.9);
-    ctx.stroke();
-    // ventanas del tambor
-    ctx.beginPath();
-    for (let i = -2; i <= 2; i++) {
-      ctx.moveTo(dx + i * w * 1.5, base - u * 1.2);
-      ctx.lineTo(dx + i * w * 1.5, base - u * 3.2);
-    }
-    stroke(0.55);
-    ctx.stroke();
-
-    // Campanario esbelto
-    const bx = w * 69;
-    const bw = w * 2.4;
-    const bt = horizon - u * 14.5;
-    solid([[bx - bw, base], [bx - bw, bt], [bx + bw, bt], [bx + bw, base]]);
-    ctx.beginPath();
-    ctx.moveTo(bx - bw * 0.35, bt + u * 3.6);
-    ctx.lineTo(bx - bw * 0.35, bt + u * 1.8);
-    ctx.arc(bx, bt + u * 1.8, bw * 0.35, Math.PI, 0);
-    ctx.lineTo(bx + bw * 0.35, bt + u * 3.6);
-    stroke(0.7);
-    ctx.stroke();
-    solid([[bx - bw * 1.1, bt], [bx, bt - u * 3.4], [bx + bw * 1.1, bt]]);
-
-    // Torre del Reloj: cuerpo, arco, esfera con manecillas y remate
-    const tx = w * 47;
-    const tw = w * 3.6;
-    const tt = horizon - u * 19;
-    const tb = horizon - u * 2.2;
-    solid([[tx - tw, tb], [tx - tw, tt], [tx + tw, tt], [tx + tw, tb]]);
-    solid([[tx - tw * 1.18, tt], [tx - tw * 1.18, tt - u * 0.9], [tx + tw * 1.18, tt - u * 0.9], [tx + tw * 1.18, tt]]);
-    // Cuerpo superior más angosto
-    const t2 = tt - u * 6.5;
-    solid([[tx - tw * 0.78, tt - u * 0.9], [tx - tw * 0.78, t2], [tx + tw * 0.78, t2], [tx + tw * 0.78, tt - u * 0.9]]);
-    // Remate: cuello, cúpula y asta
-    solid([[tx - tw * 0.55, t2], [tx - tw * 0.55, t2 - u * 1.6], [tx + tw * 0.55, t2 - u * 1.6], [tx + tw * 0.55, t2]]);
-    ctx.beginPath();
-    ctx.moveTo(tx - tw * 0.5, t2 - u * 1.6);
-    ctx.bezierCurveTo(tx - tw * 0.5, t2 - u * 5.4, tx + tw * 0.5, t2 - u * 5.4, tx + tw * 0.5, t2 - u * 1.6);
-    ctx.closePath();
-    ctx.fillStyle = BG;
-    ctx.fill();
-    stroke(0.9);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(tx, t2 - u * 4.6);
-    ctx.lineTo(tx, t2 - u * 7);
-    stroke(0.9);
-    ctx.stroke();
-    ctx.fillStyle = `rgb(${RED})`;
-    ctx.fillRect(tx, t2 - u * 7, w * 1.1, u * 0.7);
-
-    // Arco de la puerta
-    ctx.beginPath();
-    ctx.moveTo(tx - tw * 0.42, tb);
-    ctx.lineTo(tx - tw * 0.42, tb - u * 4.4);
-    ctx.arc(tx, tb - u * 4.4, tw * 0.42, Math.PI, 0);
-    ctx.lineTo(tx + tw * 0.42, tb);
-    stroke(0.75);
-    ctx.stroke();
-
-    // Esfera del reloj
-    const cx = tx;
-    const cy = t2 + (tt - t2) * 0.5 - u * 0.2;
-    const cr = tw * 0.52;
-    ctx.beginPath();
-    ctx.arc(cx, cy, cr, 0, TAU);
-    ctx.fillStyle = BG;
-    ctx.fill();
-    stroke(0.95);
-    ctx.stroke();
-    ctx.beginPath();
-    for (let i = 0; i < 12; i++) {
-      const a = (i / 12) * TAU;
-      ctx.moveTo(cx + Math.cos(a) * cr * 0.78, cy + Math.sin(a) * cr * 0.78);
-      ctx.lineTo(cx + Math.cos(a) * cr * 0.95, cy + Math.sin(a) * cr * 0.95);
-    }
-    stroke(0.6);
-    ctx.stroke();
-    // Manecillas (la horaria y la minutera avanzan despacio; el segundero, vivo)
-    const sec = (t % 60) / 60;
-    const min = (t / 60) % 60 / 60;
-    const hour = (t / 3600) % 12 / 12;
-    const hand = (frac, len, width, color) => {
-      const a = frac * TAU - Math.PI / 2;
-      ctx.beginPath();
-      ctx.moveTo(cx, cy);
-      ctx.lineTo(cx + Math.cos(a) * cr * len, cy + Math.sin(a) * cr * len);
-      ctx.strokeStyle = color;
-      ctx.lineWidth = width;
-      ctx.stroke();
-    };
-    hand(hour + 0.31, 0.5, 1.4, `rgba(${INK},0.95)`);
-    hand(min + 0.55, 0.78, 1.1, `rgba(${INK},0.95)`);
-    hand(sec, 0.86, 0.9, `rgb(${RED})`);
-
-    // Ventanas de la torre
-    ctx.beginPath();
-    for (let i = 0; i < 3; i++) {
-      const wy = tt + u * (1.4 + i * 3.4);
-      ctx.moveTo(tx - tw * 0.5, wy);
-      ctx.lineTo(tx - tw * 0.5, wy + u * 1.8);
-      ctx.moveTo(tx + tw * 0.5, wy);
-      ctx.lineTo(tx + tw * 0.5, wy + u * 1.8);
-    }
-    stroke(0.5);
-    ctx.stroke();
-  }
-
-  function draw(now) {
-    const t = reduceMotion ? 9 : now / 1000;
-    const horizon = H * 0.5;
-    const small = W < 540;
-    ctx.clearRect(0, 0, W, H);
-    ctx.lineJoin = 'round';
-
-    // --- Estrellas dispersas
-    for (const s of stars) {
-      const tw = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(t * s.f + s.p));
-      ctx.fillStyle = `rgba(${INK},${(tw * 0.65).toFixed(3)})`;
-      ctx.fillRect(s.x * W, s.y * H, s.s, s.s);
+    /* --- Cielo: estrellas y sol de franjas tras la ciudad --- */
+    for (const s of stars) S.dot([s.x, s.y, 12], { a: 0.25 + 0.4 * (0.5 + 0.5 * Math.sin(t * s.f + s.p)), r: 0.8, layer: -9 });
+    const SUN = [2.6, 1.3, 11], SR = 3.3;
+    for (let k = 0; k < 26; k++) {
+      const y = -SR + ((k + 0.5) / 26) * SR * 2;
+      if (SUN[1] + y < 0.2) continue;
+      const half = Math.sqrt(SR * SR - y * y);
+      const gap = y < 0.6 ? 0.55 : 1;
+      S.line([SUN[0] - half, SUN[1] + y, SUN[2]], [SUN[0] + half, SUN[1] + y, SUN[2]], { a: 0.5 * gap, lw: 2.2, red: k % 5 === 2, layer: -8 });
     }
 
-    // --- Constelación "< • >" (corchetes de GDG)
-    const k = Math.min(W, H) * 0.095;
-    const cx = W * (small ? 0.3 : 0.27);
-    const cy = H * 0.2;
-    const star = [
-      [-1.0, 0], [-0.3, -0.7], [-0.3, 0.7],   // <
-      [0, 0],                                  // •
-      [1.0, 0], [0.3, -0.7], [0.3, 0.7],       // >
-    ].map(([x, y]) => [cx + x * k, cy + y * k]);
-    const lines = [[0, 1], [0, 2], [4, 5], [4, 6]];
-    stroke(0.28);
-    ctx.setLineDash([3, 4]);
-    ctx.beginPath();
-    for (const [a, b] of lines) {
-      ctx.moveTo(star[a][0], star[a][1]);
-      ctx.lineTo(star[b][0], star[b][1]);
+    /* --- Mar --- */
+    const wave = (x, z) => 0.07 * Math.sin(x * 1.25 + t * 1.3) + 0.05 * Math.sin(z * 2.1 + x * 0.6 - t * 1.1) + 0.03 * Math.sin(x * 3.1 - z * 1.3 + t * 2);
+    const MX = 30, MZ = 13, sx0 = -8.2, sx1 = 8.2, sz0 = -6.4, sz1 = -0.6;
+    const ddx = (sx1 - sx0) / MX, ddz = (sz1 - sz0) / MZ;
+    for (let j = 0; j < MZ; j++) {
+      for (let i = 0; i < MX; i++) {
+        const x = sx0 + i * ddx, z = sz0 + j * ddz;
+        const pts = [[x, wave(x, z), z], [x + ddx, wave(x + ddx, z), z], [x + ddx, wave(x + ddx, z + ddz), z + ddz], [x, wave(x, z + ddz), z + ddz]];
+        // Reflejo del sol: una franja que titila hacia el observador
+        const glint = Math.exp(-(((x - SUN[0] * 0.55) / 1.1) ** 2)) * (0.5 + 0.5 * Math.sin(z * 5 + t * 3 + i));
+        S.face(pts, [x, -9, z], { a: 0.1 + glint * 0.3, tone: 0.5 + glint * 1.3, layer: -4 });
+      }
     }
-    ctx.stroke();
-    ctx.setLineDash([]);
-    star.forEach(([x, y], i) => {
-      const glow = 0.55 + 0.45 * Math.sin(t * 1.4 + i * 0.9);
-      const isCore = i === 3;
-      ctx.fillStyle = isCore ? `rgba(${RED},${(0.65 + glow * 0.35).toFixed(2)})` : `rgba(${INK},${(0.55 + glow * 0.45).toFixed(2)})`;
-      const size = isCore ? 6 : 3.4;
-      ctx.fillRect(x - size / 2, y - size / 2, size, size);
-      if (isCore) {
-        ctx.strokeStyle = `rgba(${RED},${((1 - ((t * 0.5) % 1)) * 0.6).toFixed(3)})`;
-        const r = 5 + ((t * 0.5) % 1) * 16;
-        ctx.strokeRect(x - r, y - r, r * 2, r * 2);
+
+    /* --- Muelle y muralla --- */
+    S.box(translate(0, 0, 0), [-8.2, 8.2], [-0.3, 0.22], [-0.6, 3.4], { a: 0.5, tone: 0.6, layer: -3 });
+    for (const [a, b] of [[-7.4, -1.35], [1.35, 7.4]]) {
+      S.box(translate(0, 0, 0), [a, b], [0.22, 1.12], [-0.22, 0.34], { a: 0.75, tone: 0.95, bias: 0.6 });
+      S.box(translate(0, 0, 0), [a, b], [0.22, 0.42], [-0.34, -0.22], { a: 0.4, tone: 0.8, bias: 0.5 });
+      for (let x = a + 0.12; x < b - 0.2; x += 0.5) S.box(translate(0, 0, 0), [x, x + 0.26], [1.12, 1.32], [-0.22, -0.04], { a: 0.7, tone: 1.15 });
+      // Troneras
+      for (let x = a + 0.7; x < b - 0.4; x += 1.5) S.face([[x, 0.62, -0.224], [x + 0.2, 0.62, -0.224], [x + 0.16, 0.84, -0.224], [x + 0.04, 0.84, -0.224]], [x, 0.7, 1], { a: 0.5, tone: 0.12, bias: 0.3 });
+    }
+    // Baluartes con garita en los extremos
+    for (const x of [-7.4, 7.4]) {
+      S.lathe(translate(x, 0.22, -0.1), [[0.62, 0], [0.55, 1.05], [0.6, 1.1], [0.6, 1.2]], 10, { a: 0.75, tone: 1.0, bias: 0.3 });
+      S.lathe(translate(x, 1.2, -0.3), [[0.17, 0], [0.17, 0.4], [0.23, 0.44], [0.12, 0.62], [0, 0.74]], 8, { a: 0.8, tone: 1.3 });
+      S.dot([x, 2.0, -0.3], { a: 0.9, r: 1.4 });
+    }
+
+    /* --- Torre del Reloj --- */
+    S.box(translate(0, 0, 0), [-1.35, 1.35], [0.22, 1.75], [-0.4, 0.5], { a: 0.85, tone: 1.1, bias: 0.4 });
+    S.box(translate(0, 0, 0), [-1.43, 1.43], [1.75, 1.87], [-0.47, 0.57], { a: 0.8, tone: 1.3 });
+    for (const [x, w, h] of [[-0.85, 0.44, 0.95], [0, 0.6, 1.2], [0.85, 0.44, 0.95]]) {
+      S.face(arch(w, h).map(([a, b]) => [x + a, 0.24 + b, -0.404]), [x, 0.5, 1], { a: 0.75, tone: 0.1, bias: -0.05 });
+    }
+    // Pilastras
+    for (const x of [-1.3, -0.45, 0.45, 1.3]) S.box(translate(0, 0, 0), [x - 0.07, x + 0.07], [0.22, 1.75], [-0.46, -0.4], { a: 0.6, tone: 1.4 });
+    // Fuste
+    S.box(translate(0, 0, 0), [-0.46, 0.46], [1.87, 3.2], [-0.36, 0.36], { a: 0.85, tone: 1.15 });
+    S.box(translate(0, 0, 0), [-0.54, 0.54], [3.2, 3.32], [-0.44, 0.44], { a: 0.8, tone: 1.35 });
+    S.face(arch(0.26, 0.5).map(([a, b]) => [a, 2.02 + b, -0.364]), [0, 2.2, 1], { a: 0.6, tone: 0.12, bias: -0.05 });
+    // Esfera del reloj: marcas horarias y manecillas en marcha
+    const CY = 2.86;
+    S.face(ngon(28, 0.3).map(([a, b]) => [a, CY + b, -0.366]), [0, CY, 1], { a: 0.95, tone: 1.9, bias: -0.06 });
+    for (let k = 0; k < 12; k++) {
+      const a = (k / 12) * TAU;
+      S.line([Math.cos(a) * 0.24, CY + Math.sin(a) * 0.24, -0.37], [Math.cos(a) * 0.29, CY + Math.sin(a) * 0.29, -0.37], { a: 0.9, bias: -0.2 });
+    }
+    const mh = -t * 0.9, hh = -t * 0.075;
+    S.line([0, CY, -0.372], [Math.sin(-mh) * 0.25, CY + Math.cos(mh) * 0.25, -0.372], { red: true, a: 1, lw: 1.8, bias: -0.3 });
+    S.line([0, CY, -0.372], [Math.sin(-hh) * 0.16, CY + Math.cos(hh) * 0.16, -0.372], { a: 1, lw: 2.2, bias: -0.3 });
+    // Campanario octogonal, chapitel y veleta
+    S.lathe(translate(0, 3.32, 0), [[0.36, 0], [0.36, 0.56], [0.42, 0.6], [0.42, 0.68]], 8, { a: 0.85, tone: 1.2 }, { a: 0.55 });
+    for (let k = 0; k < 8; k++) {
+      const a = ((k + 0.5) / 8) * TAU, r = 0.337;
+      const T = chain(translate(Math.cos(a) * r, 3.38, Math.sin(a) * r), rotY(-a + Math.PI / 2));
+      S.face(arch(0.15, 0.4, 5).map(([x, y]) => T([x, y, 0])), [0, 3.5, 0], { a: 0.5, tone: 0.1, bias: -0.04 });
+    }
+    S.lathe(translate(0, 4.0, 0), [[0.4, 0], [0.22, 0.5], [0.1, 0.95], [0.02, 1.3]], 8, { a: 0.85, tone: 1.25 }, { a: 0.5 });
+    S.line([0, 5.3, 0], [0, 5.62, 0], { a: 0.9 });
+    S.dot([0, 5.64, 0], { red: true, a: 1, r: 2.2, round: true });
+
+    /* --- Casas coloniales tras la muralla --- */
+    HOUSES.forEach(([x, w, h], k) => {
+      S.box(translate(x, 0, 0), [-w / 2, w / 2], [0.22, h], [1.0, 2.3], { a: 0.55, tone: 0.8 + (k % 3) * 0.12, bias: 0.8 });
+      S.extrude(chain(translate(x, 0, 1.65), rotY(Math.PI / 2)), [[-0.72, h], [0.72, h], [0, h + 0.32]], -w / 2 - 0.04, w / 2 + 0.04, { a: 0.55, tone: 0.65, bias: 0.8 });
+      for (let i = 0; i < 2; i++) {
+        const wx = x - w / 4 + i * (w / 2);
+        S.face([[wx - 0.07, h - 0.42, 0.996], [wx + 0.07, h - 0.42, 0.996], [wx + 0.07, h - 0.16, 0.996], [wx - 0.07, h - 0.16, 0.996]], [wx, h, 2], { a: 0.5, tone: (k + i) % 3 === 0 ? 2.4 : 0.15, bias: 0.6 });
+      }
+    });
+    // Cúpula y campanario
+    const DX = 3.9;
+    S.lathe(translate(DX, 0.22, 1.7), [[0.72, 0], [0.72, 1.75], [0.78, 1.8], [0.78, 1.9]], 12, { a: 0.6, tone: 0.9, bias: 0.6 });
+    S.lathe(translate(DX, 2.12, 1.7), [[0.72, 0], [0.68, 0.3], [0.55, 0.56], [0.36, 0.74], [0.14, 0.84], [0.12, 1.05], [0.02, 1.12]], 14, { a: 0.7, tone: 1.2 }, { a: 0.4 });
+    S.line([DX, 3.24, 1.7], [DX, 3.5, 1.7], { a: 0.9 });
+    S.line([DX - 0.08, 3.4, 1.7], [DX + 0.08, 3.4, 1.7], { a: 0.9 });
+    S.box(translate(5.0, 0, 1.6), [-0.3, 0.3], [0.22, 3.0], [-0.3, 0.3], { a: 0.6, tone: 1.0, bias: 0.6 });
+    S.lathe(translate(5.0, 3.0, 1.6), [[0.36, 0], [0.36, 0.08], [0.26, 0.08], [0.26, 0.5], [0.3, 0.54], [0.02, 1.1]], 4, { a: 0.7, tone: 1.2 }, { a: 0.5 });
+
+    /* --- Palmeras --- */
+    palms.forEach(([x, z, hgt], k) => {
+      const lean = Math.sin(t * 0.7 + k) * 0.05;
+      const trunk = [];
+      for (let s = 0; s <= 6; s++) trunk.push([x + Math.sin((s / 6) * 1.1) * (0.18 + lean), (z < 0 ? 0.22 : 1.12) + (s / 6) * hgt, z + 0.6]);
+      S.polyline(trunk, { a: 0.8, lw: 1.6 });
+      const top = trunk[6];
+      for (let f = 0; f < 8; f++) {
+        const a = (f / 8) * TAU + k;
+        const frond = [];
+        for (let s = 0; s <= 4; s++) {
+          const r = (s / 4) * 0.55;
+          frond.push([top[0] + Math.cos(a) * r, top[1] + Math.sin((s / 4) * Math.PI) * 0.16 - (s / 4) ** 2 * 0.3 + Math.sin(t * 1.6 + f) * 0.02 * s, top[2] + Math.sin(a) * r]);
+        }
+        S.polyline(frond, { a: 0.75 });
       }
     });
 
-    // --- Sol de franjas, medio hundido en el horizonte
-    const sunR = Math.min(W, H) * 0.21;
-    const sunX = W * 0.68;
-    const sunY = horizon - sunR * 0.1;
-    ctx.save();
-    ctx.beginPath();
-    ctx.rect(0, 0, W, horizon);
-    ctx.clip();
-    const period = 9;
-    const drift = (t * 5) % period;
-    for (let y = -sunR; y < sunR; y += period) {
-      const yy = y + drift;
-      const frac = (yy + sunR) / (sunR * 2); // 0 arriba → 1 abajo
-      if (frac < 0 || frac > 1) continue;
-      const half = Math.sqrt(Math.max(0, sunR * sunR - yy * yy));
-      const th = frac < 0.38 ? period : Math.max(1.2, period * (1 - (frac - 0.38) * 1.5));
-      ctx.fillStyle = `rgba(${INK},${(0.95 - frac * 0.5).toFixed(2)})`;
-      ctx.fillRect(sunX - half, sunY + yy, half * 2, th);
-    }
-    ctx.restore();
+    /* --- Velero --- */
+    const bx = ((t * 0.22 + 4) % 19) - 9.5, bz = -3.1;
+    const B = chain(translate(bx, wave(bx, bz) + 0.05, bz), rotZ(Math.sin(t * 1.3) * 0.05), rotX(Math.sin(t * 0.9) * 0.04));
+    S.extrude(B, [[-0.75, 0.2], [0.85, 0.2], [0.55, -0.12], [-0.6, -0.12]], -0.2, 0.2, { a: 0.9, tone: 1.4 }, { a: 0.6 });
+    S.line(B([0.05, 0.2, 0]), B([0.05, 2.0, 0]), { a: 0.95, lw: 1.5 });
+    S.face([[0.1, 0.36, 0], [0.1, 1.95, 0], [0.95, 0.36, 0]].map(B), null, { both: true, red: true, glow: 0.8, a: 0.9 });
+    S.face([[-0.02, 0.4, 0], [-0.02, 1.7, 0], [-0.7, 0.4, 0]].map(B), null, { both: true, a: 0.9, tone: 2.2 });
+    S.line(B([0.05, 2.0, 0]), B([-0.28, 1.92, 0]), { red: true, a: 0.9, lw: 2 });
+    for (let k = 1; k < 9; k++) S.line([bx - 0.8 - k * 0.3, wave(bx - k * 0.3, bz) + 0.02, bz - 0.06 * k], [bx - 0.8 - k * 0.3, wave(bx - k * 0.3, bz) + 0.02, bz + 0.06 * k], { a: 0.4 * (1 - k / 9) });
 
-    // --- Horizonte de la ciudad (tapa el sol)
-    skyline(horizon, t);
-    stroke(0.55);
-    ctx.beginPath();
-    ctx.moveTo(0, horizon);
-    ctx.lineTo(W, horizon);
-    ctx.stroke();
-
-    // --- Mar: perfiles ondulados de lejos a cerca, con oclusión y reflejo
-    const ROWS = small ? 22 : 30;
-    const STEP = small ? 7 : 6;
-    let boat = null;
-    const boatRow = Math.floor(ROWS * 0.55);
-    const boatX = W * (0.34 + 0.08 * Math.sin(t * 0.09));
-
-    for (let r = 0; r < ROWS; r++) {
-      const depth = r / (ROWS - 1); // 0 junto al horizonte → 1 cerca
-      const persp = depth ** 1.75;
-      const y0 = horizon + 4 + persp * (H - horizon) * 1.02;
-      const amp = 1.4 + depth * 15;
-      const pts = [];
-      for (let x = -STEP; x <= W + STEP; x += STEP) {
-        const wave =
-          Math.sin(x * 0.021 + t * 1.15 + r * 0.7) * 0.6 +
-          Math.sin(x * 0.047 - t * 0.85 + r * 1.3) * 0.28 +
-          Math.sin(x * 0.009 + t * 0.5 - r * 0.4) * 0.5;
-        pts.push([x, y0 + wave * amp]);
-      }
-
-      ctx.beginPath();
-      ctx.moveTo(pts[0][0], pts[0][1]);
-      for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
-      ctx.lineTo(W + STEP, H + 2);
-      ctx.lineTo(-STEP, H + 2);
-      ctx.closePath();
-      ctx.fillStyle = BG;
-      ctx.fill();
-
-      ctx.beginPath();
-      ctx.moveTo(pts[0][0], pts[0][1]);
-      for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
-      stroke(0.12 + depth * 0.52);
-      ctx.stroke();
-
-      // Reflejo del sol: tramos más claros bajo el astro
-      const spread = sunR * (0.55 + persp * 1.6);
-      ctx.beginPath();
-      let pen = false;
-      for (let i = 0; i < pts.length; i++) {
-        const near = Math.abs(pts[i][0] - sunX) < spread * (0.55 + 0.45 * Math.sin(i * 0.7 + r + t * 1.6));
-        if (near) {
-          if (pen) ctx.lineTo(pts[i][0], pts[i][1]);
-          else ctx.moveTo(pts[i][0], pts[i][1]);
-          pen = true;
-        } else pen = false;
-      }
-      stroke(0.35 + depth * 0.6, 1.3);
-      ctx.stroke();
-
-      // Velero: se dibuja sobre su fila y las siguientes lo tapan parcialmente
-      if (r === boatRow) {
-        const idx = Math.min(pts.length - 2, Math.max(1, Math.round((boatX + STEP) / STEP)));
-        const slope = (pts[idx + 1][1] - pts[idx - 1][1]) / (STEP * 2);
-        boat = { x: boatX, y: pts[idx][1], tilt: Math.atan(slope) * 1.4, scale: 0.55 + persp * 1.9 };
-      }
-    }
-
-    if (boat) {
-      const s = boat.scale * Math.min(W, H) * 0.075;
-      ctx.save();
-      ctx.translate(boat.x, boat.y);
-      ctx.rotate(boat.tilt);
-      // Casco
-      const hull = [[-s * 0.9, -s * 0.12], [s * 0.95, -s * 0.12], [s * 0.62, s * 0.2], [-s * 0.62, s * 0.2]];
-      solid(hull, 0.95);
-      // Mástil
-      ctx.beginPath();
-      ctx.moveTo(0, -s * 0.12);
-      ctx.lineTo(0, -s * 1.5);
-      stroke(0.95);
-      ctx.stroke();
-      // Vela mayor roja
-      ctx.beginPath();
-      ctx.moveTo(s * 0.04, -s * 1.42);
-      ctx.lineTo(s * 0.04, -s * 0.2);
-      ctx.lineTo(s * 0.82, -s * 0.2);
-      ctx.closePath();
-      ctx.fillStyle = `rgba(${RED},0.92)`;
-      ctx.fill();
-      // Foque
-      ctx.beginPath();
-      ctx.moveTo(-s * 0.04, -s * 1.28);
-      ctx.lineTo(-s * 0.04, -s * 0.2);
-      ctx.lineTo(-s * 0.7, -s * 0.2);
-      ctx.closePath();
-      stroke(0.9);
-      ctx.stroke();
-      ctx.restore();
-
-      // Estela
-      stroke(0.35);
-      for (let i = 0; i < 3; i++) {
-        const off = ((t * 0.5 + i / 3) % 1);
-        ctx.beginPath();
-        ctx.moveTo(boat.x - s * (0.9 + off * 2.2), boat.y + s * (0.22 + i * 0.07));
-        ctx.lineTo(boat.x - s * (1.3 + off * 2.6), boat.y + s * (0.22 + i * 0.07));
-        ctx.globalAlpha = 1 - off;
-        ctx.stroke();
-        ctx.globalAlpha = 1;
-      }
-    }
-
-    // --- Gaviotas
+    /* --- Gaviotas --- */
     for (const g of gulls) {
-      const gx = ((g.x + t * g.v) % 1.2 - 0.1) * W;
-      const gy = H * g.y + Math.sin(t * 0.7 + g.p) * 6;
-      const flap = Math.sin(t * 5 + g.p) * 0.5;
-      const s = g.size;
-      ctx.beginPath();
-      ctx.moveTo(gx - s, gy + flap * s * 0.6);
-      ctx.quadraticCurveTo(gx - s * 0.4, gy - s * (0.5 + flap * 0.5), gx, gy);
-      ctx.quadraticCurveTo(gx + s * 0.4, gy - s * (0.5 + flap * 0.5), gx + s, gy + flap * s * 0.6);
-      stroke(0.7);
-      ctx.stroke();
+      const x = ((g.x + t * g.v) % 1) * 20 - 10;
+      const flap = Math.sin(t * 5 + g.p) * 0.12;
+      S.polyline([[x - 0.26, g.y + flap, g.z], [x, g.y, g.z], [x + 0.26, g.y + flap, g.z]], { a: 0.7 });
     }
-  }
 
-  resize();
-  window.addEventListener('resize', resize);
-  return visibleLoop(canvas, draw, { fps: 45 });
+    /* --- Corchetes de GDG en volumen, girando sobre la ciudad --- */
+    const G = chain(translate(-3.3, 5.9 + Math.sin(t * 0.8) * 0.12, 1.2), rotY(t * 0.5), rotX(0.12));
+    S.extrude(chain(G, translate(-0.95, 0, 0)), CHEVRON, -0.17, 0.17, { a: 0.95, tone: 1.7 }, { a: 0.6, tone: 1.2 });
+    S.extrude(chain(G, translate(0.95, 0, 0), rotZ(Math.PI)), CHEVRON, -0.17, 0.17, { a: 0.95, tone: 1.7 }, { a: 0.6, tone: 1.2 });
+    S.lathe(G, [[0.02, -0.2], [0.15, -0.14], [0.2, 0], [0.15, 0.14], [0.02, 0.2]], 10, { a: 0.9, red: true, glow: 0.85 });
+    // Órbitas de datos alrededor del emblema
+    for (let k = 0; k < 2; k++) {
+      const O = chain(translate(-3.3, 5.9, 1.2), rotZ(k ? 0.5 : -0.4), rotX(k ? 0.3 : -0.2));
+      S.polyline(ngon(40, 1.85).map(([a, b]) => O([a, 0, b])), { a: 0.22, dash: [2, 5] }, true);
+      const a = t * (k ? 0.9 : -0.7) + k * 2;
+      S.dot(O([Math.cos(a) * 1.85, 0, Math.sin(a) * 1.85]), { a: 0.95, r: 2.2, red: k === 0 });
+    }
+
+    S.render(ctx, cam);
+  }, { fps: 40, still: 6 });
 }

@@ -1,4 +1,4 @@
-/* ---------- Arranque tipo terminal ---------- */
+/* ---------- Pantalla de carga (src/core/loader.js) ---------- */
 .boot {
   position: fixed;
   inset: 0;
@@ -17,19 +17,31 @@
   clip-path: inset(0 0 100% 0);
 }
 
+.boot__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.boot__log,
+.boot__count {
+  position: relative;
+}
+
 .boot__log {
   font-family: var(--f-mono);
   font-size: var(--fs-xs);
   line-height: 1.9;
   color: var(--c-ink-dim);
   white-space: pre-wrap;
-  min-height: 9.5em;
+  min-height: 3.8em;
 }
 
 .boot__count {
   font-family: var(--f-display);
   font-weight: 700;
-  font-size: clamp(4rem, 16vw, 13rem);
+  font-size: clamp(3rem, 9vw, 7.5rem);
   line-height: 0.8;
   letter-spacing: -0.05em;
   font-variant-numeric: tabular-nums;

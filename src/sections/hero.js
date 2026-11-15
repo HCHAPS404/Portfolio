@@ -3,7 +3,8 @@ import { esc } from '../core/dom.js';
 import { t } from '../i18n/index.js';
 
 export function renderHero() {
-  const nameLines = profile.name.split(' ');
+  // Una línea por parte del nombre; en chino y japonés las separa un punto medio
+  const nameLines = profile.name.split(/[\s·・]+/);
   const stats = profile.stats
     .map((s) => {
       const value = s.text

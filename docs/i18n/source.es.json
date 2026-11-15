@@ -7,8 +7,14 @@
     "about.portrait_alt": "Retrato de {name} dibujado con caracteres ASCII",
     "awards.meta_a": "Reconocimientos y becas",
     "awards.meta_b": "{n} registros",
+    "boot.switching": "Cambiando idioma",
     "boot.tagline": "Portafolio · {year}",
+    "ch.github": "GitHub",
+    "ch.instagram": "Instagram",
+    "ch.linkedin": "LinkedIn",
+    "ch.tiktok": "TikTok",
     "ch.web": "Sitio web",
+    "ch.x": "X",
     "comp.count_one": "{n} registro",
     "comp.count_other": "{n} registros",
     "comp.meta_a": "Concursos y hackatones",
@@ -53,17 +59,28 @@
     "nav.profile": "Perfil",
     "nav.projects": "Proyectos",
     "nav.skills": "Habilidades",
+    "proj.github": "GitHub",
+    "proj.handle": "@HCHAPS404",
     "proj.meta_a": "{n} repositorios",
     "proj.meta_b": "En desarrollo activo",
     "proj.more": "Ver todo el código",
     "proj.more_aria": "Ver todos los repositorios en GitHub",
     "proj.open_aria": "{name} — abrir repositorio en GitHub",
+    "proj.path": "github/{name}",
     "rule.next": "Siguiente — {section}",
     "skills.all": "Todas",
     "skills.close": "Cerrar",
+    "skills.code.data": "IA",
+    "skills.code.datastore": "BD",
+    "skills.code.embedded": "EMB",
+    "skills.code.ops": "OPS",
+    "skills.code.pcb": "PCB",
+    "skills.code.robotics": "ROB",
+    "skills.code.software": "SW",
     "skills.detail.applied": "Aplicado en",
     "skills.detail.certs": "Certificaciones",
     "skills.detail.competitions": "Competencias",
+    "skills.detail.focus": "Enfoque",
     "skills.detail.tech": "Tecnologías",
     "skills.detail.tools": "Herramientas",
     "skills.expand": "Ver detalle de {title}",
@@ -85,6 +102,8 @@
   },
   "data": {
     "profile": {
+      "name": "Helmut Chaparro Sandoval",
+      "shortName": "Helmut Chaparro",
       "availability": "Disponible",
       "location": "Bogotá, Colombia",
       "summary": "Ingeniero electrónico y desarrollador full-stack en Bogotá. Más de seis años construyendo de punta a punta: PCB, firmware embebido, backends .NET, Edge AI en campo. Fundador de DevKit Electronics S.A.S y dueño y fundador de Poimen Labs S.A.S.",
@@ -304,112 +323,255 @@
       "education": [
         {
           "degree": "Ingeniería Electrónica",
+          "institution": "Universidad Distrital Francisco José de Caldas",
           "status": "En curso"
         }
       ],
       "certificates": [
         {
-          "name": "Diseño y Ensamble Profesional de PCB"
+          "name": "Diseño y Ensamble Profesional de PCB",
+          "issuer": "UDFJC"
         },
         {
-          "name": "Altium Designer"
+          "name": "Altium Designer",
+          "issuer": "Altium Designer Software"
         },
         {
-          "name": "Altium Global Scholarship Program"
+          "name": "Altium Global Scholarship Program",
+          "issuer": "Altium"
         },
         {
-          "name": "Grad to Career Program"
+          "name": "Grad to Career Program",
+          "issuer": "Altium Designer"
         },
         {
-          "name": "AI Developer"
+          "name": "AI Developer",
+          "issuer": "IBM"
         },
         {
-          "name": "Data Science Professional"
+          "name": "Data Science Professional",
+          "issuer": "IBM"
         },
         {
-          "name": "RAG & Agentic AI"
+          "name": "RAG & Agentic AI",
+          "issuer": "IBM"
         },
         {
-          "name": "JavaScript Backend Developer"
+          "name": "JavaScript Backend Developer",
+          "issuer": "IBM"
         },
         {
-          "name": "AI & ML Engineering"
+          "name": "AI & ML Engineering",
+          "issuer": "Microsoft"
         },
         {
-          "name": "Advanced Data Analytics"
+          "name": "Advanced Data Analytics",
+          "issuer": "Google"
         },
         {
-          "name": "Data Engineering"
+          "name": "Data Engineering",
+          "issuer": "DeepLearning.AI"
         },
         {
-          "name": "Teledetección y Drones"
+          "name": "Teledetección y Drones",
+          "issuer": "ESRI Colombia"
         }
       ]
     },
     "skills": {
       "tools": [
         {
-          "category": "PCB"
+          "category": "PCB",
+          "items": [
+            "Altium Designer",
+            "KiCAD",
+            "Cadence OrCAD",
+            "LTSpice",
+            "Multisim",
+            "Proteus"
+          ]
         },
         {
-          "category": "Embebidos"
+          "category": "Embebidos",
+          "items": [
+            "STM32CubeIDE",
+            "Keil MDK",
+            "ESP-IDF",
+            "Arduino IDE",
+            "PlatformIO",
+            "Vivado / Quartus"
+          ]
         },
         {
-          "category": "Software"
+          "category": "Software",
+          "items": [
+            "VS Code",
+            "Visual Studio",
+            ".NET / C#",
+            "Python",
+            "TypeScript",
+            "Node.js",
+            "React",
+            "Next.js"
+          ]
         },
         {
-          "category": "Datos e IA"
+          "category": "Datos e IA",
+          "items": [
+            "TensorFlow",
+            "PyTorch",
+            "OpenCV",
+            "MATLAB",
+            "Jupyter",
+            "R",
+            "Power BI",
+            "Apache Spark"
+          ]
         },
         {
-          "category": "Bases de datos"
+          "category": "Bases de datos",
+          "items": [
+            "SQL Server",
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Grafana",
+            "Azure DevOps"
+          ]
         },
         {
-          "category": "Operaciones"
+          "category": "Operaciones",
+          "items": [
+            "Git",
+            "Docker",
+            "Linux",
+            "Postman",
+            "Wireshark",
+            "MQTT / LoRaWAN"
+          ]
         },
         {
-          "category": "Robótica y diseño"
+          "category": "Robótica y diseño",
+          "items": [
+            "ROS 2",
+            "Gazebo",
+            "Fusion 360",
+            "SolidWorks",
+            "Blender",
+            "Figma"
+          ]
         }
       ],
       "domains": [
         {
           "title": "Sistemas embebidos",
-          "tech": "ARM · RTOS · STM32 · ESP32 · C/C++ · FreeRTOS · SoC"
+          "tech": "ARM · RTOS · STM32 · ESP32 · C/C++ · FreeRTOS · SoC",
+          "summary": "Firmware para microcontroladores ARM (STM32) y ESP32, en C/C++ y sobre FreeRTOS cuando el sistema lo pide. Es la base de casi todo lo que construyo: kits educativos, nodos de sensores para el campo y robots.",
+          "focus": [
+            "Firmware en C/C++ sobre STM32 y ESP32, con sistema operativo de tiempo real cuando hace falta",
+            "Bajo consumo para nodos que trabajan con batería en campo",
+            "Adquisición de sensores, control y conectividad IoT",
+            "Del prototipo en protoboard a la placa propia"
+          ]
         },
         {
           "title": "Hardware y diseño de PCB",
-          "tech": "Altium Designer · KiCAD · EMI/EMC · LTSpice · Integridad de señal"
+          "tech": "Altium Designer · KiCAD · EMI/EMC · LTSpice · Integridad de señal",
+          "summary": "Diseño placas de circuito impreso desde el esquemático hasta el ensamble, en Altium Designer y KiCAD. Cuido la integridad de señal y la compatibilidad electromagnética desde el trazado, y simulo en LTSpice antes de fabricar.",
+          "focus": [
+            "PCB multicapa para productos educativos y equipos de laboratorio",
+            "Placa y carcasa de nodos de sensores para el agro",
+            "Simulación de circuitos antes de fabricar",
+            "Becado por Altium en dos programas de diseño profesional de PCB"
+          ]
         },
         {
           "title": "Sistemas eléctricos y potencia",
-          "tech": "Electrónica de potencia · Control · Protección · Esquemáticos · EMI/EMC"
+          "tech": "Electrónica de potencia · Control · Protección · Esquemáticos · EMI/EMC",
+          "summary": "Electrónica de potencia y sistemas eléctricos: etapas de alimentación, control y protección, documentadas en esquemáticos claros y pensadas para convivir con el resto del circuito sin interferencias.",
+          "focus": [
+            "Etapas de alimentación y conversión de energía",
+            "Lazos de control y circuitos de protección",
+            "Esquemáticos y documentación técnica",
+            "Criterios de compatibilidad electromagnética desde el diseño"
+          ]
         },
         {
           "title": "Full-stack y software",
-          "tech": ".NET · C# · JavaScript · TypeScript · REST APIs · SQL Server · Azure DevOps"
+          "tech": ".NET · C# · JavaScript · TypeScript · REST APIs · SQL Server · Azure DevOps",
+          "summary": "Desarrollo software de punta a punta: .NET y C# en el servidor, JavaScript y TypeScript en el cliente y SQL Server en los datos. Lo he aplicado en software empresarial de comercio exterior y en las plataformas de mis propias empresas.",
+          "focus": [
+            "Servicios y APIs REST en .NET",
+            "Modelos de datos y consultas en SQL Server",
+            "Interfaces web con JavaScript y TypeScript",
+            "Trabajo en equipos ágiles y remotos, con Azure DevOps"
+          ]
         },
         {
           "title": "Ingeniería y análisis de datos",
-          "tech": "ETL · Pipelines · SQL · Power BI · R · Dashboards · Reportes"
+          "tech": "ETL · Pipelines · SQL · Power BI · R · Dashboards · Reportes",
+          "summary": "Llevo los datos desde su origen hasta la decisión: extracción y transformación, pipelines, consultas SQL y tableros en Power BI. En Poimen Labs convierto lecturas de campo en visualización, alertas y apoyo a la decisión para productores.",
+          "focus": [
+            "Pipelines y procesos de extracción, transformación y carga",
+            "Análisis en SQL y R",
+            "Tableros y reportes en Power BI",
+            "Datos geoespaciales: teledetección y drones"
+          ]
         },
         {
           "title": "IA y aprendizaje automático",
-          "tech": "Python · TensorFlow · PyTorch · Edge AI · RAG · Visión artificial"
+          "tech": "Python · TensorFlow · PyTorch · Edge AI · RAG · Visión artificial",
+          "summary": "Modelos de aprendizaje automático en Python con TensorFlow y PyTorch, con interés especial en ejecutarlos en el borde, sobre hardware embebido. También trabajo con visión artificial y con sistemas de recuperación aumentada y agentes.",
+          "focus": [
+            "Inferencia en el borde sobre hardware propio",
+            "Visión artificial",
+            "Recuperación aumentada (RAG) y agentes sobre modelos de lenguaje",
+            "Cursos de sistemas embebidos con IA como docente"
+          ]
         },
         {
           "title": "Diseño digital y FPGA",
-          "tech": "VHDL · Verilog · Xilinx · Intel · RTL · Cierre de timing"
+          "tech": "VHDL · Verilog · Xilinx · Intel · RTL · Cierre de timing",
+          "summary": "Diseño digital descrito en VHDL y Verilog para FPGA de Xilinx e Intel: de la descripción a nivel de transferencia de registros a la síntesis, la simulación y el cierre de timing.",
+          "focus": [
+            "Descripción de hardware en VHDL y Verilog",
+            "Síntesis e implementación en Vivado y Quartus",
+            "Simulación y verificación",
+            "Análisis y cierre de timing"
+          ]
         },
         {
           "title": "Robótica y automatización",
-          "tech": "ROS 2 · Gazebo · SLAM · Mecatrónica · PID · Navegación"
+          "tech": "ROS 2 · Gazebo · SLAM · Mecatrónica · PID · Navegación",
+          "summary": "Robótica y mecatrónica, del prototipo al aula: desde 2021 diseño, programo y enseño robots educativos. Trabajo con ROS 2 y Gazebo para simulación, navegación y mapeo, y con control PID en los actuadores.",
+          "focus": [
+            "Prototipos mecatrónicos con metodología STEAM",
+            "Kits y robots educativos para colegios y universidades",
+            "Simulación y navegación con ROS 2 y Gazebo",
+            "Presido el capítulo estudiantil de Robótica y Automatización del IEEE"
+          ]
         },
         {
           "title": "Bioingeniería",
-          "tech": "Biosensores · Procesamiento de señales · Instrumentos de laboratorio · Edge AI · IoT biomédico"
+          "tech": "Biosensores · Procesamiento de señales · Instrumentos de laboratorio · Edge AI · IoT biomédico",
+          "summary": "Instrumentación para medir señales biológicas: biosensores, acondicionamiento y procesamiento de señales, y dispositivos biomédicos conectados con inteligencia en el borde. Es un interés que cultivo también desde la comunidad de Ingeniería en Medicina y Biología del IEEE.",
+          "focus": [
+            "Biosensores y adquisición de bioseñales",
+            "Procesamiento digital de señales",
+            "Instrumentos de laboratorio",
+            "Cargo presidencial en el capítulo estudiantil de Ingeniería en Medicina y Biología del IEEE"
+          ]
         },
         {
           "title": "Cloud, DevOps y sistemas",
-          "tech": "Docker · Linux · CI/CD · Git · Azure · Monitoreo · Infraestructura"
+          "tech": "Docker · Linux · CI/CD · Git · Azure · Monitoreo · Infraestructura",
+          "summary": "La infraestructura que mantiene el software en marcha: contenedores Docker, servidores Linux, integración y despliegue continuos y servicios en Azure, con monitoreo para saber qué pasa en producción.",
+          "focus": [
+            "Contenedores con Docker",
+            "Administración de sistemas Linux",
+            "Integración y despliegue continuos con Git",
+            "Monitoreo e infraestructura en Azure"
+          ]
         }
       ],
       "softSkills": [
@@ -448,36 +610,47 @@
       ],
       "proyectos": [
         {
+          "name": "STATUM",
           "status": "En desarrollo"
         },
         {
+          "name": "INZERM",
           "status": "En desarrollo"
         },
         {
+          "name": "NUREN",
           "status": "En desarrollo"
         },
         {
+          "name": "PRORA",
           "status": "En desarrollo"
         },
         {
+          "name": "SOUL",
           "status": "En desarrollo"
         },
         {
+          "name": "VERIK",
           "status": "En desarrollo"
         },
         {
+          "name": "VAK",
           "status": "En desarrollo"
         },
         {
+          "name": "NIRU",
           "status": "En desarrollo"
         },
         {
+          "name": "PROTOBOT",
           "status": "En desarrollo"
         },
         {
+          "name": "REDACT",
           "status": "En desarrollo"
         },
         {
+          "name": "VOXLU",
           "status": "En desarrollo"
         }
       ]

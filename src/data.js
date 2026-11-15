@@ -19,6 +19,9 @@ export let projects;
 export let awards;
 export let sections;
 
+/** Iniciales de la marca, tomadas del nombre en el idioma elegido. */
+export let initials;
+
 const SECTION_DEFS = [
   { id: 'inicio', key: 'nav.home' },
   { id: 'perfil', key: 'nav.profile' },
@@ -33,6 +36,10 @@ const SECTION_DEFS = [
 
 export function initData() {
   profile = localize(profileBase, 'profile');
+  initials = profile.name
+    .split(/[\s·・]+/)
+    .map((w) => [...w][0])
+    .join('');
   experience = localize(experienceBase, 'experience');
   skills = localize(skillsBase, 'skills');
   const edu = localize(educationBase, 'education');

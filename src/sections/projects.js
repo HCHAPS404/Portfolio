@@ -17,7 +17,7 @@ export function renderProjects() {
           <span class="project__name" data-scramble-target>${esc(p.name)}</span>
           ${p.summary ? `<span class="project__desc">${esc(p.summary)}</span>` : ''}
           <span class="project__foot mono">
-            <span>github/${esc(p.name)}</span>
+            <span>${esc(t('proj.path', { name: p.name }))}</span>
             <span class="project__arrow" aria-hidden="true">↗</span>
           </span>
         </a>
@@ -29,9 +29,9 @@ export function renderProjects() {
   const more = `
       <li class="project project--more" data-reveal>
         <a class="project__link" href="${esc(profile.links.github)}" target="_blank" rel="noopener" data-cursor aria-label="${esc(t('proj.more_aria'))}">
-          <span class="project__top mono"><span>++</span><span>GitHub</span></span>
+          <span class="project__top mono"><span>++</span><span>${esc(t('proj.github'))}</span></span>
           <span class="project__name">${esc(t('proj.more'))}</span>
-          <span class="project__foot mono"><span>@HCHAPS404</span><span class="project__arrow" aria-hidden="true">↗</span></span>
+          <span class="project__foot mono"><span>${esc(t('proj.handle'))}</span><span class="project__arrow" aria-hidden="true">↗</span></span>
         </a>
       </li>`;
 

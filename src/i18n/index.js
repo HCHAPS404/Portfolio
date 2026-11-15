@@ -9,17 +9,18 @@
  * - Cambiar de idioma guarda la preferencia y recarga la página (ver `switchLang`).
  */
 import es from './locales/es.json';
+import { langFromCountry } from './geo.js';
 
 /** Idiomas disponibles, en el orden en que se muestran en el selector. */
 export const LANGS = [
-  { code: 'es', native: 'Español' },
-  { code: 'en', native: 'English' },
-  { code: 'de', native: 'Deutsch' },
-  { code: 'fr', native: 'Français' },
-  { code: 'ru', native: 'Русский' },
-  { code: 'zh', native: '中文' },
-  { code: 'ja', native: '日本語' },
-  { code: 'it', native: 'Italiano' },
+  { code: 'es', short: 'ES', native: 'Español' },
+  { code: 'en', short: 'EN', native: 'English' },
+  { code: 'de', short: 'DE', native: 'Deutsch' },
+  { code: 'fr', short: 'FR', native: 'Français' },
+  { code: 'ru', short: 'РУ', native: 'Русский' },
+  { code: 'zh', short: '中', native: '中文' },
+  { code: 'ja', short: '日', native: '日本語' },
+  { code: 'it', short: 'IT', native: 'Italiano' },
 ];
 
 const STORAGE_KEY = 'portfolio-lang';
@@ -35,7 +36,10 @@ let overlay = {};
 
 const isSupported = (code) => LANGS.some((l) => l.code === code);
 
-/** Elige el idioma inicial: ?lang= → preferencia guardada → idioma del navegador → español. */
+/**
+ * Elige el idioma inicial: ?lang= → elección guardada del visitante → país del
+ * visitante → idioma del navegador → inglés (visitante internacional sin más pistas).
+ */
 export function detectLang() {
   try {
     const fromUrl = new URLSearchParams(location.search).get('lang');
@@ -48,11 +52,13 @@ export function detectLang() {
   } catch {
     /* almacenamiento no disponible: se ignora */
   }
+  const byCountry = langFromCountry();
+  if (isSupported(byCountry)) return byCountry;
   for (const candidate of navigator.languages ?? [navigator.language]) {
     const short = String(candidate).slice(0, 2).toLowerCase();
     if (isSupported(short)) return short;
   }
-  return 'es';
+  return 'en';
 }
 
 /** Carga el idioma y prepara `t()` y `localize()`. */
@@ -111,8 +117,8 @@ export function localize(base, name) {
 }
 
 /**
- * Cambia de idioma: guarda la preferencia, recuerda el punto de lectura y recarga.
- * La recarga evita tener que desmontar canvas y animaciones; se salta el arranque.
+ * Cambia de idioma: guarda la preferencia, recuerda el punto de lectura, baja la
+ * cortina y recarga. La página nueva abre con la pantalla de carga ya puesta.
  */
 export function switchLang(code) {
   if (!isSupported(code) || code === lang) return;
@@ -127,7 +133,7 @@ export function switchLang(code) {
   url.searchParams.delete('lang');
   const hash = location.hash;
   document.documentElement.classList.add('is-switching');
-  setTimeout(() => location.replace(url.pathname + url.search + hash), 260);
+  setTimeout(() => location.replace(url.pathname + url.search + hash), 520);
 }
 
 /** ¿Esta carga viene de un cambio de idioma? Devuelve y limpia el punto de lectura. */

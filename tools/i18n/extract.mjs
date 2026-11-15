@@ -15,7 +15,7 @@ const pick = (obj, keys) => Object.fromEntries(keys.filter((k) => obj[k] !== und
 
 const data = {
   profile: {
-    ...pick(prof, ['availability', 'location', 'summary', 'about']),
+    ...pick(prof, ['name', 'shortName', 'availability', 'location', 'summary', 'about']),
     roles: prof.roles,
     tags: prof.tags,
     stats: prof.stats.map((s) => pick(s, ['label', 'text'])),
@@ -23,17 +23,17 @@ const data = {
   },
   experience: exp.map((e) => pick(e, ['period', 'role', 'org', 'type', 'summary', 'bullets', 'tags'])),
   education: {
-    education: edu.education.map((e) => pick(e, ['degree', 'status'])),
-    certificates: edu.certificates.map((c) => pick(c, ['name'])),
+    education: edu.education.map((e) => pick(e, ['degree', 'institution', 'status'])),
+    certificates: edu.certificates.map((c) => pick(c, ['name', 'issuer'])),
   },
   skills: {
-    tools: sk.tools.map((c) => pick(c, ['category'])),
-    domains: sk.domains.map((d) => pick(d, ['title', 'tech'])),
+    tools: sk.tools.map((c) => pick(c, ['category', 'items'])),
+    domains: sk.domains.map((d) => pick(d, ['title', 'tech', 'summary', 'focus'])),
     softSkills: sk.softSkills,
   },
   projects: {
     competencias: pr.competencias.map((c) => pick(c, ['name', 'org', 'summary', 'detail', 'flag'])),
-    proyectos: pr.proyectos.map((p) => pick(p, ['status'])),
+    proyectos: pr.proyectos.map((p) => pick(p, ['name', 'status'])),
   },
   awards: {
     awards: aw.awards.map((a) => pick(a, ['year', 'title', 'org', 'desc', 'flag'])),

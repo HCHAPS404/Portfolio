@@ -10,7 +10,8 @@ import './styles/i18n.css';
 import { initData, profile, skills, sections, asset } from './data.js';
 import { $, $$, esc } from './core/dom.js';
 import { detectLang, setupLang, consumeSwitch, t } from './i18n/index.js';
-import { renderChrome, initChrome, boot } from './core/chrome.js';
+import { renderChrome, initChrome } from './core/chrome.js';
+import { startLoader } from './core/loader.js';
 import { initScroll, initMotion, lockScroll } from './core/motion.js';
 
 import { renderHero } from './sections/hero.js';
@@ -23,7 +24,7 @@ import { renderProjects } from './sections/projects.js';
 import { renderAwards } from './sections/awards.js';
 import { renderContact, renderFooter } from './sections/contact.js';
 
-import { createPcb } from './visuals/pcb.js';
+import { createHeroScene } from './visuals/hero/index.js';
 import { createAsciiPortrait } from './visuals/ascii-portrait.js';
 import { createTerrain } from './visuals/terrain.js';
 import { createWaves } from './visuals/waves.js';
@@ -83,9 +84,10 @@ function render() {
     ${renderFooter()}`;
 }
 
-function initVisuals() {
-  const board = $('.hero__canvas');
-  if (board) createPcb(board);
+async function initVisuals(lang) {
+  // La portada cambia con el idioma (ver src/visuals/hero/index.js)
+  const cover = $('.hero__canvas');
+  if (cover) await createHeroScene(cover, lang);
 
   const portrait = $('.about__canvas');
   if (portrait) createAsciiPortrait(portrait, asset(profile.photo));
@@ -93,6 +95,22 @@ function initVisuals() {
   // Cada competencia elige su animación con el campo `visual` de data/projects.json
   const factories = { terrain: createTerrain, waves: createWaves };
   $$('.comp__canvas').forEach((canvas) => (factories[canvas.dataset.visual] ?? createTerrain)(canvas));
+}
+
+/**
+ * Ajusta el tamaño del nombre de la portada para que la línea más ancha quepa:
+ * el nombre cambia de alfabeto y de longitud según el idioma.
+ */
+function fitHeroTitle() {
+  const title = $('.hero__title');
+  if (!title) return;
+  title.style.fontSize = '';
+  const room = title.clientWidth;
+  const widest = Math.max(...$$('.hero__word', title).map((w) => w.offsetWidth));
+  if (widest > room) {
+    const size = parseFloat(getComputedStyle(title).fontSize);
+    title.style.fontSize = `${Math.floor(size * (room / widest) * 0.97)}px`;
+  }
 }
 
 /** Título, descripción y etiquetas para compartir, en el idioma elegido. */
@@ -122,17 +140,27 @@ function loadScriptFonts(lang) {
 }
 
 async function start() {
+  // La pantalla de carga sale antes que nada; el resto se prepara detrás
+  const { switching, scroll } = consumeSwitch();
+  const loader = startLoader({ switching });
+
   const lang = await setupLang(detectLang());
   initData();
   applyDocumentMeta();
   loadScriptFonts(lang);
+  loader.label([
+    profile.name.toUpperCase(),
+    switching ? t('boot.switching') : t('boot.tagline', { year: new Date().getFullYear() }),
+  ]);
 
-  const { switching, scroll } = consumeSwitch();
   render();
+  fitHeroTitle();
+  document.fonts?.ready.then(fitHeroTitle);
+  window.addEventListener('resize', fitHeroTitle);
   initChrome({ onMenuToggle: lockScroll });
   initScroll();
-  initVisuals();
-  await boot({ skip: switching });
+  await initVisuals(lang).catch((error) => console.error(error));
+  await loader.finish();
   document.documentElement.classList.add('is-ready');
   initMotion();
 

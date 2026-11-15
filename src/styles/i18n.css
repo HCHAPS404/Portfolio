@@ -1,8 +1,10 @@
 /* Ajustes por idioma. Se carga el último para poder imponerse al resto de hojas. */
 
-/* El nombre y las cifras en contorno son siempre latinos: se fijan a Space Grotesk.
-   Las fuentes alternativas de ru/ja/zh tienen contornos solapados que, con
-   -webkit-text-stroke, dejan trazos internos visibles. */
+/* El nombre y las cifras en contorno se fijan a Space Grotesk. En ruso, chino y
+   japonés el nombre va en su alfabeto y cae en la fuente del sistema (system-ui):
+   las fuentes web de esos idiomas tienen contornos solapados que, con
+   -webkit-text-stroke, dejan trazos internos visibles. El tamaño del nombre lo
+   ajusta `fitHeroTitle()` (src/main.js) para que ninguna línea se corte. */
 .hero__title,
 .footer__mark,
 .degree__years,
@@ -11,4 +13,138 @@
 .insp__sym,
 .tool__sym {
   font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+/* ---------- Aire entre bloques ---------- */
+.sec-head {
+  margin-bottom: clamp(2.5rem, 1.5rem + 3.5vw, 5rem);
+}
+
+.skills .marquee {
+  margin-top: var(--sp-4);
+}
+
+.tools + .skills__sub {
+  margin-top: var(--sec-gap);
+}
+
+.tally {
+  margin-bottom: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
+}
+
+.comp + .comp {
+  margin-top: clamp(2.5rem, 1.5rem + 4vw, 5.5rem);
+}
+
+.rule {
+  margin-block: clamp(0.5rem, 2vw, 2rem);
+}
+
+/* ---------- Detalle ampliado de un dominio ---------- */
+.dd__block--lead {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: var(--sp-5);
+  align-items: start;
+  padding-bottom: var(--sp-5);
+  border-bottom: 1px solid var(--c-line);
+}
+
+.dd__summary {
+  max-width: 62ch;
+  font-size: var(--fs-md);
+  line-height: 1.65;
+}
+
+.dd__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr));
+  gap: var(--sp-4) var(--sp-3);
+}
+
+.dd__facts div {
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--c-line-strong);
+}
+
+.dd__facts dt {
+  font-size: var(--fs-2xs);
+  line-height: 1.4;
+}
+
+.dd__facts dd {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: var(--fs-xl);
+  line-height: 1.15;
+}
+
+.dd__focus li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--c-line);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+.dd__focus li:first-child {
+  border-top: 1px solid var(--c-line);
+}
+
+.dd__focus li span {
+  padding-top: 0.25em;
+  font-size: var(--fs-2xs);
+  color: var(--c-accent);
+}
+
+.dd__list em {
+  margin-top: 0.25rem;
+  font-family: var(--f-body);
+  font-style: normal;
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: var(--c-ink-dim);
+}
+
+@media (min-width: 900px) {
+  .dd__block--wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 800px) {
+  .dd__block--lead {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Nombres largos en fichas (ruso, chino y japonés van transliterados) ---------- */
+.tool__name,
+.insp__name,
+.tools__cat-name,
+.chip,
+.cert__name,
+.project__name,
+.channel__label,
+.channel__handle {
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Portada en chino y japonés: los caracteres son más altos que los latinos ---------- */
+html[lang='zh'] .hero__title,
+html[lang='ja'] .hero__title {
+  line-height: 1.12;
+}
+
+html[lang='zh'] .hero__line,
+html[lang='ja'] .hero__line {
+  padding-block: 0.06em;
+  margin-block: -0.03em;
+}
+
+html[lang='ru'] .hero__title {
+  line-height: 0.92;
 }

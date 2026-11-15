@@ -94,6 +94,13 @@
       "no": "A",
       "title": "Sistemas embebidos",
       "tech": "ARM · RTOS · STM32 · ESP32 · C/C++ · FreeRTOS · SoC",
+      "summary": "Firmware para microcontroladores ARM (STM32) y ESP32, en C/C++ y sobre FreeRTOS cuando el sistema lo pide. Es la base de casi todo lo que construyo: kits educativos, nodos de sensores para el campo y robots.",
+      "focus": [
+        "Firmware en C/C++ sobre STM32 y ESP32, con sistema operativo de tiempo real cuando hace falta",
+        "Bajo consumo para nodos que trabajan con batería en campo",
+        "Adquisición de sensores, control y conectividad IoT",
+        "Del prototipo en protoboard a la placa propia"
+      ],
       "categories": [
         "embedded"
       ],
@@ -112,6 +119,13 @@
       "no": "B",
       "title": "Hardware y diseño de PCB",
       "tech": "Altium Designer · KiCAD · EMI/EMC · LTSpice · Integridad de señal",
+      "summary": "Diseño placas de circuito impreso desde el esquemático hasta el ensamble, en Altium Designer y KiCAD. Cuido la integridad de señal y la compatibilidad electromagnética desde el trazado, y simulo en LTSpice antes de fabricar.",
+      "focus": [
+        "PCB multicapa para productos educativos y equipos de laboratorio",
+        "Placa y carcasa de nodos de sensores para el agro",
+        "Simulación de circuitos antes de fabricar",
+        "Becado por Altium en dos programas de diseño profesional de PCB"
+      ],
       "categories": [
         "pcb"
       ],
@@ -133,6 +147,13 @@
       "no": "C",
       "title": "Sistemas eléctricos y potencia",
       "tech": "Electrónica de potencia · Control · Protección · Esquemáticos · EMI/EMC",
+      "summary": "Electrónica de potencia y sistemas eléctricos: etapas de alimentación, control y protección, documentadas en esquemáticos claros y pensadas para convivir con el resto del circuito sin interferencias.",
+      "focus": [
+        "Etapas de alimentación y conversión de energía",
+        "Lazos de control y circuitos de protección",
+        "Esquemáticos y documentación técnica",
+        "Criterios de compatibilidad electromagnética desde el diseño"
+      ],
       "categories": [
         "pcb"
       ],
@@ -144,6 +165,13 @@
       "no": "D",
       "title": "Full-stack y software",
       "tech": ".NET · C# · JavaScript · TypeScript · REST APIs · SQL Server · Azure DevOps",
+      "summary": "Desarrollo software de punta a punta: .NET y C# en el servidor, JavaScript y TypeScript en el cliente y SQL Server en los datos. Lo he aplicado en software empresarial de comercio exterior y en las plataformas de mis propias empresas.",
+      "focus": [
+        "Servicios y APIs REST en .NET",
+        "Modelos de datos y consultas en SQL Server",
+        "Interfaces web con JavaScript y TypeScript",
+        "Trabajo en equipos ágiles y remotos, con Azure DevOps"
+      ],
       "categories": [
         "software",
         "datastore"
@@ -162,6 +190,13 @@
       "no": "E",
       "title": "Ingeniería y análisis de datos",
       "tech": "ETL · Pipelines · SQL · Power BI · R · Dashboards · Reportes",
+      "summary": "Llevo los datos desde su origen hasta la decisión: extracción y transformación, pipelines, consultas SQL y tableros en Power BI. En Poimen Labs convierto lecturas de campo en visualización, alertas y apoyo a la decisión para productores.",
+      "focus": [
+        "Pipelines y procesos de extracción, transformación y carga",
+        "Análisis en SQL y R",
+        "Tableros y reportes en Power BI",
+        "Datos geoespaciales: teledetección y drones"
+      ],
       "categories": [
         "data",
         "datastore"
@@ -181,6 +216,13 @@
       "no": "F",
       "title": "IA y aprendizaje automático",
       "tech": "Python · TensorFlow · PyTorch · Edge AI · RAG · Visión artificial",
+      "summary": "Modelos de aprendizaje automático en Python con TensorFlow y PyTorch, con interés especial en ejecutarlos en el borde, sobre hardware embebido. También trabajo con visión artificial y con sistemas de recuperación aumentada y agentes.",
+      "focus": [
+        "Inferencia en el borde sobre hardware propio",
+        "Visión artificial",
+        "Recuperación aumentada (RAG) y agentes sobre modelos de lenguaje",
+        "Cursos de sistemas embebidos con IA como docente"
+      ],
       "categories": [
         "data"
       ],
@@ -201,6 +243,13 @@
       "no": "G",
       "title": "Diseño digital y FPGA",
       "tech": "VHDL · Verilog · Xilinx · Intel · RTL · Cierre de timing",
+      "summary": "Diseño digital descrito en VHDL y Verilog para FPGA de Xilinx e Intel: de la descripción a nivel de transferencia de registros a la síntesis, la simulación y el cierre de timing.",
+      "focus": [
+        "Descripción de hardware en VHDL y Verilog",
+        "Síntesis e implementación en Vivado y Quartus",
+        "Simulación y verificación",
+        "Análisis y cierre de timing"
+      ],
       "categories": [
         "embedded"
       ],
@@ -212,6 +261,13 @@
       "no": "H",
       "title": "Robótica y automatización",
       "tech": "ROS 2 · Gazebo · SLAM · Mecatrónica · PID · Navegación",
+      "summary": "Robótica y mecatrónica, del prototipo al aula: desde 2021 diseño, programo y enseño robots educativos. Trabajo con ROS 2 y Gazebo para simulación, navegación y mapeo, y con control PID en los actuadores.",
+      "focus": [
+        "Prototipos mecatrónicos con metodología STEAM",
+        "Kits y robots educativos para colegios y universidades",
+        "Simulación y navegación con ROS 2 y Gazebo",
+        "Presido el capítulo estudiantil de Robótica y Automatización del IEEE"
+      ],
       "categories": [
         "robotics"
       ],
@@ -229,6 +285,13 @@
       "no": "I",
       "title": "Bioingeniería",
       "tech": "Biosensores · Procesamiento de señales · Instrumentos de laboratorio · Edge AI · IoT biomédico",
+      "summary": "Instrumentación para medir señales biológicas: biosensores, acondicionamiento y procesamiento de señales, y dispositivos biomédicos conectados con inteligencia en el borde. Es un interés que cultivo también desde la comunidad de Ingeniería en Medicina y Biología del IEEE.",
+      "focus": [
+        "Biosensores y adquisición de bioseñales",
+        "Procesamiento digital de señales",
+        "Instrumentos de laboratorio",
+        "Cargo presidencial en el capítulo estudiantil de Ingeniería en Medicina y Biología del IEEE"
+      ],
       "categories": [],
       "experience": [
         "ieee"
@@ -240,6 +303,13 @@
       "no": "J",
       "title": "Cloud, DevOps y sistemas",
       "tech": "Docker · Linux · CI/CD · Git · Azure · Monitoreo · Infraestructura",
+      "summary": "La infraestructura que mantiene el software en marcha: contenedores Docker, servidores Linux, integración y despliegue continuos y servicios en Azure, con monitoreo para saber qué pasa en producción.",
+      "focus": [
+        "Contenedores con Docker",
+        "Administración de sistemas Linux",
+        "Integración y despliegue continuos con Git",
+        "Monitoreo e infraestructura en Azure"
+      ],
       "categories": [
         "ops"
       ],

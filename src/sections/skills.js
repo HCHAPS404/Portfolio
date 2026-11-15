@@ -1,17 +1,10 @@
 import { skills, experience, certificates, competitions } from '../data.js';
 import { esc, pad2, sectionHead } from '../core/dom.js';
-import { t } from '../i18n/index.js';
+import { t, getLang } from '../i18n/index.js';
+import skillsBase from '../../data/skills.json';
 
-/** Código corto por categoría (identificador técnico, no se traduce). */
-const CAT_CODE = {
-  pcb: 'PCB',
-  embedded: 'EMB',
-  software: 'SW',
-  data: 'AI',
-  datastore: 'DB',
-  ops: 'OPS',
-  robotics: 'ROB',
-};
+/** Código corto por categoría (claves `skills.code.*`). */
+const catCode = (id) => t(`skills.code.${id}`);
 
 /** Símbolo de dos letras por herramienta, al estilo de una tabla periódica. */
 const SYMBOLS = {
@@ -24,7 +17,14 @@ const SYMBOLS = {
   'ROS 2': 'R2', Gazebo: 'Gz', 'Fusion 360': 'F3', SolidWorks: 'Sw', Blender: 'Bl', Figma: 'Fg',
 };
 
-const symbolOf = (name) => SYMBOLS[name] ?? name.replace(/[^A-Za-z0-9#]/g, '').slice(0, 2);
+/**
+ * Símbolo de la ficha. En ruso, chino y japonés sale de las dos primeras letras del
+ * nombre ya traducido; en el resto, de la tabla (por el nombre original).
+ */
+function symbolOf(name, baseName) {
+  if (['ru', 'zh', 'ja'].includes(getLang())) return [...name.replace(/[^\p{L}\p{N}]/gu, '')].slice(0, 2).join('');
+  return SYMBOLS[baseName] ?? baseName.replace(/[^A-Za-z0-9#]/g, '').slice(0, 2);
+}
 
 function chips(list, cls = 'chip') {
   return list.map((item) => `<li class="${cls}">${esc(item)}</li>`).join('');
@@ -37,7 +37,32 @@ function domainDetail(d) {
   const certs = (d.certificates ?? []).map((id) => certificates.find((c) => c.id === id)).filter(Boolean);
   const comps = (d.competitions ?? []).map((id) => competitions.find((c) => c.id === id)).filter(Boolean);
 
+  const toolCount = cats.reduce((n, c) => n + c.items.length, 0);
+  const facts = [
+    [techs.length, t('skills.detail.tech')],
+    [toolCount, t('skills.detail.tools')],
+    [xp.length, t('skills.detail.applied')],
+    [certs.length, t('skills.detail.certs')],
+    [comps.length, t('skills.detail.competitions')],
+  ].filter(([n]) => n > 0);
+
   const blocks = [];
+  blocks.push(`
+    <section class="dd__block dd__block--lead">
+      <p class="dd__summary">${esc(d.summary)}</p>
+      <dl class="dd__facts">
+        ${facts.map(([n, label]) => `<div><dt class="mono dim">${esc(label)}</dt><dd>${pad2(n)}</dd></div>`).join('')}
+      </dl>
+    </section>`);
+
+  blocks.push(`
+    <section class="dd__block">
+      <h5 class="dd__label mono dim">${esc(t('skills.detail.focus'))}</h5>
+      <ol class="dd__focus">
+        ${d.focus.map((f, i) => `<li><span class="mono" aria-hidden="true">${pad2(i + 1)}</span>${esc(f)}</li>`).join('')}
+      </ol>
+    </section>`);
+
   blocks.push(`
     <section class="dd__block">
       <h5 class="dd__label mono dim">${esc(t('skills.detail.tech'))}</h5>
@@ -60,13 +85,13 @@ function domainDetail(d) {
 
   if (xp.length) {
     blocks.push(`
-    <section class="dd__block">
+    <section class="dd__block dd__block--wide">
       <h5 class="dd__label mono dim">${esc(t('skills.detail.applied'))}</h5>
       <ul class="dd__list">
         ${xp
           .map(
             (e) => `
-          <li><a href="#xp-${esc(e.id)}" data-cursor><b>${esc(e.role)}</b><span>${esc(e.org)} · ${esc(e.period)}</span></a></li>`,
+          <li><a href="#xp-${esc(e.id)}" data-cursor><b>${esc(e.role)}</b><span>${esc(e.org)} · ${esc(e.period)}</span><em>${esc(e.summary)}</em></a></li>`,
           )
           .join('')}
       </ul>
@@ -88,7 +113,7 @@ function domainDetail(d) {
     <section class="dd__block">
       <h5 class="dd__label mono dim">${esc(t('skills.detail.competitions'))}</h5>
       <ul class="dd__list">
-        ${comps.map((c) => `<li><a href="#competencias" data-cursor><b>${esc(c.name)}</b><span>${esc(c.flag)} · ${esc(c.org)}</span></a></li>`).join('')}
+        ${comps.map((c) => `<li><a href="#competencias" data-cursor><b>${esc(c.name)}</b><span>${esc(c.flag)} · ${esc(c.org)}</span><em>${esc(c.summary)}</em></a></li>`).join('')}
       </ul>
     </section>`);
   }
@@ -141,16 +166,18 @@ function renderTools() {
 
   let n = 0;
   const tiles = skills.tools
-    .flatMap((c) => {
+    .flatMap((c, ci) => {
       const used = skills.domains.filter((d) => (d.categories ?? []).includes(c.id)).map((d) => d.no);
-      return c.items.map((name) => {
+      return c.items.map((name, ii) => {
         n += 1;
+        const sym = symbolOf(name, skillsBase.tools[ci].items[ii]);
+        const code = catCode(c.id);
         return `
         <li class="tool" data-cat="${esc(c.id)}" data-name="${esc(name.toLowerCase())}">
-          <button class="tool__btn" type="button" data-tool="${esc(name)}" data-cat-name="${esc(c.category)}" data-code="${esc(CAT_CODE[c.id] ?? '')}" data-domains="${esc(used.join(' · '))}" data-sym="${esc(symbolOf(name))}">
+          <button class="tool__btn" type="button" data-tool="${esc(name)}" data-cat-name="${esc(c.category)}" data-code="${esc(code)}" data-domains="${esc(used.join(' · '))}" data-sym="${esc(sym)}">
             <span class="tool__no">${pad2(n)}</span>
-            <span class="tool__code">${esc(CAT_CODE[c.id] ?? '')}</span>
-            <span class="tool__sym">${esc(symbolOf(name))}</span>
+            <span class="tool__code">${esc(code)}</span>
+            <span class="tool__sym">${esc(sym)}</span>
             <span class="tool__name">${esc(name)}</span>
           </button>
         </li>`;

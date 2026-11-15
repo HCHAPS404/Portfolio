@@ -81,6 +81,7 @@
 
 .hero__word {
   display: inline-block;
+  white-space: nowrap;
   will-change: transform;
 }
 
