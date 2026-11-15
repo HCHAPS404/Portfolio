@@ -1,0 +1,101 @@
+[
+  {
+    "period": "2024 – Actualidad",
+    "role": "Fundador y Gerente General",
+    "org": "DevKit Electronics S.A.S",
+    "link": "https://devkitelectronics.com",
+    "type": "Fundador",
+    "summary": "Empresa de educación STEM que fundé. Hacemos hardware, software y currículos que funcionan en aulas y laboratorios reales.",
+    "bullets": [
+      "Dirijo estrategia, operación y producto en educación de ingeniería y ciencias para niños, jóvenes, universitarios y profesionales.",
+      "Diseño y entrego soluciones de punta a punta: arquitectura curricular, PCB multicapa, firmware embebido, software educativo, plataformas web y equipos de laboratorio.",
+      "Construí un portafolio de cursos, kits de robótica y sistemas de laboratorio adoptados por colegios y universidades.",
+      "Lidero equipos multidisciplinarios entre electrónica, software y pedagogía.",
+      "Traduzco ingeniería compleja (STM32, IoT, fabricación 3D, automatización) en experiencias de aprendizaje."
+    ],
+    "tags": ["STEM", "Robótica", "STM32", "Firmware", "Software", "Impresión 3D", "IoT"],
+    "featured": true
+  },
+  {
+    "period": "2025 – Actualidad",
+    "role": "Cofundador y Gerente General",
+    "org": "Poimen Labs",
+    "type": "Cofundador",
+    "summary": "Empresa AgriTech que cofundé para llevar electrónica, automatización, sensado y datos al agro colombiano, del prototipo al despliegue en campo.",
+    "bullets": [
+      "Codirijo la estrategia, la dirección de ingeniería y la entrega de soluciones de tecnología agrícola en Colombia.",
+      "Diseño hardware y software integrados para el campo: nodos de sensores, adquisición en el borde, control y capas de conectividad rural.",
+      "Desarrollo sistemas de monitoreo y automatización de bajo costo para cultivos y ganadería, con firmware eficiente en energía.",
+      "Convierto datos de campo en visualización, alertas y apoyo a la decisión para productores.",
+      "Gestiono el ciclo completo: requisitos con productores, PCB y carcasa, firmware, backend, pilotos en campo y mejora iterativa."
+    ],
+    "tags": ["AgriTech", "IoT", "Automatización", "Embebidos", "Sensores", "Datos", "Software"],
+    "featured": true
+  },
+  {
+    "period": "May 2024 – Abr 2025",
+    "role": "Desarrollador Full-Stack Junior",
+    "org": "Tranexco",
+    "type": "Tiempo completo · Remoto",
+    "summary": "Software empresarial para comercio internacional, aduanas y operaciones logísticas.",
+    "bullets": [
+      "Diseñé soluciones .NET para gestión de clientes, procesos aduaneros, importaciones, cumplimiento DIAN, logística e integraciones.",
+      "Desarrollé soluciones para clientes de alto volumen, con escalabilidad, seguridad y rendimiento.",
+      "Trabajé en todo el stack, desde modelos de datos en SQL Server hasta APIs y front-end, en un equipo ágil y remoto."
+    ],
+    "tags": [".NET", "C#", "SQL Server", "REST API", "DIAN"]
+  },
+  {
+    "period": "Jul 2025 – Dic 2025",
+    "role": "Docente de Robótica y Electrónica",
+    "org": "COMPENSAR · Universidad COMPENSAR",
+    "type": "Presencial",
+    "summary": "Enseñar robótica e IA embebida para ayudar a cerrar la brecha educativa en STEAM.",
+    "bullets": [
+      "Lideré iniciativas STEAM para reducir la brecha educativa en instituciones públicas.",
+      "Diseñé cursos de robótica, automatización y sistemas embebidos con IA, integrados a los proyectos curriculares.",
+      "Acompañé a estudiantes desde el primer circuito hasta un prototipo autónomo funcional."
+    ],
+    "tags": ["Robótica", "IA embebida", "Arduino", "STEAM"]
+  },
+  {
+    "period": "2023 – 2024",
+    "role": "Desarrollador de Software y Consultor en Robótica Educativa",
+    "org": "Arisoft Seguridad Vial S.A.S",
+    "type": "Tiempo completo · Híbrido",
+    "summary": "Robótica educativa llevada del circuito al aula, lista para el mercado.",
+    "bullets": [
+      "Gestioné proyectos de robótica educativa para su comercialización a instituciones distritales y educativas.",
+      "Programé robots educativos, desarrollé circuitos electrónicos y brindé consultoría en sitio.",
+      "Conecté ingeniería y ventas, traduciendo capacidades técnicas en productos que las instituciones podían adoptar."
+    ],
+    "tags": ["Robótica", "PCB", "C/C++", "Producto"]
+  },
+  {
+    "period": "Mar 2021 – Nov 2023",
+    "role": "Consultor en Ingeniería y Robótica Educativa",
+    "org": "Computadores para Educar · Ministerio de Educación",
+    "type": "Tiempo completo · Híbrido",
+    "summary": "Prototipos mecatrónicos y programas STEAM que llegaron a comunidades vulnerables en todo el país.",
+    "bullets": [
+      "Lideré el ciclo completo de diseño y desarrollo de prototipos mecatrónicos con metodología STEAM.",
+      "Apliqué diseño de PCB, modelado 3D, robótica y programación (Python, C/C++) para educación y poblaciones vulnerables.",
+      "Formé a docentes y comunidades para que sostuvieran la tecnología por sí mismos."
+    ],
+    "tags": ["PCB", "CAD 3D", "Python", "C/C++", "STEAM"]
+  },
+  {
+    "period": "Jun 2022 – Actualidad",
+    "role": "Cargos de Presidencia y Staff",
+    "org": "IEEE · Universidad Distrital",
+    "type": "Medio tiempo · Híbrido",
+    "summary": "Liderar comunidades estudiantiles en robótica, tecnología biomédica y humanitaria.",
+    "bullets": [
+      "Cargos presidenciales en la rama estudiantil IEEE, RAS, EMBS y el capítulo de Tecnologías Humanitarias.",
+      "Actualmente presido los capítulos estudiantiles RAS, SIGHT y CIS.",
+      "Organizo eventos técnicos, talleres y actividades que conectan a los estudiantes con la ingeniería real."
+    ],
+    "tags": ["IEEE", "RAS", "EMBS", "SIGHT", "CIS"],
+    "featured": true
+  }
+]

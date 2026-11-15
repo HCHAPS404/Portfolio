@@ -1,0 +1,133 @@
+{
+  "owner": "HCHAPS404",
+  "githubBase": "https://github.com/HCHAPS404/",
+  "competencias": [
+    {
+      "id": "navira",
+      "no": "C1",
+      "name": "NAVIRA-SATViRe",
+      "meta": "Hackatón nacional · IoT · Edge AI · Embebidos",
+      "org": "UNGRD × PNUD",
+      "year": "2026",
+      "summary": "Sistema de alerta temprana para derrumbes y deslizamientos. Primer puesto en la hackatón nacional.",
+      "detail": "Construido durante la hackatón nacional organizada por la UNGRD y el PNUD. Combina nodos de sensores de bajo consumo con inferencia en el borde y una cadena de alertas para dar aviso temprano a las comunidades ante eventos de remoción en masa.",
+      "flag": "1er puesto",
+      "repo": "https://github.com/HCHAPS404/NAVIRA-SATViRe",
+      "featured": true,
+      "image": null,
+      "video": null,
+      "visual": "terrain",
+      "place": 1,
+      "location": "Colombia"
+    },
+    {
+      "id": "gdg-cartagena",
+      "no": "C2",
+      "name": "Hackatón GDG Cartagena",
+      "meta": "Hackatón · Google Developer Group",
+      "org": "Google Developer Group (GDG) Cartagena",
+      "year": null,
+      "location": "Cartagena de Indias",
+      "summary": "Tercer puesto en la hackatón organizada por Google Developer Group (GDG) Cartagena.",
+      "detail": null,
+      "flag": "3er puesto",
+      "place": 3,
+      "repo": null,
+      "featured": false,
+      "visual": "waves",
+      "image": null,
+      "video": null
+    }
+  ],
+  "proyectos": [
+    {
+      "id": "statum",
+      "no": "P1",
+      "name": "STATUM",
+      "status": "En desarrollo",
+      "summary": null,
+      "repo": "https://github.com/HCHAPS404/STATUM"
+    },
+    {
+      "id": "inzerm",
+      "no": "P2",
+      "name": "INZERM",
+      "status": "En desarrollo",
+      "summary": null,
+      "repo": "https://github.com/HCHAPS404/INZERM"
+    },
+    {
+      "id": "nuren",
+      "no": "P3",
+      "name": "NUREN",
+      "status": "En desarrollo",
+      "summary": null,
+      "repo": "https://github.com/HCHAPS404/NUREN"
+    },
+    {
+      "id": "prora",
+      "no": "P4",
+      "name": "PRORA",
+      "status": "En desarrollo",
+      "summary": null,
+      "repo": "https://github.com/HCHAPS404/PRORA"
+    },
+    {
+      "id": "soul",
+      "no": "P5",
+      "name": "SOUL",
+      "status": "En desarrollo",
+      "summary": null,
+      "repo": "https://github.com/HCHAPS404/SOUL"
+    },
+    {
+      "id": "verik",
+      "no": "P6",
+      "name": "VERIK",
+      "status": "En desarrollo",
+      "summary": null,
+      "repo": "https://github.com/HCHAPS404/VERIK"
+    },
+    {
+      "id": "vak",
+      "no": "P7",
+      "name": "VAK",
+      "status": "En desarrollo",
+      "summary": null,
+      "repo": "https://github.com/HCHAPS404/VAK"
+    },
+    {
+      "id": "niru",
+      "no": "P8",
+      "name": "NIRU",
+      "status": "En desarrollo",
+      "summary": null,
+      "repo": "https://github.com/HCHAPS404/NIRU"
+    },
+    {
+      "id": "protobot",
+      "no": "P9",
+      "name": "PROTOBOT",
+      "status": "En desarrollo",
+      "summary": null,
+      "repo": "https://github.com/HCHAPS404/PROTOBOT"
+    },
+    {
+      "id": "redact",
+      "no": "P10",
+      "name": "REDACT",
+      "status": "En desarrollo",
+      "summary": null,
+      "repo": "https://github.com/HCHAPS404/REDACT"
+    },
+    {
+      "id": "voxlu",
+      "no": "P11",
+      "name": "VOXLU",
+      "status": "En desarrollo",
+      "summary": null,
+      "repo": "https://github.com/HCHAPS404/VOXLU"
+    }
+  ],
+  "_nota": "Los proyectos de 'proyectos' no tienen descripción aún (summary: null). En 'competencias', los campos null (year, detail, repo) están pendientes de que el dueño los complete: no inventar. 'visual' elige la animación del panel: terrain | waves."
+}

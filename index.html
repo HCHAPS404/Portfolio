@@ -1,23 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Helmut Chaparro Sandoval · Electronics Engineer &amp; Full-Stack Developer</title>
+    <title>Helmut Chaparro Sandoval — Ingeniero Electrónico y Desarrollador Full-Stack</title>
     <meta
       name="description"
-      content="Portfolio of Helmut Chaparro Sandoval. Electronics engineering, embedded systems, PCB design, full-stack development and applied AI. Bogotá, Colombia."
+      content="Portafolio de Helmut Chaparro Sandoval: ingeniero electrónico y desarrollador full-stack en Bogotá. Sistemas embebidos, PCB, Edge AI, software y datos. Fundador de DevKit Electronics y cofundador de Poimen Labs."
     />
+    <meta name="author" content="Helmut Chaparro Sandoval" />
+    <meta name="theme-color" content="#08080a" />
+    <meta name="color-scheme" content="dark" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Helmut Chaparro Sandoval — Portafolio" />
+    <meta
+      property="og:description"
+      content="Ingeniero electrónico y desarrollador full-stack. Hardware, software y datos, de punta a punta."
+    />
+    <meta property="og:locale" content="es_CO" />
+    <meta name="twitter:card" content="summary" />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%2308080a'/><rect x='3' y='3' width='4' height='10' fill='%23edebe6'/><rect x='9' y='3' width='4' height='10' fill='%23edebe6'/><rect x='5' y='7' width='6' height='2' fill='%23e5262c'/></svg>"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500;125,600;125,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Silkscreen&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="%BASE_URL%assets/logo.png" type="image/png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Helmut Chaparro Sandoval",
+        "jobTitle": "Ingeniero Electrónico y Desarrollador Full-Stack",
+        "address": { "@type": "PostalAddress", "addressLocality": "Bogotá", "addressCountry": "CO" },
+        "url": "https://www.helmutchs.com",
+        "sameAs": [
+          "https://github.com/HCHAPS404",
+          "https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317/"
+        ]
+      }
+    </script>
+
+    <style>
+      /* Evita un destello blanco antes de que cargue el CSS */
+      html { background: #08080a; color: #edebe6; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <div id="app"></div>
+    <noscript>
+      <p style="padding: 2rem; font-family: monospace">
+        Este portafolio necesita JavaScript para mostrarse. Contacto: helmut.chs@gmail.com
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

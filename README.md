@@ -1,60 +1,51 @@
-# Portfolio · Helmut Chaparro Sandoval
+# Portafolio · Helmut Chaparro Sandoval
 
-Sitio en vivo: **[hchaps404.github.io/Portfolio](https://hchaps404.github.io/Portfolio/)**
-
-Mi portafolio personal. Una sola página, bilingüe (ES/EN), hecha con React y Vite. El código está en `src/`, el build en `dist/`.
-
-Soy ingeniero electrónico y desarrollador full-stack en Bogotá. Fundé [DevKit Electronics](https://devkitelectronics.com) (soy uno de los dos fundadores oficiales) y soy cofundador de Poimen Labs. Este repo es la versión que mantengo yo.
+Portafolio personal de una sola página: perfil, formación, experiencia, habilidades, competencias, proyectos, premios y contacto. Estética "Terminal Cósmica": blanco y negro con acento rojo, arte ASCII y animación ligada al scroll.
 
 ## Stack
 
-React 19, Vite 6, CSS en `src/index.css`, i18n con Context API. Se publica con GitHub Actions en Pages.
+Vite · JavaScript (módulos ES, sin framework) · GSAP + ScrollTrigger · Lenis · Canvas 2D.
 
-## Desarrollo local
+## Desarrollo
 
 ```bash
-git clone https://github.com/HCHAPS404/Portfolio.git
-cd Portfolio
 npm install
-npm run dev
-```
-
-Abre `http://localhost:5173`.
-
-```bash
-npm run build
-npm run preview
-```
-
-## Deploy
-
-El workflow en `.github/workflows/deploy.yml` compila y sube `dist/` en cada push a `main`.
-
-En GitHub: **Settings → Pages → Source: GitHub Actions**.
-
-Si la página sale en blanco, revisa que Pages no esté publicando la rama `main` directamente. El `index.html` del repo apunta a `/src/main.jsx`, que solo corre en desarrollo.
-
-Para dominio propio en la raíz:
-
-```powershell
-$env:BASE_PATH="/"; npm run build
+npm run dev       # http://localhost:5173
+npm run build     # genera dist/
+npm run preview   # sirve dist/ en http://localhost:4173
 ```
 
 ## Dónde editar
 
-- Textos ES/EN → `src/i18n/translations.js`
-- Experiencia, becas, proyectos → `src/data/`
-- Componentes → `src/components/`
-- Imágenes y CV → `public/assets/`
-- Formulario → `FORM_ENDPOINT` en `src/data/config.js`
+| Qué | Dónde |
+|---|---|
+| Textos y datos (perfil, experiencia, proyectos…) | `data/*.json` |
+| Foto, CV y logos | `public/assets/` |
+| Colores, tipografías, espaciado y tiempos | `src/styles/tokens.css` |
+| Estructura de cada sección | `src/sections/` |
+| Estilos de cada sección | `src/styles/` |
+| Animaciones y scroll | `src/core/motion.js` |
+| Navegación, arranque, cursor | `src/core/chrome.js` |
+| Visuales en canvas (toro ASCII, retrato ASCII, terreno, emblemas) | `src/visuals/` |
 
-## Contacto
+Para agregar un proyecto, una certificación o un premio basta con añadir una entrada al JSON correspondiente; la página se actualiza sola.
 
-- [helmutchs.com](https://www.helmutchs.com)
-- [helmut.chs@gmail.com](mailto:helmut.chs@gmail.com)
-- [LinkedIn](https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317/)
-- [@HCHAPS404](https://github.com/HCHAPS404)
-- [@divisum.hell](https://instagram.com/divisum.hell)
-- [@imhell.12](https://www.tiktok.com/@imhell.12)
+## Verificación
 
-MIT · © 2026 Helmut Chaparro Sandoval
+Con el servidor de preview activo:
+
+```bash
+node tools/shot.mjs http://localhost:4173/ renders/d 1440 900   # capturas de escritorio por sección
+node tools/shot.mjs http://localhost:4173/ renders/m 390 844    # capturas móviles
+node tools/check-rm.mjs                                         # modo "movimiento reducido"
+node tools/check-ui.mjs                                         # menú móvil y filtros
+```
+
+Los scripts usan el Edge instalado y reportan errores de consola y desbordes horizontales.
+
+## Despliegue en GitHub Pages
+
+El workflow `.github/workflows/deploy.yml` compila y publica `dist/` en cada push a `main`, con `BASE_PATH=/Portfolio/` (la ruta del sitio: https://hchaps404.github.io/Portfolio/).
+En GitHub: **Settings → Pages → Source: GitHub Actions**. Para compilar localmente con la misma ruta: `BASE_PATH=/Portfolio/ npm run build`.
+
+© 2026 Helmut Chaparro Sandoval

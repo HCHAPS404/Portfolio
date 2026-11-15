@@ -1,0 +1,423 @@
+/* ---------- Arranque tipo terminal ---------- */
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: var(--sp-4);
+  padding: var(--gutter);
+  background: var(--c-bg);
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.85s var(--ease-io);
+}
+
+.boot.is-done {
+  clip-path: inset(0 0 100% 0);
+}
+
+.boot__log {
+  font-family: var(--f-mono);
+  font-size: var(--fs-xs);
+  line-height: 1.9;
+  color: var(--c-ink-dim);
+  white-space: pre-wrap;
+  min-height: 9.5em;
+}
+
+.boot__count {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(4rem, 16vw, 13rem);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.boot__count i {
+  font-style: normal;
+  font-size: 0.3em;
+  color: var(--c-accent);
+  letter-spacing: 0;
+}
+
+.boot__bar {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+}
+
+.boot__bar i {
+  display: block;
+  height: 100%;
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* ---------- HUD superior ---------- */
+.hud {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--hud-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding-inline: var(--gutter);
+  font-family: var(--f-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s;
+}
+
+.is-scrolled .hud,
+.menu-open .hud {
+  background: rgba(8, 8, 10, 0.78);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom-color: var(--c-line);
+}
+
+.hud__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15em;
+  font-family: var(--f-pixel);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.hud__mark {
+  width: 9px;
+  height: 9px;
+  margin-right: 0.7em;
+  background: var(--c-accent);
+  animation: blink 2.4s steps(2) infinite;
+}
+
+.hud__nav {
+  display: flex;
+  gap: clamp(0.9rem, 0.2rem + 1.1vw, 1.9rem);
+}
+
+.hud__nav a {
+  position: relative;
+  display: inline-flex;
+  gap: 0.5em;
+  padding-block: 0.6em;
+  color: var(--c-ink-dim);
+  transition: color var(--dur-snap);
+}
+
+.hud__nav a span {
+  color: var(--c-mute);
+  transition: color var(--dur-snap);
+}
+
+.hud__nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.15em;
+  height: 1px;
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s var(--ease-out);
+}
+
+.hud__nav a:hover,
+.hud__nav a[aria-current] {
+  color: var(--c-ink);
+}
+
+.hud__nav a:hover span,
+.hud__nav a[aria-current] span {
+  color: var(--c-accent);
+}
+
+.hud__nav a:hover::after,
+.hud__nav a[aria-current]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.hud__right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.hud__clock {
+  color: var(--c-ink-dim);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.hud__menu {
+  display: none;
+  align-items: center;
+  gap: 0.8em;
+  padding: 0.7em 0;
+  font-family: var(--f-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hud__menu i {
+  position: relative;
+  width: 22px;
+  height: 8px;
+}
+
+.hud__menu i::before,
+.hud__menu i::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--c-ink);
+  transition: transform 0.4s var(--ease-out), top 0.4s var(--ease-out);
+}
+
+.hud__menu i::before { top: 0; }
+.hud__menu i::after { top: 100%; }
+
+.hud__menu[aria-expanded='true'] i::before { top: 50%; transform: rotate(45deg); }
+.hud__menu[aria-expanded='true'] i::after { top: 50%; transform: rotate(-45deg); }
+
+/* ---------- Menú móvil ---------- */
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--hud-h) + var(--sp-5)) var(--gutter) var(--sp-5);
+  background: var(--c-bg);
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.5s var(--ease-io);
+}
+
+.menu[hidden] {
+  display: none;
+}
+
+.menu.is-open {
+  clip-path: inset(0 0 0 0);
+}
+
+.menu__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__nav a {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 0.32em;
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 8.4vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--c-line);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out), color var(--dur-snap);
+}
+
+.menu.is-open .menu__nav a {
+  opacity: 1;
+  transform: none;
+}
+
+.menu__nav a:nth-child(1) { transition-delay: 0.1s; }
+.menu__nav a:nth-child(2) { transition-delay: 0.14s; }
+.menu__nav a:nth-child(3) { transition-delay: 0.18s; }
+.menu__nav a:nth-child(4) { transition-delay: 0.22s; }
+.menu__nav a:nth-child(5) { transition-delay: 0.26s; }
+.menu__nav a:nth-child(6) { transition-delay: 0.3s; }
+.menu__nav a:nth-child(7) { transition-delay: 0.34s; }
+.menu__nav a:nth-child(8) { transition-delay: 0.38s; }
+
+.menu__nav a span {
+  font-family: var(--f-pixel);
+  font-size: var(--fs-xs);
+  letter-spacing: 0;
+  color: var(--c-accent);
+}
+
+.menu__nav a[aria-current] {
+  color: var(--c-accent);
+}
+
+/* ---------- Riel de progreso ---------- */
+.rail {
+  position: fixed;
+  right: calc(var(--gutter) * 0.42);
+  top: 50%;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  transform: translateY(-50%);
+  font-family: var(--f-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ink-dim);
+  pointer-events: none;
+  transition: color 0.3s;
+}
+
+/* Sobre el bloque rojo de contacto el riel pasa a negro */
+.on-accent .rail,
+.on-accent .rail__no {
+  color: var(--c-accent-ink);
+}
+
+.on-accent .rail__bar {
+  background: rgba(10, 10, 12, 0.35);
+}
+
+.on-accent .rail__bar i {
+  background: var(--c-accent-ink);
+}
+
+.rail__no {
+  font-family: var(--f-pixel);
+  color: var(--c-ink);
+}
+
+.rail__bar {
+  width: 1px;
+  height: 110px;
+  background: var(--c-line-strong);
+}
+
+.rail__bar i {
+  display: block;
+  width: 3px;
+  margin-left: -1px;
+  height: 100%;
+  background: var(--c-ink);
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.rail__label {
+  writing-mode: vertical-rl;
+}
+
+/* ---------- Cursor personalizado ---------- */
+.cursor {
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 500;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.cursor.is-visible {
+  opacity: 1;
+}
+
+.cursor__ring,
+.cursor__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.cursor__ring::before {
+  content: '';
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1px solid var(--c-ink);
+  opacity: 0.55;
+  transition: transform 0.35s var(--ease-out), border-color 0.25s, opacity 0.25s;
+}
+
+.cursor__dot::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  background: var(--c-accent);
+  transition: background 0.2s, transform 0.3s var(--ease-out);
+}
+
+.cursor.is-active .cursor__ring::before {
+  transform: scale(1.75) rotate(45deg);
+  border-color: var(--c-accent);
+  opacity: 1;
+}
+
+.cursor.is-inverse .cursor__ring::before {
+  border-color: var(--c-accent-ink);
+}
+
+.cursor.is-inverse .cursor__dot::before {
+  background: var(--c-accent-ink);
+}
+
+/* ---------- Indicador "en vivo" ---------- */
+.pulse {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 0.7em;
+  background: var(--c-accent);
+  animation: blink 1.6s steps(2) infinite;
+  vertical-align: 0.05em;
+}
+
+@keyframes blink {
+  50% { opacity: 0.15; }
+}
+
+@media (max-width: 1100px) {
+  .hud__nav,
+  .rail {
+    display: none;
+  }
+  .hud__menu {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .hud__clock {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse,
+  .hud__mark {
+    animation: none;
+  }
+  .menu,
+  .menu__nav a {
+    transition: none;
+  }
+}

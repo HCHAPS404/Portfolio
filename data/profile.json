@@ -1,0 +1,48 @@
+{
+  "name": "Helmut Chaparro Sandoval",
+  "shortName": "Helmut Chaparro",
+  "roles": [
+    "Ingeniero Electrónico",
+    "Desarrollador Full-Stack",
+    "Emprendedor",
+    "Sistemas embebidos",
+    "Diseñador de PCB",
+    "Ingeniero en robótica",
+    "Edge AI",
+    "Ingeniero de IA",
+    "Analista de datos",
+    "Ingeniero de datos",
+    "Educador STEM"
+  ],
+  "location": "Bogotá, Colombia",
+  "availability": "Disponible",
+  "summary": "Ingeniero electrónico y desarrollador full-stack en Bogotá. Más de seis años construyendo de punta a punta: PCB, firmware embebido, backends .NET, Edge AI en campo. Fundé DevKit Electronics y soy cofundador de Poimen Labs.",
+  "about": "Llevo más de seis años en proyectos que mezclan hardware, software y datos: desde plataformas de comercio exterior hasta Edge AI, FPGA y robótica aplicada.",
+  "tags": ["Fundador de DevKit Electronics", "Presidente de rama IEEE", "Liderazgo estratégico", "Consultoría técnica"],
+  "stats": [
+    { "label": "Años de experiencia", "value": 6, "suffix": "+" },
+    { "label": "Certificaciones", "value": 10, "suffix": "+" },
+    { "label": "Idiomas", "value": 6 },
+    { "label": "Hackatón nacional", "text": "1er puesto", "accent": true }
+  ],
+  "languages": [
+    { "name": "Español", "level": "Nativo", "fill": 100 },
+    { "name": "Inglés", "level": "B2", "fill": 68 },
+    { "name": "Francés", "level": "A1", "fill": 30 },
+    { "name": "Mandarín", "level": "HSK1", "fill": 18 },
+    { "name": "Alemán", "level": "A2", "fill": 40 },
+    { "name": "Ruso", "level": "A2", "fill": 40 }
+  ],
+  "photo": "assets/img/profile/foto.png",
+  "cv": "assets/docs/cv.pdf",
+  "logo": { "white": "assets/img/logo/logo-white.png", "black": "assets/img/logo/logo-black.png" },
+  "links": {
+    "web": "https://www.helmutchs.com",
+    "github": "https://github.com/HCHAPS404",
+    "linkedin": "https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317/",
+    "email": "helmut.chs@gmail.com",
+    "instagram": "https://instagram.com/divisum.hell",
+    "tiktok": "https://www.tiktok.com/@imhell.12",
+    "x": "https://x.com/HCHAPS404"
+  }
+}

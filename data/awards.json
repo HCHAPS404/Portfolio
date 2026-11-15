@@ -1,0 +1,33 @@
+{
+  "awards": [
+    {
+      "year": "2026",
+      "title": "Sistema de alerta temprana para deslizamientos",
+      "org": "Hackatón nacional · UNGRD × PNUD",
+      "desc": "Ganador de la hackatón nacional de la Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD) y el Programa de las Naciones Unidas para el Desarrollo (PNUD), con un sistema de alerta temprana para derrumbes y deslizamientos.",
+      "flag": "1er puesto",
+      "featured": true
+    },
+    {
+      "year": "2026",
+      "title": "Altium Global Scholarship Program",
+      "org": "Altium Designer Software",
+      "desc": "Beca global otorgada por Altium por excelencia en diseño profesional de PCB.",
+      "flag": "Beca"
+    },
+    {
+      "year": "2026",
+      "title": "Grad to Career Program",
+      "org": "Altium Designer",
+      "desc": "Beca de desarrollo profesional dentro del programa Grad to Career para talento emergente en diseño de PCB.",
+      "flag": "Beca"
+    },
+    {
+      "year": "2022 – Actualidad",
+      "title": "Presidencias IEEE y capítulos estudiantiles",
+      "org": "IEEE · Universidad Distrital",
+      "desc": "Presidente electo de la rama estudiantil IEEE y de los capítulos RAS, SIGHT y CIS, liderando iniciativas de robótica, tecnología humanitaria e inteligencia computacional.",
+      "flag": "Liderazgo"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+/* =========================================================
+   08 · CONTACTO — bloque brutalista rojo
+   ========================================================= */
+.contact {
+  position: relative;
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+  padding-block: clamp(3.5rem, 2rem + 6vw, 7rem) clamp(3rem, 2rem + 5vw, 6rem);
+  overflow: hidden;
+}
+
+/* Trama de puntos sobre el rojo */
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(10, 10, 12, 0.22) 1px, transparent 1.4px);
+  background-size: 9px 9px;
+  mask-image: linear-gradient(115deg, transparent 35%, #000 100%);
+  -webkit-mask-image: linear-gradient(115deg, transparent 35%, #000 100%);
+  pointer-events: none;
+}
+
+.contact__inner {
+  position: relative;
+}
+
+.contact__kicker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-4);
+  padding-bottom: var(--sp-3);
+  border-bottom: 3px solid var(--c-accent-ink);
+  font-weight: 500;
+}
+
+.contact__title {
+  position: relative;
+  display: inline-block;
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(3rem, 19vw, 17.5rem);
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+  margin-block: clamp(1.5rem, 4vw, 3.5rem) clamp(2rem, 5vw, 4.5rem);
+  margin-left: -0.04em;
+}
+
+/* Glitch: dos copias desplazadas y recortadas en franjas */
+.contact__title::before,
+.contact__title::after {
+  content: attr(data-glitch);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.contact__title::before {
+  color: var(--c-ink);
+}
+
+.contact__title::after {
+  color: var(--c-accent-ink);
+  mix-blend-mode: multiply;
+}
+
+.contact__title:hover::before,
+.contact__title.is-glitching::before {
+  opacity: 1;
+  animation: glitch-a 0.55s steps(2) infinite;
+}
+
+.contact__title:hover::after,
+.contact__title.is-glitching::after {
+  opacity: 1;
+  animation: glitch-b 0.55s steps(2) infinite;
+}
+
+@keyframes glitch-a {
+  0% { clip-path: inset(8% 0 72% 0); transform: translate(-0.03em, 0); }
+  25% { clip-path: inset(52% 0 28% 0); transform: translate(0.035em, 0); }
+  50% { clip-path: inset(30% 0 55% 0); transform: translate(-0.02em, 0); }
+  75% { clip-path: inset(78% 0 6% 0); transform: translate(0.03em, 0); }
+  100% { clip-path: inset(15% 0 70% 0); transform: translate(-0.035em, 0); }
+}
+
+@keyframes glitch-b {
+  0% { clip-path: inset(62% 0 20% 0); transform: translate(0.03em, 0.01em); }
+  25% { clip-path: inset(12% 0 74% 0); transform: translate(-0.03em, 0); }
+  50% { clip-path: inset(70% 0 12% 0); transform: translate(0.025em, -0.01em); }
+  75% { clip-path: inset(36% 0 48% 0); transform: translate(-0.035em, 0); }
+  100% { clip-path: inset(84% 0 4% 0); transform: translate(0.03em, 0); }
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(2rem, 1rem + 5vw, 6rem);
+  align-items: start;
+}
+
+.contact__email {
+  display: inline-block;
+  margin-block: var(--sp-2) var(--sp-4);
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 0.8rem + 2.6vw, 3.1rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  word-break: break-all;
+  background: linear-gradient(var(--c-accent-ink), var(--c-accent-ink)) left bottom / 100% 3px no-repeat;
+  padding-bottom: 0.12em;
+  transition: background-size 0.45s var(--ease-out), color var(--dur-snap);
+}
+
+.contact__email:hover {
+  background-size: 100% 100%;
+  color: var(--c-accent);
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.btn--ink {
+  background: var(--c-accent-ink);
+  border-color: var(--c-accent-ink);
+  color: var(--c-ink);
+}
+
+.btn--ink:hover {
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+  color: var(--c-accent-ink);
+}
+
+.btn--line {
+  border: 2px solid var(--c-accent-ink);
+  color: var(--c-accent-ink);
+  clip-path: none;
+  font-weight: 500;
+}
+
+.btn--line:hover {
+  background: var(--c-accent-ink);
+  border-color: var(--c-accent-ink);
+  color: var(--c-ink);
+}
+
+.contact__channels {
+  border-bottom: 3px solid var(--c-accent-ink);
+}
+
+.channel {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--sp-3);
+  padding: 0.95rem 0.6rem;
+  border-top: 3px solid var(--c-accent-ink);
+  transition: background var(--dur-snap), color var(--dur-snap), padding var(--dur-snap) var(--ease-out);
+}
+
+.channel__label {
+  font-family: var(--f-pixel);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+}
+
+.channel__handle {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: var(--fs-lg);
+  letter-spacing: -0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.channel__arrow {
+  font-size: 1.2rem;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.channel:hover,
+.channel:focus-visible {
+  background: var(--c-accent-ink);
+  color: var(--c-ink);
+  padding-left: 1.2rem;
+}
+
+.channel:hover .channel__arrow {
+  transform: translate(4px, -4px);
+}
+
+/* ---------- Pie ---------- */
+.footer {
+  background: var(--c-bg);
+  border-top: 1px solid var(--c-line);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-5);
+  padding-block: var(--sp-4);
+  font-size: var(--fs-2xs);
+}
+
+.footer a:hover {
+  color: var(--c-accent);
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .channel {
+    grid-template-columns: 5.2rem minmax(0, 1fr) auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__title::before,
+  .contact__title::after {
+    display: none;
+  }
+}

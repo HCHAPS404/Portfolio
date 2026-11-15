@@ -1,0 +1,54 @@
+/* Tokens de diseño — "Terminal Cósmica" · blanco y negro + rojo */
+:root {
+  /* Color */
+  --c-bg: #08080a;
+  --c-bg-2: #0f0f12;
+  --c-bg-3: #17171b;
+  --c-ink: #edebe6;
+  --c-ink-dim: #a3a29d;
+  --c-mute: #63625f;
+  --c-line: rgba(237, 235, 230, 0.14);
+  --c-line-strong: rgba(237, 235, 230, 0.32);
+  --c-accent: #ee2e33;
+  --c-accent-ink: #0a0a0c;
+  --c-data: #f4f4f2;
+
+  /* Tipografía */
+  --f-pixel: 'Silkscreen', 'VT323', monospace;
+  --f-display: 'Space Grotesk', system-ui, sans-serif;
+  --f-body: 'Inter', system-ui, sans-serif;
+  --f-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  /* Escala fluida */
+  --fs-2xs: 0.6875rem;
+  --fs-xs: clamp(0.72rem, 0.7rem + 0.1vw, 0.8rem);
+  --fs-sm: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
+  --fs-md: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --fs-lg: clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem);
+  --fs-xl: clamp(1.6rem, 1.1rem + 2.2vw, 3rem);
+  --fs-2xl: clamp(2.4rem, 1.2rem + 5.2vw, 6rem);
+  --fs-hero: clamp(3rem, 0.6rem + 10.4vw, 11.5rem);
+
+  /* Espaciado */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2.5rem;
+  --sp-6: 4rem;
+  --sp-7: 7rem;
+  --sec-y: clamp(5rem, 3rem + 9vw, 11rem);
+  --gutter: clamp(1.1rem, 0.4rem + 3vw, 3.5rem);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-snap: 0.22s;
+  --dur-enter: 0.8s;
+  --dur-reveal: 1.1s;
+
+  /* Layout */
+  --w-max: 1440px;
+  --hud-h: 3.5rem;
+  --cut: 22px; /* esquina recortada */
+}
