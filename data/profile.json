@@ -16,14 +16,16 @@
   ],
   "location": "Bogotá, Colombia",
   "availability": "Disponible",
-  "summary": "Ingeniero electrónico y desarrollador full-stack en Bogotá. Más de seis años construyendo de punta a punta: PCB, firmware embebido, backends .NET, Edge AI en campo. Fundador de DevKit Electronics S.A.S y dueño y fundador de Poimen Labs S.A.S.",
-  "about": "Llevo más de seis años en proyectos que mezclan hardware, software y datos: desde plataformas de comercio exterior hasta Edge AI, FPGA y robótica aplicada.",
+  "summary": "Ingeniero electrónico en Bogotá, con énfasis en sistemas embebidos, hardware, software, datos e inteligencia artificial, robótica y bioingeniería. Más de seis años construyendo soluciones de punta a punta. Fundador de DevKit Electronics S.A.S y dueño y fundador de Poimen Labs S.A.S.",
+  "about": "Soy ingeniero electrónico. Llevo más de seis años diseñando, construyendo y liderando soluciones completas, en las que el circuito, el firmware, el software y los datos se piensan como un solo sistema.",
   "tags": [
-    "Fundador de DevKit Electronics S.A.S",
-    "Dueño y fundador de Poimen Labs S.A.S",
-    "Presidente de rama IEEE",
-    "Liderazgo estratégico",
-    "Consultoría técnica"
+    "Fundador y Gerente General · DevKit Electronics S.A.S",
+    "Dueño y fundador · Poimen Labs S.A.S",
+    "Presidente · Rama estudiantil IEEE",
+    "Arquitectura de soluciones",
+    "Liderazgo técnico",
+    "Gestión de producto",
+    "Consultoría en ingeniería"
   ],
   "stats": [
     {
@@ -50,42 +52,58 @@
     {
       "name": "Español",
       "level": "Nativo",
-      "fill": 100
+      "fill": 100,
+      "glyph": "Ñ",
+      "steps": 6
     },
     {
       "name": "Inglés",
       "level": "B2",
-      "fill": 68
+      "fill": 68,
+      "glyph": "A",
+      "steps": 4
     },
     {
       "name": "Italiano",
       "level": "B1",
-      "fill": 55
+      "fill": 55,
+      "glyph": "È",
+      "steps": 3
     },
     {
       "name": "Alemán",
       "level": "A2",
-      "fill": 40
+      "fill": 40,
+      "glyph": "ß",
+      "steps": 2
     },
     {
       "name": "Ruso",
       "level": "A2",
-      "fill": 40
+      "fill": 40,
+      "glyph": "Я",
+      "steps": 2
     },
     {
       "name": "Japonés",
       "level": "A2",
-      "fill": 40
+      "fill": 40,
+      "glyph": "あ",
+      "steps": 2
     },
     {
       "name": "Francés",
       "level": "A1",
-      "fill": 30
+      "fill": 30,
+      "glyph": "Ç",
+      "steps": 1
     },
     {
       "name": "Mandarín",
       "level": "HSK1",
-      "fill": 18
+      "fill": 18,
+      "glyph": "中",
+      "steps": 1
     }
   ],
   "photo": "assets/img/profile/foto.png",
@@ -102,5 +120,48 @@
     "instagram": "https://instagram.com/divisum.hell",
     "tiktok": "https://www.tiktok.com/@imhell.12",
     "x": "https://x.com/HCHAPS404"
-  }
+  },
+  "title": "Ingeniero Electrónico",
+  "emphasis": [
+    "Sistemas embebidos e IoT",
+    "Diseño de hardware y PCB",
+    "Ingeniería de software",
+    "Datos e inteligencia artificial",
+    "Robótica y automatización",
+    "Bioingeniería"
+  ],
+  "scenarios": [
+    {
+      "area": "Sistemas embebidos e IoT",
+      "text": "Programo firmware para STM32 y ESP32, integro sensores y llevo la telemetría del dispositivo hasta el servidor."
+    },
+    {
+      "area": "Hardware y PCB",
+      "text": "Diseño placas multicapa en Altium Designer y KiCAD, del esquemático al ensamble y la validación."
+    },
+    {
+      "area": "Ingeniería de software",
+      "text": "Construyo servicios y APIs en .NET y C#, con SQL Server en los datos y TypeScript en la interfaz."
+    },
+    {
+      "area": "Ingeniería y análisis de datos",
+      "text": "Modelo datos, armo procesos de extracción y transformación y los convierto en tableros que apoyan decisiones."
+    },
+    {
+      "area": "Inteligencia artificial",
+      "text": "Entreno modelos con TensorFlow y PyTorch y los llevo al borde; trabajo con visión artificial, recuperación aumentada y agentes."
+    },
+    {
+      "area": "Robótica y mecatrónica",
+      "text": "Diseño y programo robots y prototipos mecatrónicos, con ROS 2, simulación y control."
+    },
+    {
+      "area": "Bioingeniería",
+      "text": "Proceso señales fisiológicas: fotopletismografía con la cámara del teléfono, filtrado y métricas de ritmo cardíaco."
+    },
+    {
+      "area": "Liderazgo técnico",
+      "text": "Fundo y dirijo equipos multidisciplinarios: requisitos, arquitectura, hoja de ruta y entrega."
+    }
+  ]
 }

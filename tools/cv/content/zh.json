@@ -1,0 +1,551 @@
+{
+  "meta": {
+    "lang": "zh",
+    "format": "jianli",
+    "locale": "zh-CN",
+    "paper": "A4",
+    "title": "简历 - 赫尔穆特·查帕罗·桑多瓦尔",
+    "labelSeparator": "："
+  },
+  "person": {
+    "name": "Helmut Chaparro Sandoval",
+    "headline": "电子工程师 · 嵌入式系统、硬件、软件、数据与人工智能、机器人",
+    "location": "哥伦比亚，波哥大",
+    "phone": "+57 300 872 32 90",
+    "email": "helmut.chs@gmail.com",
+    "links": [
+      {
+        "id": "portfolio",
+        "label": "Portfolio",
+        "url": "https://hchaps404.github.io/Portfolio/",
+        "display": "https://hchaps404.github.io/Portfolio/"
+      },
+      {
+        "id": "github",
+        "label": "GitHub",
+        "url": "https://github.com/HCHAPS404",
+        "display": "https://github.com/HCHAPS404"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317",
+        "display": "linkedin.com/in/helmut-chaparro-sandoval-370192317"
+      }
+    ],
+    "availability": "全职远程 | 哥伦比亚/拉丁美洲 | 可配合美国工作时间（EST/CST及其他）"
+  },
+  "profile": "波哥大的电子工程师，六年多来从端到端构建解决方案，涵盖软件工程、后端与全栈开发、数据与分析、人工智能与机器学习、嵌入式系统、物联网、电子、机器人与自动化。熟悉C#/.NET、Python、SQL、REST接口、TypeScript、SQL Server、系统集成、印制电路板与FPGA。创始人与技术负责人，擅长需求、架构、路线图与多学科团队管理。英语B2（职业使用），法语B2（IEEE场合）。",
+  "capabilities": [
+    {
+      "area": "软件开发 / 后端 / 全栈",
+      "items": [
+        "C#",
+        ".NET/.NET Core",
+        "Python",
+        "Node.js",
+        "JavaScript/TypeScript",
+        "React",
+        "Next.js",
+        "REST接口"
+      ]
+    },
+    {
+      "area": "数据工程与分析",
+      "items": [
+        "SQL",
+        "SQL Server",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "数据建模",
+        "ETL/ELT",
+        "SQL Server集成服务（SSIS）"
+      ]
+    },
+    {
+      "area": "人工智能 / 机器学习 / 智能系统",
+      "items": [
+        "TensorFlow",
+        "PyTorch",
+        "OpenCV",
+        "预测建模",
+        "计算机视觉",
+        "RAG",
+        "Agentic AI",
+        "MCP"
+      ]
+    },
+    {
+      "area": "云 / DevOps / IT基础",
+      "items": [
+        "Docker",
+        "Linux",
+        "Azure DevOps",
+        "GitHub Actions",
+        "CI/CD",
+        "Postman",
+        "Wireshark",
+        "DNS/TCP-IP"
+      ]
+    },
+    {
+      "area": "嵌入式 / 物联网 / 电子",
+      "items": [
+        "C/C++",
+        "STM32",
+        "ESP32",
+        "Arduino",
+        "Raspberry Pi",
+        "ESP-IDF",
+        "RTOS",
+        "MQTT"
+      ]
+    },
+    {
+      "area": "机器人 / 自动化 / 生物医学",
+      "items": [
+        "ROS2",
+        "Gazebo",
+        "Webots",
+        "控制系统",
+        "机电原型",
+        "MATLAB/Octave",
+        "Fusion 360",
+        "Blender"
+      ]
+    },
+    {
+      "area": "技术领导 / 管理",
+      "items": [
+        "技术项目协调",
+        "工程与产品管理",
+        "需求定义",
+        "产品路线图",
+        "利益相关方沟通",
+        "多学科团队领导",
+        "指导",
+        "技术咨询"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "devkit",
+      "role": "创始人兼总经理 / 技术负责人",
+      "org": "DevKit Electronics S.A.S",
+      "place": "哥伦比亚，波哥大",
+      "period": "2024年1月 – 至今",
+      "start": "2024-01",
+      "end": "present",
+      "mode": "兼职 / 混合",
+      "bullets": [
+        "创立并领导公司，负责业务战略、运营、产品方向与技术交付；把机构和市场的需求转化为工程产品与可重复实施的方案。",
+        "负责端到端的解决方案架构：多层印制电路板、嵌入式固件、传感器与数据采集、物联网连接、后端服务、网络平台、教育软件、机器人与实验室设备。",
+        "把设备与应用数据整合进采集、转换（ETL/ELT）、监控、仪表板、报告与自动化流程，使用Python、SQL和API。",
+        "带领电子、软件与教学的跨学科团队，制定需求、路线图、验证标准与交付优先级。"
+      ],
+      "languageUse": "English B2 - professionally used at DevKit Electronics S.A.S.: technical documentation, software/tooling, international technical resources, research, meetings, stakeholder communication and product/engineering collaboration.",
+      "tech": [
+        "Technical leadership",
+        "product management",
+        ".NET/Python/JavaScript ecosystems",
+        "REST APIs",
+        "SQL",
+        "data modeling",
+        "ETL/ELT concepts",
+        "telemetry/data pipelines",
+        "dashboards",
+        "AI/ML",
+        "RAG",
+        "Agentic AI",
+        "MCP",
+        "IoT",
+        "STM32/ESP32",
+        "firmware",
+        "PCB",
+        "sensors",
+        "automation",
+        "Git/GitHub",
+        "technical documentation",
+        "client delivery"
+      ],
+      "tags": [
+        "Guida tecnica",
+        "Prodotto",
+        "STEM",
+        "Robotica",
+        "STM32",
+        "Firmware",
+        "PCB",
+        "IoT",
+        "Dati"
+      ]
+    },
+    {
+      "id": "poimen",
+      "role": "创始人兼总经理 / 工程负责人",
+      "org": "Poimen Labs",
+      "place": "哥伦比亚",
+      "period": "2025年 – 至今",
+      "start": "2025",
+      "end": "present",
+      "mode": "兼职",
+      "bullets": [
+        "创立并领导农业科技项目，把电子、自动化、传感、数据与软件应用于哥伦比亚条件下的农业监测与田间决策支持。",
+        "设计集成架构（传感器节点、边缘采集、遥测、连接、控制逻辑、后端与仪表板），把田间测量转化为可追溯的预警与运营指标。",
+        "负责产品全周期：需求与架构、电路板、外壳、固件与软件集成、试点验证与迭代。"
+      ],
+      "languageUse": "English B2 - professionally used at Poimen Labs: technical research, documentation, architecture references, software/data tooling, meetings, stakeholder communication and international technical resources.",
+      "tech": [
+        "AgriTech",
+        "IoT",
+        "sensor data",
+        "telemetry",
+        "edge acquisition",
+        "Python",
+        "SQL",
+        "data modeling",
+        "ETL/ELT",
+        "data ingestion",
+        "pipeline/orchestration concepts",
+        "time-series data",
+        "backend services",
+        "dashboards",
+        "automation",
+        "AI/ML",
+        "Agentic AI concepts",
+        "embedded systems",
+        "product engineering",
+        "technical management"
+      ],
+      "tags": [
+        "AgriTech",
+        "IoT",
+        "Sensori",
+        "Telemetria",
+        "Embedded",
+        "Ingegneria dei dati",
+        "Automazione"
+      ]
+    },
+    {
+      "id": "tranexco",
+      "role": "初级全栈开发工程师",
+      "org": "Tranexco",
+      "place": "远程",
+      "period": "2024年5月 – 2025年4月",
+      "start": "2024-05",
+      "end": "2025-04",
+      "mode": "全职",
+      "bullets": [
+        "为客户管理、海关业务、进口、哥伦比亚税务海关总署合规、物流与业务集成开发企业级.NET/C#解决方案。"
+      ],
+      "languageUse": "English B2 - professionally used at Tranexco: technical documentation, development tooling, research, written communication, software/data terminology and professional/technical conversations in a remote engineering environment.",
+      "tech": [
+        ".NET",
+        "C#",
+        "SQL Server",
+        "SQL",
+        "SSIS",
+        "ETL/ELT",
+        "REST APIs",
+        "backend services",
+        "relational data modeling",
+        "schema/data integration",
+        "extraction/transformation/loading",
+        "query design/optimization",
+        "structured-data workflows",
+        "JavaScript",
+        "Git/GitHub",
+        "software architecture fundamentals",
+        "security",
+        "remote collaboration"
+      ]
+    },
+    {
+      "id": "arisoft",
+      "role": "软件开发工程师、程序员兼教育机器人顾问",
+      "org": "Arisoft Seguridad Vial S.A.S",
+      "place": "哥伦比亚，波哥大",
+      "period": "2023年6月 – 2024年11月",
+      "start": "2023-06",
+      "end": "2024-11",
+      "mode": "全职 / 混合",
+      "bullets": [
+        "负责面向商业化与机构落地的教育机器人项目：软件开发、机器人编程、电子电路与技术咨询。"
+      ],
+      "languageUse": "English B2 - professionally used at Arisoft Seguridad Vial S.A.S. for technical documentation, software/tools, research, product references and professional communication. Basic Mandarin Chinese (HSK2) used as a complementary capability for technical-reference review and communication contexts.",
+      "tech": [
+        "Software development",
+        "C/C++/Python",
+        "robotics",
+        "electronics",
+        "PCB/circuit prototyping",
+        "automation",
+        "sensor/data acquisition concepts",
+        "hardware-software integration",
+        "technical consulting",
+        "product implementation",
+        "multi-client support"
+      ]
+    },
+    {
+      "id": "cpe",
+      "role": "工程与教育机器人顾问",
+      "org": "Computadores para Educar · 教育部",
+      "place": "哥伦比亚",
+      "period": "2021年3月 – 2023年11月",
+      "start": "2021-03",
+      "end": "2023-11",
+      "mode": "全职 / 混合",
+      "bullets": [
+        "为学校和弱势社区主导机电与教育原型的完整周期：设计、开发、电路板、传感器、机器人与3D建模（Python、C/C++）。"
+      ],
+      "languageUse": "English B2 - professionally used at Computadores para Educar - Ministry of Education: technical documentation, research literature, engineering/software tools, technical resources and solution-development references.",
+      "tech": [
+        "Python",
+        "C/C++",
+        "sensors",
+        "data acquisition",
+        "structured-data handling",
+        "preprocessing/transformation workflows",
+        "PCB",
+        "electronics",
+        "robotics",
+        "automation",
+        "3D CAD",
+        "engineering implementation",
+        "technical training",
+        "stakeholder coordination"
+      ]
+    },
+    {
+      "id": "compensar",
+      "role": "机器人与电子课程教师 / 技术讲师",
+      "org": "COMPENSAR - Universidad COMPENSAR",
+      "place": "哥伦比亚，波哥大",
+      "period": "2025年7月 – 2025年12月",
+      "start": "2025-07",
+      "end": "2025-12",
+      "mode": "现场",
+      "bullets": [
+        "设计并讲授机器人、自动化、电子与带人工智能的嵌入式系统课程，融入课程项目。"
+      ],
+      "languageUse": "English B2 - professionally used at COMPENSAR - Universidad COMPENSAR: technical references, documentation, engineering/software tools, AI/embedded resources and specialized course content.",
+      "tech": [
+        "Robotics",
+        "embedded AI",
+        "Python/C++ concepts",
+        "Arduino/embedded systems",
+        "sensors",
+        "data acquisition",
+        "automation",
+        "programming",
+        "technical mentoring",
+        "curriculum/product design",
+        "project evaluation"
+      ]
+    },
+    {
+      "id": "ieee",
+      "role": "主席 / 技术负责人 – 电气电子工程师学会学生分会",
+      "org": "电气电子工程师学会 · 弗朗西斯科·何塞·德卡尔达斯区立大学",
+      "place": "哥伦比亚，波哥大",
+      "period": "2022年6月 – 至今",
+      "start": "2022-06",
+      "end": "present",
+      "mode": "兼职 / 混合",
+      "bullets": [
+        "担任学生分会及机器人与自动化学会、人道主义技术小组、计算智能学会分支的主席职务；此前参与医学与生物工程学会工作。",
+        "领导机器人、计算智能、人工智能、生物工程与人道主义技术方面的技术社群，协调团队、活动与合作。"
+      ],
+      "languageUse": "English B2 and French B2 - professionally/academically used at IEEE - Universidad Distrital Francisco José de Caldas: technical documentation, IEEE international resources, communications, events, networking, workshops and professional/academic interactions.",
+      "tech": [
+        "Technical leadership",
+        "project/program management",
+        "IEEE RAS/SIGHT/CIS/EMBS",
+        "robotics",
+        "AI/ML",
+        "RAG/Agentic AI concepts",
+        "biomedical engineering contexts",
+        "humanitarian technology",
+        "stakeholder management",
+        "public speaking",
+        "multidisciplinary coordination"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "satvire",
+      "title": "全国黑客松冠军 – SAT-ViRe",
+      "context": "哥伦比亚国家灾害风险管理局 / 联合国开发计划署",
+      "period": "2026年5月",
+      "award": "第一名 – 早期预警系统",
+      "bullets": [
+        "为弱势社区开发低成本的滑坡与边坡失稳早期预警方案：风险识别、数据采集、通信与决策支持。"
+      ],
+      "tech": [
+        "物联网",
+        "传感器",
+        "边缘人工智能",
+        "风险分析"
+      ]
+    },
+    {
+      "id": "google-cartagena",
+      "title": "谷歌黑客松 – 卡塔赫纳",
+      "context": "技术与风险管理挑战",
+      "period": "2026年",
+      "award": "第三名",
+      "bullets": [
+        "为卡塔赫纳设计区域风险管理系统：识别受影响区域，评估预算风险以及对交通、经济、旅游等行业的影响，并建立决策仪表板。"
+      ],
+      "tech": [
+        "数据分析",
+        "区域风险",
+        "决策仪表板"
+      ]
+    }
+  ],
+  "education": {
+    "degree": {
+      "level": "",
+      "title": "电子工程",
+      "institution": "弗朗西斯科·何塞·德卡尔达斯区立大学",
+      "period": "2020 – 2027",
+      "start": "2020",
+      "end": "2027",
+      "status": "在读（最后学期）"
+    },
+    "certifications": [
+      {
+        "name": "Data Engineering",
+        "issuer": "DeepLearning.AI",
+        "year": "2026"
+      },
+      {
+        "name": "Advanced Data Analytics",
+        "issuer": "Google",
+        "year": "2026"
+      },
+      {
+        "name": "AI & ML Engineering",
+        "issuer": "Microsoft",
+        "year": "2026"
+      },
+      {
+        "name": "AI Developer",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "Data Science Professional",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "RAG & Agentic AI",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "JavaScript Backend Developer",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "Professional PCB Design & Assembly",
+        "issuer": "Altium/UDFJC",
+        "year": "2023"
+      },
+      {
+        "name": "Altium Global Scholarship Program",
+        "issuer": "",
+        "year": "2026"
+      },
+      {
+        "name": "Remote Sensing & Drones",
+        "issuer": "ESRI Colombia",
+        "year": "2026"
+      }
+    ],
+    "continuing": "数据工程（SQL、ETL/ELT、SSIS、Spark、Airflow）、数据分析、人工智能与机器学习、RAG与智能体、项目与产品管理、敏捷方法。"
+  },
+  "languages": [
+    {
+      "code": "es",
+      "name": "西班牙语",
+      "level": "母语",
+      "cefr": "",
+      "native": true,
+      "note": ""
+    },
+    {
+      "code": "en",
+      "name": "英语",
+      "level": "B2",
+      "cefr": "B2",
+      "native": false,
+      "note": "专业与技术工作中使用"
+    },
+    {
+      "code": "fr",
+      "name": "法语",
+      "level": "B2",
+      "cefr": "B2",
+      "native": false,
+      "note": "IEEE技术与国际场合"
+    },
+    {
+      "code": "zh",
+      "name": "普通话",
+      "level": "HSK2 / 基础",
+      "cefr": "",
+      "native": false,
+      "note": "Arisoft 工作场景"
+    },
+    {
+      "code": "de",
+      "name": "德语",
+      "level": "A1",
+      "cefr": "A1",
+      "native": false,
+      "note": ""
+    }
+  ],
+  "availability": "可全职远程工作，适应哥伦比亚/拉丁美洲及国际团队；可配合美国时区与分布式团队的工作时间。",
+  "labels": {
+    "docTitle": "简历",
+    "objective": "求职意向",
+    "location": "所在地",
+    "phone": "电话",
+    "email": "邮箱",
+    "education": "教育背景",
+    "certifications": "证书与课程",
+    "continuing": "继续教育",
+    "experience": "工作经历",
+    "projects": "项目经历与荣誉",
+    "capabilities": "专业技能",
+    "languages": "语言能力",
+    "profile": "自我评价",
+    "tech": "应用技术",
+    "availability": "到岗情况",
+    "availabilityLead": "到岗"
+  },
+  "objective": [
+    {
+      "label": "职位",
+      "value": "电子工程师 / 嵌入式与物联网工程师 / 软件与数据工程师（人工智能方向）"
+    },
+    {
+      "label": "工作地点",
+      "value": "哥伦比亚（波哥大）；可全职远程"
+    },
+    {
+      "label": "到岗",
+      "value": "全职，可配合国际团队与美国时区"
+    }
+  ]
+}

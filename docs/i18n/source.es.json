@@ -3,12 +3,18 @@
     "a11y.main_nav": "Navegación principal",
     "a11y.mobile_nav": "Menú móvil",
     "a11y.skip": "Saltar al contenido",
+    "about.channels": "Redes y contacto",
+    "about.emphasis": "Con énfasis en",
     "about.langs": "Idiomas",
     "about.portrait_alt": "Retrato de {name} dibujado con caracteres ASCII",
+    "about.roles": "Cargos y enfoque",
+    "about.scenarios": "En la práctica",
     "awards.meta_a": "Reconocimientos y becas",
     "awards.meta_b": "{n} registros",
+    "awards.title": "Premios, becas y nominaciones",
     "boot.switching": "Cambiando idioma",
     "boot.tagline": "Portafolio · {year}",
+    "ch.email": "Correo",
     "ch.github": "GitHub",
     "ch.instagram": "Instagram",
     "ch.linkedin": "LinkedIn",
@@ -38,7 +44,7 @@
     "edu.scholarship": "Beca",
     "footer.top": "Volver arriba ↑",
     "hero.canvas_alt": "Placa electrónica de tres capas en vista explosionada, con pistas, vías y componentes, por la que viajan pulsos de señal",
-    "hero.cta_cv": "Descargar CV",
+    "hero.cta_cv": "Descargar hoja de vida",
     "hero.cta_projects": "Ver proyectos",
     "hud.brand": "PORTAFOLIO",
     "hud.close": "Cerrar",
@@ -46,10 +52,10 @@
     "hud.menu": "Menú",
     "lang.aria": "Idioma: {lang}. Cambiar idioma",
     "lang.label": "Idioma",
-    "meta.description": "Portafolio de Helmut Chaparro Sandoval: ingeniero electrónico y desarrollador full-stack en Bogotá. Sistemas embebidos, PCB, Edge AI, software y datos. Fundador de DevKit Electronics S.A.S y dueño y fundador de Poimen Labs S.A.S.",
-    "meta.og_description": "Ingeniero electrónico y desarrollador full-stack. Hardware, software y datos, de punta a punta.",
+    "meta.description": "Portafolio de Helmut Chaparro Sandoval, ingeniero electrónico en Bogotá con énfasis en sistemas embebidos, hardware y PCB, software, datos e inteligencia artificial, robótica y bioingeniería. Fundador de DevKit Electronics S.A.S y dueño y fundador de Poimen Labs S.A.S.",
+    "meta.og_description": "Ingeniero electrónico con énfasis en embebidos, hardware, software, datos e IA, robótica y bioingeniería.",
     "meta.og_title": "Helmut Chaparro Sandoval — Portafolio",
-    "meta.title": "Helmut Chaparro Sandoval — Ingeniero Electrónico y Desarrollador Full-Stack",
+    "meta.title": "Helmut Chaparro Sandoval — Ingeniero Electrónico",
     "nav.awards": "Premios",
     "nav.competitions": "Competencias",
     "nav.contact": "Contacto",
@@ -70,8 +76,11 @@
     "rule.next": "Siguiente — {section}",
     "skills.all": "Todas",
     "skills.close": "Cerrar",
-    "skills.code.data": "IA",
-    "skills.code.datastore": "BD",
+    "skills.code.ai": "IA",
+    "skills.code.analytics": "BI",
+    "skills.code.bio": "BIO",
+    "skills.code.dataeng": "ETL",
+    "skills.code.electrical": "ELE",
     "skills.code.embedded": "EMB",
     "skills.code.ops": "OPS",
     "skills.code.pcb": "PCB",
@@ -87,7 +96,7 @@
     "skills.filter_aria": "Filtrar herramientas por categoría",
     "skills.inspect_cat": "Categoría",
     "skills.inspect_domains": "Dominios",
-    "skills.inspect_hint": "Pasa el cursor o toca una herramienta para ver su ficha",
+    "skills.inspect_hint": "Pulsa una herramienta para desplegar su descripción y en qué la uso",
     "skills.meta_a": "{n} dominios",
     "skills.meta_b": "{n} herramientas",
     "skills.no_results": "Ninguna herramienta coincide con la búsqueda",
@@ -95,6 +104,10 @@
     "skills.sec_a": "A — Dominios de afinidad",
     "skills.sec_b": "B — Herramientas",
     "skills.sec_c": "C — Habilidades blandas",
+    "skills.tool.open": "Ver descripción de {name}",
+    "skills.tool.use": "En qué la uso",
+    "skills.tool.what": "Qué es",
+    "xp.contribution": "Aporte",
     "xp.detail_aria": "Detalle: {role}",
     "xp.meta_a": "{n} roles",
     "xp.meta_b": "{from} — {to}",
@@ -104,10 +117,53 @@
     "profile": {
       "name": "Helmut Chaparro Sandoval",
       "shortName": "Helmut Chaparro",
+      "title": "Ingeniero Electrónico",
       "availability": "Disponible",
       "location": "Bogotá, Colombia",
-      "summary": "Ingeniero electrónico y desarrollador full-stack en Bogotá. Más de seis años construyendo de punta a punta: PCB, firmware embebido, backends .NET, Edge AI en campo. Fundador de DevKit Electronics S.A.S y dueño y fundador de Poimen Labs S.A.S.",
-      "about": "Llevo más de seis años en proyectos que mezclan hardware, software y datos: desde plataformas de comercio exterior hasta Edge AI, FPGA y robótica aplicada.",
+      "summary": "Ingeniero electrónico en Bogotá, con énfasis en sistemas embebidos, hardware, software, datos e inteligencia artificial, robótica y bioingeniería. Más de seis años construyendo soluciones de punta a punta. Fundador de DevKit Electronics S.A.S y dueño y fundador de Poimen Labs S.A.S.",
+      "about": "Soy ingeniero electrónico. Llevo más de seis años diseñando, construyendo y liderando soluciones completas, en las que el circuito, el firmware, el software y los datos se piensan como un solo sistema.",
+      "emphasis": [
+        "Sistemas embebidos e IoT",
+        "Diseño de hardware y PCB",
+        "Ingeniería de software",
+        "Datos e inteligencia artificial",
+        "Robótica y automatización",
+        "Bioingeniería"
+      ],
+      "scenarios": [
+        {
+          "area": "Sistemas embebidos e IoT",
+          "text": "Programo firmware para STM32 y ESP32, integro sensores y llevo la telemetría del dispositivo hasta el servidor."
+        },
+        {
+          "area": "Hardware y PCB",
+          "text": "Diseño placas multicapa en Altium Designer y KiCAD, del esquemático al ensamble y la validación."
+        },
+        {
+          "area": "Ingeniería de software",
+          "text": "Construyo servicios y APIs en .NET y C#, con SQL Server en los datos y TypeScript en la interfaz."
+        },
+        {
+          "area": "Ingeniería y análisis de datos",
+          "text": "Modelo datos, armo procesos de extracción y transformación y los convierto en tableros que apoyan decisiones."
+        },
+        {
+          "area": "Inteligencia artificial",
+          "text": "Entreno modelos con TensorFlow y PyTorch y los llevo al borde; trabajo con visión artificial, recuperación aumentada y agentes."
+        },
+        {
+          "area": "Robótica y mecatrónica",
+          "text": "Diseño y programo robots y prototipos mecatrónicos, con ROS 2, simulación y control."
+        },
+        {
+          "area": "Bioingeniería",
+          "text": "Proceso señales fisiológicas: fotopletismografía con la cámara del teléfono, filtrado y métricas de ritmo cardíaco."
+        },
+        {
+          "area": "Liderazgo técnico",
+          "text": "Fundo y dirijo equipos multidisciplinarios: requisitos, arquitectura, hoja de ruta y entrega."
+        }
+      ],
       "roles": [
         "Ingeniero Electrónico",
         "Desarrollador Full-Stack",
@@ -122,11 +178,13 @@
         "Educador STEM"
       ],
       "tags": [
-        "Fundador de DevKit Electronics S.A.S",
-        "Dueño y fundador de Poimen Labs S.A.S",
-        "Presidente de rama IEEE",
-        "Liderazgo estratégico",
-        "Consultoría técnica"
+        "Fundador y Gerente General · DevKit Electronics S.A.S",
+        "Dueño y fundador · Poimen Labs S.A.S",
+        "Presidente · Rama estudiantil IEEE",
+        "Arquitectura de soluciones",
+        "Liderazgo técnico",
+        "Gestión de producto",
+        "Consultoría en ingeniería"
       ],
       "stats": [
         {
@@ -180,26 +238,29 @@
     },
     "experience": [
       {
-        "period": "2024 – Actualidad",
+        "period": "Ene 2024 – Actualidad",
         "role": "Fundador y Gerente General",
         "org": "DevKit Electronics S.A.S",
         "type": "Fundador",
-        "summary": "Empresa de educación STEM que fundé. Hacemos hardware, software y currículos que funcionan en aulas y laboratorios reales.",
+        "summary": "Empresa de ingeniería y educación STEM que fundé y dirijo. Convertimos necesidades de instituciones y del mercado en productos, servicios y programas de implementación repetibles.",
+        "contribution": "Construí la empresa desde cero y la capacidad técnica que la sostiene. Diseñé la arquitectura que une hardware, firmware, software y datos en un mismo producto, y armé un portafolio de cursos, kits de robótica y sistemas de laboratorio que colegios y universidades ya usan.",
         "bullets": [
-          "Dirijo estrategia, operación y producto en educación de ingeniería y ciencias para niños, jóvenes, universitarios y profesionales.",
-          "Diseño y entrego soluciones de punta a punta: arquitectura curricular, PCB multicapa, firmware embebido, software educativo, plataformas web y equipos de laboratorio.",
-          "Construí un portafolio de cursos, kits de robótica y sistemas de laboratorio adoptados por colegios y universidades.",
-          "Lidero equipos multidisciplinarios entre electrónica, software y pedagogía.",
-          "Traduzco ingeniería compleja (STM32, IoT, fabricación 3D, automatización) en experiencias de aprendizaje."
+          "Dirijo la empresa en estrategia, operación, dirección de producto y entrega técnica.",
+          "Soy responsable de la arquitectura de las soluciones de punta a punta: PCB multicapa, firmware embebido, sensores y adquisición de datos, conectividad IoT, servicios de backend, plataformas web, software educativo, robótica y equipos de laboratorio.",
+          "Integro los datos de dispositivos y aplicaciones en flujos de ingesta, transformación, monitoreo, tableros, reportes y automatización, con Python, SQL y APIs.",
+          "Lidero equipos multidisciplinarios de electrónica, software y pedagogía: defino requisitos, hoja de ruta, documentación, criterios de validación y prioridades de entrega.",
+          "Incorporo inteligencia artificial en prototipos y flujos de producto cuando aporta: aprendizaje automático, recuperación aumentada y agentes."
         ],
         "tags": [
+          "Dirección técnica",
+          "Producto",
           "STEM",
           "Robótica",
           "STM32",
           "Firmware",
-          "Software",
-          "Impresión 3D",
-          "IoT"
+          "PCB",
+          "IoT",
+          "Datos"
         ]
       },
       {
@@ -207,22 +268,23 @@
         "role": "Dueño, fundador y Gerente General",
         "org": "Poimen Labs S.A.S",
         "type": "Dueño y fundador",
-        "summary": "Empresa AgriTech que fundé y de la que soy dueño, para llevar electrónica, automatización, sensado y datos al agro colombiano, del prototipo al despliegue en campo.",
+        "summary": "Empresa AgriTech que fundé y de la que soy dueño. Aplica electrónica, automatización, sensado, datos y software al monitoreo agrícola y al apoyo a la decisión en campo, en las condiciones reales del agro colombiano.",
+        "contribution": "Llevé la idea de tecnología para el agro a una arquitectura completa y desplegable, del sensor en el cultivo al tablero del productor. Definí cómo se mide, cómo viajan los datos con conectividad limitada y cómo se convierten en alertas y decisiones, con hardware de bajo costo y firmware eficiente en energía.",
         "bullets": [
-          "Fundé Poimen Labs y soy su dueño; codirijo la estrategia de la empresa, la dirección de ingeniería y la entrega de soluciones de tecnología agrícola en Colombia.",
-          "Diseño hardware y software integrados para el campo: nodos de sensores, adquisición en el borde, control y capas de conectividad rural.",
-          "Desarrollo sistemas de monitoreo y automatización de bajo costo para cultivos y ganadería, con firmware eficiente en energía.",
-          "Convierto datos de campo en visualización, alertas y apoyo a la decisión para productores.",
-          "Gestiono el ciclo completo: requisitos con productores, PCB y carcasa, firmware, backend, pilotos en campo y mejora iterativa."
+          "Fundé Poimen Labs y soy su dueño; dirijo la estrategia y la ingeniería de la empresa.",
+          "Diseño arquitecturas integradas: nodos de sensores, adquisición en el borde, telemetría, conectividad rural, lógica de control, servicios de backend y tableros.",
+          "Convierto las mediciones de campo en información estructurada, alertas e indicadores operativos trazables para los productores.",
+          "Aplico ingeniería de datos a los flujos IoT: ingesta, transformación, almacenamiento estructurado, series de tiempo, calidad de datos y visualización, con Python y SQL.",
+          "Gestiono el ciclo completo del producto: requisitos y arquitectura, integración de PCB, carcasa, firmware y software, pilotos de validación, retroalimentación e iteración."
         ],
         "tags": [
           "AgriTech",
           "IoT",
-          "Automatización",
-          "Embebidos",
           "Sensores",
-          "Datos",
-          "Software"
+          "Telemetría",
+          "Embebidos",
+          "Ingeniería de datos",
+          "Automatización"
         ]
       },
       {
@@ -231,15 +293,18 @@
         "org": "Tranexco",
         "type": "Tiempo completo · Remoto",
         "summary": "Software empresarial para comercio internacional, aduanas y operaciones logísticas.",
+        "contribution": "Aporté en todo el stack de un software que mueve operaciones reales de comercio exterior. Traduje requisitos operativos de aduanas y logística en servicios, modelos de datos y procesos de integración mantenibles, cuidando la escalabilidad, la seguridad y el rendimiento para clientes de alto volumen.",
         "bullets": [
-          "Diseñé soluciones .NET para gestión de clientes, procesos aduaneros, importaciones, cumplimiento DIAN, logística e integraciones.",
-          "Desarrollé soluciones para clientes de alto volumen, con escalabilidad, seguridad y rendimiento.",
-          "Trabajé en todo el stack, desde modelos de datos en SQL Server hasta APIs y front-end, en un equipo ágil y remoto."
+          "Desarrollé soluciones empresariales en .NET y C# para gestión de clientes, operaciones aduaneras, importaciones, cumplimiento DIAN, logística e integraciones de negocio.",
+          "Construí y mantuve servicios de backend, APIs REST, lógica de negocio y estructuras de datos en SQL Server: consultas, modelos relacionales y validación de datos.",
+          "Implementé procesos de extracción, transformación y carga con SQL Server Integration Services, además de flujos de integración y reportes.",
+          "Trabajé en todas las capas, incluidos componentes web en JavaScript, en un equipo ágil y remoto, con control de versiones y documentación técnica."
         ],
         "tags": [
           ".NET",
           "C#",
           "SQL Server",
+          "SSIS",
           "REST API",
           "DIAN"
         ]
@@ -250,6 +315,7 @@
         "org": "COMPENSAR · Universidad COMPENSAR",
         "type": "Presencial",
         "summary": "Enseñar robótica e IA embebida para ayudar a cerrar la brecha educativa en STEAM.",
+        "contribution": "Diseñé y dicté experiencias de aprendizaje especializadas en robótica, automatización, electrónica y sistemas embebidos con IA, integradas a los proyectos curriculares. Acompañé a cada estudiante en un proyecto técnico completo: del circuito y los sensores a la programación, el comportamiento autónomo, las pruebas y el prototipo funcional.",
         "bullets": [
           "Lideré iniciativas STEAM para reducir la brecha educativa en instituciones públicas.",
           "Diseñé cursos de robótica, automatización y sistemas embebidos con IA, integrados a los proyectos curriculares.",
@@ -263,11 +329,12 @@
         ]
       },
       {
-        "period": "2023 – 2024",
+        "period": "Jun 2023 – Nov 2024",
         "role": "Desarrollador de Software y Consultor en Robótica Educativa",
         "org": "Arisoft Seguridad Vial S.A.S",
         "type": "Tiempo completo · Híbrido",
         "summary": "Robótica educativa llevada del circuito al aula, lista para el mercado.",
+        "contribution": "Fui el puente entre la ingeniería y el cliente: desarrollé software, programé robots, diseñé circuitos y acompañé la implementación en sitio. Convertí capacidades técnicas en productos de robótica educativa que las instituciones podían adoptar, y di soporte, ajuste y seguimiento durante su puesta en marcha.",
         "bullets": [
           "Gestioné proyectos de robótica educativa para su comercialización a instituciones distritales y educativas.",
           "Programé robots educativos, desarrollé circuitos electrónicos y brindé consultoría en sitio.",
@@ -286,6 +353,7 @@
         "org": "Computadores para Educar · Ministerio de Educación",
         "type": "Tiempo completo · Híbrido",
         "summary": "Prototipos mecatrónicos y programas STEAM que llegaron a comunidades vulnerables en todo el país.",
+        "contribution": "Lideré ciclos completos, del diseño a la implementación, de prototipos mecatrónicos y educativos para colegios y comunidades vulnerables, equilibrando lo que la ingeniería permite con lo que el territorio puede usar y sostener. Dejé capacidad instalada: formé a docentes y comunidades para operar y mantener la tecnología por su cuenta.",
         "bullets": [
           "Lideré el ciclo completo de diseño y desarrollo de prototipos mecatrónicos con metodología STEAM.",
           "Apliqué diseño de PCB, modelado 3D, robótica y programación (Python, C/C++) para educación y poblaciones vulnerables.",
@@ -305,6 +373,7 @@
         "org": "IEEE · Universidad Distrital",
         "type": "Medio tiempo · Híbrido",
         "summary": "Liderar comunidades estudiantiles en robótica, tecnología biomédica y humanitaria.",
+        "contribution": "Dirijo comunidades técnicas de estudiantes en robótica, inteligencia computacional, ingeniería biomédica y tecnología humanitaria. Coordino equipos, eventos, talleres y alianzas, y conecto el mundo académico con el profesional y con la comunidad.",
         "bullets": [
           "Cargos presidenciales en la rama estudiantil IEEE, RAS, EMBS y el capítulo de Tecnologías Humanitarias.",
           "Actualmente presido los capítulos estudiantiles RAS, SIGHT y CIS.",
@@ -381,7 +450,7 @@
     "skills": {
       "tools": [
         {
-          "category": "PCB",
+          "category": "Electrónica y PCB",
           "items": [
             "Altium Designer",
             "KiCAD",
@@ -389,76 +458,274 @@
             "LTSpice",
             "Multisim",
             "Proteus"
+          ],
+          "what": [
+            "Suite profesional de diseño electrónico: esquemático, trazado de PCB multicapa y documentación de fabricación.",
+            "Suite libre de diseño de circuitos impresos, con editor de esquemáticos, trazado y visor 3D.",
+            "Entorno de captura de esquemáticos y simulación de circuitos de uso extendido en la industria.",
+            "Simulador SPICE de circuitos analógicos y de potencia.",
+            "Simulador de circuitos con instrumentos virtuales, muy usado en formación.",
+            "Simulador que combina el circuito con el microcontrolador ejecutando su firmware."
+          ],
+          "use": [
+            "Es mi herramienta principal para las placas de DevKit y Poimen Labs, del esquemático a los archivos de fabricación.",
+            "La uso en prototipos rápidos y en proyectos abiertos o educativos, donde importa que cualquiera pueda abrir el diseño.",
+            "Captura de esquemáticos y simulación cuando el proyecto o el equipo trabajan sobre el ecosistema Cadence.",
+            "Verifico fuentes, filtros y etapas analógicas antes de mandar a fabricar una placa.",
+            "Simulación y demostración de circuitos en clases y talleres de electrónica.",
+            "Pruebo firmware junto con el circuito antes de tener el hardware, sobre todo en proyectos educativos."
           ]
         },
         {
-          "category": "Embebidos",
+          "category": "Embebidos e IoT",
           "items": [
             "STM32CubeIDE",
             "Keil MDK",
             "ESP-IDF",
             "Arduino IDE",
             "PlatformIO",
+            "Raspberry Pi",
+            "FreeRTOS",
+            "MQTT / LoRaWAN",
             "Vivado / Quartus"
+          ],
+          "what": [
+            "Entorno de desarrollo de ST para microcontroladores STM32: configuración de periféricos, compilación y depuración.",
+            "Entorno profesional de desarrollo para microcontroladores ARM Cortex-M.",
+            "Marco de desarrollo oficial de Espressif para ESP32, con Wi-Fi, Bluetooth y FreeRTOS.",
+            "Entorno sencillo de programación de microcontroladores, estándar en educación y prototipado.",
+            "Entorno multiplataforma para firmware, con gestión de bibliotecas y de varias placas.",
+            "Computador de placa única con Linux, pensado para proyectos embebidos y de borde.",
+            "Sistema operativo de tiempo real para microcontroladores.",
+            "Protocolos de mensajería ligera y de comunicación de largo alcance y bajo consumo para IoT.",
+            "Entornos de Xilinx e Intel para describir, sintetizar e implementar diseños en FPGA."
+          ],
+          "use": [
+            "Desarrollo y depuración de firmware en C/C++ para las placas basadas en STM32.",
+            "Compilación y depuración de firmware ARM cuando el proyecto ya vive en ese entorno.",
+            "Firmware de nodos conectados con ESP32: sensores, telemetría y actualización remota.",
+            "Prototipos rápidos y cursos de robótica y electrónica.",
+            "Mantengo un mismo proyecto de firmware para distintos microcontroladores con compilaciones reproducibles.",
+            "Pasarela de sensores, visión artificial y procesamiento en el borde.",
+            "Organizo el firmware en tareas con tiempos garantizados cuando el sistema atiende varias cosas a la vez.",
+            "Llevo la telemetría de los nodos de campo al servidor, también donde la conectividad es limitada.",
+            "Diseño digital en VHDL y Verilog: síntesis, simulación y cierre de timing."
           ]
         },
         {
-          "category": "Software",
+          "category": "Ingeniería de software",
           "items": [
-            "VS Code",
-            "Visual Studio",
             ".NET / C#",
+            "ASP.NET Core",
             "Python",
             "TypeScript",
             "Node.js",
             "React",
-            "Next.js"
+            "Next.js",
+            "VS Code",
+            "Visual Studio",
+            "Figma"
+          ],
+          "what": [
+            "Plataforma y lenguaje de Microsoft para servicios, aplicaciones y sistemas empresariales.",
+            "Marco de .NET para construir APIs y aplicaciones web.",
+            "Lenguaje de propósito general, dominante en datos, automatización e inteligencia artificial.",
+            "JavaScript con tipos estáticos, para aplicaciones web mantenibles.",
+            "Entorno de ejecución de JavaScript en el servidor.",
+            "Biblioteca para construir interfaces de usuario por componentes.",
+            "Marco de React para aplicaciones web con renderizado en servidor.",
+            "Editor de código extensible.",
+            "Entorno de desarrollo integrado de Microsoft.",
+            "Herramienta de diseño de interfaces y prototipado colaborativo."
+          ],
+          "use": [
+            "Fue mi stack diario en Tranexco para software de comercio exterior, y lo sigo usando en servicios de backend.",
+            "Servicios y APIs REST que exponen la lógica de negocio.",
+            "Análisis de datos, automatización, aprendizaje automático y herramientas de apoyo para hardware.",
+            "Interfaces web y servicios en Node.js con menos errores en tiempo de ejecución.",
+            "Servicios ligeros, integraciones y herramientas de desarrollo.",
+            "Interfaces de las plataformas web y de los tableros.",
+            "Aplicaciones web completas, con rutas, datos y despliegue integrados.",
+            "Mi editor del día a día para firmware, web y datos.",
+            "Desarrollo y depuración de soluciones .NET.",
+            "Diseño y valido las pantallas antes de programarlas."
           ]
         },
         {
-          "category": "Datos e IA",
+          "category": "Ingeniería de datos",
+          "items": [
+            "SQL Server",
+            "SSIS",
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Apache Spark",
+            "Apache Airflow"
+          ],
+          "what": [
+            "Motor de base de datos relacional de Microsoft.",
+            "SQL Server Integration Services: herramienta de Microsoft para procesos de extracción, transformación y carga.",
+            "Base de datos relacional de código abierto.",
+            "Base de datos documental.",
+            "Almacén en memoria para caché y mensajería.",
+            "Motor de procesamiento distribuido de grandes volúmenes de datos.",
+            "Plataforma para programar y orquestar flujos de datos."
+          ],
+          "use": [
+            "Modelos de datos, consultas y optimización; fue la base de datos de los sistemas en Tranexco.",
+            "Integración de datos y flujos de carga para reportes.",
+            "Almacenamiento estructurado de los datos de aplicaciones y de telemetría.",
+            "Datos poco estructurados o que cambian de forma con frecuencia.",
+            "Caché y colas ligeras entre servicios.",
+            "Transformaciones a escala con PySpark, dentro de mi formación en ingeniería de datos.",
+            "Orquestación de pipelines, dentro de mi formación en ingeniería de datos."
+          ]
+        },
+        {
+          "category": "Análisis de datos",
+          "items": [
+            "Power BI",
+            "Excel avanzado",
+            "Jupyter",
+            "Pandas",
+            "R",
+            "Grafana"
+          ],
+          "what": [
+            "Herramienta de Microsoft para tableros e informes interactivos.",
+            "Hoja de cálculo con tablas dinámicas, consultas y modelos de datos.",
+            "Cuadernos interactivos que combinan código, resultados y texto.",
+            "Biblioteca de Python para manipular y analizar datos tabulares.",
+            "Lenguaje para estadística y visualización.",
+            "Plataforma de tableros para métricas y series de tiempo."
+          ],
+          "use": [
+            "Tableros de indicadores y reportes automatizados para apoyar decisiones.",
+            "Análisis rápido, validación de datos e informes para equipos no técnicos.",
+            "Exploración de datos, prototipos de modelos y análisis reproducibles.",
+            "Limpieza, transformación y análisis de datos y series de tiempo.",
+            "Análisis estadístico y gráficos.",
+            "Monitoreo en vivo de la telemetría de dispositivos y servicios."
+          ]
+        },
+        {
+          "category": "Inteligencia artificial",
           "items": [
             "TensorFlow",
             "PyTorch",
             "OpenCV",
+            "scikit-learn",
+            "MCP"
+          ],
+          "what": [
+            "Marco de aprendizaje automático de Google, con versiones para dispositivos de borde.",
+            "Marco de aprendizaje profundo flexible, estándar en investigación.",
+            "Biblioteca de visión por computador y procesamiento de imágenes.",
+            "Biblioteca de Python de aprendizaje automático clásico.",
+            "Protocolo abierto que conecta modelos de lenguaje con herramientas y fuentes de datos."
+          ],
+          "use": [
+            "Entreno modelos y los llevo a hardware embebido.",
+            "Prototipos y entrenamiento de modelos.",
+            "Visión artificial y extracción de señales fisiológicas a partir de video.",
+            "Modelos predictivos, clasificación y evaluación.",
+            "Servidores que dan a los agentes acceso controlado a datos y acciones."
+          ]
+        },
+        {
+          "category": "Bioingeniería",
+          "items": [
             "MATLAB",
-            "Jupyter",
-            "R",
-            "Power BI",
-            "Apache Spark"
+            "GNU Octave",
+            "SciPy"
+          ],
+          "what": [
+            "Entorno de cálculo numérico, muy usado en procesamiento de señales y control.",
+            "Alternativa libre y compatible con MATLAB.",
+            "Biblioteca científica de Python, con filtros y análisis espectral."
+          ],
+          "use": [
+            "Análisis y filtrado de señales y validación de algoritmos.",
+            "Procesamiento de señales y cálculo numérico sin depender de licencias.",
+            "Preprocesamiento, filtrado y remuestreo de señales fisiológicas."
           ]
         },
         {
-          "category": "Bases de datos",
-          "items": [
-            "SQL Server",
-            "PostgreSQL",
-            "MongoDB",
-            "Redis",
-            "Grafana",
-            "Azure DevOps"
-          ]
-        },
-        {
-          "category": "Operaciones",
-          "items": [
-            "Git",
-            "Docker",
-            "Linux",
-            "Postman",
-            "Wireshark",
-            "MQTT / LoRaWAN"
-          ]
-        },
-        {
-          "category": "Robótica y diseño",
+          "category": "Robótica y mecatrónica",
           "items": [
             "ROS 2",
             "Gazebo",
+            "Webots",
+            "Simulink",
             "Fusion 360",
             "SolidWorks",
-            "Blender",
-            "Figma"
+            "Ultimaker Cura",
+            "Blender"
+          ],
+          "what": [
+            "Sistema operativo de robots: nodos, mensajes y herramientas para percepción, navegación y control.",
+            "Simulador físico de robots integrado con ROS.",
+            "Simulador de robótica de código abierto.",
+            "Entorno de MATLAB para modelar y simular sistemas dinámicos por bloques.",
+            "CAD y CAM de Autodesk para diseño mecánico.",
+            "CAD paramétrico de diseño mecánico.",
+            "Laminador para preparar piezas de impresión 3D.",
+            "Suite libre de modelado, animación y render 3D."
+          ],
+          "use": [
+            "Arquitectura de software de robots, navegación y mapeo.",
+            "Pruebo navegación y control antes de pasar al robot real.",
+            "Simulación de robots móviles y validación de comportamientos.",
+            "Modelado de sistemas y ajuste de controladores.",
+            "Piezas, carcasas y mecanismos de los prototipos.",
+            "Diseño de piezas y ensambles mecánicos.",
+            "Fabricación de piezas y carcasas por impresión 3D.",
+            "Modelado y visualización de productos y prototipos."
+          ]
+        },
+        {
+          "category": "Sistemas eléctricos",
+          "items": [
+            "PSIM",
+            "AutoCAD Electrical"
+          ],
+          "what": [
+            "Simulador especializado en electrónica de potencia y control de motores.",
+            "CAD de Autodesk para planos y esquemas eléctricos."
+          ],
+          "use": [
+            "Simulación de convertidores y etapas de potencia.",
+            "Planos eléctricos y documentación de tableros."
+          ]
+        },
+        {
+          "category": "Cloud y DevOps",
+          "items": [
+            "Git",
+            "GitHub Actions",
+            "Docker",
+            "Linux",
+            "Azure DevOps",
+            "Postman",
+            "Wireshark"
+          ],
+          "what": [
+            "Sistema de control de versiones distribuido.",
+            "Automatización de integración y despliegue continuos dentro de GitHub.",
+            "Contenedores para empaquetar y ejecutar aplicaciones de forma reproducible.",
+            "Sistema operativo de servidores y de sistemas embebidos.",
+            "Plataforma de Microsoft para planificar trabajo, repositorios y entregas.",
+            "Herramienta para diseñar, probar y documentar APIs.",
+            "Analizador de tráfico de red."
+          ],
+          "use": [
+            "Versiono todo: firmware, software, diseños y documentación.",
+            "Compilo, pruebo y despliego en cada cambio; este sitio se publica así.",
+            "Entornos de desarrollo y despliegue de servicios.",
+            "Administración de servidores y de equipos de borde.",
+            "Gestión de tareas y entregas en equipos ágiles y remotos.",
+            "Pruebo y documento las APIs que construyo o integro.",
+            "Depuro protocolos y comunicaciones entre dispositivos y servicios."
           ]
         }
       ],
@@ -604,7 +871,8 @@
         {
           "name": "Hackatón GDG Cartagena",
           "org": "Google Developer Group (GDG) Cartagena",
-          "summary": "Tercer puesto en la hackatón organizada por Google Developer Group (GDG) Cartagena.",
+          "summary": "Tercer puesto en la hackatón de Google Developer Group (GDG) Cartagena, en el reto de tecnología y gestión del riesgo.",
+          "detail": "Sistema de gestión territorial del riesgo para Cartagena: identifica las zonas afectadas y estima la exposición presupuestal y el impacto en movilidad, actividad económica, turismo y otros sectores de la ciudad. Sus indicadores y tableros hacen visibles los efectos por zona y por sector para priorizar la mitigación y la asignación de recursos.",
           "flag": "3er puesto"
         }
       ],
@@ -663,6 +931,13 @@
           "org": "Hackatón nacional · UNGRD × PNUD",
           "desc": "Ganador de la hackatón nacional de la Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD) y el Programa de las Naciones Unidas para el Desarrollo (PNUD), con un sistema de alerta temprana para derrumbes y deslizamientos.",
           "flag": "1er puesto"
+        },
+        {
+          "year": "2026",
+          "title": "Sistema de gestión territorial del riesgo",
+          "org": "Hackatón · Google Developer Group (GDG) Cartagena",
+          "desc": "Tercer puesto en el reto de tecnología y gestión del riesgo, con un sistema que identifica las zonas afectadas de Cartagena y estima su impacto presupuestal, de movilidad, económico y turístico.",
+          "flag": "3er puesto"
         },
         {
           "year": "2026",

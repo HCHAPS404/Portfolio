@@ -1,0 +1,638 @@
+{
+  "meta": {
+    "lang": "de",
+    "format": "lebenslauf",
+    "locale": "de-DE",
+    "paper": "A4",
+    "title": "Lebenslauf - Helmut Chaparro Sandoval"
+  },
+  "person": {
+    "name": "Helmut Chaparro Sandoval",
+    "headline": "Technologie- und Ingenieurfachkraft | Software | Daten & KI | Eingebettete Systeme & IoT | Elektronik | Automatisierung | Technische Leitung",
+    "location": "Bogotá D.C., Kolumbien",
+    "phone": "+57 300 872 32 90",
+    "email": "helmut.chs@gmail.com",
+    "links": [
+      {
+        "id": "portfolio",
+        "label": "Portfolio",
+        "url": "https://hchaps404.github.io/Portfolio/",
+        "display": "https://hchaps404.github.io/Portfolio/"
+      },
+      {
+        "id": "github",
+        "label": "GitHub",
+        "url": "https://github.com/HCHAPS404",
+        "display": "https://github.com/HCHAPS404"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317",
+        "display": "linkedin.com/in/helmut-chaparro-sandoval-370192317"
+      }
+    ],
+    "availability": "Vollzeit remote | Kolumbien/Lateinamerika | Abstimmung mit US-Geschäftszeiten möglich (EST/CST und andere Zeiten nach Bedarf)"
+  },
+  "profile": "Technologie- und Ingenieurfachkraft mit mehr als sechs Jahren Erfahrung im Entwurf, Aufbau und in der Leitung durchgängiger Lösungen in Softwaretechnik, Backend- und Full-Stack-Entwicklung, Daten und Analytik, KI und maschinellem Lernen, eingebetteten Systemen, IoT, Elektronik, Robotik, Automatisierung, biomedizinischen Prototypen und technischer Produktentwicklung. Praktische Erfahrung mit C#/.NET, Python, SQL, REST-APIs, JavaScript/TypeScript, SQL Server, Systemintegration, Datenmodellierung, Dashboards, Telemetrie, Echtzeit-Datenerfassung, Firmware, Sensorik, Leiterplatten- und FPGA-Technologien. Gründer und technische Leitung mit Erfahrung in Anforderungsmanagement, Lösungsarchitektur, Produkt-Roadmaps, multidisziplinären Teams, technischer Dokumentation und Umsetzung. Systemisches Denken, das Software, Daten, KI und physische Geräte zu praxistauglichen Produkten und Entscheidungshilfen verbindet. Englisch (B2) beruflich eingesetzt, Französisch (B2) in IEEE-Führungskontexten, Grundkenntnisse Mandarin (HSK2) in Arisoft-Projekten.",
+  "capabilities": [
+    {
+      "area": "Softwareentwicklung / Backend / Full-Stack",
+      "items": [
+        "C#",
+        ".NET/.NET Core",
+        "ASP.NET-oriented backend services",
+        "Python",
+        "Node.js",
+        "JavaScript/TypeScript",
+        "React",
+        "Next.js",
+        "REST APIs",
+        "service integration",
+        "application architecture",
+        "design patterns",
+        "secure development",
+        "Git/GitHub",
+        "technical documentation"
+      ]
+    },
+    {
+      "area": "Datentechnik / Analytik",
+      "items": [
+        "SQL",
+        "SQL Server",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "relational data modeling/design",
+        "schema design",
+        "data management",
+        "ETL/ELT",
+        "SQL Server Integration Services (SSIS)",
+        "data ingestion",
+        "extraction/transformation/loading workflows",
+        "pipeline/orchestration concepts",
+        "Data Warehousing concepts",
+        "query design/optimization",
+        "data quality",
+        "Power BI",
+        "advanced Excel",
+        "Jupyter",
+        "Apache Spark/PySpark concepts",
+        "dashboards",
+        "automated reporting",
+        "telemetry and time-series data"
+      ]
+    },
+    {
+      "area": "KI / ML / intelligente Systeme",
+      "items": [
+        "TensorFlow",
+        "PyTorch",
+        "OpenCV",
+        "predictive modeling",
+        "computer vision",
+        "RAG",
+        "Agentic AI",
+        "MCP Server",
+        "LLM orchestration/workflows",
+        "prompt engineering",
+        "AI-assisted software development",
+        "intelligent automation concepts"
+      ]
+    },
+    {
+      "area": "Cloud / DevOps / IT-Grundlagen",
+      "items": [
+        "Docker",
+        "Linux",
+        "Azure DevOps",
+        "GitHub Actions",
+        "CI/CD workflows",
+        "Postman",
+        "Wireshark",
+        "DNS/TCP-IP fundamentals",
+        "cloud-oriented development workflows",
+        "deployment practices",
+        "API/service integration",
+        "remote systems collaboration"
+      ]
+    },
+    {
+      "area": "Embedded / IoT / Elektronik",
+      "items": [
+        "C/C++",
+        "STM32",
+        "ESP32",
+        "Arduino",
+        "Raspberry Pi",
+        "ESP-IDF",
+        "RTOS",
+        "MQTT",
+        "LoRaWAN",
+        "sensors",
+        "telemetry",
+        "real-time data acquisition",
+        "firmware/software integration",
+        "Altium Designer",
+        "KiCad",
+        "Cadence OrCAD",
+        "LTspice",
+        "Proteus",
+        "FPGA",
+        "VHDL/Verilog",
+        "Xilinx",
+        "Intel Quartus"
+      ]
+    },
+    {
+      "area": "Robotik / Automatisierung / Biomedizin",
+      "items": [
+        "ROS2",
+        "Gazebo",
+        "Webots",
+        "control systems",
+        "mechatronic prototyping",
+        "MATLAB/Octave",
+        "Fusion 360",
+        "Blender",
+        "physiological-signal concepts",
+        "PPG/ECG workflows",
+        "digital signal/image processing",
+        "sensor-based health-tech prototyping"
+      ]
+    },
+    {
+      "area": "Technische Leitung / Management",
+      "items": [
+        "technische Projektkoordination",
+        "Ingenieur- und Produktmanagement",
+        "Anforderungsdefinition",
+        "Produkt-Roadmapping",
+        "Kommunikation mit Stakeholdern und Kundschaft",
+        "Führung multidisziplinärer Teams",
+        "Mentoring",
+        "operative Planung",
+        "technische Beratung",
+        "Nachverfolgung der Umsetzung",
+        "datengetriebene Entscheidungsfindung"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "devkit",
+      "role": "Gründer & Geschäftsführer / Technische Leitung",
+      "org": "DevKit Electronics S.A.S",
+      "place": "Bogotá, Kolumbien",
+      "period": "Jan. 2024 – heute",
+      "start": "2024-01",
+      "end": "present",
+      "mode": "Teilzeit / hybrid",
+      "bullets": [
+        "Gründung und Leitung des Unternehmens in Geschäftsstrategie, Betrieb, Produktausrichtung und technischer Umsetzung; Übersetzung institutioneller und marktseitiger Bedürfnisse in Ingenieurprodukte und wiederholbare Umsetzungsprogramme.",
+        "Verantwortung für die durchgängige Lösungsarchitektur: mehrlagige Leiterplatten, eingebettete Firmware, Sensorik und Datenerfassung, IoT-Anbindung, Backend-Dienste, Webplattformen, Lernsoftware, Robotik und Laborgeräte.",
+        "Integration von Geräte- und Anwendungsdaten in strukturierte Abläufe für Erfassung, Transformation (ETL/ELT), Monitoring, Dashboards, Reporting und Automatisierung mit Python, SQL und APIs.",
+        "Leitung multidisziplinärer Teams aus Elektronik, Software und Pädagogik; Definition von Anforderungen, Roadmaps, Dokumentation, Validierungskriterien und Lieferprioritäten; Einbindung von KI/ML, RAG und Agentic AI in Prototypen, wo sinnvoll."
+      ],
+      "languageUse": "",
+      "tech": [
+        "Technical leadership",
+        "product management",
+        ".NET/Python/JavaScript ecosystems",
+        "REST APIs",
+        "SQL",
+        "data modeling",
+        "ETL/ELT concepts",
+        "telemetry/data pipelines",
+        "dashboards",
+        "AI/ML",
+        "RAG",
+        "Agentic AI",
+        "MCP",
+        "IoT",
+        "STM32/ESP32",
+        "firmware",
+        "PCB",
+        "sensors",
+        "automation",
+        "Git/GitHub",
+        "technical documentation",
+        "client delivery"
+      ],
+      "tags": [
+        "Technische Leitung",
+        "Produkt",
+        "STEM",
+        "Robotik",
+        "STM32",
+        "Firmware",
+        "Leiterplatten",
+        "IoT",
+        "Daten"
+      ]
+    },
+    {
+      "id": "poimen",
+      "role": "Gründer & Geschäftsführer / Ingenieurleitung",
+      "org": "Poimen Labs",
+      "place": "Kolumbien",
+      "period": "2025 – heute",
+      "start": "2025",
+      "end": "present",
+      "mode": "Teilzeit",
+      "bullets": [
+        "Gründung und Leitung einer AgriTech-Initiative zur Anwendung von Elektronik, Automatisierung, Sensorik, Daten und Software in der landwirtschaftlichen Überwachung und Entscheidungsunterstützung unter kolumbianischen Bedingungen.",
+        "Entwurf integrierter Architekturen mit Sensorknoten, Datenerfassung am Netzwerkrand, Telemetrie, Konnektivität, Steuerlogik, Backend-Diensten und Dashboards; Umwandlung von Feldmessungen in nachvollziehbare Informationen, Warnungen und Betriebskennzahlen.",
+        "Anwendung der Datentechnik auf IoT-Abläufe: Erfassung, Transformation, strukturierte Speicherung, Zeitreihen, Datenqualität und Visualisierung mit Python und SQL.",
+        "Steuerung des Produktzyklus von Anforderungen und Architektur über Integration von Leiterplatte, Gehäuse, Firmware und Software bis zu Pilotvalidierung, Rückmeldungen und Iteration."
+      ],
+      "languageUse": "",
+      "tech": [
+        "AgriTech",
+        "IoT",
+        "sensor data",
+        "telemetry",
+        "edge acquisition",
+        "Python",
+        "SQL",
+        "data modeling",
+        "ETL/ELT",
+        "data ingestion",
+        "pipeline/orchestration concepts",
+        "time-series data",
+        "backend services",
+        "dashboards",
+        "automation",
+        "AI/ML",
+        "Agentic AI concepts",
+        "embedded systems",
+        "product engineering",
+        "technical management"
+      ],
+      "tags": [
+        "AgriTech",
+        "IoT",
+        "Sensorik",
+        "Telemetrie",
+        "Eingebettete Systeme",
+        "Datentechnik",
+        "Automatisierung"
+      ]
+    },
+    {
+      "id": "tranexco",
+      "role": "Junior Full-Stack-Entwickler",
+      "org": "Tranexco",
+      "place": "Remote",
+      "period": "Mai 2024 – Apr. 2025",
+      "start": "2024-05",
+      "end": "2025-04",
+      "mode": "Vollzeit",
+      "bullets": [
+        "Entwicklung unternehmensweiter .NET/C#-Lösungen für Kundenverwaltung, Zollabwicklung, Importe, DIAN-Konformität, Logistik und Geschäftsintegrationen.",
+        "Aufbau und Pflege von Backend-Diensten, REST-APIs, Geschäftslogik und SQL-Server-Datenstrukturen, inklusive Datenvalidierung und ETL/ELT-Prozessen mit SQL Server Integration Services (SSIS).",
+        "Mitarbeit in allen Schichten, auch bei JavaScript-Komponenten, im agilen Remote-Team mit Versionskontrolle und technischer Dokumentation."
+      ],
+      "languageUse": "",
+      "tech": [
+        ".NET",
+        "C#",
+        "SQL Server",
+        "SQL",
+        "SSIS",
+        "ETL/ELT",
+        "REST APIs",
+        "backend services",
+        "relational data modeling",
+        "schema/data integration",
+        "extraction/transformation/loading",
+        "query design/optimization",
+        "structured-data workflows",
+        "JavaScript",
+        "Git/GitHub",
+        "software architecture fundamentals",
+        "security",
+        "remote collaboration"
+      ]
+    },
+    {
+      "id": "arisoft",
+      "role": "Softwareentwickler, Programmierer & Berater für Lernrobotik",
+      "org": "Arisoft Seguridad Vial S.A.S",
+      "place": "Bogotá, Kolumbien",
+      "period": "Jun. 2023 – Nov. 2024",
+      "start": "2023-06",
+      "end": "2024-11",
+      "mode": "Vollzeit / hybrid",
+      "bullets": [
+        "Betreuung von Lernrobotik-Projekten für Vermarktung und institutionelle Umsetzung: Softwareentwicklung, Roboterprogrammierung, elektronische Schaltungen und technische Beratung.",
+        "Arbeit an der Integration von Hardware und Software, Automatisierungslogik, Prototypen der Elektronik sowie Sensor- und Datenerfassung; Koordination mit Kundschaft und Bildungseinrichtungen."
+      ],
+      "languageUse": "",
+      "tech": [
+        "Software development",
+        "C/C++/Python",
+        "robotics",
+        "electronics",
+        "PCB/circuit prototyping",
+        "automation",
+        "sensor/data acquisition concepts",
+        "hardware-software integration",
+        "technical consulting",
+        "product implementation",
+        "multi-client support"
+      ]
+    },
+    {
+      "id": "cpe",
+      "role": "Ingenieur- und Lernrobotik-Berater",
+      "org": "Computadores para Educar · Bildungsministerium Kolumbien",
+      "place": "Kolumbien",
+      "period": "März 2021 – Nov. 2023",
+      "start": "2021-03",
+      "end": "2023-11",
+      "mode": "Vollzeit / hybrid",
+      "bullets": [
+        "Leitung vom Entwurf bis zur Umsetzung mechatronischer und pädagogischer Prototypen mit Python, C/C++, Leiterplattenentwurf, Sensorik, Robotik und 3D-Modellierung.",
+        "Integration von Elektronik, Software, Sensorik und Datenerfassung in Lösungen für Schulen und benachteiligte Gemeinschaften; Wissensvermittlung an Lehrkräfte und Gemeinschaften."
+      ],
+      "languageUse": "",
+      "tech": [
+        "Python",
+        "C/C++",
+        "sensors",
+        "data acquisition",
+        "structured-data handling",
+        "preprocessing/transformation workflows",
+        "PCB",
+        "electronics",
+        "robotics",
+        "automation",
+        "3D CAD",
+        "engineering implementation",
+        "technical training",
+        "stakeholder coordination"
+      ]
+    },
+    {
+      "id": "compensar",
+      "role": "Lehrkraft für Robotik und Elektronik / Technischer Ausbilder",
+      "org": "COMPENSAR - Universidad COMPENSAR",
+      "place": "Bogotá, Kolumbien",
+      "period": "Juli 2025 – Dez. 2025",
+      "start": "2025-07",
+      "end": "2025-12",
+      "mode": "Vor Ort",
+      "bullets": [
+        "Konzeption und Durchführung spezialisierter Lernangebote zu Robotik, Automatisierung, Elektronik und eingebetteten Systemen mit KI in curricularen Projekten.",
+        "Begleitung von Studierenden durch vollständige technische Projekte: von Schaltung und Sensorik über Programmierung und autonomes Verhalten bis zu funktionsfähigen Prototypen."
+      ],
+      "languageUse": "",
+      "tech": [
+        "Robotics",
+        "embedded AI",
+        "Python/C++ concepts",
+        "Arduino/embedded systems",
+        "sensors",
+        "data acquisition",
+        "automation",
+        "programming",
+        "technical mentoring",
+        "curriculum/product design",
+        "project evaluation"
+      ]
+    },
+    {
+      "id": "ieee",
+      "role": "Präsident / Technische Leitung – IEEE-Studierendenzweig und Fachgruppen",
+      "org": "IEEE · Universidad Distrital Francisco José de Caldas",
+      "place": "Bogotá, Kolumbien",
+      "period": "Juni 2022 – heute",
+      "start": "2022-06",
+      "end": "present",
+      "mode": "Teilzeit / hybrid",
+      "bullets": [
+        "Führungspositionen im IEEE-Studierendenzweig und in den Fachgruppen Robotik und Automatisierung (RAS), Humanitäre Technologien (SIGHT), Computational Intelligence (CIS) sowie frühere Mitarbeit bei EMBS.",
+        "Leitung technischer Gemeinschaften in Robotik, Computational Intelligence, KI, Biomedizintechnik und humanitärer Technologie; Koordination von Teams, Veranstaltungen, Workshops und Projekten; Pflege von Partnerschaften."
+      ],
+      "languageUse": "",
+      "tech": [
+        "Technical leadership",
+        "project/program management",
+        "IEEE RAS/SIGHT/CIS/EMBS",
+        "robotics",
+        "AI/ML",
+        "RAG/Agentic AI concepts",
+        "biomedical engineering contexts",
+        "humanitarian technology",
+        "stakeholder management",
+        "public speaking",
+        "multidisciplinary coordination"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "satvire",
+      "title": "Nationaler Hackathon-Gewinner – SAT-ViRe",
+      "context": "UNGRD / UNDP Kolumbien",
+      "period": "Mai 2026",
+      "award": "1. Platz – Frühwarnsysteme",
+      "bullets": [
+        "Entwicklung einer kostengünstigen Frühwarnlösung für Erdrutsche und Hangversagen für gefährdete Gemeinschaften; Verbindung von Risikoerkennung, Datenerfassung, Kommunikation und Entscheidungsunterstützung für Katastrophenschutzorganisationen.",
+        "Verbindung von Sensorik/IoT und Analyselogik mit Alarmierung und feldtauglichem Einsatz zur Verbesserung von Prävention, Risikokommunikation und sicheren territorialen Entscheidungen."
+      ],
+      "tech": [
+        "IoT",
+        "Sensorik",
+        "Edge AI",
+        "Risikoanalyse",
+        "Datenerfassung",
+        "Alarmierung",
+        "Entscheidungsunterstützung"
+      ]
+    },
+    {
+      "id": "google-cartagena",
+      "title": "Google Hackathon – Cartagena",
+      "context": "Herausforderung Technologie und Risikomanagement",
+      "period": "2026",
+      "award": "3. Platz",
+      "bullets": [
+        "Entwurf eines Systems für das territoriale Risikomanagement in Cartagena: Ermittlung betroffener Zonen und Bewertung des Budgetrisikos sowie der Auswirkungen auf Mobilität, Wirtschaft, Tourismus und weitere Sektoren.",
+        "Strukturierung von Risikoindikatoren und Entscheidungs-Dashboards, um räumliche und sektorübergreifende Effekte sichtbar zu machen und Maßnahmen und Ressourcenverteilung zu priorisieren."
+      ],
+      "tech": [
+        "Datenanalyse",
+        "territoriales Risiko",
+        "Entscheidungs-Dashboards",
+        "Indikatoren",
+        "Budgetwirkung"
+      ]
+    },
+    {
+      "id": "epidemiology",
+      "title": "Epidemiologisches Vorhersage- und Überwachungs-Dashboard",
+      "context": "Projekt Daten / Analytik im Gesundheitswesen",
+      "period": "2026",
+      "award": "",
+      "bullets": [
+        "Konzept eines analytischen Dashboards für eine epidemiologische Vorhersageplattform auf Basis öffentlicher Datensätze zur frühzeitigen Erkennung von Ausbrüchen, u. a. Dengue, Chikungunya, Leishmaniose und Influenza.",
+        "Schwerpunkt auf Erfassung öffentlicher Daten, ETL/ELT-Aufbereitung, Bereinigung und Modellierung, Indikatoren, Visualisierung und zeitlich-räumlicher Analyse mit Python/SQL."
+      ],
+      "tech": [
+        "offene Daten",
+        "ETL/ELT",
+        "Python/SQL",
+        "Datenmodellierung",
+        "Datenqualität",
+        "Dashboards"
+      ]
+    },
+    {
+      "id": "ppg",
+      "title": "Smartphone-PPG und Analyse physiologischer Signale",
+      "context": "Forschung und Entwicklung Biomedizin / Signalverarbeitung",
+      "period": "2026 – laufend",
+      "award": "",
+      "bullets": [
+        "Gewinnung und Analyse physiologischer Signale aus RGB-Kameradaten: Vorverarbeitung, Filterung, Resampling und Untersuchung von Herzfrequenz- und HRV-Kennzahlen."
+      ],
+      "tech": [
+        "Biomedizin",
+        "PPG/EKG",
+        "Python",
+        "OpenCV",
+        "digitale Signalverarbeitung",
+        "Zeitreihen"
+      ]
+    }
+  ],
+  "education": {
+    "degree": {
+      "title": "Elektronikingenieurwesen",
+      "institution": "Universidad Distrital Francisco José de Caldas",
+      "period": "2020 – 2027",
+      "start": "2020",
+      "end": "2027",
+      "status": "Letzte Semester"
+    },
+    "certifications": [
+      {
+        "name": "Data Engineering",
+        "issuer": "DeepLearning.AI",
+        "year": "2026"
+      },
+      {
+        "name": "Advanced Data Analytics",
+        "issuer": "Google",
+        "year": "2026"
+      },
+      {
+        "name": "AI & ML Engineering",
+        "issuer": "Microsoft",
+        "year": "2026"
+      },
+      {
+        "name": "AI Developer",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "Data Science Professional",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "RAG & Agentic AI",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "JavaScript Backend Developer",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "Professional PCB Design & Assembly",
+        "issuer": "Altium/UDFJC",
+        "year": "2023"
+      },
+      {
+        "name": "Altium Global Scholarship Program",
+        "issuer": "",
+        "year": "2026"
+      },
+      {
+        "name": "Remote Sensing & Drones",
+        "issuer": "ESRI Colombia",
+        "year": "2026"
+      }
+    ],
+    "continuing": "Data Engineering (SQL, Datenmodellierung, ETL/ELT, SSIS, Data Warehousing, Spark/PySpark und Orchestrierung mit Airflow), Datenanalyse, KI und maschinelles Lernen, RAG & Agentic AI, technisches Projektmanagement, Produktmanagement, agile Methoden, strategische Führung und datengetriebene Entscheidungsfindung."
+  },
+  "languages": [
+    {
+      "code": "es",
+      "name": "Spanisch",
+      "level": "Muttersprache",
+      "cefr": "",
+      "native": true,
+      "note": ""
+    },
+    {
+      "code": "en",
+      "name": "Englisch",
+      "level": "B2",
+      "cefr": "B2",
+      "native": false,
+      "note": "beruflich und fachlich eingesetzt"
+    },
+    {
+      "code": "fr",
+      "name": "Französisch",
+      "level": "B2",
+      "cefr": "B2",
+      "native": false,
+      "note": "in IEEE-Fachkontexten angewandt"
+    },
+    {
+      "code": "zh",
+      "name": "Mandarin-Chinesisch",
+      "level": "HSK2 / Grundkenntnisse",
+      "cefr": "",
+      "native": false,
+      "note": "in Arisoft-Kontexten angewandt"
+    },
+    {
+      "code": "de",
+      "name": "Deutsch",
+      "level": "A1",
+      "cefr": "A1",
+      "native": false,
+      "note": ""
+    }
+  ],
+  "availability": "Vollzeit remote in Kolumbien/Lateinamerika und für internationale Teams verfügbar. Flexible Abstimmung mit US-Geschäftszeiten und verteilten Teams.",
+  "labels": {
+    "docTitle": "Lebenslauf",
+    "personal": "Persönliche Daten",
+    "name": "Name",
+    "location": "Wohnort",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "availability": "Verfügbarkeit",
+    "availabilityLead": "Verfügbarkeit",
+    "profile": "Profil",
+    "capabilities": "Kenntnisse / IT-Kenntnisse",
+    "experience": "Berufserfahrung",
+    "projects": "Projekte und Auszeichnungen",
+    "education": "Ausbildung",
+    "certifications": "Zertifikate und Kurse",
+    "continuing": "Weiterbildung",
+    "languages": "Sprachkenntnisse",
+    "tech": "Eingesetzte Technologien",
+    "current": "heute"
+  }
+}

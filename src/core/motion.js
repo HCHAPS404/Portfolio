@@ -79,8 +79,8 @@ function initHero() {
     let i = 0;
     setInterval(() => {
       if (document.hidden) return;
-      i = (i + 1) % profile.roles.length;
-      scramble(roleEl, { text: profile.roles[i], duration: 550 });
+      i = (i + 1) % profile.emphasis.length;
+      scramble(roleEl, { text: profile.emphasis[i], duration: 550 });
     }, 2600);
   }
 

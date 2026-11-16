@@ -26,10 +26,10 @@
       "name": "Hackatón GDG Cartagena",
       "meta": "Hackatón · Google Developer Group",
       "org": "Google Developer Group (GDG) Cartagena",
-      "year": null,
+      "year": "2026",
       "location": "Cartagena de Indias",
-      "summary": "Tercer puesto en la hackatón organizada por Google Developer Group (GDG) Cartagena.",
-      "detail": null,
+      "summary": "Tercer puesto en la hackatón de Google Developer Group (GDG) Cartagena, en el reto de tecnología y gestión del riesgo.",
+      "detail": "Sistema de gestión territorial del riesgo para Cartagena: identifica las zonas afectadas y estima la exposición presupuestal y el impacto en movilidad, actividad económica, turismo y otros sectores de la ciudad. Sus indicadores y tableros hacen visibles los efectos por zona y por sector para priorizar la mitigación y la asignación de recursos.",
       "flag": "3er puesto",
       "place": 3,
       "repo": null,
@@ -129,5 +129,5 @@
       "repo": "https://github.com/HCHAPS404/VOXLU"
     }
   ],
-  "_nota": "Los proyectos de 'proyectos' no tienen descripción aún (summary: null). En 'competencias', los campos null (year, detail, repo) están pendientes de que el dueño los complete: no inventar. 'visual' elige la animación del panel: terrain | waves."
+  "_nota": "Los proyectos de 'proyectos' no tienen descripción aún (summary: null): no inventar. 'visual' elige la animación del panel: terrain | waves."
 }

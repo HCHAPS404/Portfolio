@@ -15,6 +15,9 @@ const SYMBOLS = {
   'SQL Server': 'Sq', PostgreSQL: 'Pg', MongoDB: 'Mg', Redis: 'Rd', Grafana: 'Gf', 'Azure DevOps': 'Az',
   Git: 'Gt', Docker: 'Dk', Linux: 'Lx', Postman: 'Pm', Wireshark: 'Ws', 'MQTT / LoRaWAN': 'Lo',
   'ROS 2': 'R2', Gazebo: 'Gz', 'Fusion 360': 'F3', SolidWorks: 'Sw', Blender: 'Bl', Figma: 'Fg',
+  'Raspberry Pi': 'Rp', FreeRTOS: 'Fr', 'ASP.NET Core': 'As', SSIS: 'Ss', 'Apache Airflow': 'Af', 'Excel avanzado': 'Xl', Pandas: 'Pd',
+  'scikit-learn': 'Sk', MCP: 'Mc', 'GNU Octave': 'Go', SciPy: 'Sc', Webots: 'Wb', Simulink: 'Sm', 'Ultimaker Cura': 'Cu', PSIM: 'Ps',
+  'AutoCAD Electrical': 'Ae', 'GitHub Actions': 'Ga',
 };
 
 /**
@@ -174,12 +177,18 @@ function renderTools() {
         const code = catCode(c.id);
         return `
         <li class="tool" data-cat="${esc(c.id)}" data-name="${esc(name.toLowerCase())}">
-          <button class="tool__btn" type="button" data-tool="${esc(name)}" data-cat-name="${esc(c.category)}" data-code="${esc(code)}" data-domains="${esc(used.join(' · '))}" data-sym="${esc(sym)}">
+          <button class="tool__btn" type="button" aria-expanded="false" aria-controls="tool-${n}" aria-label="${esc(t('skills.tool.open', { name }))}" data-tool="${esc(name)}" data-cat-name="${esc(c.category)}" data-code="${esc(code)}" data-domains="${esc(used.join(' · '))}" data-sym="${esc(sym)}">
             <span class="tool__no">${pad2(n)}</span>
             <span class="tool__code">${esc(code)}</span>
             <span class="tool__sym">${esc(sym)}</span>
             <span class="tool__name">${esc(name)}</span>
+            <span class="tool__x" aria-hidden="true"></span>
           </button>
+          <dl class="tool__detail" id="tool-${n}" hidden>
+            <div><dt class="mono">${esc(t('skills.tool.what'))}</dt><dd>${esc(c.what[ii])}</dd></div>
+            <div><dt class="mono">${esc(t('skills.tool.use'))}</dt><dd>${esc(c.use[ii])}</dd></div>
+            <div class="tool__meta mono"><dt>${esc(t('skills.inspect_cat'))}</dt><dd>${esc(c.category)}</dd>${used.length ? `<dt>${esc(t('skills.inspect_domains'))}</dt><dd>${esc(used.join(' · '))}</dd>` : ''}</div>
+          </dl>
         </li>`;
       });
     })

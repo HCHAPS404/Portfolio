@@ -1,0 +1,568 @@
+{
+  "meta": {
+    "lang": "ru",
+    "format": "rezyume",
+    "locale": "ru-RU",
+    "paper": "A4",
+    "title": "Резюме - Хельмут Чапарро Сандоваль"
+  },
+  "person": {
+    "name": "Helmut Chaparro Sandoval",
+    "headline": "Инженер-электронщик · встраиваемые системы, аппаратное обеспечение, ПО, данные и ИИ, робототехника",
+    "location": "Богота, Колумбия",
+    "phone": "+57 300 872 32 90",
+    "email": "helmut.chs@gmail.com",
+    "links": [
+      {
+        "id": "portfolio",
+        "label": "Portfolio",
+        "url": "https://hchaps404.github.io/Portfolio/",
+        "display": "https://hchaps404.github.io/Portfolio/"
+      },
+      {
+        "id": "github",
+        "label": "GitHub",
+        "url": "https://github.com/HCHAPS404",
+        "display": "https://github.com/HCHAPS404"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/helmut-chaparro-sandoval-370192317",
+        "display": "linkedin.com/in/helmut-chaparro-sandoval-370192317"
+      }
+    ],
+    "availability": "Полная занятость удалённо | Колумбия/Латинская Америка | Возможна работа по времени США (EST/CST и др.)"
+  },
+  "profile": "Инженер-электронщик и технический специалист с более чем шестилетним опытом проектирования, создания и руководства комплексными решениями: разработка ПО, backend и full-stack, данные и аналитика, ИИ и машинное обучение, встраиваемые системы, IoT, электроника, робототехника и автоматизация. Практический опыт работы с C#/.NET, Python, SQL, REST API, TypeScript, SQL Server, интеграцией систем, печатными платами и FPGA. Основатель и технический руководитель: требования, архитектура, дорожные карты, многопрофильные команды. Английский B2 в профессиональной деятельности, французский B2 в контексте IEEE.",
+  "capabilities": [
+    {
+      "area": "Разработка ПО / backend / full-stack",
+      "items": [
+        "C#",
+        ".NET/.NET Core",
+        "Python",
+        "Node.js",
+        "JavaScript/TypeScript",
+        "React",
+        "Next.js",
+        "REST API",
+        "Git/GitHub",
+        "техническая документация"
+      ]
+    },
+    {
+      "area": "Инженерия и анализ данных",
+      "items": [
+        "SQL",
+        "SQL Server",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "моделирование данных",
+        "ETL/ELT",
+        "SQL Server Integration Services (SSIS)",
+        "Power BI",
+        "Apache Spark/PySpark",
+        "дашборды, отчётность, телеметрия"
+      ]
+    },
+    {
+      "area": "ИИ / ML / интеллектуальные системы",
+      "items": [
+        "TensorFlow",
+        "PyTorch",
+        "OpenCV",
+        "прогнозное моделирование",
+        "компьютерное зрение",
+        "RAG",
+        "Agentic AI",
+        "MCP",
+        "промпт-инжиниринг"
+      ]
+    },
+    {
+      "area": "Облака / DevOps / ИТ",
+      "items": [
+        "Docker",
+        "Linux",
+        "Azure DevOps",
+        "GitHub Actions",
+        "CI/CD",
+        "Postman",
+        "Wireshark",
+        "DNS/TCP-IP",
+        "развёртывание"
+      ]
+    },
+    {
+      "area": "Встраиваемые системы / IoT / электроника",
+      "items": [
+        "C/C++",
+        "STM32",
+        "ESP32",
+        "Arduino",
+        "Raspberry Pi",
+        "ESP-IDF",
+        "RTOS",
+        "MQTT",
+        "LoRaWAN",
+        "датчики",
+        "Altium Designer",
+        "KiCad",
+        "LTspice",
+        "FPGA",
+        "VHDL/Verilog"
+      ]
+    },
+    {
+      "area": "Робототехника / автоматизация / биомедицина",
+      "items": [
+        "ROS2",
+        "Gazebo",
+        "Webots",
+        "системы управления",
+        "мехатроника",
+        "MATLAB/Octave",
+        "Fusion 360",
+        "Blender",
+        "PPG/ECG",
+        "обработка сигналов и изображений"
+      ]
+    },
+    {
+      "area": "Техническое руководство",
+      "items": [
+        "координация технических проектов",
+        "управление инженерией и продуктом",
+        "определение требований",
+        "дорожные карты продукта",
+        "работа с заинтересованными сторонами",
+        "руководство многопрофильными командами",
+        "наставничество",
+        "техническая консультация"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "devkit",
+      "role": "Основатель и генеральный директор / технический руководитель",
+      "org": "DevKit Electronics S.A.S",
+      "place": "Богота, Колумбия",
+      "period": "янв. 2024 – наст. время",
+      "start": "2024-01",
+      "end": "present",
+      "mode": "Неполный день / гибрид",
+      "bullets": [
+        "Основал компанию и руковожу стратегией, операциями, развитием продукта и технической реализацией; перевожу потребности институтов и рынка в инженерные продукты и повторяемые программы внедрения.",
+        "Архитектура решений от начала до конца: многослойные печатные платы, встраиваемое ПО, датчики и сбор данных, подключение к интернету вещей, серверные сервисы, веб-платформы, учебное ПО, робототехника и лабораторное оборудование.",
+        "Интеграция данных устройств и приложений в процессы сбора, преобразования (ETL/ELT), мониторинга, панелей и автоматизации с Python, SQL и API.",
+        "Руковожу многопрофильными командами (электроника, ПО, педагогика): требования, дорожные карты, критерии проверки и приоритеты поставки."
+      ],
+      "languageUse": "",
+      "tech": [
+        "Technical leadership",
+        "product management",
+        ".NET/Python/JavaScript ecosystems",
+        "REST APIs",
+        "SQL",
+        "data modeling",
+        "ETL/ELT concepts",
+        "telemetry/data pipelines",
+        "dashboards",
+        "AI/ML",
+        "RAG",
+        "Agentic AI",
+        "MCP",
+        "IoT",
+        "STM32/ESP32",
+        "firmware",
+        "PCB",
+        "sensors",
+        "automation",
+        "Git/GitHub",
+        "technical documentation",
+        "client delivery"
+      ],
+      "tags": [
+        "Guida tecnica",
+        "Prodotto",
+        "STEM",
+        "Robotica",
+        "STM32",
+        "Firmware",
+        "PCB",
+        "IoT",
+        "Dati"
+      ]
+    },
+    {
+      "id": "poimen",
+      "role": "Основатель и генеральный директор / руководитель инженерии",
+      "org": "Poimen Labs",
+      "place": "Колумбия",
+      "period": "2025 – наст. время",
+      "start": "2025",
+      "end": "present",
+      "mode": "Неполный день",
+      "bullets": [
+        "Основал и руковожу инициативой АгриТех: электроника, автоматизация, датчики, данные и ПО для мониторинга сельского хозяйства и поддержки решений в условиях Колумбии.",
+        "Проектирую интегрированные архитектуры (узлы датчиков, сбор данных на периферии, телеметрия, связь, логика управления, сервер, панели) и превращаю полевые измерения в прослеживаемые предупреждения и показатели.",
+        "Веду полный цикл продукта: требования и архитектура, интеграция платы, корпуса, встраиваемого ПО и программ, пилотная проверка и итерации."
+      ],
+      "languageUse": "",
+      "tech": [
+        "AgriTech",
+        "IoT",
+        "sensor data",
+        "telemetry",
+        "edge acquisition",
+        "Python",
+        "SQL",
+        "data modeling",
+        "ETL/ELT",
+        "data ingestion",
+        "pipeline/orchestration concepts",
+        "time-series data",
+        "backend services",
+        "dashboards",
+        "automation",
+        "AI/ML",
+        "Agentic AI concepts",
+        "embedded systems",
+        "product engineering",
+        "technical management"
+      ],
+      "tags": [
+        "AgriTech",
+        "IoT",
+        "Sensori",
+        "Telemetria",
+        "Embedded",
+        "Ingegneria dei dati",
+        "Automazione"
+      ]
+    },
+    {
+      "id": "tranexco",
+      "role": "Junior full-stack разработчик",
+      "org": "Tranexco",
+      "place": "Удалённо",
+      "period": "май 2024 – апр. 2025",
+      "start": "2024-05",
+      "end": "2025-04",
+      "mode": "Полный день",
+      "bullets": [
+        "Корпоративные решения на .NET/C#: управление клиентами, таможенные операции, импорт, соответствие требованиям DIAN, логистика и интеграции.",
+        "Серверные сервисы, REST API и структуры SQL Server; процессы ETL/ELT на SQL Server Integration Services (SSIS)."
+      ],
+      "languageUse": "",
+      "tech": [
+        ".NET",
+        "C#",
+        "SQL Server",
+        "SQL",
+        "SSIS",
+        "ETL/ELT",
+        "REST APIs",
+        "backend services",
+        "relational data modeling",
+        "schema/data integration",
+        "extraction/transformation/loading",
+        "query design/optimization",
+        "structured-data workflows",
+        "JavaScript",
+        "Git/GitHub",
+        "software architecture fundamentals",
+        "security",
+        "remote collaboration"
+      ]
+    },
+    {
+      "id": "arisoft",
+      "role": "Разработчик ПО, программист и консультант по образовательной робототехнике",
+      "org": "Arisoft Seguridad Vial S.A.S",
+      "place": "Богота, Колумбия",
+      "period": "июнь 2023 – нояб. 2024",
+      "start": "2023-06",
+      "end": "2024-11",
+      "mode": "Полный день / гибрид",
+      "bullets": [
+        "Ведение проектов образовательной робототехники для коммерциализации и внедрения в учреждениях: ПО, программирование роботов, схемы и техническая консультация."
+      ],
+      "languageUse": "",
+      "tech": [
+        "Software development",
+        "C/C++/Python",
+        "robotics",
+        "electronics",
+        "PCB/circuit prototyping",
+        "automation",
+        "sensor/data acquisition concepts",
+        "hardware-software integration",
+        "technical consulting",
+        "product implementation",
+        "multi-client support"
+      ]
+    },
+    {
+      "id": "cpe",
+      "role": "Консультант по инженерии и образовательной робототехнике",
+      "org": "Computadores para Educar · Министерство образования",
+      "place": "Колумбия",
+      "period": "март 2021 – нояб. 2023",
+      "start": "2021-03",
+      "end": "2023-11",
+      "mode": "Полный день / гибрид",
+      "bullets": [
+        "Полные циклы от проектирования до внедрения мехатронных и образовательных прототипов (Python, C/C++, печатные платы, датчики, робототехника, 3D-моделирование) для школ и уязвимых сообществ."
+      ],
+      "languageUse": "",
+      "tech": [
+        "Python",
+        "C/C++",
+        "sensors",
+        "data acquisition",
+        "structured-data handling",
+        "preprocessing/transformation workflows",
+        "PCB",
+        "electronics",
+        "robotics",
+        "automation",
+        "3D CAD",
+        "engineering implementation",
+        "technical training",
+        "stakeholder coordination"
+      ]
+    },
+    {
+      "id": "compensar",
+      "role": "Преподаватель робототехники и электроники",
+      "org": "COMPENSAR - Universidad COMPENSAR",
+      "place": "Богота, Колумбия",
+      "period": "июль 2025 – дек. 2025",
+      "start": "2025-07",
+      "end": "2025-12",
+      "mode": "На месте",
+      "bullets": [
+        "Разработка и проведение учебных программ по робототехнике, автоматизации, электронике и встраиваемым системам с ИИ, интегрированных в учебные проекты."
+      ],
+      "languageUse": "",
+      "tech": [
+        "Robotics",
+        "embedded AI",
+        "Python/C++ concepts",
+        "Arduino/embedded systems",
+        "sensors",
+        "data acquisition",
+        "automation",
+        "programming",
+        "technical mentoring",
+        "curriculum/product design",
+        "project evaluation"
+      ]
+    },
+    {
+      "id": "ieee",
+      "role": "Президент / техническое руководство – студенческое отделение и секции IEEE",
+      "org": "IEEE · Окружной университет имени Франсиско Хосе де Кальдаса",
+      "place": "Богота, Колумбия",
+      "period": "июнь 2022 – наст. время",
+      "start": "2022-06",
+      "end": "present",
+      "mode": "Неполный день / гибрид",
+      "bullets": [
+        "Руководящие должности в студенческом отделении и секциях робототехники и автоматизации, гуманитарных технологий и вычислительного интеллекта; ранее участие в EMBS.",
+        "Руководство техническими сообществами в робототехнике, вычислительном интеллекте, ИИ, биоинженерии и гуманитарных технологиях; координация команд, мероприятий и партнёрств."
+      ],
+      "languageUse": "",
+      "tech": [
+        "Technical leadership",
+        "project/program management",
+        "IEEE RAS/SIGHT/CIS/EMBS",
+        "robotics",
+        "AI/ML",
+        "RAG/Agentic AI concepts",
+        "biomedical engineering contexts",
+        "humanitarian technology",
+        "stakeholder management",
+        "public speaking",
+        "multidisciplinary coordination"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "satvire",
+      "title": "Победитель национального хакатона – SAT-ViRe",
+      "context": "UNGRD / ПРООН Колумбия",
+      "period": "май 2026",
+      "award": "1 место – системы раннего предупреждения",
+      "bullets": [
+        "Недорогое решение раннего предупреждения об оползнях и обрушениях склонов для уязвимых сообществ: обнаружение рисков, сбор данных, связь и поддержка решений."
+      ],
+      "tech": [
+        "IoT",
+        "датчики",
+        "Edge AI",
+        "анализ рисков"
+      ]
+    },
+    {
+      "id": "google-cartagena",
+      "title": "Хакатон Google – Картахена",
+      "context": "Испытание «технологии и управление рисками»",
+      "period": "2026",
+      "award": "3 место",
+      "bullets": [
+        "Система территориального управления рисками для Картахены: пострадавшие зоны, бюджетные риски и влияние на мобильность, экономику, туризм; показатели и панели для принятия решений."
+      ],
+      "tech": [
+        "анализ данных",
+        "территориальный риск",
+        "панели"
+      ]
+    },
+    {
+      "id": "epidemiology",
+      "title": "Панель прогноза и эпидемиологического надзора",
+      "context": "Проект данных и аналитики здравоохранения",
+      "period": "2026",
+      "award": "",
+      "bullets": [
+        "Концепция аналитической панели для платформы эпидемиологического прогноза на основе открытых данных (денге, чикунгунья, лейшманиоз, грипп): ETL/ELT, показатели, временной и географический анализ."
+      ],
+      "tech": [
+        "открытые данные",
+        "ETL/ELT",
+        "Python/SQL"
+      ]
+    }
+  ],
+  "education": {
+    "degree": {
+      "level": "",
+      "title": "Инженерия электроники",
+      "institution": "Окружной университет имени Франсиско Хосе де Кальдаса",
+      "period": "2020 – 2027",
+      "start": "2020",
+      "end": "2027",
+      "status": "Последние семестры"
+    },
+    "certifications": [
+      {
+        "name": "Data Engineering",
+        "issuer": "DeepLearning.AI",
+        "year": "2026"
+      },
+      {
+        "name": "Advanced Data Analytics",
+        "issuer": "Google",
+        "year": "2026"
+      },
+      {
+        "name": "AI & ML Engineering",
+        "issuer": "Microsoft",
+        "year": "2026"
+      },
+      {
+        "name": "AI Developer",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "Data Science Professional",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "RAG & Agentic AI",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "JavaScript Backend Developer",
+        "issuer": "IBM",
+        "year": "2026"
+      },
+      {
+        "name": "Professional PCB Design & Assembly",
+        "issuer": "Altium/UDFJC",
+        "year": "2023"
+      },
+      {
+        "name": "Altium Global Scholarship Program",
+        "issuer": "",
+        "year": "2026"
+      },
+      {
+        "name": "Remote Sensing & Drones",
+        "issuer": "ESRI Colombia",
+        "year": "2026"
+      }
+    ],
+    "continuing": "Data Engineering (SQL, ETL/ELT, SSIS, Spark, Airflow), анализ данных, ИИ и машинное обучение, RAG & Agentic AI, управление проектами и продуктом, гибкие методы."
+  },
+  "languages": [
+    {
+      "code": "es",
+      "name": "Испанский",
+      "level": "родной",
+      "cefr": "",
+      "native": true,
+      "note": ""
+    },
+    {
+      "code": "en",
+      "name": "Английский",
+      "level": "B2",
+      "cefr": "B2",
+      "native": false,
+      "note": "профессиональное и техническое использование"
+    },
+    {
+      "code": "fr",
+      "name": "Французский",
+      "level": "B2",
+      "cefr": "B2",
+      "native": false,
+      "note": "в технических контекстах IEEE"
+    },
+    {
+      "code": "zh",
+      "name": "Китайский (мандарин)",
+      "level": "HSK2 / базовый",
+      "cefr": "",
+      "native": false,
+      "note": "в контексте Arisoft"
+    },
+    {
+      "code": "de",
+      "name": "Немецкий",
+      "level": "A1",
+      "cefr": "A1",
+      "native": false,
+      "note": ""
+    }
+  ],
+  "availability": "Доступен к полной занятости удалённо в Колумбии/Латинской Америке и для международных команд; гибкий график с распределёнными командами США.",
+  "labels": {
+    "docTitle": "Резюме",
+    "desiredPosition": "Желаемая должность: инженер-электронщик, разработчик ПО, инженер данных и ИИ",
+    "location": "Место жительства",
+    "phone": "Телефон",
+    "email": "Почта",
+    "availability": "Готовность к работе",
+    "availabilityLead": "Готовность",
+    "experience": "Опыт работы",
+    "projects": "Проекты и достижения",
+    "education": "Образование",
+    "certifications": "Сертификаты и курсы",
+    "continuing": "Дополнительное образование",
+    "capabilities": "Ключевые навыки",
+    "languages": "Знание языков",
+    "profile": "О себе",
+    "tech": "Применяемые технологии"
+  }
+}

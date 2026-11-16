@@ -12,6 +12,7 @@ import { $, $$, esc } from './core/dom.js';
 import { detectLang, setupLang, consumeSwitch, t } from './i18n/index.js';
 import { renderChrome, initChrome } from './core/chrome.js';
 import { startLoader } from './core/loader.js';
+import { initAboutUi } from './core/about-ui.js';
 import { initScroll, initMotion, lockScroll } from './core/motion.js';
 
 import { renderHero } from './sections/hero.js';
@@ -163,6 +164,7 @@ async function start() {
   await loader.finish();
   document.documentElement.classList.add('is-ready');
   initMotion();
+  initAboutUi();
 
   // Tras cambiar de idioma se vuelve al punto donde estaba la lectura
   if (switching && scroll > 0) {

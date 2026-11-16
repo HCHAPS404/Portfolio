@@ -181,6 +181,25 @@ function initTools() {
     tiles.forEach((tile) => tile.classList.remove('is-kin'));
   }
 
+  function setOpenTile(btn, open) {
+    const tile = btn.closest('.tool');
+    tile.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    $('.tool__detail', tile).hidden = !open;
+    if (open && !reduceMotion) {
+      gsap.fromTo($('.tool__detail', tile), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out', clearProps: 'transform,opacity' });
+    }
+    ScrollTrigger.refresh();
+  }
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && pinned) {
+      setOpenTile(pinned, false);
+      pinned.focus({ preventScroll: true });
+      pinned = null;
+      clearInspector();
+    }
+  });
+
   $$('.tool__btn', board).forEach((btn) => {
     const enter = () => {
       show(btn);
@@ -197,12 +216,13 @@ function initTools() {
     btn.addEventListener('focus', enter);
     btn.addEventListener('pointerleave', leave);
     btn.addEventListener('blur', leave);
+    // Al pulsar, la ficha se despliega en el propio tablero con la descripción y el uso
     btn.addEventListener('click', () => {
       const same = pinned === btn;
-      pinned?.closest('.tool').classList.remove('is-pinned');
+      if (pinned) setOpenTile(pinned, false);
       pinned = same ? null : btn;
-      pinned?.closest('.tool').classList.add('is-pinned');
       if (pinned) {
+        setOpenTile(pinned, true);
         show(pinned);
         kin(pinned);
       } else clearInspector();

@@ -22,7 +22,7 @@ export function renderAwards() {
   return `
   <section class="section awards" id="premios" aria-labelledby="premios-title">
     <div class="wrap">
-      ${sectionHead('07', t('nav.awards'), `${esc(t('awards.meta_a'))}<br>${esc(t('awards.meta_b', { n: pad2(awards.length) }))}`).replace('<h2 ', '<h2 id="premios-title" ')}
+      ${sectionHead('07', t('awards.title'), `${esc(t('awards.meta_a'))}<br>${esc(t('awards.meta_b', { n: pad2(awards.length) }))}`).replace('<h2 ', '<h2 id="premios-title" ')}
       <ol class="awards__list">${rows}</ol>
     </div>
   </section>`;

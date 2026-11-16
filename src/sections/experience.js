@@ -28,6 +28,10 @@ export function renderExperience() {
           <p class="xp__summary">${esc(x.summary)}</p>
           <div class="xp__panel" id="xp-panel-${i}" role="region" aria-label="${esc(t('xp.detail_aria', { role: x.role }))}">
             <div class="xp__panel-inner">
+              <div class="xp__aporte">
+                <h4 class="mono">${esc(t('xp.contribution'))}</h4>
+                <p>${esc(x.contribution)}</p>
+              </div>
               <ul class="xp__bullets">${x.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>
             </div>
           </div>

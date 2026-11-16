@@ -2,7 +2,7 @@
   "tools": [
     {
       "id": "pcb",
-      "category": "PCB",
+      "category": "Electrónica y PCB",
       "items": [
         "Altium Designer",
         "KiCAD",
@@ -10,82 +10,283 @@
         "LTSpice",
         "Multisim",
         "Proteus"
+      ],
+      "what": [
+        "Suite profesional de diseño electrónico: esquemático, trazado de PCB multicapa y documentación de fabricación.",
+        "Suite libre de diseño de circuitos impresos, con editor de esquemáticos, trazado y visor 3D.",
+        "Entorno de captura de esquemáticos y simulación de circuitos de uso extendido en la industria.",
+        "Simulador SPICE de circuitos analógicos y de potencia.",
+        "Simulador de circuitos con instrumentos virtuales, muy usado en formación.",
+        "Simulador que combina el circuito con el microcontrolador ejecutando su firmware."
+      ],
+      "use": [
+        "Es mi herramienta principal para las placas de DevKit y Poimen Labs, del esquemático a los archivos de fabricación.",
+        "La uso en prototipos rápidos y en proyectos abiertos o educativos, donde importa que cualquiera pueda abrir el diseño.",
+        "Captura de esquemáticos y simulación cuando el proyecto o el equipo trabajan sobre el ecosistema Cadence.",
+        "Verifico fuentes, filtros y etapas analógicas antes de mandar a fabricar una placa.",
+        "Simulación y demostración de circuitos en clases y talleres de electrónica.",
+        "Pruebo firmware junto con el circuito antes de tener el hardware, sobre todo en proyectos educativos."
       ]
     },
     {
       "id": "embedded",
-      "category": "Embebidos",
+      "category": "Embebidos e IoT",
       "items": [
         "STM32CubeIDE",
         "Keil MDK",
         "ESP-IDF",
         "Arduino IDE",
         "PlatformIO",
+        "Raspberry Pi",
+        "FreeRTOS",
+        "MQTT / LoRaWAN",
         "Vivado / Quartus"
+      ],
+      "what": [
+        "Entorno de desarrollo de ST para microcontroladores STM32: configuración de periféricos, compilación y depuración.",
+        "Entorno profesional de desarrollo para microcontroladores ARM Cortex-M.",
+        "Marco de desarrollo oficial de Espressif para ESP32, con Wi-Fi, Bluetooth y FreeRTOS.",
+        "Entorno sencillo de programación de microcontroladores, estándar en educación y prototipado.",
+        "Entorno multiplataforma para firmware, con gestión de bibliotecas y de varias placas.",
+        "Computador de placa única con Linux, pensado para proyectos embebidos y de borde.",
+        "Sistema operativo de tiempo real para microcontroladores.",
+        "Protocolos de mensajería ligera y de comunicación de largo alcance y bajo consumo para IoT.",
+        "Entornos de Xilinx e Intel para describir, sintetizar e implementar diseños en FPGA."
+      ],
+      "use": [
+        "Desarrollo y depuración de firmware en C/C++ para las placas basadas en STM32.",
+        "Compilación y depuración de firmware ARM cuando el proyecto ya vive en ese entorno.",
+        "Firmware de nodos conectados con ESP32: sensores, telemetría y actualización remota.",
+        "Prototipos rápidos y cursos de robótica y electrónica.",
+        "Mantengo un mismo proyecto de firmware para distintos microcontroladores con compilaciones reproducibles.",
+        "Pasarela de sensores, visión artificial y procesamiento en el borde.",
+        "Organizo el firmware en tareas con tiempos garantizados cuando el sistema atiende varias cosas a la vez.",
+        "Llevo la telemetría de los nodos de campo al servidor, también donde la conectividad es limitada.",
+        "Diseño digital en VHDL y Verilog: síntesis, simulación y cierre de timing."
       ]
     },
     {
       "id": "software",
-      "category": "Software",
+      "category": "Ingeniería de software",
       "items": [
-        "VS Code",
-        "Visual Studio",
         ".NET / C#",
+        "ASP.NET Core",
         "Python",
         "TypeScript",
         "Node.js",
         "React",
-        "Next.js"
+        "Next.js",
+        "VS Code",
+        "Visual Studio",
+        "Figma"
+      ],
+      "what": [
+        "Plataforma y lenguaje de Microsoft para servicios, aplicaciones y sistemas empresariales.",
+        "Marco de .NET para construir APIs y aplicaciones web.",
+        "Lenguaje de propósito general, dominante en datos, automatización e inteligencia artificial.",
+        "JavaScript con tipos estáticos, para aplicaciones web mantenibles.",
+        "Entorno de ejecución de JavaScript en el servidor.",
+        "Biblioteca para construir interfaces de usuario por componentes.",
+        "Marco de React para aplicaciones web con renderizado en servidor.",
+        "Editor de código extensible.",
+        "Entorno de desarrollo integrado de Microsoft.",
+        "Herramienta de diseño de interfaces y prototipado colaborativo."
+      ],
+      "use": [
+        "Fue mi stack diario en Tranexco para software de comercio exterior, y lo sigo usando en servicios de backend.",
+        "Servicios y APIs REST que exponen la lógica de negocio.",
+        "Análisis de datos, automatización, aprendizaje automático y herramientas de apoyo para hardware.",
+        "Interfaces web y servicios en Node.js con menos errores en tiempo de ejecución.",
+        "Servicios ligeros, integraciones y herramientas de desarrollo.",
+        "Interfaces de las plataformas web y de los tableros.",
+        "Aplicaciones web completas, con rutas, datos y despliegue integrados.",
+        "Mi editor del día a día para firmware, web y datos.",
+        "Desarrollo y depuración de soluciones .NET.",
+        "Diseño y valido las pantallas antes de programarlas."
       ]
     },
     {
-      "id": "data",
-      "category": "Datos e IA",
+      "id": "dataeng",
+      "category": "Ingeniería de datos",
+      "items": [
+        "SQL Server",
+        "SSIS",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Apache Spark",
+        "Apache Airflow"
+      ],
+      "what": [
+        "Motor de base de datos relacional de Microsoft.",
+        "SQL Server Integration Services: herramienta de Microsoft para procesos de extracción, transformación y carga.",
+        "Base de datos relacional de código abierto.",
+        "Base de datos documental.",
+        "Almacén en memoria para caché y mensajería.",
+        "Motor de procesamiento distribuido de grandes volúmenes de datos.",
+        "Plataforma para programar y orquestar flujos de datos."
+      ],
+      "use": [
+        "Modelos de datos, consultas y optimización; fue la base de datos de los sistemas en Tranexco.",
+        "Integración de datos y flujos de carga para reportes.",
+        "Almacenamiento estructurado de los datos de aplicaciones y de telemetría.",
+        "Datos poco estructurados o que cambian de forma con frecuencia.",
+        "Caché y colas ligeras entre servicios.",
+        "Transformaciones a escala con PySpark, dentro de mi formación en ingeniería de datos.",
+        "Orquestación de pipelines, dentro de mi formación en ingeniería de datos."
+      ]
+    },
+    {
+      "id": "analytics",
+      "category": "Análisis de datos",
+      "items": [
+        "Power BI",
+        "Excel avanzado",
+        "Jupyter",
+        "Pandas",
+        "R",
+        "Grafana"
+      ],
+      "what": [
+        "Herramienta de Microsoft para tableros e informes interactivos.",
+        "Hoja de cálculo con tablas dinámicas, consultas y modelos de datos.",
+        "Cuadernos interactivos que combinan código, resultados y texto.",
+        "Biblioteca de Python para manipular y analizar datos tabulares.",
+        "Lenguaje para estadística y visualización.",
+        "Plataforma de tableros para métricas y series de tiempo."
+      ],
+      "use": [
+        "Tableros de indicadores y reportes automatizados para apoyar decisiones.",
+        "Análisis rápido, validación de datos e informes para equipos no técnicos.",
+        "Exploración de datos, prototipos de modelos y análisis reproducibles.",
+        "Limpieza, transformación y análisis de datos y series de tiempo.",
+        "Análisis estadístico y gráficos.",
+        "Monitoreo en vivo de la telemetría de dispositivos y servicios."
+      ]
+    },
+    {
+      "id": "ai",
+      "category": "Inteligencia artificial",
       "items": [
         "TensorFlow",
         "PyTorch",
         "OpenCV",
+        "scikit-learn",
+        "MCP"
+      ],
+      "what": [
+        "Marco de aprendizaje automático de Google, con versiones para dispositivos de borde.",
+        "Marco de aprendizaje profundo flexible, estándar en investigación.",
+        "Biblioteca de visión por computador y procesamiento de imágenes.",
+        "Biblioteca de Python de aprendizaje automático clásico.",
+        "Protocolo abierto que conecta modelos de lenguaje con herramientas y fuentes de datos."
+      ],
+      "use": [
+        "Entreno modelos y los llevo a hardware embebido.",
+        "Prototipos y entrenamiento de modelos.",
+        "Visión artificial y extracción de señales fisiológicas a partir de video.",
+        "Modelos predictivos, clasificación y evaluación.",
+        "Servidores que dan a los agentes acceso controlado a datos y acciones."
+      ]
+    },
+    {
+      "id": "bio",
+      "category": "Bioingeniería",
+      "items": [
         "MATLAB",
-        "Jupyter",
-        "R",
-        "Power BI",
-        "Apache Spark"
-      ]
-    },
-    {
-      "id": "datastore",
-      "category": "Bases de datos",
-      "items": [
-        "SQL Server",
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "Grafana",
-        "Azure DevOps"
-      ]
-    },
-    {
-      "id": "ops",
-      "category": "Operaciones",
-      "items": [
-        "Git",
-        "Docker",
-        "Linux",
-        "Postman",
-        "Wireshark",
-        "MQTT / LoRaWAN"
+        "GNU Octave",
+        "SciPy"
+      ],
+      "what": [
+        "Entorno de cálculo numérico, muy usado en procesamiento de señales y control.",
+        "Alternativa libre y compatible con MATLAB.",
+        "Biblioteca científica de Python, con filtros y análisis espectral."
+      ],
+      "use": [
+        "Análisis y filtrado de señales y validación de algoritmos.",
+        "Procesamiento de señales y cálculo numérico sin depender de licencias.",
+        "Preprocesamiento, filtrado y remuestreo de señales fisiológicas."
       ]
     },
     {
       "id": "robotics",
-      "category": "Robótica y diseño",
+      "category": "Robótica y mecatrónica",
       "items": [
         "ROS 2",
         "Gazebo",
+        "Webots",
+        "Simulink",
         "Fusion 360",
         "SolidWorks",
-        "Blender",
-        "Figma"
+        "Ultimaker Cura",
+        "Blender"
+      ],
+      "what": [
+        "Sistema operativo de robots: nodos, mensajes y herramientas para percepción, navegación y control.",
+        "Simulador físico de robots integrado con ROS.",
+        "Simulador de robótica de código abierto.",
+        "Entorno de MATLAB para modelar y simular sistemas dinámicos por bloques.",
+        "CAD y CAM de Autodesk para diseño mecánico.",
+        "CAD paramétrico de diseño mecánico.",
+        "Laminador para preparar piezas de impresión 3D.",
+        "Suite libre de modelado, animación y render 3D."
+      ],
+      "use": [
+        "Arquitectura de software de robots, navegación y mapeo.",
+        "Pruebo navegación y control antes de pasar al robot real.",
+        "Simulación de robots móviles y validación de comportamientos.",
+        "Modelado de sistemas y ajuste de controladores.",
+        "Piezas, carcasas y mecanismos de los prototipos.",
+        "Diseño de piezas y ensambles mecánicos.",
+        "Fabricación de piezas y carcasas por impresión 3D.",
+        "Modelado y visualización de productos y prototipos."
+      ]
+    },
+    {
+      "id": "electrical",
+      "category": "Sistemas eléctricos",
+      "items": [
+        "PSIM",
+        "AutoCAD Electrical"
+      ],
+      "what": [
+        "Simulador especializado en electrónica de potencia y control de motores.",
+        "CAD de Autodesk para planos y esquemas eléctricos."
+      ],
+      "use": [
+        "Simulación de convertidores y etapas de potencia.",
+        "Planos eléctricos y documentación de tableros."
+      ]
+    },
+    {
+      "id": "ops",
+      "category": "Cloud y DevOps",
+      "items": [
+        "Git",
+        "GitHub Actions",
+        "Docker",
+        "Linux",
+        "Azure DevOps",
+        "Postman",
+        "Wireshark"
+      ],
+      "what": [
+        "Sistema de control de versiones distribuido.",
+        "Automatización de integración y despliegue continuos dentro de GitHub.",
+        "Contenedores para empaquetar y ejecutar aplicaciones de forma reproducible.",
+        "Sistema operativo de servidores y de sistemas embebidos.",
+        "Plataforma de Microsoft para planificar trabajo, repositorios y entregas.",
+        "Herramienta para diseñar, probar y documentar APIs.",
+        "Analizador de tráfico de red."
+      ],
+      "use": [
+        "Versiono todo: firmware, software, diseños y documentación.",
+        "Compilo, pruebo y despliego en cada cambio; este sitio se publica así.",
+        "Entornos de desarrollo y despliegue de servicios.",
+        "Administración de servidores y de equipos de borde.",
+        "Gestión de tareas y entregas en equipos ágiles y remotos.",
+        "Pruebo y documento las APIs que construyo o integro.",
+        "Depuro protocolos y comunicaciones entre dispositivos y servicios."
       ]
     }
   ],
@@ -155,6 +356,7 @@
         "Criterios de compatibilidad electromagnética desde el diseño"
       ],
       "categories": [
+        "electrical",
         "pcb"
       ],
       "experience": [],
@@ -174,7 +376,7 @@
       ],
       "categories": [
         "software",
-        "datastore"
+        "dataeng"
       ],
       "experience": [
         "tranexco",
@@ -198,8 +400,8 @@
         "Datos geoespaciales: teledetección y drones"
       ],
       "categories": [
-        "data",
-        "datastore"
+        "dataeng",
+        "analytics"
       ],
       "experience": [
         "poimen"
@@ -224,7 +426,7 @@
         "Cursos de sistemas embebidos con IA como docente"
       ],
       "categories": [
-        "data"
+        "ai"
       ],
       "experience": [
         "compensar"
@@ -292,7 +494,9 @@
         "Instrumentos de laboratorio",
         "Cargo presidencial en el capítulo estudiantil de Ingeniería en Medicina y Biología del IEEE"
       ],
-      "categories": [],
+      "categories": [
+        "bio"
+      ],
       "experience": [
         "ieee"
       ],

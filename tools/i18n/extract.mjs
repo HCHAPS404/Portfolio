@@ -15,19 +15,21 @@ const pick = (obj, keys) => Object.fromEntries(keys.filter((k) => obj[k] !== und
 
 const data = {
   profile: {
-    ...pick(prof, ['name', 'shortName', 'availability', 'location', 'summary', 'about']),
+    ...pick(prof, ['name', 'shortName', 'title', 'availability', 'location', 'summary', 'about']),
+    emphasis: prof.emphasis,
+    scenarios: prof.scenarios.map((x) => pick(x, ['area', 'text'])),
     roles: prof.roles,
     tags: prof.tags,
     stats: prof.stats.map((s) => pick(s, ['label', 'text'])),
     languages: prof.languages.map((l) => pick(l, ['name', 'level'])),
   },
-  experience: exp.map((e) => pick(e, ['period', 'role', 'org', 'type', 'summary', 'bullets', 'tags'])),
+  experience: exp.map((e) => pick(e, ['period', 'role', 'org', 'type', 'summary', 'contribution', 'bullets', 'tags'])),
   education: {
     education: edu.education.map((e) => pick(e, ['degree', 'institution', 'status'])),
     certificates: edu.certificates.map((c) => pick(c, ['name', 'issuer'])),
   },
   skills: {
-    tools: sk.tools.map((c) => pick(c, ['category', 'items'])),
+    tools: sk.tools.map((c) => pick(c, ['category', 'items', 'what', 'use'])),
     domains: sk.domains.map((d) => pick(d, ['title', 'tech', 'summary', 'focus'])),
     softSkills: sk.softSkills,
   },

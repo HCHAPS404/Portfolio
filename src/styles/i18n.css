@@ -148,3 +148,430 @@ html[lang='ja'] .hero__line {
 html[lang='ru'] .hero__title {
   line-height: 0.92;
 }
+
+/* =========================================================
+   Perfil rediseñado
+   ========================================================= */
+.about__title {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: var(--fs-2xl);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.about__emph {
+  margin-top: var(--sp-4);
+}
+
+.about__emph h3,
+.about__roles h3,
+.about__langs h3 {
+  margin-bottom: var(--sp-3);
+  font-weight: 400;
+}
+
+.about__emph ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  border-top: 1px solid var(--c-line-strong);
+}
+
+.about__emph li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.6rem 0.25rem;
+  border-bottom: 1px solid var(--c-line);
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: var(--fs-md);
+}
+
+.about__emph li span {
+  font-size: var(--fs-2xs);
+  color: var(--c-accent);
+}
+
+.about__body .about__lead {
+  margin-top: var(--sp-5);
+}
+
+/* Escenarios que rotan */
+.scn {
+  margin-top: var(--sp-5);
+  padding: var(--sp-4);
+  border: 1px solid var(--c-line-strong);
+  background: var(--c-bg-2);
+  box-shadow: inset 3px 0 0 var(--c-accent);
+}
+
+.scn__head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  font-size: var(--fs-2xs);
+}
+
+.scn__count b {
+  color: var(--c-accent);
+  font-weight: 500;
+}
+
+.scn__body {
+  min-height: 7.5em;
+  margin-top: var(--sp-3);
+  transition: opacity 0.26s ease, transform 0.26s ease;
+}
+
+.scn.is-swapping .scn__body {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.scn__area {
+  font-family: var(--f-pixel);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.scn__text {
+  margin-top: 0.5rem;
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.scn__ticks {
+  display: flex;
+  gap: 4px;
+  margin-top: var(--sp-3);
+}
+
+.scn__ticks button {
+  flex: 1;
+  padding-block: 8px;
+}
+
+.scn__ticks i {
+  display: block;
+  height: 3px;
+  background: var(--c-line-strong);
+  transform-origin: left;
+}
+
+.scn__ticks .is-on i {
+  background: var(--c-accent);
+  animation: scn-fill 4.6s linear both;
+}
+
+.scn.is-manual .scn__ticks .is-on i {
+  animation: none;
+}
+
+@keyframes scn-fill {
+  from { transform: scaleX(0.04); }
+  to { transform: scaleX(1); }
+}
+
+/* Cargos, áreas e idiomas */
+.about__lower {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--sp-6);
+  margin-top: var(--sec-gap);
+}
+
+.rtags {
+  border-top: 1px solid var(--c-line-strong);
+}
+
+.rtag {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.8rem 0.25rem 0.8rem 1rem;
+  border-bottom: 1px solid var(--c-line);
+  box-shadow: inset 2px 0 0 var(--c-accent);
+}
+
+.rtag b {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: var(--fs-md);
+  line-height: 1.2;
+}
+
+.rtag span {
+  font-family: var(--f-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.04em;
+  color: var(--c-ink-dim);
+}
+
+.about__roles .about__tags {
+  margin-top: var(--sp-4);
+}
+
+.about__langs {
+  margin-top: 0;
+}
+
+.lngs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--c-line);
+  border: 1px solid var(--c-line);
+}
+
+.lng {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: 'glyph name level' 'glyph scale scale';
+  align-items: center;
+  gap: 0.45rem 0.85rem;
+  padding: 0.85rem 0.9rem;
+  background: var(--c-bg);
+  transition: background-color 0.3s;
+}
+
+.lng:hover {
+  background: var(--c-bg-2);
+}
+
+.lng__glyph {
+  grid-area: glyph;
+  display: grid;
+  place-items: center;
+  width: 2.9rem;
+  aspect-ratio: 1;
+  border: 1px solid var(--c-line-strong);
+  font-family: 'Space Grotesk', 'Noto Sans JP', 'Noto Sans SC', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.lng:first-child .lng__glyph {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: var(--c-accent-ink);
+}
+
+.lng__name {
+  grid-area: name;
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  overflow-wrap: anywhere;
+}
+
+.lng__level {
+  grid-area: level;
+  font-family: var(--f-mono);
+  font-size: var(--fs-2xs);
+  color: var(--c-accent);
+  text-align: right;
+}
+
+.lng__scale {
+  grid-area: scale;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3px;
+}
+
+.lng__scale i {
+  height: 5px;
+  background: var(--c-line-strong);
+}
+
+.lng__scale i.is-on {
+  background: var(--c-ink);
+}
+
+/* Redes: solo iconos */
+.about__channels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  margin-top: var(--sp-6);
+  width: fit-content;
+  background: var(--c-line);
+  border: 1px solid var(--c-line);
+}
+
+.ico {
+  display: grid;
+  place-items: center;
+  width: 3.4rem;
+  aspect-ratio: 1;
+  background: var(--c-bg);
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.ico svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.ico:hover,
+.ico:focus-visible {
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+}
+
+@media (max-width: 900px) {
+  .about__lower {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+}
+
+/* Portada: título fijo y énfasis que rota */
+.hero__role-sep {
+  margin-inline: 0.15em;
+}
+
+/* =========================================================
+   Experiencia: aporte
+   ========================================================= */
+.xp__aporte {
+  margin-bottom: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--c-bg-2);
+  box-shadow: inset 3px 0 0 var(--c-accent);
+}
+
+.xp__aporte h4 {
+  margin-bottom: 0.4rem;
+  font-size: var(--fs-2xs);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.xp__aporte p {
+  max-width: 68ch;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   Herramientas: ficha que se despliega
+   ========================================================= */
+.tools__board {
+  grid-auto-flow: dense;
+}
+
+.tool__x {
+  display: none;
+}
+
+.tool__detail[hidden] {
+  display: none;
+}
+
+.tool.is-open {
+  grid-column: span 3;
+  grid-row: span 2;
+  background: var(--c-bg-2);
+  box-shadow: inset 0 3px 0 var(--c-accent);
+}
+
+.tool.is-open .tool__btn {
+  aspect-ratio: auto;
+  min-height: 6rem;
+  background: transparent;
+  color: var(--c-ink);
+}
+
+.tool.is-open .tool__btn .tool__no,
+.tool.is-open .tool__btn .tool__code {
+  color: var(--c-ink-dim);
+}
+
+.tool.is-open .tool__btn .tool__name {
+  color: var(--c-ink);
+  font-size: var(--fs-sm);
+}
+
+.tool.is-open .tool__sym {
+  color: var(--c-accent);
+}
+
+.tool.is-open .tool__x {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  background:
+    linear-gradient(var(--c-ink), var(--c-ink)) center / 100% 1.5px no-repeat,
+    linear-gradient(var(--c-ink), var(--c-ink)) center / 1.5px 100% no-repeat;
+  transform: rotate(45deg);
+}
+
+.tool.is-open .tool__code {
+  margin-right: 1.8rem;
+}
+
+.tool__detail {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.2rem 0.8rem 0.95rem;
+  font-size: var(--fs-xs);
+  line-height: 1.55;
+}
+
+.tool__detail dt {
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.tool__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--c-line);
+  font-size: var(--fs-2xs);
+}
+
+.tool__meta dt {
+  color: var(--c-ink-dim);
+}
+
+@media (max-width: 560px) {
+  .tool.is-open {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Título largo de premios */
+#premios-title {
+  font-size: clamp(1.9rem, 1rem + 4.2vw, 5rem);
+  line-height: 0.98;
+}
+
+@media (min-width: 1280px) {
+  .lngs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .about__lower {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .lngs {
+    grid-template-columns: 1fr;
+  }
+}

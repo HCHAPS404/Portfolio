@@ -1,6 +1,6 @@
 import { profile, asset } from '../data.js';
 import { esc } from '../core/dom.js';
-import { t } from '../i18n/index.js';
+import { t, getLang } from '../i18n/index.js';
 
 export function renderHero() {
   // Una línea por parte del nombre; en chino y japonés las separa un punto medio
@@ -36,14 +36,16 @@ export function renderHero() {
 
       <div class="hero__bottom">
         <div class="hero__intro">
-          <p class="hero__role" aria-label="${esc(profile.roles.slice(0, 3).join(', '))}">
+          <p class="hero__role" aria-label="${esc(`${profile.title}. ${t('about.emphasis')}: ${profile.emphasis.join(', ')}`)}">
             <span class="red" aria-hidden="true">&gt;</span>
-            <span data-roles aria-hidden="true">${esc(profile.roles[0])}</span><span class="caret" aria-hidden="true">_</span>
+            <span class="hero__role-title" aria-hidden="true">${esc(profile.title)}</span>
+            <span class="hero__role-sep red" aria-hidden="true">/</span>
+            <span data-roles aria-hidden="true">${esc(profile.emphasis[0])}</span><span class="caret" aria-hidden="true">_</span>
           </p>
           <p class="hero__summary" data-hero-fade>${esc(profile.summary)}</p>
           <div class="hero__cta" data-hero-fade>
             <a class="btn btn--accent" href="#proyectos" data-cursor data-magnetic>${esc(t('hero.cta_projects'))} <span class="btn__arrow" aria-hidden="true">↗</span></a>
-            <a class="btn" href="${asset(profile.cv)}" download data-cursor data-magnetic>${esc(t('hero.cta_cv'))} <span class="btn__arrow" aria-hidden="true">↓</span></a>
+            <a class="btn" href="${asset(`assets/docs/cv-${getLang()}.pdf`)}" download data-cursor data-magnetic>${esc(t('hero.cta_cv'))} <span class="btn__arrow" aria-hidden="true">↓</span></a>
           </div>
         </div>
 

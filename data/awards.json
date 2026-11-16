@@ -10,6 +10,13 @@
     },
     {
       "year": "2026",
+      "title": "Sistema de gestión territorial del riesgo",
+      "org": "Hackatón · Google Developer Group (GDG) Cartagena",
+      "desc": "Tercer puesto en el reto de tecnología y gestión del riesgo, con un sistema que identifica las zonas afectadas de Cartagena y estima su impacto presupuestal, de movilidad, económico y turístico.",
+      "flag": "3er puesto"
+    },
+    {
+      "year": "2026",
       "title": "Altium Global Scholarship Program",
       "org": "Altium Designer Software",
       "desc": "Beca global otorgada por Altium por excelencia en diseño profesional de PCB.",

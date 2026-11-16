@@ -1,29 +1,32 @@
 [
   {
     "id": "devkit",
-    "period": "2024 – Actualidad",
+    "period": "Ene 2024 – Actualidad",
     "role": "Fundador y Gerente General",
     "org": "DevKit Electronics S.A.S",
     "link": "https://devkitelectronics.com",
     "type": "Fundador",
-    "summary": "Empresa de educación STEM que fundé. Hacemos hardware, software y currículos que funcionan en aulas y laboratorios reales.",
+    "summary": "Empresa de ingeniería y educación STEM que fundé y dirijo. Convertimos necesidades de instituciones y del mercado en productos, servicios y programas de implementación repetibles.",
     "bullets": [
-      "Dirijo estrategia, operación y producto en educación de ingeniería y ciencias para niños, jóvenes, universitarios y profesionales.",
-      "Diseño y entrego soluciones de punta a punta: arquitectura curricular, PCB multicapa, firmware embebido, software educativo, plataformas web y equipos de laboratorio.",
-      "Construí un portafolio de cursos, kits de robótica y sistemas de laboratorio adoptados por colegios y universidades.",
-      "Lidero equipos multidisciplinarios entre electrónica, software y pedagogía.",
-      "Traduzco ingeniería compleja (STM32, IoT, fabricación 3D, automatización) en experiencias de aprendizaje."
+      "Dirijo la empresa en estrategia, operación, dirección de producto y entrega técnica.",
+      "Soy responsable de la arquitectura de las soluciones de punta a punta: PCB multicapa, firmware embebido, sensores y adquisición de datos, conectividad IoT, servicios de backend, plataformas web, software educativo, robótica y equipos de laboratorio.",
+      "Integro los datos de dispositivos y aplicaciones en flujos de ingesta, transformación, monitoreo, tableros, reportes y automatización, con Python, SQL y APIs.",
+      "Lidero equipos multidisciplinarios de electrónica, software y pedagogía: defino requisitos, hoja de ruta, documentación, criterios de validación y prioridades de entrega.",
+      "Incorporo inteligencia artificial en prototipos y flujos de producto cuando aporta: aprendizaje automático, recuperación aumentada y agentes."
     ],
     "tags": [
+      "Dirección técnica",
+      "Producto",
       "STEM",
       "Robótica",
       "STM32",
       "Firmware",
-      "Software",
-      "Impresión 3D",
-      "IoT"
+      "PCB",
+      "IoT",
+      "Datos"
     ],
-    "featured": true
+    "featured": true,
+    "contribution": "Construí la empresa desde cero y la capacidad técnica que la sostiene. Diseñé la arquitectura que une hardware, firmware, software y datos en un mismo producto, y armé un portafolio de cursos, kits de robótica y sistemas de laboratorio que colegios y universidades ya usan."
   },
   {
     "id": "poimen",
@@ -31,24 +34,25 @@
     "role": "Dueño, fundador y Gerente General",
     "org": "Poimen Labs S.A.S",
     "type": "Dueño y fundador",
-    "summary": "Empresa AgriTech que fundé y de la que soy dueño, para llevar electrónica, automatización, sensado y datos al agro colombiano, del prototipo al despliegue en campo.",
+    "summary": "Empresa AgriTech que fundé y de la que soy dueño. Aplica electrónica, automatización, sensado, datos y software al monitoreo agrícola y al apoyo a la decisión en campo, en las condiciones reales del agro colombiano.",
     "bullets": [
-      "Fundé Poimen Labs y soy su dueño; codirijo la estrategia de la empresa, la dirección de ingeniería y la entrega de soluciones de tecnología agrícola en Colombia.",
-      "Diseño hardware y software integrados para el campo: nodos de sensores, adquisición en el borde, control y capas de conectividad rural.",
-      "Desarrollo sistemas de monitoreo y automatización de bajo costo para cultivos y ganadería, con firmware eficiente en energía.",
-      "Convierto datos de campo en visualización, alertas y apoyo a la decisión para productores.",
-      "Gestiono el ciclo completo: requisitos con productores, PCB y carcasa, firmware, backend, pilotos en campo y mejora iterativa."
+      "Fundé Poimen Labs y soy su dueño; dirijo la estrategia y la ingeniería de la empresa.",
+      "Diseño arquitecturas integradas: nodos de sensores, adquisición en el borde, telemetría, conectividad rural, lógica de control, servicios de backend y tableros.",
+      "Convierto las mediciones de campo en información estructurada, alertas e indicadores operativos trazables para los productores.",
+      "Aplico ingeniería de datos a los flujos IoT: ingesta, transformación, almacenamiento estructurado, series de tiempo, calidad de datos y visualización, con Python y SQL.",
+      "Gestiono el ciclo completo del producto: requisitos y arquitectura, integración de PCB, carcasa, firmware y software, pilotos de validación, retroalimentación e iteración."
     ],
     "tags": [
       "AgriTech",
       "IoT",
-      "Automatización",
-      "Embebidos",
       "Sensores",
-      "Datos",
-      "Software"
+      "Telemetría",
+      "Embebidos",
+      "Ingeniería de datos",
+      "Automatización"
     ],
-    "featured": true
+    "featured": true,
+    "contribution": "Llevé la idea de tecnología para el agro a una arquitectura completa y desplegable, del sensor en el cultivo al tablero del productor. Definí cómo se mide, cómo viajan los datos con conectividad limitada y cómo se convierten en alertas y decisiones, con hardware de bajo costo y firmware eficiente en energía."
   },
   {
     "id": "tranexco",
@@ -58,17 +62,20 @@
     "type": "Tiempo completo · Remoto",
     "summary": "Software empresarial para comercio internacional, aduanas y operaciones logísticas.",
     "bullets": [
-      "Diseñé soluciones .NET para gestión de clientes, procesos aduaneros, importaciones, cumplimiento DIAN, logística e integraciones.",
-      "Desarrollé soluciones para clientes de alto volumen, con escalabilidad, seguridad y rendimiento.",
-      "Trabajé en todo el stack, desde modelos de datos en SQL Server hasta APIs y front-end, en un equipo ágil y remoto."
+      "Desarrollé soluciones empresariales en .NET y C# para gestión de clientes, operaciones aduaneras, importaciones, cumplimiento DIAN, logística e integraciones de negocio.",
+      "Construí y mantuve servicios de backend, APIs REST, lógica de negocio y estructuras de datos en SQL Server: consultas, modelos relacionales y validación de datos.",
+      "Implementé procesos de extracción, transformación y carga con SQL Server Integration Services, además de flujos de integración y reportes.",
+      "Trabajé en todas las capas, incluidos componentes web en JavaScript, en un equipo ágil y remoto, con control de versiones y documentación técnica."
     ],
     "tags": [
       ".NET",
       "C#",
       "SQL Server",
+      "SSIS",
       "REST API",
       "DIAN"
-    ]
+    ],
+    "contribution": "Aporté en todo el stack de un software que mueve operaciones reales de comercio exterior. Traduje requisitos operativos de aduanas y logística en servicios, modelos de datos y procesos de integración mantenibles, cuidando la escalabilidad, la seguridad y el rendimiento para clientes de alto volumen."
   },
   {
     "id": "compensar",
@@ -87,11 +94,12 @@
       "IA embebida",
       "Arduino",
       "STEAM"
-    ]
+    ],
+    "contribution": "Diseñé y dicté experiencias de aprendizaje especializadas en robótica, automatización, electrónica y sistemas embebidos con IA, integradas a los proyectos curriculares. Acompañé a cada estudiante en un proyecto técnico completo: del circuito y los sensores a la programación, el comportamiento autónomo, las pruebas y el prototipo funcional."
   },
   {
     "id": "arisoft",
-    "period": "2023 – 2024",
+    "period": "Jun 2023 – Nov 2024",
     "role": "Desarrollador de Software y Consultor en Robótica Educativa",
     "org": "Arisoft Seguridad Vial S.A.S",
     "type": "Tiempo completo · Híbrido",
@@ -106,7 +114,8 @@
       "PCB",
       "C/C++",
       "Producto"
-    ]
+    ],
+    "contribution": "Fui el puente entre la ingeniería y el cliente: desarrollé software, programé robots, diseñé circuitos y acompañé la implementación en sitio. Convertí capacidades técnicas en productos de robótica educativa que las instituciones podían adoptar, y di soporte, ajuste y seguimiento durante su puesta en marcha."
   },
   {
     "id": "ce",
@@ -126,7 +135,8 @@
       "Python",
       "C/C++",
       "STEAM"
-    ]
+    ],
+    "contribution": "Lideré ciclos completos, del diseño a la implementación, de prototipos mecatrónicos y educativos para colegios y comunidades vulnerables, equilibrando lo que la ingeniería permite con lo que el territorio puede usar y sostener. Dejé capacidad instalada: formé a docentes y comunidades para operar y mantener la tecnología por su cuenta."
   },
   {
     "id": "ieee",
@@ -147,6 +157,7 @@
       "SIGHT",
       "CIS"
     ],
-    "featured": true
+    "featured": true,
+    "contribution": "Dirijo comunidades técnicas de estudiantes en robótica, inteligencia computacional, ingeniería biomédica y tecnología humanitaria. Coordino equipos, eventos, talleres y alianzas, y conecto el mundo académico con el profesional y con la comunidad."
   }
 ]
